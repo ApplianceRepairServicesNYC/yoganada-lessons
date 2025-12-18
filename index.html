@@ -931,17 +931,24 @@
             position: relative;
             overflow: hidden;
             cursor: default;
+            -webkit-tap-highlight-color: transparent;
         }
-        .upcoming-card:hover {
+        .upcoming-card:hover,
+        .upcoming-card:active,
+        .upcoming-card.touched {
             transform: translateY(-6px);
             border-color: var(--color-accent);
             box-shadow: 0 16px 40px rgba(199, 93, 36, 0.15);
             background: var(--color-bg-card-hover);
         }
-        .upcoming-card:hover .upcoming-icon {
+        .upcoming-card:hover .upcoming-icon,
+        .upcoming-card:active .upcoming-icon,
+        .upcoming-card.touched .upcoming-icon {
             transform: scale(1.15);
         }
-        .upcoming-card:hover .upcoming-badge {
+        .upcoming-card:hover .upcoming-badge,
+        .upcoming-card:active .upcoming-badge,
+        .upcoming-card.touched .upcoming-badge {
             background: var(--gradient-primary);
             color: white;
         }
@@ -2044,6 +2051,18 @@
             
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') closeFeaturePanels();
+            });
+            
+            // Mobile touch hover effect for upcoming cards
+            document.querySelectorAll('.upcoming-card').forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.classList.add('touched');
+                }, { passive: true });
+                
+                card.addEventListener('touchend', function() {
+                    const el = this;
+                    setTimeout(() => el.classList.remove('touched'), 300);
+                }, { passive: true });
             });
         });
     </script>
