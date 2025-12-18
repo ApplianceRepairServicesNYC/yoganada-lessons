@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful | Yogananda Teachings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fdf6e9 0%, #f5ebe0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .card {
+            background: #fffcf7;
+            border-radius: 24px;
+            padding: 3rem;
+            max-width: 480px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        .icon {
+            width: 80px;
+            height: 80px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+        }
+        h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.75rem;
+            color: #2d1810;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #5c4033;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #e8a946, #c75d24);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(199, 93, 36, 0.3);
+        }
+        .status {
+            margin-top: 1.5rem;
+            padding: 0.75rem 1rem;
+            background: #ecfdf5;
+            border-radius: 8px;
+            color: #047857;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h1>Welcome to the Course!</h1>
+        <p>Your payment was successful. You now have lifetime access to all 48 chapters of Autobiography of a Yogi.</p>
+        <a href="/teachings/paramahansa-yogananda/autobiography-of-a-yogi/" class="btn">Go to the Course →</a>
+        <div class="status" id="status">✓ Course unlocked</div>
+    </div>
+
+    <script>
+    (function() {
+        localStorage.setItem("yogananda_course_unlocked", "true");
+    })();
+    </script>
+</body>
+</html>
