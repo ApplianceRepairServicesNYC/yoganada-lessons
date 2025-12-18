@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful — Yogananda Teachings</title>
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #f5f0e8;
+            --color-card: #fffcf7;
+            --color-text: #2d1810;
+            --color-text-secondary: #5c4033;
+            --color-accent: #c75d24;
+            --color-success: #10b981;
+            --gradient-primary: linear-gradient(135deg, #e8a946 0%, #c75d24 100%);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--color-bg);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .success-card {
+            background: var(--color-card);
+            border-radius: 24px;
+            padding: 3rem;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.75rem;
+            color: var(--color-text);
+            margin-bottom: 0.75rem;
+        }
+        p {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .features {
+            text-align: left;
+            background: rgba(16, 185, 129, 0.08);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .features li {
+            list-style: none;
+            padding: 0.5rem 0;
+            color: var(--color-text);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .features li::before {
+            content: '✓';
+            color: var(--color-success);
+            font-weight: 700;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(199, 93, 36, 0.3);
+            transition: all 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(199, 93, 36, 0.4);
+        }
+        .loading {
+            display: none;
+            color: var(--color-text-secondary);
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-card">
+        <div class="success-icon">✓</div>
+        <h1>Welcome to the Course!</h1>
+        <p>Your payment was successful. You now have lifetime access to all 48 chapters of Autobiography of a Yogi.</p>
+        <ul class="features">
+            <li>All 48 chapter lessons unlocked</li>
+            <li>Interactive quizzes with progress tracking</li>
+            <li>Practice exercises and journal prompts</li>
+            <li>Lifetime access — learn at your own pace</li>
+        </ul>
+        <a href="teachings/paramahansa-yogananda/autobiography-of-a-yogi/" class="btn" id="start-btn">Start Learning →</a>
+        <p class="loading" id="loading">Unlocking your course...</p>
+    </div>
+
+    <script>
+    (function() {
+        // Unlock the course
+        var PAYMENT_KEY = 'yogananda_course_paid';
+        
+        try {
+            localStorage.setItem(PAYMENT_KEY, 'true');
+            console.log('Course unlocked successfully');
+        } catch(e) {
+            console.error('Could not save unlock status:', e);
+        }
+        
+        // Optional: Auto-redirect after a few seconds
+        // setTimeout(function() {
+        //     window.location.href = '../';
+        // }, 3000);
+    })();
+    </script>
+</body>
+</html>
