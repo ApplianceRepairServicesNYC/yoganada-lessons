@@ -180,15 +180,6 @@
         }
         .nav-links a:hover { color: var(--color-text); }
         .nav-cta { margin-left: 1.5rem; }
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--color-text);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
         
         /* ==================== HERO ==================== */
         .hero {
@@ -213,7 +204,12 @@
             transform: translateX(-50%);
             width: 1200px;
             height: 1400px;
+            /* ============================================
+               HERO BACKGROUND IMAGE - EDIT URL BELOW
+               Replace with your own image URL
+            ============================================ */
             background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/40/Paramahansa_Yogananda_Standard_Pose.jpg');
+            /* ============================================ */
             background-size: cover;
             background-position: top center;
             opacity: 0.08;
@@ -855,6 +851,118 @@
         .footer-legal a { color: var(--color-text-muted); }
         .footer-legal a:hover { color: var(--color-text); }
         
+        /* ==================== MOBILE MENU ==================== */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+            font-size: 1.25rem;
+            cursor: pointer;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .mobile-menu-btn:hover {
+            background: var(--color-bg-card);
+            border-color: var(--color-border-light);
+        }
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1500;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            max-width: 85vw;
+            height: 100vh;
+            background: var(--color-bg-deep);
+            z-index: 1501;
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid var(--color-border);
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        .mobile-menu-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .mobile-menu-header .logo {
+            font-size: 1.25rem;
+        }
+        .mobile-menu-header .logo-icon {
+            width: 36px;
+            height: 36px;
+            font-size: 1rem;
+        }
+        .mobile-menu-close {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-elevated);
+            color: var(--color-text);
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .mobile-menu-close:hover {
+            background: var(--color-bg-card-hover);
+            border-color: var(--color-border-light);
+        }
+        .mobile-menu-nav {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+        .mobile-menu-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .mobile-menu-links a {
+            display: block;
+            padding: 1rem 1.25rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            border-radius: 12px;
+            transition: all 0.2s;
+        }
+        .mobile-menu-links a:hover {
+            background: var(--color-bg-card);
+            color: var(--color-text);
+        }
+        .mobile-menu-cta {
+            padding: 1.5rem;
+            border-top: 1px solid var(--color-border);
+        }
+        .mobile-menu-cta .btn {
+            width: 100%;
+        }
+        
         /* ==================== RESPONSIVE ==================== */
         @media (max-width: 1200px) {
             .features-grid { grid-template-columns: repeat(2, 1fr); }
@@ -902,10 +1010,33 @@
                 <div class="nav-cta">
                     <a href="teachings/paramahansa-yogananda/autobiography-of-a-yogi/self-realization/" class="btn btn-primary">Start Free</a>
                 </div>
-                <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
             </nav>
         </div>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="/" class="logo">
+                <span class="logo-icon">✦</span>
+                <span>Yogananda</span>
+            </a>
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="mobile-menu-nav">
+            <ul class="mobile-menu-links">
+                <li><a href="#features" class="mobile-nav-link">Features</a></li>
+                <li><a href="#about" class="mobile-nav-link">About Yogananda</a></li>
+                <li><a href="#programs" class="mobile-nav-link">Programs</a></li>
+                <li><a href="about/" class="mobile-nav-link">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-cta">
+            <a href="teachings/paramahansa-yogananda/autobiography-of-a-yogi/self-realization/" class="btn btn-primary">Start Free Lesson</a>
+        </div>
+    </div>
 
     <main>
         <!-- ==================== HERO ==================== -->
@@ -1396,6 +1527,37 @@
         const header = document.getElementById('site-header');
         window.addEventListener('scroll', () => {
             header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile Menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+        
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
         });
 
         // Accordion functionality

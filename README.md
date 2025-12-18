@@ -1,8 +1,10 @@
-# Wisdom Path
+# Yogananda Teachings
 
 Transform your mind through timeless wisdom. A modern learning platform featuring structured lessons based on Paramahansa Yogananda's teachings.
 
-![Wisdom Path](https://img.shields.io/badge/version-1.0.0-purple)
+🌐 **Live Site:** [yoganandateachings.com](https://yoganandateachings.com)
+
+![Yogananda Teachings](https://img.shields.io/badge/version-1.0.0-purple)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Static Site](https://img.shields.io/badge/type-static-green)
 
@@ -22,16 +24,16 @@ Transform your mind through timeless wisdom. A modern learning platform featurin
 1. Fork this repository
 2. Go to Settings → Pages
 3. Select "Deploy from a branch" → main → / (root)
-4. Your site will be live at `https://yourusername.github.io/wisdom-path/`
+4. Your site will be live at `https://yourusername.github.io/yogananda-teachings/`
 
 ### Option 2: Local Development
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/wisdom-path.git
+git clone https://github.com/yourusername/yoganandateachings.com.git
 
 # Navigate to folder
-cd wisdom-path
+cd yoganandateachings.com
 
 # Open in browser (or use any local server)
 open index.html
@@ -48,7 +50,7 @@ Simply drag and drop the folder to [Netlify Drop](https://app.netlify.com/drop) 
 ## 📁 Project Structure
 
 ```
-wisdom-path/
+yoganandateachings.com/
 ├── index.html                    # Homepage
 ├── about/
 │   └── index.html               # About page
