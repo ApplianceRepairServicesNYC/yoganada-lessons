@@ -777,21 +777,34 @@
     <script>
     // === UNLOCK SYSTEM ===
     document.addEventListener("DOMContentLoaded", function() {
-        // Read localStorage and set body class
+        // Read localStorage
         var unlocked = localStorage.getItem("yogananda_course_unlocked");
-        console.log("Unlock flag:", unlocked);
+        console.log("=== UNLOCK DEBUG ===");
+        console.log("localStorage key: yogananda_course_unlocked");
+        console.log("localStorage value:", unlocked);
+        console.log("Type:", typeof unlocked);
         
         if (unlocked === "true") {
+            console.log("UNLOCKING COURSE...");
             document.body.classList.remove("course-locked");
             document.body.classList.add("course-unlocked");
+            console.log("Body classes:", document.body.className);
             
             // Hide unlock section
             var unlockSection = document.getElementById("unlock-section");
-            if (unlockSection) unlockSection.style.display = "none";
+            if (unlockSection) {
+                unlockSection.style.display = "none";
+                console.log("Hidden unlock section");
+            }
+            
+            // Find all locked lessons
+            var lockedLessons = document.querySelectorAll(".lesson-item-locked");
+            console.log("Found locked lessons:", lockedLessons.length);
             
             // Convert all locked lessons to unlocked
-            document.querySelectorAll(".lesson-item-locked").forEach(function(item) {
+            lockedLessons.forEach(function(item, index) {
                 var url = item.getAttribute("data-lesson-url");
+                console.log("Unlocking lesson " + index + ":", url);
                 if (url) {
                     item.setAttribute("href", url);
                     item.classList.remove("lesson-item-locked");
@@ -799,11 +812,16 @@
                     item.removeAttribute("onclick");
                     var badge = item.querySelector(".lesson-badge");
                     var arrow = item.querySelector(".lesson-arrow");
-                    if (badge) { badge.textContent = "Unlocked"; badge.className = "lesson-badge badge-unlocked"; }
+                    if (badge) { 
+                        badge.textContent = "Unlocked"; 
+                        badge.className = "lesson-badge badge-unlocked"; 
+                    }
                     if (arrow) arrow.textContent = "→";
                 }
             });
+            console.log("=== UNLOCK COMPLETE ===");
         } else {
+            console.log("Course is LOCKED (no valid unlock flag)");
             document.body.classList.remove("course-unlocked");
             document.body.classList.add("course-locked");
         }
