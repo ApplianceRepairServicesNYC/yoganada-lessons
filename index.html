@@ -29,8 +29,8 @@
     <!-- Favicon & Theme -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-    <meta name="theme-color" content="#0a0a0f">
-    <meta name="msapplication-TileColor" content="#0a0a0f">
+    <meta name="theme-color" content="#f5f0e8">
+    <meta name="msapplication-TileColor" content="#f5f0e8">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://yoganandateachings.com/">
@@ -44,25 +44,33 @@
     
     <style>
         :root {
-            --color-bg-deep: #0a0a0f;
-            --color-bg: #0f0f17;
-            --color-bg-card: rgba(22, 22, 31, 0.8);
-            --color-bg-card-solid: #16161f;
-            --color-bg-card-hover: rgba(28, 28, 40, 0.9);
-            --color-bg-elevated: #1e1e2a;
-            --color-border: rgba(255,255,255,0.06);
-            --color-border-light: rgba(255,255,255,0.1);
-            --color-border-accent: rgba(139, 92, 246, 0.4);
-            --color-text: #ffffff;
-            --color-text-secondary: rgba(255,255,255,0.7);
-            --color-text-muted: rgba(255,255,255,0.5);
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --color-accent: #8b5cf6;
-            --color-accent-light: #a78bfa;
-            --color-accent-glow: rgba(139, 92, 246, 0.4);
-            --color-success: #10b981;
-            --color-success-bg: rgba(16, 185, 129, 0.15);
+            /* ============================================
+               BUDDHA COLOR THEME - Warm, Serene, Light
+            ============================================ */
+            --color-bg-deep: #f5f0e8;
+            --color-bg: #faf7f2;
+            --color-bg-card: rgba(255, 255, 255, 0.9);
+            --color-bg-card-solid: #ffffff;
+            --color-bg-card-hover: rgba(255, 252, 247, 1);
+            --color-bg-elevated: #fff9f0;
+            --color-border: rgba(139, 90, 43, 0.1);
+            --color-border-light: rgba(139, 90, 43, 0.15);
+            --color-border-accent: rgba(205, 127, 50, 0.4);
+            --color-text: #2d1810;
+            --color-text-secondary: #5c4033;
+            --color-text-muted: #8b7355;
+            /* Saffron & Gold Gradient */
+            --gradient-primary: linear-gradient(135deg, #e8a946 0%, #c75d24 100%);
+            --gradient-secondary: linear-gradient(135deg, #d4a84b 0%, #b8860b 100%);
+            --color-accent: #c75d24;
+            --color-accent-light: #e8a946;
+            --color-accent-glow: rgba(205, 127, 50, 0.3);
+            --color-success: #2e7d32;
+            --color-success-bg: rgba(46, 125, 50, 0.1);
+            /* Burgundy accent for special elements */
+            --color-burgundy: #722f37;
+            --color-gold: #d4a84b;
+            --color-saffron: #ff9933;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             --font-display: 'Sora', 'Inter', sans-serif;
             --header-height: 80px;
@@ -136,10 +144,10 @@
             transition: background 0.3s, box-shadow 0.3s;
         }
         .site-header.scrolled {
-            background: rgba(10, 10, 15, 0.95);
+            background: rgba(250, 247, 242, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 1px 0 var(--color-border);
+            box-shadow: 0 2px 20px rgba(139, 90, 43, 0.08);
         }
         .header-inner {
             max-width: var(--container-wide);
@@ -212,8 +220,8 @@
             /* ============================================ */
             background-size: cover;
             background-position: top center;
-            opacity: 0.08;
-            filter: grayscale(100%) brightness(1.2) contrast(1.1);
+            opacity: 0.12;
+            filter: sepia(30%) brightness(0.9) contrast(1.1);
             mask-image: radial-gradient(ellipse 50% 45% at 50% 30%, black 0%, transparent 70%);
             -webkit-mask-image: radial-gradient(ellipse 50% 45% at 50% 30%, black 0%, transparent 70%);
         }
@@ -222,10 +230,25 @@
             position: absolute;
             inset: 0;
             background: 
-                radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 30% 70%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 70%, rgba(118, 75, 162, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 0%, rgba(232, 169, 70, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 30% 70%, rgba(205, 127, 50, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 70%, rgba(199, 93, 36, 0.08) 0%, transparent 50%),
                 linear-gradient(to bottom, transparent 50%, var(--color-bg-deep) 100%);
+        }
+        /* Temple Silhouette Background */
+        .temple-silhouette {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 350px;
+            z-index: 0;
+            opacity: 0.06;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 350' preserveAspectRatio='xMidYMax slice'%3E%3Cdefs%3E%3ClinearGradient id='templeGrad' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23c75d24'/%3E%3Cstop offset='100%25' stop-color='%238b5a2b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23templeGrad)'%3E%3C!-- Left temple complex --%3E%3Cpath d='M0 350 L0 280 L30 280 L30 250 L50 250 L50 220 L60 220 L60 180 L70 150 L80 180 L80 220 L90 220 L90 250 L110 250 L110 280 L140 280 L140 350 Z'/%3E%3Cpath d='M120 350 L120 260 L140 260 L140 230 L150 230 L150 190 L155 160 L160 130 L165 100 L170 130 L175 160 L180 190 L180 230 L190 230 L190 260 L210 260 L210 350 Z'/%3E%3C!-- Left dome --%3E%3Cpath d='M200 350 L200 300 L220 300 L225 270 L230 250 L240 230 L250 220 L260 215 L270 220 L280 230 L290 250 L295 270 L300 300 L320 300 L320 350 Z'/%3E%3C!-- Left small temples --%3E%3Cpath d='M340 350 L340 290 L355 290 L360 260 L365 240 L370 260 L375 290 L390 290 L390 350 Z'/%3E%3Cpath d='M400 350 L400 300 L415 300 L420 280 L425 260 L430 280 L435 300 L450 300 L450 350 Z'/%3E%3C!-- Center-left gopuram --%3E%3Cpath d='M480 350 L480 280 L500 280 L505 250 L510 220 L515 200 L520 180 L525 160 L530 140 L535 120 L540 100 L545 80 L550 60 L555 80 L560 100 L565 120 L570 140 L575 160 L580 180 L585 200 L590 220 L595 250 L600 280 L620 280 L620 350 Z'/%3E%3C!-- Center main temple --%3E%3Cpath d='M700 350 L700 250 L730 250 L740 220 L750 200 L760 180 L770 160 L780 145 L790 130 L800 115 L810 100 L820 85 L830 70 L840 55 L850 45 L860 35 L870 28 L880 22 L890 18 L900 15 L910 12 L920 10 L930 8 L940 7 L950 6 L960 6 L970 7 L980 8 L990 10 L1000 12 L1010 15 L1020 18 L1030 22 L1040 28 L1050 35 L1060 45 L1070 55 L1080 70 L1090 85 L1100 100 L1110 115 L1120 130 L1130 145 L1140 160 L1150 180 L1160 200 L1170 220 L1180 250 L1210 250 L1210 350 Z'/%3E%3C!-- Center-right gopuram --%3E%3Cpath d='M1300 350 L1300 280 L1320 280 L1325 250 L1330 220 L1335 200 L1340 180 L1345 160 L1350 140 L1355 120 L1360 100 L1365 80 L1370 60 L1375 80 L1380 100 L1385 120 L1390 140 L1395 160 L1400 180 L1405 200 L1410 220 L1415 250 L1420 280 L1440 280 L1440 350 Z'/%3E%3C!-- Right small temples --%3E%3Cpath d='M1470 350 L1470 300 L1485 300 L1490 280 L1495 260 L1500 280 L1505 300 L1520 300 L1520 350 Z'/%3E%3Cpath d='M1530 350 L1530 290 L1545 290 L1550 260 L1555 240 L1560 260 L1565 290 L1580 290 L1580 350 Z'/%3E%3C!-- Right dome --%3E%3Cpath d='M1600 350 L1600 300 L1620 300 L1625 270 L1630 250 L1640 230 L1650 220 L1660 215 L1670 220 L1680 230 L1690 250 L1695 270 L1700 300 L1720 300 L1720 350 Z'/%3E%3C!-- Right temple complex --%3E%3Cpath d='M1710 350 L1710 260 L1730 260 L1730 230 L1740 230 L1740 190 L1745 160 L1750 130 L1755 100 L1760 130 L1765 160 L1770 190 L1770 230 L1780 230 L1780 260 L1800 260 L1800 350 Z'/%3E%3Cpath d='M1780 350 L1780 280 L1810 280 L1810 250 L1830 250 L1830 220 L1840 220 L1840 180 L1850 150 L1860 180 L1860 220 L1870 220 L1870 250 L1890 250 L1890 280 L1920 280 L1920 350 Z'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            pointer-events: none;
         }
         .hero-content {
             position: relative;
@@ -260,7 +283,7 @@
         }
         .hero h1 {
             margin-bottom: 1.5rem;
-            background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.8) 100%);
+            background: linear-gradient(180deg, #2d1810 0%, #5c4033 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -340,11 +363,11 @@
         .btn-primary {
             background: var(--gradient-primary);
             color: white;
-            box-shadow: 0 4px 20px var(--color-accent-glow);
+            box-shadow: 0 4px 20px rgba(199, 93, 36, 0.3);
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px var(--color-accent-glow);
+            box-shadow: 0 8px 30px rgba(199, 93, 36, 0.4);
         }
         .btn-secondary {
             background: var(--color-bg-card);
@@ -380,7 +403,7 @@
         .feature-card:hover {
             border-color: var(--color-border-light);
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(139, 90, 43, 0.1);
         }
         .feature-icon {
             width: 64px;
@@ -392,10 +415,10 @@
             font-size: 1.75rem;
             margin-bottom: 1.5rem;
         }
-        .feature-card:nth-child(1) .feature-icon { background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2)); }
-        .feature-card:nth-child(2) .feature-icon { background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.2)); }
-        .feature-card:nth-child(3) .feature-icon { background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(234, 88, 12, 0.2)); }
-        .feature-card:nth-child(4) .feature-icon { background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(167, 139, 250, 0.2)); }
+        .feature-card:nth-child(1) .feature-icon { background: linear-gradient(135deg, rgba(232, 169, 70, 0.2), rgba(199, 93, 36, 0.15)); }
+        .feature-card:nth-child(2) .feature-icon { background: linear-gradient(135deg, rgba(46, 125, 50, 0.15), rgba(27, 94, 32, 0.1)); }
+        .feature-card:nth-child(3) .feature-icon { background: linear-gradient(135deg, rgba(212, 168, 75, 0.2), rgba(184, 134, 11, 0.15)); }
+        .feature-card:nth-child(4) .feature-icon { background: linear-gradient(135deg, rgba(114, 47, 55, 0.15), rgba(139, 90, 43, 0.1)); }
         .feature-card h4 { margin-bottom: 0.75rem; }
         .feature-card p { font-size: 0.9375rem; color: var(--color-text-muted); }
         
@@ -414,7 +437,7 @@
         }
         .about-image img {
             border-radius: 24px;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+            box-shadow: 0 40px 80px rgba(139, 90, 43, 0.15);
         }
         .about-image::before {
             content: '';
@@ -422,7 +445,7 @@
             inset: -4px;
             border-radius: 28px;
             background: var(--gradient-primary);
-            opacity: 0.3;
+            opacity: 0.2;
             filter: blur(20px);
             z-index: -1;
         }
@@ -510,10 +533,10 @@
             gap: 0.5rem;
             margin-top: 1rem;
             padding: 0.75rem 1.25rem;
-            background: rgba(139, 92, 246, 0.15);
+            background: rgba(199, 93, 36, 0.1);
             border: 1px solid var(--color-border-accent);
             border-radius: 10px;
-            color: var(--color-accent-light);
+            color: var(--color-accent);
             font-weight: 600;
             font-size: 0.9375rem;
             cursor: pointer;
@@ -521,7 +544,7 @@
             font-family: inherit;
         }
         .read-more-btn:hover {
-            background: rgba(139, 92, 246, 0.25);
+            background: rgba(199, 93, 36, 0.15);
             transform: translateX(4px);
         }
         
@@ -529,7 +552,7 @@
         .read-more-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(45, 24, 16, 0.4);
             backdrop-filter: blur(4px);
             z-index: 2000;
             opacity: 0;
@@ -547,13 +570,14 @@
             width: 100%;
             max-width: 700px;
             height: 100vh;
-            background: var(--color-bg-deep);
+            background: var(--color-bg);
             z-index: 2001;
             transform: translateX(100%);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
             border-left: 1px solid var(--color-border);
+            box-shadow: -10px 0 40px rgba(139, 90, 43, 0.1);
         }
         .read-more-panel.active {
             transform: translateX(0);
@@ -572,6 +596,7 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
+            color: var(--color-text);
         }
         .read-more-close {
             width: 44px;
@@ -628,7 +653,7 @@
         .read-more-content blockquote {
             margin: 1.5rem 0;
             padding: 1.5rem;
-            background: var(--color-bg-card);
+            background: var(--color-bg-elevated);
             border-left: 4px solid var(--color-accent);
             border-radius: 0 12px 12px 0;
             font-style: italic;
@@ -646,13 +671,13 @@
         .read-more-content .highlight-box {
             margin: 2rem 0;
             padding: 1.5rem;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(118, 75, 162, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(232, 169, 70, 0.1) 0%, rgba(199, 93, 36, 0.05) 100%);
             border: 1px solid var(--color-border-accent);
             border-radius: 12px;
         }
         .read-more-content .highlight-box h5 {
             font-size: 1rem;
-            color: var(--color-accent-light);
+            color: var(--color-accent);
             margin-bottom: 0.75rem;
         }
         @media (max-width: 700px) {
@@ -682,7 +707,7 @@
         .program-card:hover {
             border-color: var(--color-border-light);
             transform: translateY(-4px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 30px 60px rgba(139, 90, 43, 0.12);
         }
         .program-card-image {
             height: 200px;
@@ -746,7 +771,7 @@
             border: 1px solid var(--color-border);
         }
         .testimonial-stars {
-            color: #f59e0b;
+            color: #d4a84b;
             font-size: 1.125rem;
             margin-bottom: 1rem;
         }
@@ -780,7 +805,7 @@
             background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-deep) 100%);
         }
         .cta-box {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(118, 75, 162, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(232, 169, 70, 0.1) 0%, rgba(199, 93, 36, 0.05) 100%);
             border: 1px solid var(--color-border-accent);
             border-radius: 32px;
             padding: 5rem;
@@ -794,7 +819,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 2px;
+            height: 3px;
             background: var(--gradient-primary);
         }
         .cta-box h2 { margin-bottom: 1rem; }
@@ -870,7 +895,7 @@
         .mobile-menu-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(45, 24, 16, 0.3);
             backdrop-filter: blur(4px);
             z-index: 1500;
             opacity: 0;
@@ -888,13 +913,14 @@
             width: 300px;
             max-width: 85vw;
             height: 100vh;
-            background: var(--color-bg-deep);
+            background: var(--color-bg);
             z-index: 1501;
             transform: translateX(100%);
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
             border-left: 1px solid var(--color-border);
+            box-shadow: -10px 0 40px rgba(139, 90, 43, 0.1);
         }
         .mobile-menu.active {
             transform: translateX(0);
@@ -905,6 +931,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            background: var(--color-bg-card-solid);
         }
         .mobile-menu-header .logo {
             font-size: 1.25rem;
@@ -952,12 +979,13 @@
             transition: all 0.2s;
         }
         .mobile-menu-links a:hover {
-            background: var(--color-bg-card);
+            background: var(--color-bg-elevated);
             color: var(--color-text);
         }
         .mobile-menu-cta {
             padding: 1.5rem;
             border-top: 1px solid var(--color-border);
+            background: var(--color-bg-card-solid);
         }
         .mobile-menu-cta .btn {
             width: 100%;
@@ -1042,6 +1070,7 @@
         <!-- ==================== HERO ==================== -->
         <section class="hero" id="hero">
             <div class="hero-bg" aria-hidden="true"></div>
+            <div class="temple-silhouette" aria-hidden="true"></div>
             <div class="hero-content">
                 <div class="hero-badge">
                     <span class="hero-badge-dot" aria-hidden="true"></span>
