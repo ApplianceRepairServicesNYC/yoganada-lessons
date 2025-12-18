@@ -137,8 +137,15 @@
         try {
             localStorage.setItem(PAYMENT_KEY, 'true');
             console.log('Course unlocked successfully');
+            // Show confirmation
+            document.getElementById('loading').textContent = '✓ Course unlocked!';
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('loading').style.color = '#10b981';
         } catch(e) {
             console.error('Could not save unlock status:', e);
+            document.getElementById('loading').textContent = 'Error: ' + e.message;
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('loading').style.color = 'red';
         }
         
         // Optional: Auto-redirect after a few seconds
