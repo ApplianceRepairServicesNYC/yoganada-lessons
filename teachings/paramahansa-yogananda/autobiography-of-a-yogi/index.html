@@ -127,6 +127,7 @@
         .lesson-badge { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.25rem 0.625rem; border-radius: 6px; }
         .badge-free { background: var(--color-success-bg); color: var(--color-success); }
         .badge-locked { background: var(--color-bg-elevated); color: var(--color-locked); }
+        .badge-unlocked { background: rgba(16,185,129,0.15); color: #059669; }
         .badge-completed { background: var(--color-success-bg); color: var(--color-success); }
         .badge-progress { background: rgba(245, 158, 11, 0.2); color: var(--color-warning); }
         .lesson-arrow { font-size: 1.5rem; color: var(--color-text-muted); transition: all 0.2s; }
@@ -267,10 +268,10 @@
                     <span class="section-label">Curriculum</span>
                     <h2 class="section-title">Lessons</h2>
                 </header>
-                <div class="lessons-list" id="lesson-list">
-                    <!-- PART I: EARLY YEARS (Chapters 1-9) - Beginner -->
+                                <div class="lessons-list" id="lesson-list">
+                    <!-- PART I: EARLY YEARS (Chapters 1-9) -->
                     <div class="lesson-group-header">Part I: Early Years</div>
-                    <a href="my-parents-and-early-life/" class="lesson-item lesson-item-unlocked" data-lesson-slug="ch1">
+                    <a href="my-parents-and-early-life/" class="lesson-item lesson-item-unlocked" data-lesson-slug="ch1" data-lesson-url="my-parents-and-early-life/">
                         <div class="lesson-number">1</div>
                         <div class="lesson-content">
                             <div class="lesson-title">My Parents and Early Life <span class="lesson-badge badge-free">Free</span></div>
@@ -278,399 +279,398 @@
                         </div>
                         <span class="lesson-arrow">→</span>
                     </a>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch2">
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch2" data-lesson-url="mothers-death-mystic-amulet/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">2</div>
                         <div class="lesson-content">
                             <div class="lesson-title">My Mother's Death and the Mystic Amulet <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Loss, guidance, and destiny revealed</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch3">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch3" data-lesson-url="saint-two-bodies/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">3</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Saint With Two Bodies <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Expanding the limits of possibility</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch4">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch4" data-lesson-url="interrupted-flight-himalayas/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">4</div>
                         <div class="lesson-content">
                             <div class="lesson-title">My Interrupted Flight Toward the Himalayas <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Divine timing and patience</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch5">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch5" data-lesson-url="perfume-saint/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">5</div>
                         <div class="lesson-content">
                             <div class="lesson-title">A "Perfume Saint" Displays His Wonders <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Discrimination between power and purpose</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch6">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch6" data-lesson-url="tiger-swami/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">6</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Tiger Swami <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Physical mastery and its limits</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch7">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch7" data-lesson-url="levitating-saint/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">7</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Levitating Saint <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">States of perpetual divine joy</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch8">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch8" data-lesson-url="jc-bose-scientist/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">8</div>
                         <div class="lesson-content">
                             <div class="lesson-title">India's Great Scientist, J.C. Bose <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Science and spirituality converge</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch9">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch9" data-lesson-url="blissful-devotee/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">9</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Blissful Devotee and His Cosmic Romance <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">The path of devotion (bhakti)</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
+                    </a>
                     
-                    <!-- PART II: YEARS WITH THE MASTER (Chapters 10-20) - Intermediate -->
+                    <!-- PART II: YEARS WITH THE MASTER (Chapters 10-20) -->
                     <div class="lesson-group-header">Part II: Years with the Master</div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch10">
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch10" data-lesson-url="meet-my-master/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">10</div>
                         <div class="lesson-content">
                             <div class="lesson-title">I Meet My Master, Sri Yukteswar <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">The guru-disciple relationship begins</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch11">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch11" data-lesson-url="two-penniless-boys/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">11</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Two Penniless Boys in Brindaban <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Faith tested and proven</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch12">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch12" data-lesson-url="years-masters-hermitage/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">12</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Years in My Master's Hermitage <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Intensive spiritual training</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch13">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch13" data-lesson-url="sleepless-saint/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">13</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Sleepless Saint <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Transcending physical limitations</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch14">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch14" data-lesson-url="cosmic-consciousness/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">14</div>
                         <div class="lesson-content">
                             <div class="lesson-title">An Experience in Cosmic Consciousness <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Direct perception of infinite awareness</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch15">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch15" data-lesson-url="cauliflower-robbery/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">15</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Cauliflower Robbery <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Lessons in discipline and impulse</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch16">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch16" data-lesson-url="outwitting-stars/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">16</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Outwitting the Stars <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Karma, astrology, and free will</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch17">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch17" data-lesson-url="sasi-three-sapphires/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">17</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Sasi and the Three Sapphires <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Knowledge vs. application</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch18">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch18" data-lesson-url="mohammedan-wonder-worker/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">18</div>
                         <div class="lesson-content">
                             <div class="lesson-title">A Mohammedan Wonder-Worker <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Truth beyond religious boundaries</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch19">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch19" data-lesson-url="master-appears-serampore/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">19</div>
                         <div class="lesson-content">
                             <div class="lesson-title">My Master, in Calcutta, Appears in Serampore <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Consciousness beyond physical form</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch20">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch20" data-lesson-url="we-do-not-visit-kashmir/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">20</div>
                         <div class="lesson-content">
                             <div class="lesson-title">We Do Not Visit Kashmir <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Heeding the guru's guidance</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
+                    </a>
                     
-                    <!-- PART III: DEEPENING PRACTICE (Chapters 21-30) - Advanced -->
+                    <!-- PART III: DEEPENING PRACTICE (Chapters 21-30) -->
                     <div class="lesson-group-header">Part III: Deepening Practice</div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch21">
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch21" data-lesson-url="we-visit-kashmir/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">21</div>
                         <div class="lesson-content">
                             <div class="lesson-title">We Visit Kashmir <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Right timing for action</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch22">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch22" data-lesson-url="heart-stone-image/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">22</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Heart of a Stone Image <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">The power of devotion through form</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch23">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch23" data-lesson-url="university-degree/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">23</div>
                         <div class="lesson-content">
                             <div class="lesson-title">I Receive My University Degree <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Integrating worldly and spiritual life</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch24">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch24" data-lesson-url="monk-swami-order/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">24</div>
                         <div class="lesson-content">
                             <div class="lesson-title">I Become a Monk of the Swami Order <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Formal spiritual commitment</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch25">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch25" data-lesson-url="brother-ananta-sister-nalini/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">25</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Brother Ananta and Sister Nalini <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Householder spirituality</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch26">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch26" data-lesson-url="science-kriya-yoga/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">26</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Science of Kriya Yoga <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">The central technique explained</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch27">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch27" data-lesson-url="yoga-school-ranchi/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">27</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Founding a Yoga School in Ranchi <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Spirituality in education</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch28">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch28" data-lesson-url="kashi-reborn/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">28</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Kashi, Reborn and Rediscovered <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Evidence of reincarnation</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch29">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch29" data-lesson-url="tagore-compare-schools/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">29</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Rabindranath Tagore and I Compare Schools <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Experiential vs. intellectual learning</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch30">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch30" data-lesson-url="law-miracles/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">30</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Law of Miracles <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Scientific basis of higher laws</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
+                    </a>
                     
-                    <!-- PART IV: THE LINEAGE (Chapters 31-36) - Expert -->
+                    <!-- PART IV: THE LINEAGE (Chapters 31-36) -->
                     <div class="lesson-group-header">Part IV: The Lineage of Masters</div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch31">
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch31" data-lesson-url="sacred-mother/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">31</div>
                         <div class="lesson-content">
                             <div class="lesson-title">An Interview with the Sacred Mother <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Anandamoyi Ma and divine feminine</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch32">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch32" data-lesson-url="rama-raised-dead/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">32</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Rama Is Raised From the Dead <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Mastery over life and death</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch33">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch33" data-lesson-url="babaji-yogi-christ/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">33</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Babaji, the Yogi-Christ of Modern India <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">The deathless master</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch34">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch34" data-lesson-url="palace-himalayas/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">34</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Materializing a Palace in the Himalayas <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Matter as condensed thought</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch35">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch35" data-lesson-url="lahiri-mahasaya/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">35</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Christlike Life of Lahiri Mahasaya <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">The householder yogi master</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch36">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch36" data-lesson-url="babaji-interest-west/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">36</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Babaji's Interest in the West <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">East-West spiritual synthesis</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
+                    </a>
                     
-                    <!-- PART V: MISSION TO AMERICA (Chapters 37-44) - Expert -->
+                    <!-- PART V: MISSION TO AMERICA (Chapters 37-44) -->
                     <div class="lesson-group-header">Part V: Mission to America</div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch37">
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch37" data-lesson-url="go-to-america/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">37</div>
                         <div class="lesson-content">
                             <div class="lesson-title">I Go to America <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Answering the call to serve</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch38">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch38" data-lesson-url="luther-burbank/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">38</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Luther Burbank—A Saint Amidst the Roses <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Spirituality through vocation</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch39">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch39" data-lesson-url="therese-neumann/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">39</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Therese Neumann, the Catholic Stigmatist <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Sainthood across traditions</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch40">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch40" data-lesson-url="return-india/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">40</div>
                         <div class="lesson-content">
                             <div class="lesson-title">I Return to India <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Reunion with the master</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch41">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch41" data-lesson-url="south-india/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">41</div>
                         <div class="lesson-content">
                             <div class="lesson-title">An Idyll in South India <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Unity through diversity</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch42">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch42" data-lesson-url="last-days-guru/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">42</div>
                         <div class="lesson-content">
                             <div class="lesson-title">Last Days With My Guru <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">The bond beyond death</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch43">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch43" data-lesson-url="resurrection-yukteswar/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">43</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Resurrection of Sri Yukteswar <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">After-death communication</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch44">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch44" data-lesson-url="gandhi-wardha/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">44</div>
                         <div class="lesson-content">
                             <div class="lesson-title">With Mahatma Gandhi at Wardha <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Spirituality in action</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
+                    </a>
                     
-                    <!-- PART VI: FINAL TEACHINGS (Chapters 45-48) - Master -->
+                    <!-- PART VI: FINAL TEACHINGS (Chapters 45-48) -->
                     <div class="lesson-group-header">Part VI: Final Teachings</div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch45">
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch45" data-lesson-url="joy-permeated-mother/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">45</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Bengali "Joy-Permeated Mother" <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Spontaneous realization</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch46">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch46" data-lesson-url="woman-yogi-never-eats/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">46</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Woman Yogi Who Never Eats <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Living on light</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch47">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch47" data-lesson-url="return-west/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">47</div>
                         <div class="lesson-content">
                             <div class="lesson-title">I Return to the West <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Completing the mission</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch48">
+                    </a>
+                    <a href="#" class="lesson-item lesson-item-locked" data-lesson-slug="ch48" data-lesson-url="encinitas-california/" onclick="return handleLockedLesson(this)">
                         <div class="lesson-number">48</div>
                         <div class="lesson-content">
                             <div class="lesson-title">At Encinitas in California <span class="lesson-badge badge-locked">Locked</span></div>
                             <div class="lesson-subtitle">Establishing the legacy</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
-                    </div>
-                </div>
-            </section>
+                    </a>
+                </div></section>
             
             <section class="section">
                 <div class="unlock-card">
@@ -760,4 +760,92 @@
                         if(badge&&!badge.classList.contains('badge-locked')){badge.textContent='✓ Done';badge.className='lesson-badge badge-completed';}
                         if(arrow&&arrow.textContent==='→')arrow.textContent='✓';
                     }else if(progress.viewed&&badge&&badge.classList.contains('badge-free')){
-                        badge.textContent='In Progre
+                        badge.textContent='In Progress';badge.className='lesson-badge badge-progress';}
+                    }
+                }
+            });
+        });
+    })();
+    // === UNLOCK SYSTEM ===
+    // This checks if user has paid and unlocks all lessons
+    // To integrate with Stripe: set localStorage item 'course_paid' = 'true' after successful payment
+    (function(){
+        var PAYMENT_KEY = 'yogananda_course_paid';
+        
+        // Check if user has paid
+        function isPaid() {
+            try {
+                return localStorage.getItem(PAYMENT_KEY) === 'true';
+            } catch(e) {
+                return false;
+            }
+        }
+        
+        // Unlock all lessons (call after successful Stripe payment)
+        window.unlockAllLessons = function() {
+            localStorage.setItem(PAYMENT_KEY, 'true');
+            location.reload();
+        };
+        
+        // Lock lessons (for testing)
+        window.lockAllLessons = function() {
+            localStorage.removeItem(PAYMENT_KEY);
+            location.reload();
+        };
+        
+        // Handle click on locked lesson
+        window.handleLockedLesson = function(el) {
+            if (isPaid()) {
+                // User has paid - redirect to lesson
+                var url = el.getAttribute('data-lesson-url');
+                if (url) {
+                    window.location.href = url;
+                }
+                return false;
+            } else {
+                // Show payment prompt
+                showPaymentModal();
+                return false;
+            }
+        };
+        
+        // Payment modal
+        function showPaymentModal() {
+            var existing = document.getElementById('payment-modal');
+            if (existing) existing.remove();
+            
+            var modal = document.createElement('div');
+            modal.id = 'payment-modal';
+            modal.innerHTML = '<div style="position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem;" onclick="this.remove()"><div style="background:#fffcf7;border-radius:20px;padding:2.5rem;max-width:400px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);" onclick="event.stopPropagation()"><div style="font-size:3rem;margin-bottom:1rem;">🔐</div><h3 style="font-family:Sora,sans-serif;font-size:1.5rem;margin-bottom:0.75rem;color:#2d1810;">Unlock Full Course</h3><p style="color:#5c4033;margin-bottom:1.5rem;line-height:1.6;">Get lifetime access to all 48 chapters with quizzes, exercises, and progress tracking.</p><button id="stripe-pay-btn" style="width:100%;padding:1rem;background:linear-gradient(135deg,#e8a946,#c75d24);color:white;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:0.75rem;">Unlock Now — $47</button><button onclick="this.closest(\'#payment-modal\').remove()" style="width:100%;padding:0.75rem;background:transparent;border:1px solid rgba(139,90,43,0.2);border-radius:12px;font-size:0.875rem;color:#8b7355;cursor:pointer;">Maybe Later</button></div></div>';
+            document.body.appendChild(modal);
+            
+            // Hook up Stripe button (replace with your Stripe checkout)
+            document.getElementById('stripe-pay-btn').onclick = function() {
+                // TODO: Replace with Stripe Checkout redirect
+                // Example: window.location.href = 'https://checkout.stripe.com/pay/your-link';
+                alert('Stripe integration needed. Add your Stripe Checkout link here.');
+            };
+        }
+        
+        // On page load, unlock lessons if paid
+        document.addEventListener('DOMContentLoaded', function() {
+            if (isPaid()) {
+                document.querySelectorAll('.lesson-item-locked').forEach(function(item) {
+                    var url = item.getAttribute('data-lesson-url');
+                    if (url) {
+                        item.href = url;
+                        item.classList.remove('lesson-item-locked');
+                        item.classList.add('lesson-item-unlocked');
+                        item.removeAttribute('onclick');
+                        var badge = item.querySelector('.lesson-badge');
+                        var arrow = item.querySelector('.lesson-arrow');
+                        if (badge) { badge.textContent = 'Unlocked'; badge.className = 'lesson-badge badge-unlocked'; }
+                        if (arrow) arrow.textContent = '→';
+                    }
+                });
+            }
+        });
+    })();
+    </script>
+</body>
+</html>
