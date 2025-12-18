@@ -52,7 +52,7 @@
         body { font-family: var(--font-body); font-size: 1rem; line-height: 1.6; color: var(--color-text); background: var(--color-bg-deep); -webkit-font-smoothing: antialiased; }
         
         .master-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
-        .master-bg::before { content: ''; position: absolute; top: -5%; left: 50%; transform: translateX(-50%); width: 1000px; height: 1100px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/40/Paramahansa_Yogananda_Standard_Pose.jpg'); background-size: cover; background-position: top center; opacity: 0.08; filter: sepia(30%) brightness(0.9); mask-image: radial-gradient(ellipse 50% 45% at 50% 25%, black 0%, transparent 65%); -webkit-mask-image: radial-gradient(ellipse 50% 45% at 50% 25%, black 0%, transparent 65%); }
+        .master-bg::before { content: ''; position: absolute; top: -5%; left: 50%; transform: translateX(-50%); width: 1000px; height: 1100px; background-image: url('https://yoganandateachings.com/hero-image.png'); background-size: cover; background-position: top center; opacity: 0.08; filter: sepia(30%) brightness(0.9); mask-image: radial-gradient(ellipse 50% 45% at 50% 25%, black 0%, transparent 65%); -webkit-mask-image: radial-gradient(ellipse 50% 45% at 50% 25%, black 0%, transparent 65%); }
         .master-bg::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(91, 164, 201, 0.1) 0%, transparent 50%), radial-gradient(ellipse at 30% 30%, rgba(232, 169, 70, 0.1) 0%, transparent 50%), linear-gradient(to bottom, transparent 40%, var(--color-bg-deep) 100%); }
 
         h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
@@ -220,7 +220,7 @@
             
             <section class="teacher-profile">
                 <div class="teacher-avatar">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Paramahansa_Yogananda_Standard_Pose.jpg" alt="Paramahansa Yogananda" loading="lazy">
+                    <img src="https://yoganandateachings.com/hero-image.png" alt="Paramahansa Yogananda" loading="lazy">
                 </div>
                 <h1>Paramahansa Yogananda</h1>
                 <p>One of the great spiritual teachers of the 20th century, Yogananda brought ancient wisdom to the modern world. His book "Autobiography of a Yogi" has transformed millions of lives and continues to inspire seekers worldwide.</p>
@@ -291,7 +291,7 @@
                     <ul class="footer-links">
                         <li><a href="../../about/">About Us</a></li>
                         <li><a href="../../#about">Our Mission</a></li>
-                        <li><a href="mailto:hello@yoganandateachings.com">Contact</a></li>
+                        <li><a href="/cdn-cgi/l/email-protection#660e030a0a09261f0901070807080207120307050e0f0801154805090b">Contact</a></li>
                     </ul>
                 </nav>
                 <nav>
@@ -312,7 +312,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
@@ -334,9 +334,4 @@
         mobileMenuClose.addEventListener('click', closeMobileMenu);
         mobileMenuOverlay.addEventListener('click', closeMobileMenu);
         
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
-    </script>
-</body>
-</html>
+        document

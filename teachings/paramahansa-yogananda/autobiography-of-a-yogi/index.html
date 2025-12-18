@@ -46,7 +46,7 @@
         body { font-family: var(--font-body); font-size: 1rem; line-height: 1.6; color: var(--color-text); background: var(--color-bg-deep); -webkit-font-smoothing: antialiased; }
         
         .master-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
-        .master-bg::before { content: ''; position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 800px; height: 900px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/40/Paramahansa_Yogananda_Standard_Pose.jpg'); background-size: cover; background-position: top center; opacity: 0.05; filter: sepia(30%) brightness(0.9); mask-image: radial-gradient(ellipse 50% 45% at 50% 25%, black 0%, transparent 60%); -webkit-mask-image: radial-gradient(ellipse 50% 45% at 50% 25%, black 0%, transparent 60%); }
+        .master-bg::before { content: ''; position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 800px; height: 900px; background-image: url('https://yoganandateachings.com/hero-image.png'); background-size: cover; background-position: top center; opacity: 0.05; filter: sepia(30%) brightness(0.9); mask-image: radial-gradient(ellipse 50% 45% at 50% 25%, black 0%, transparent 60%); -webkit-mask-image: radial-gradient(ellipse 50% 45% at 50% 25%, black 0%, transparent 60%); }
         .master-bg::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(232, 169, 70, 0.12) 0%, transparent 50%), linear-gradient(to bottom, transparent 40%, var(--color-bg-deep) 100%); }
 
         h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
@@ -349,7 +349,7 @@
                     <h4 class="footer-heading">Company</h4>
                     <ul class="footer-links">
                         <li><a href="../../../about/">About Us</a></li>
-                        <li><a href="mailto:hello@yoganandateachings.com">Contact</a></li>
+                        <li><a href="/cdn-cgi/l/email-protection#7b131e1717143b02141c1a151a151f1a0f1e1a181312151c0855181416">Contact</a></li>
                     </ul>
                 </nav>
                 <nav>
@@ -370,7 +370,7 @@
         </div>
     </footer>
     
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Mobile Menu
     (function(){
         var btn=document.getElementById('mobileMenuBtn'),menu=document.getElementById('mobileMenu'),overlay=document.getElementById('mobileMenuOverlay'),close=document.getElementById('mobileMenuClose');
@@ -403,12 +403,4 @@
                         if(badge&&!badge.classList.contains('badge-locked')){badge.textContent='✓ Done';badge.className='lesson-badge badge-completed';}
                         if(arrow&&arrow.textContent==='→')arrow.textContent='✓';
                     }else if(progress.viewed&&badge&&badge.classList.contains('badge-free')){
-                        badge.textContent='In Progress';badge.className='lesson-badge badge-progress';
-                    }
-                }
-            });
-        });
-    })();
-    </script>
-</body>
-</html>
+                        badge.textContent='In Progre
