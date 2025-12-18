@@ -1794,7 +1794,7 @@
         });
 
         // Feature Panel System
-        (function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const featureOverlay = document.getElementById('featurePanelOverlay');
             const featurePanels = document.querySelectorAll('.feature-panel');
             
@@ -1802,7 +1802,7 @@
                 btn.addEventListener('click', () => {
                     const panelId = 'feature-panel-' + btn.getAttribute('data-panel');
                     const panel = document.getElementById(panelId);
-                    if (panel) {
+                    if (panel && featureOverlay) {
                         featureOverlay.classList.add('active');
                         panel.classList.add('active');
                         document.body.style.overflow = 'hidden';
@@ -1811,12 +1811,14 @@
             });
             
             function closeFeaturePanels() {
-                featureOverlay.classList.remove('active');
+                if (featureOverlay) featureOverlay.classList.remove('active');
                 featurePanels.forEach(p => p.classList.remove('active'));
                 document.body.style.overflow = '';
             }
             
-            featureOverlay.addEventListener('click', closeFeaturePanels);
+            if (featureOverlay) {
+                featureOverlay.addEventListener('click', closeFeaturePanels);
+            }
             
             document.querySelectorAll('.feature-panel-close').forEach(btn => {
                 btn.addEventListener('click', closeFeaturePanels);
@@ -1825,7 +1827,7 @@
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') closeFeaturePanels();
             });
-        })();
+        });
     </script>
 
     <!-- Feature Panel Overlay -->
