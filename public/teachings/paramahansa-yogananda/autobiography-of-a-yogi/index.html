@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#FDFBF7">
+    <meta name="description" content="Structured lessons based on Autobiography of a Yogi. Learn self-realization, discipline, focus, and inner peace.">
+    
+    <title>Autobiography of a Yogi — Learning Path</title>
+    
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <a href="/" class="app-logo">
+                <span class="app-logo-icon">🌱</span>
+                <span>Wisdom Path</span>
+            </a>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-main">
+            <!-- Breadcrumb -->
+            <nav class="page-breadcrumb">
+                <a href="/">Home</a>
+                <span class="page-breadcrumb-sep">›</span>
+                <a href="/teachings/paramahansa-yogananda/">Yogananda</a>
+                <span class="page-breadcrumb-sep">›</span>
+                <span>Autobiography of a Yogi</span>
+            </nav>
+
+            <!-- Page Header -->
+            <header class="page-header">
+                <h1 class="page-title">Autobiography of a Yogi</h1>
+                <p class="page-subtitle">A structured learning path exploring self-awareness, discipline, and personal growth</p>
+            </header>
+
+            <!-- Path Stats -->
+            <section class="section">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-card-icon">📚</div>
+                        <div class="info-card-value" id="total-lessons">6</div>
+                        <div class="info-card-label">Lessons</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">✅</div>
+                        <div class="info-card-value" id="completed-lessons">0</div>
+                        <div class="info-card-label">Completed</div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="content-block">
+                    <div class="text-sm font-medium mb-sm">Your Progress</div>
+                    <div class="quiz-progress-bar" style="height: 8px;">
+                        <div class="quiz-progress-fill" id="path-progress" style="width: 0%;"></div>
+                    </div>
+                    <div class="text-xs text-muted mt-sm" id="progress-text">Start with the free preview to begin</div>
+                </div>
+            </section>
+
+            <!-- About This Path -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">About This Path</h2>
+                </div>
+                <div class="content-block">
+                    <p>"Autobiography of a Yogi" is considered one of the most influential books on personal development and self-understanding. This learning path distills its key concepts into practical lessons you can apply to daily life.</p>
+                    <p class="mt-md">Each lesson includes a clear explanation, a real-world example, an actionable takeaway, a reflection question, and a comprehension quiz.</p>
+                </div>
+            </section>
+
+            <!-- Access Model -->
+            <section class="section">
+                <div class="highlight-box">
+                    <div class="highlight-box-title">Free Preview + Paid Path</div>
+                    <p>The first lesson is completely free. To access all lessons, unlock the full learning path.</p>
+                </div>
+            </section>
+
+            <!-- Lesson List -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Lessons</h2>
+                    <p class="section-subtitle">Complete each lesson and quiz to progress</p>
+                </div>
+
+                <div class="lesson-list" id="lesson-list">
+                    <!-- Lesson 1 - Free -->
+                    <a href="/teachings/paramahansa-yogananda/autobiography-of-a-yogi/self-realization/" 
+                       class="lesson-item lesson-item-unlocked" 
+                       data-lesson-slug="self-realization">
+                        <div class="lesson-item-number">1</div>
+                        <div class="lesson-item-content">
+                            <div class="lesson-item-title">
+                                Self-Realization
+                                <span class="lesson-item-badge badge-free">Free</span>
+                            </div>
+                            <div class="lesson-item-subtitle">Understanding awareness in daily life</div>
+                        </div>
+                        <span class="lesson-item-icon">→</span>
+                    </a>
+
+                    <!-- Lesson 2 - Locked -->
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="discipline">
+                        <div class="lesson-item-number">2</div>
+                        <div class="lesson-item-content">
+                            <div class="lesson-item-title">
+                                Discipline
+                                <span class="lesson-item-badge badge-locked">Locked</span>
+                            </div>
+                            <div class="lesson-item-subtitle">Building consistent habits</div>
+                        </div>
+                        <span class="lesson-item-icon">🔒</span>
+                    </div>
+
+                    <!-- Lesson 3 - Locked -->
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="presence">
+                        <div class="lesson-item-number">3</div>
+                        <div class="lesson-item-content">
+                            <div class="lesson-item-title">
+                                The Power of Presence
+                                <span class="lesson-item-badge badge-locked">Locked</span>
+                            </div>
+                            <div class="lesson-item-subtitle">Engaging fully with the now</div>
+                        </div>
+                        <span class="lesson-item-icon">🔒</span>
+                    </div>
+
+                    <!-- Lesson 4 - Locked -->
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="inner-peace">
+                        <div class="lesson-item-number">4</div>
+                        <div class="lesson-item-content">
+                            <div class="lesson-item-title">
+                                Cultivating Inner Peace
+                                <span class="lesson-item-badge badge-locked">Locked</span>
+                            </div>
+                            <div class="lesson-item-subtitle">Maintaining balance in challenges</div>
+                        </div>
+                        <span class="lesson-item-icon">🔒</span>
+                    </div>
+
+                    <!-- Lesson 5 - Locked -->
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="willpower">
+                        <div class="lesson-item-number">5</div>
+                        <div class="lesson-item-content">
+                            <div class="lesson-item-title">
+                                Strengthening Willpower
+                                <span class="lesson-item-badge badge-locked">Locked</span>
+                            </div>
+                            <div class="lesson-item-subtitle">Building inner strength</div>
+                        </div>
+                        <span class="lesson-item-icon">🔒</span>
+                    </div>
+
+                    <!-- Lesson 6 - Locked -->
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="focus">
+                        <div class="lesson-item-number">6</div>
+                        <div class="lesson-item-content">
+                            <div class="lesson-item-title">
+                                The Art of Focus
+                                <span class="lesson-item-badge badge-locked">Locked</span>
+                            </div>
+                            <div class="lesson-item-subtitle">Directing attention deliberately</div>
+                        </div>
+                        <span class="lesson-item-icon">🔒</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Unlock CTA -->
+            <section class="section">
+                <div class="locked-overlay">
+                    <div class="locked-icon">🔐</div>
+                    <h3 class="locked-title">Unlock Full Learning Path</h3>
+                    <p class="locked-message">Get access to all 6 lessons, quizzes, and progress tracking.</p>
+                    <button class="btn btn-primary" onclick="alert('Payment integration coming soon. For now, enjoy the free preview!')">
+                        Unlock Now
+                    </button>
+                </div>
+            </section>
+
+            <!-- Actions -->
+            <section class="section">
+                <div class="content-block">
+                    <div class="content-block-header">
+                        <span class="content-block-icon">⚙️</span>
+                        <span>Progress Options</span>
+                    </div>
+                    <button class="btn btn-ghost btn-full" onclick="if(window.WisdomProgress) { window.WisdomProgress.resetProgress(); location.reload(); }">
+                        Reset All Progress
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/progress.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        // Update progress display on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.WisdomProgress) {
+                const slugs = ['self-realization', 'discipline', 'presence', 'inner-peace', 'willpower', 'focus'];
+                const pathProgress = window.WisdomProgress.getPathProgress(slugs);
+                
+                // Update stats
+                document.getElementById('completed-lessons').textContent = pathProgress.completed;
+                document.getElementById('path-progress').style.width = pathProgress.percentCompleted + '%';
+                
+                // Update progress text
+                const progressText = document.getElementById('progress-text');
+                if (pathProgress.completed > 0) {
+                    progressText.textContent = pathProgress.completed + ' of ' + pathProgress.total + ' lessons completed (' + pathProgress.percentCompleted + '%)';
+                } else if (pathProgress.viewed > 0) {
+                    progressText.textContent = pathProgress.viewed + ' lesson started — keep going!';
+                }
+            }
+            
+            // Update individual lesson items
+            if (window.WisdomApp) {
+                window.WisdomApp.checkAndUpdateProgress();
+            }
+        });
+    </script>
+</body>
+</html>
