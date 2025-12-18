@@ -4,27 +4,27 @@
     <!-- Primary Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Wisdom Path — Transform Your Mind Through Timeless Wisdom">
+    <meta name="title" content="Yogananda Teachings — Transform Your Mind Through Timeless Wisdom">
     <meta name="description" content="Master self-awareness, discipline, and inner peace through structured learning paths based on the teachings of Paramahansa Yogananda. Start your free lesson today.">
     <meta name="keywords" content="self-realization, personal growth, meditation, Yogananda, mindfulness, self-improvement, spiritual growth, wisdom teachings">
-    <meta name="author" content="Wisdom Path">
+    <meta name="author" content="Yogananda Teachings">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wisdompath.app/">
-    <meta property="og:title" content="Wisdom Path — Transform Your Mind Through Timeless Wisdom">
+    <meta property="og:url" content="https://yoganandateachings.com/">
+    <meta property="og:title" content="Yogananda Teachings — Transform Your Mind Through Timeless Wisdom">
     <meta property="og:description" content="Master self-awareness, discipline, and inner peace through structured learning paths. Start your free lesson today.">
-    <meta property="og:image" content="https://wisdompath.app/assets/og-image.jpg">
-    <meta property="og:site_name" content="Wisdom Path">
+    <meta property="og:image" content="https://yoganandateachings.com/assets/og-image.jpg">
+    <meta property="og:site_name" content="Yogananda Teachings">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://wisdompath.app/">
-    <meta name="twitter:title" content="Wisdom Path — Transform Your Mind Through Timeless Wisdom">
+    <meta name="twitter:url" content="https://yoganandateachings.com/">
+    <meta name="twitter:title" content="Yogananda Teachings — Transform Your Mind Through Timeless Wisdom">
     <meta name="twitter:description" content="Master self-awareness, discipline, and inner peace through structured learning paths. Start your free lesson today.">
-    <meta name="twitter:image" content="https://wisdompath.app/assets/og-image.jpg">
+    <meta name="twitter:image" content="https://yoganandateachings.com/assets/og-image.jpg">
     
     <!-- Favicon & Theme -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
@@ -33,9 +33,9 @@
     <meta name="msapplication-TileColor" content="#0a0a0f">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://wisdompath.app/">
+    <link rel="canonical" href="https://yoganandateachings.com/">
     
-    <title>Wisdom Path — Transform Your Mind Through Timeless Wisdom</title>
+    <title>Yogananda Teachings — Transform Your Mind Through Timeless Wisdom</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -479,15 +479,193 @@
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
+            transition: max-height 0.4s ease;
         }
         .accordion-item.active .accordion-content {
-            max-height: 500px;
+            max-height: 1000px;
         }
         .accordion-body {
             padding: 0 1.5rem 1.5rem;
             color: var(--color-text-secondary);
             line-height: 1.8;
+        }
+        .accordion-body p { margin-bottom: 1rem; }
+        .accordion-subtopics {
+            margin: 1rem 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        .accordion-subtopics li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--color-text-muted);
+            font-size: 0.9375rem;
+        }
+        .accordion-subtopics li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+        .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid var(--color-border-accent);
+            border-radius: 10px;
+            color: var(--color-accent-light);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .read-more-btn:hover {
+            background: rgba(139, 92, 246, 0.25);
+            transform: translateX(4px);
+        }
+        
+        /* Read More Panel (Slide-out) */
+        .read-more-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .read-more-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .read-more-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 700px;
+            height: 100vh;
+            background: var(--color-bg-deep);
+            z-index: 2001;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid var(--color-border);
+        }
+        .read-more-panel.active {
+            transform: translateX(0);
+        }
+        .read-more-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--color-bg-card-solid);
+            flex-shrink: 0;
+        }
+        .read-more-header h3 {
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .read-more-close {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-elevated);
+            color: var(--color-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .read-more-close:hover {
+            background: var(--color-bg-card-hover);
+            border-color: var(--color-border-light);
+        }
+        .read-more-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2rem;
+            scroll-behavior: smooth;
+        }
+        .read-more-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        .read-more-scroll::-webkit-scrollbar-track {
+            background: var(--color-bg-elevated);
+        }
+        .read-more-scroll::-webkit-scrollbar-thumb {
+            background: var(--color-border-light);
+            border-radius: 4px;
+        }
+        .read-more-scroll::-webkit-scrollbar-thumb:hover {
+            background: var(--color-accent);
+        }
+        .read-more-content h4 {
+            font-size: 1.375rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--color-border);
+            color: var(--color-text);
+        }
+        .read-more-content h4:first-child {
+            margin-top: 0;
+        }
+        .read-more-content p {
+            margin-bottom: 1.25rem;
+            font-size: 1.0625rem;
+            line-height: 1.9;
+        }
+        .read-more-content blockquote {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: var(--color-bg-card);
+            border-left: 4px solid var(--color-accent);
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: var(--color-text-secondary);
+        }
+        .read-more-content ul {
+            margin: 1rem 0 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .read-more-content li {
+            margin-bottom: 0.75rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+        .read-more-content .highlight-box {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(118, 75, 162, 0.05) 100%);
+            border: 1px solid var(--color-border-accent);
+            border-radius: 12px;
+        }
+        .read-more-content .highlight-box h5 {
+            font-size: 1rem;
+            color: var(--color-accent-light);
+            margin-bottom: 0.75rem;
+        }
+        @media (max-width: 700px) {
+            .read-more-panel {
+                max-width: 100%;
+            }
+            .read-more-scroll {
+                padding: 1.5rem;
+            }
         }
         
         /* ==================== PROGRAMS ==================== */
@@ -710,9 +888,9 @@
     <!-- ==================== HEADER ==================== -->
     <header class="site-header" id="site-header">
         <div class="header-inner">
-            <a href="/" class="logo" aria-label="Wisdom Path Home">
+            <a href="/" class="logo" aria-label="Yogananda Teachings Home">
                 <span class="logo-icon" aria-hidden="true">✦</span>
-                <span>Wisdom Path</span>
+                <span>Yogananda Teachings</span>
             </a>
             <nav class="main-nav" aria-label="Main navigation">
                 <ul class="nav-links">
@@ -823,7 +1001,14 @@
                                 </button>
                                 <div class="accordion-content">
                                     <div class="accordion-body">
-                                        Born Mukunda Lal Ghosh in Gorakhpur, India, Yogananda showed spiritual inclinations from childhood. He met his guru Sri Yukteswar in 1910 and spent a decade mastering ancient techniques. In 1920, he traveled to America, becoming one of the first Indian teachers to settle in the West, where he founded Self-Realization Fellowship.
+                                        <p>Born Mukunda Lal Ghosh in Gorakhpur, India, Yogananda showed profound spiritual inclinations from earliest childhood. His life journey took him from the sacred banks of the Ganges to the stages of America, transforming millions along the way.</p>
+                                        <ul class="accordion-subtopics">
+                                            <li>Early Spiritual Inclinations</li>
+                                            <li>Meeting His Guru</li>
+                                            <li>Years of Training & Discipline</li>
+                                            <li>Journey to the West</li>
+                                        </ul>
+                                        <button class="read-more-btn" data-panel="life">Read More →</button>
                                     </div>
                                 </div>
                             </div>
@@ -834,7 +1019,13 @@
                                 </button>
                                 <div class="accordion-content">
                                     <div class="accordion-body">
-                                        Yogananda lectured to capacity crowds across America for over 30 years. He met with presidents, scientists, and cultural leaders. His teachings influenced figures from George Harrison to Steve Jobs. Today, Self-Realization Fellowship has centers worldwide and his book remains a perennial bestseller.
+                                        <p>Yogananda lectured to capacity crowds across America for over 30 years. His teachings influenced figures from George Harrison to Steve Jobs, making Eastern wisdom accessible to Western minds.</p>
+                                        <ul class="accordion-subtopics">
+                                            <li>Influence on Western Spirituality</li>
+                                            <li>Notable Figures He Inspired</li>
+                                            <li>Self-Realization Fellowship Legacy</li>
+                                        </ul>
+                                        <button class="read-more-btn" data-panel="influence">Read More →</button>
                                     </div>
                                 </div>
                             </div>
@@ -845,7 +1036,13 @@
                                 </button>
                                 <div class="accordion-content">
                                     <div class="accordion-body">
-                                        Yogananda taught that lasting happiness comes from within through scientific techniques of concentration and meditation. His approach emphasizes direct experience over blind belief, practical application over theory, and balanced living that honors both material and spiritual needs.
+                                        <p>Yogananda taught that lasting happiness comes from within through scientific techniques of concentration and meditation. His approach emphasizes direct experience over blind belief.</p>
+                                        <ul class="accordion-subtopics">
+                                            <li>Self-Realization Explained</li>
+                                            <li>Meditation as a Science</li>
+                                            <li>Applying His Teachings to Daily Life</li>
+                                        </ul>
+                                        <button class="read-more-btn" data-panel="teachings">Read More →</button>
                                     </div>
                                 </div>
                             </div>
@@ -856,7 +1053,13 @@
                                 </button>
                                 <div class="accordion-content">
                                     <div class="accordion-body">
-                                        In an age of distraction and anxiety, Yogananda's practical methods for developing focus, discipline, and inner peace are more relevant than ever. His techniques require no religious belief—they work through understanding the mechanics of mind and applying systematic practices.
+                                        <p>In an age of distraction and anxiety, Yogananda's practical methods for developing focus, discipline, and inner peace are more relevant than ever.</p>
+                                        <ul class="accordion-subtopics">
+                                            <li>Independent Educational Approach</li>
+                                            <li>Relevance in the Modern World</li>
+                                            <li>Practical Applications Today</li>
+                                        </ul>
+                                        <button class="read-more-btn" data-panel="today">Read More →</button>
                                     </div>
                                 </div>
                             </div>
@@ -865,6 +1068,190 @@
                 </div>
             </div>
         </section>
+
+        <!-- Read More Panels -->
+        <div class="read-more-overlay" id="readMoreOverlay"></div>
+        
+        <!-- Life & Journey Panel -->
+        <div class="read-more-panel" id="panel-life">
+            <div class="read-more-header">
+                <h3>📜 His Life & Journey</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <h4>Early Spiritual Inclinations</h4>
+                    <p>From his earliest years, Mukunda Lal Ghosh displayed an extraordinary sensitivity to spiritual matters. Born on January 5, 1893, in Gorakhpur, India, he was the fourth of eight children in a devout Bengali family. His father, Bhagabati Charan Ghosh, was a senior executive with the Bengal-Nagpur Railway and a disciple of Lahiri Mahasaya, the great master who revived the ancient science of Kriya Yoga.</p>
+                    <p>Young Mukunda's childhood was marked by profound spiritual experiences that set him apart from other children. He often fell into deep states of meditative absorption, sometimes remaining motionless for hours. His mother, Gyana Prabha, recognized these tendencies and nurtured his spiritual development, telling him stories of saints and sages that fired his imagination.</p>
+                    <blockquote>"Even in my earliest memories, I was convinced that I had come into this world with a specific mission to fulfill. The ordinary ambitions that drove my schoolmates held no attraction for me."</blockquote>
+                    <p>At the age of eleven, Mukunda experienced a profound spiritual awakening following his mother's death. This event intensified his longing for God-realization and set him on an unwavering quest to find his guru—the spiritual teacher who would guide him to enlightenment.</p>
+                    
+                    <h4>Meeting His Guru</h4>
+                    <p>The meeting that would define Yogananda's life occurred in 1910, when the seventeen-year-old Mukunda encountered Sri Yukteswar Giri in the holy city of Benares. The moment was electric with spiritual significance—both master and disciple recognized each other instantly from past incarnations.</p>
+                    <p>Sri Yukteswar was no ordinary teacher. A direct disciple of Lahiri Mahasaya and a master of both Eastern mysticism and Western scientific thought, he possessed the rare ability to present ancient truths in modern, rational terms. This quality would profoundly shape Yogananda's own teaching style.</p>
+                    <div class="highlight-box">
+                        <h5>✦ The First Words</h5>
+                        <p>Upon their first meeting, Sri Yukteswar said to Mukunda: "I have been expecting you. You have come to me at last, after many incarnations of seeking. I will be your guru."</p>
+                    </div>
+                    <p>For the next ten years, Mukunda lived as Sri Yukteswar's disciple at his ashram in Serampore. The training was rigorous—not just in meditation techniques, but in every aspect of character development. Sri Yukteswar demanded precision, punctuality, and absolute honesty from his students.</p>
+                    
+                    <h4>Years of Training & Discipline</h4>
+                    <p>Life at Sri Yukteswar's ashram was a crucible of transformation. The master employed unconventional methods to break down the ego and build spiritual strength. He might praise a student one moment and deliver crushing criticism the next, always with the purpose of eliminating attachment to praise and blame.</p>
+                    <p>During these formative years, Mukunda mastered the ancient science of Kriya Yoga—a powerful meditation technique that accelerates spiritual evolution. He also received training in the Vedas, the Upanishads, the Bhagavad Gita, and the Bible, developing the interfaith understanding that would characterize his later teachings.</p>
+                    <ul>
+                        <li><strong>Physical Discipline:</strong> Regular fasting, yoga postures, and pranayama (breath control)</li>
+                        <li><strong>Mental Training:</strong> Hours of daily meditation, scriptural study, and philosophical debate</li>
+                        <li><strong>Emotional Purification:</strong> Constant self-examination and the burning away of desires</li>
+                        <li><strong>Service:</strong> Caring for other disciples and performing ashram duties without complaint</li>
+                    </ul>
+                    <p>In 1915, Mukunda took formal monastic vows and received the name "Yogananda," meaning "bliss through divine union." He graduated from Calcutta University the same year with a Bachelor of Arts degree, demonstrating his master's insistence on balanced development.</p>
+                    
+                    <h4>Journey to the West</h4>
+                    <p>The vision came clearly: Yogananda was to bring India's ancient wisdom to America. In 1920, as a delegate to the International Congress of Religious Liberals in Boston, the twenty-seven-year-old swami set sail for the United States, carrying little more than a few dollars and an unshakeable conviction in his mission.</p>
+                    <p>His first years in America were challenging. He knew almost no one, spoke English with difficulty, and faced the cultural prejudices of the era. Yet his sincerity and the power of his message soon began attracting students. His lectures drew increasingly large crowds, and by 1925, he had established his headquarters at Mount Washington in Los Angeles.</p>
+                    <p>Over the next three decades, Yogananda would crisscross America, delivering over 100 lectures per year to audiences often numbering in the thousands. He met with presidents, scientists, and business leaders. He initiated thousands of students into Kriya Yoga. And in 1946, he published his masterwork, "Autobiography of a Yogi," which would eventually be translated into over 50 languages and sell millions of copies worldwide.</p>
+                    <blockquote>"The West has need of the spiritual idealism of the East, while the East needs the material efficiency of the West. This exchange will be beneficial to both."</blockquote>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Global Influence Panel -->
+        <div class="read-more-panel" id="panel-influence">
+            <div class="read-more-header">
+                <h3>🌍 His Global Influence</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <h4>Influence on Western Spirituality</h4>
+                    <p>Paramahansa Yogananda's arrival in America in 1920 marked a watershed moment in the spiritual history of the West. While a handful of Indian teachers had visited before, none had stayed to establish permanent institutions or train Western disciples in authentic yogic practices.</p>
+                    <p>Yogananda fundamentally changed how the West understood meditation. Before his work, most Westerners associated yoga primarily with physical postures or viewed meditation as an exotic curiosity. Yogananda presented meditation as a precise science—a systematic method for achieving specific results in consciousness.</p>
+                    <div class="highlight-box">
+                        <h5>✦ First Major Yoga Teacher in America</h5>
+                        <p>Yogananda was the first great master of India to live in the West for an extended period (32 years), establishing deep roots and training teachers who could carry on after him.</p>
+                    </div>
+                    <p>His approach was revolutionary in several ways. He stripped away cultural baggage that might alienate Western students while preserving the essential techniques. He drew parallels between yoga philosophy and Christian mysticism, showing that all religions point toward the same truths. And he insisted that spirituality must be practical—that genuine practice should produce tangible improvements in daily life.</p>
+                    
+                    <h4>Notable Figures He Inspired</h4>
+                    <p>The reach of Yogananda's influence extended to some of the most influential figures of the 20th and 21st centuries:</p>
+                    <ul>
+                        <li><strong>Steve Jobs:</strong> The Apple co-founder first read "Autobiography of a Yogi" as a teenager and re-read it every year thereafter. It was the only book on his iPad. At his memorial service, every attendee received a copy as Jobs' final gift.</li>
+                        <li><strong>George Harrison:</strong> The Beatle credited Yogananda with opening his eyes to Eastern spirituality, which profoundly influenced both his music and his life philosophy.</li>
+                        <li><strong>Elvis Presley:</strong> The King of Rock and Roll was a serious student of Yogananda's teachings, keeping his books by his bedside and discussing them frequently.</li>
+                        <li><strong>Dennis Weaver:</strong> The acclaimed actor was a devoted follower who helped bring Yogananda's teachings to Hollywood circles.</li>
+                    </ul>
+                    <p>Beyond celebrities, Yogananda influenced countless scientists, artists, business leaders, and ordinary seekers who found in his teachings a practical path to inner peace and self-realization.</p>
+                    
+                    <h4>Self-Realization Fellowship Legacy</h4>
+                    <p>The organization Yogananda founded, Self-Realization Fellowship (SRF), continues to thrive more than seven decades after his passing. With headquarters still at Mount Washington in Los Angeles, SRF maintains:</p>
+                    <ul>
+                        <li>Temples and meditation centers on six continents</li>
+                        <li>A worldwide membership in the hundreds of thousands</li>
+                        <li>The Lessons—a comprehensive home-study course in yoga and meditation</li>
+                        <li>Publishing operations that keep Yogananda's writings in print in over 50 languages</li>
+                        <li>Lake Shrine, one of the most visited spiritual sites in Southern California</li>
+                    </ul>
+                    <p>Yogananda also established Yogoda Satsanga Society of India, which operates numerous ashrams, schools, and charitable programs throughout the Indian subcontinent.</p>
+                    <blockquote>"The time for knowing God has come. The age of miracles is not past. The timeless laws of science and spirituality shall be demonstrated anew."</blockquote>
+                    <p>His book "Autobiography of a Yogi" has never been out of print since its publication in 1946. It has been named one of the 100 most important spiritual books of the 20th century and continues to introduce new generations to the possibilities of inner transformation.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Core Teachings Panel -->
+        <div class="read-more-panel" id="panel-teachings">
+            <div class="read-more-header">
+                <h3>📿 His Core Teachings</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <h4>Self-Realization Explained</h4>
+                    <p>At the heart of Yogananda's message lies the concept of Self-realization—the direct, personal experience of one's true nature as divine consciousness. This is not mere intellectual understanding or blind belief, but actual experience achieved through systematic practice.</p>
+                    <p>According to Yogananda, every human being is essentially a soul—a spark of infinite consciousness temporarily identified with a body and mind. This misidentification is the root cause of all suffering. Self-realization is the process of awakening from this illusion and recognizing our true, unlimited nature.</p>
+                    <div class="highlight-box">
+                        <h5>✦ The Central Teaching</h5>
+                        <p>"Self-realization is the knowing—in body, mind, and soul—that we are one with the omnipresence of God; that we do not have to pray that it come to us, that we are not merely near it at all times, but that God's omnipresence is our omnipresence."</p>
+                    </div>
+                    <p>This realization isn't reserved for monks or saints. Yogananda repeatedly emphasized that anyone—regardless of religion, background, or lifestyle—can achieve it through proper practice. The path is open to all who sincerely seek it.</p>
+                    
+                    <h4>Meditation as a Science</h4>
+                    <p>Yogananda approached meditation not as a vague spiritual exercise but as a precise science with predictable results. Just as chemistry follows fixed laws, so too does the science of consciousness. Apply the correct techniques consistently, and specific results follow inevitably.</p>
+                    <p>The cornerstone of his teaching is Kriya Yoga, an advanced meditation technique that works directly with life force (prana) and the subtle energy centers (chakras) of the spine. Kriya Yoga accelerates spiritual evolution by:</p>
+                    <ul>
+                        <li><strong>Oxygenating the blood:</strong> Removing carbon dioxide and calming the nervous system</li>
+                        <li><strong>Magnetizing the spine:</strong> Drawing life force inward and upward</li>
+                        <li><strong>Stilling the mind:</strong> Creating the conditions for direct perception of truth</li>
+                        <li><strong>Burning karma:</strong> Neutralizing the mental impressions that bind us to suffering</li>
+                    </ul>
+                    <p>Yogananda taught that one Kriya, practiced correctly, is equivalent to one year of natural spiritual evolution. This claim may seem extraordinary, but countless practitioners over the decades have reported dramatic acceleration in their inner development.</p>
+                    <p>Beyond Kriya, Yogananda taught a complete system including:</p>
+                    <ul>
+                        <li><strong>Energization Exercises:</strong> A unique system of 39 exercises that teach conscious control of life force</li>
+                        <li><strong>Hong-Sau Technique:</strong> A powerful concentration method to develop one-pointed focus</li>
+                        <li><strong>Aum Technique:</strong> Listening to the cosmic vibration that underlies all creation</li>
+                    </ul>
+                    
+                    <h4>Applying His Teachings to Daily Life</h4>
+                    <p>Yogananda never advocated withdrawal from the world. He taught that true spirituality must be lived in the marketplace, in relationships, in work, and in all aspects of daily existence. The goal is not to escape life but to infuse it with higher awareness.</p>
+                    <p>Key practical applications include:</p>
+                    <ul>
+                        <li><strong>Work as Worship:</strong> Approaching every task with full attention and dedication, offering the results to a higher purpose</li>
+                        <li><strong>Conscious Living:</strong> Making deliberate choices rather than reacting mechanically to circumstances</li>
+                        <li><strong>Energy Management:</strong> Conserving and directing life force rather than dissipating it in useless activities</li>
+                        <li><strong>Positive Thinking:</strong> Training the mind to focus on solutions rather than problems</li>
+                        <li><strong>Service to Others:</strong> Recognizing the divine in every person and acting accordingly</li>
+                    </ul>
+                    <blockquote>"Be calmly active and actively calm. That is the way of the yogi."</blockquote>
+                    <p>Yogananda's teachings address every aspect of life—health, relationships, success, creativity, and ultimate spiritual fulfillment. They offer not a philosophy to believe but a science to practice, with results that can be verified by anyone willing to make the effort.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Why Today Panel -->
+        <div class="read-more-panel" id="panel-today">
+            <div class="read-more-header">
+                <h3>⚡ Why His Teachings Matter Today</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <h4>Independent Educational Approach</h4>
+                    <p>Yogananda Teachings presents Yogananda's wisdom as an educational resource, independent of any religious organization. Our approach differs from traditional spiritual institutions in several important ways:</p>
+                    <ul>
+                        <li><strong>No Religious Requirements:</strong> You don't need to adopt any beliefs, join any organization, or change your existing faith to benefit from these teachings</li>
+                        <li><strong>Practical Focus:</strong> Every lesson emphasizes real-world application and measurable results</li>
+                        <li><strong>Modern Presentation:</strong> Ancient wisdom translated into contemporary language and contexts</li>
+                        <li><strong>Self-Paced Learning:</strong> Progress at your own speed with structured lessons and progress tracking</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <h5>✦ Our Philosophy</h5>
+                        <p>We believe Yogananda's teachings belong to humanity, not to any single organization. Our mission is to make them accessible to modern seekers in a format that respects their intelligence and autonomy.</p>
+                    </div>
+                    
+                    <h4>Relevance in the Modern World</h4>
+                    <p>The challenges Yogananda addressed have only intensified in the 21st century. Consider the modern epidemic of distraction: the average person checks their phone 150 times per day. Our attention spans have shrunk to mere seconds. We're more connected than ever yet lonelier than ever.</p>
+                    <p>Yogananda's teachings address these modern afflictions directly:</p>
+                    <ul>
+                        <li><strong>For Anxiety:</strong> Scientific techniques to calm the nervous system and quiet the racing mind</li>
+                        <li><strong>For Distraction:</strong> Methods to develop laser-like concentration and sustained attention</li>
+                        <li><strong>For Disconnection:</strong> Practices that awaken our sense of unity with all life</li>
+                        <li><strong>For Meaninglessness:</strong> A framework for discovering purpose and lasting fulfillment</li>
+                        <li><strong>For Stress:</strong> Tools for maintaining inner peace regardless of external circumstances</li>
+                    </ul>
+                    <p>Research increasingly validates what Yogananda taught a century ago. Studies on meditation show it physically changes the brain, reducing activity in the amygdala (the fear center) and strengthening the prefrontal cortex (responsible for executive function). It reduces inflammation, lowers blood pressure, and improves immune function.</p>
+                    
+                    <h4>Practical Applications Today</h4>
+                    <p>Modern practitioners apply Yogananda's teachings across every area of life:</p>
+                    <p><strong>In Business:</strong> Entrepreneurs use concentration techniques to enhance creativity and decision-making. The ability to remain calm under pressure—a skill meditation develops—proves invaluable in high-stakes negotiations and leadership roles.</p>
+                    <p><strong>In Relationships:</strong> The self-awareness developed through practice helps people respond rather than react. Understanding our own mental patterns allows us to communicate more effectively and build deeper connections.</p>
+                    <p><strong>In Health:</strong> The stress-reduction benefits alone make meditation one of the most powerful health interventions available. Combined with the energization exercises and lifestyle principles Yogananda taught, practitioners report dramatic improvements in vitality and well-being.</p>
+                    <p><strong>In Creativity:</strong> Artists, writers, and innovators find that regular meditation opens access to deeper levels of inspiration. The still mind becomes a clear channel for creative ideas to flow.</p>
+                    <blockquote>"In the midst of activity, you should find a stillness of mind that remains unruffled. That is the consciousness with which you should live."</blockquote>
+                    <p>What Yogananda offered was not escape from life but a way to live more fully, more consciously, more effectively. His teachings remain a practical roadmap for anyone seeking to transform their experience of being human—not in some distant future, but starting today.</p>
+                </div>
+            </div>
+        </div>
 
         <!-- ==================== PROGRAMS ==================== -->
         <section class="section" id="programs">
@@ -964,7 +1351,7 @@
                 <div class="footer-brand">
                     <a href="/" class="logo">
                         <span class="logo-icon" aria-hidden="true">✦</span>
-                        <span>Wisdom Path</span>
+                        <span>Yogananda Teachings</span>
                     </a>
                     <p>Transforming timeless wisdom into practical daily skills for modern seekers.</p>
                 </div>
@@ -981,7 +1368,7 @@
                     <ul class="footer-links">
                         <li><a href="about/">About Us</a></li>
                         <li><a href="#about">Our Mission</a></li>
-                        <li><a href="mailto:hello@wisdompath.app">Contact</a></li>
+                        <li><a href="/cdn-cgi/l/email-protection#731b161f1f1c330a1c14121d121d1712071612101b1a1d14005d101c1e">Contact</a></li>
                     </ul>
                 </nav>
                 <nav aria-label="Resources">
@@ -989,12 +1376,12 @@
                     <ul class="footer-links">
                         <li><a href="#features">Features</a></li>
                         <li><a href="#programs">All Programs</a></li>
-                        <li><a href="https://github.com/yourusername/wisdom-path" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://github.com/yourusername/yoganandateachings.com" target="_blank" rel="noopener">GitHub</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="footer-bottom">
-                <p>© 2024 Wisdom Path. Educational content inspired by published works.</p>
+                <p>© 2024 YoganandaTeachings.com. Educational content inspired by published works.</p>
                 <div class="footer-legal">
                     <a href="privacy/">Privacy Policy</a>
                     <a href="terms/">Terms of Service</a>
@@ -1029,6 +1416,43 @@
                     button.setAttribute('aria-expanded', 'true');
                 }
             });
+        });
+
+        // Read More Panel functionality
+        const overlay = document.getElementById('readMoreOverlay');
+        const panels = document.querySelectorAll('.read-more-panel');
+        
+        // Open panel
+        document.querySelectorAll('.read-more-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const panelId = 'panel-' + btn.getAttribute('data-panel');
+                const panel = document.getElementById(panelId);
+                if (panel) {
+                    overlay.classList.add('active');
+                    panel.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Close panel functions
+        function closeAllPanels() {
+            overlay.classList.remove('active');
+            panels.forEach(p => p.classList.remove('active'));
+            document.body.style.overflow = '';
+        }
+        
+        // Close on overlay click
+        overlay.addEventListener('click', closeAllPanels);
+        
+        // Close buttons
+        document.querySelectorAll('.read-more-close').forEach(btn => {
+            btn.addEventListener('click', closeAllPanels);
+        });
+        
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeAllPanels();
         });
 
         // Smooth scroll for anchor links
