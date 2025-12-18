@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Autobiography of a Yogi Program — Yogananda Teachings">
-    <meta name="description" content="Master self-realization, discipline, focus, and inner peace through 6 structured lessons based on Yogananda's teachings.">
+    <meta name="description" content="Journey from beginner to mastery through 48 chapter-based lessons from Autobiography of a Yogi by Paramahansa Yogananda.">
     <meta property="og:title" content="Autobiography of a Yogi Program — Yogananda Teachings">
-    <meta property="og:description" content="6 transformational lessons on self-mastery and inner peace.">
+    <meta property="og:description" content="48 transformational lessons on self-realization and spiritual mastery.">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#f5f0e8">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
@@ -113,8 +113,10 @@
         .lessons-list { display: flex; flex-direction: column; gap: 0.75rem; }
         .lesson-item { display: flex; align-items: center; gap: 1.5rem; padding: 1.5rem; background: var(--color-bg-card); backdrop-filter: blur(10px); border-radius: 16px; border: 1px solid var(--color-border); transition: all 0.2s; text-decoration: none; color: inherit; }
         .lesson-item-unlocked:hover { background: var(--color-bg-card-hover); border-color: var(--color-accent); box-shadow: 0 0 30px var(--color-accent-glow); transform: translateX(8px); }
-        .lesson-item-locked { opacity: 0.5; cursor: not-allowed; }
+        .lesson-item-locked { opacity: 0.6; cursor: not-allowed; }
         .lesson-item-completed { border-color: rgba(16, 185, 129, 0.3); }
+        .lesson-group-header { font-family: var(--font-display); font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-sky); padding: 2rem 0 0.75rem 0.5rem; margin-top: 1rem; border-top: 1px solid var(--color-border); }
+        .lesson-group-header:first-child { border-top: none; margin-top: 0; padding-top: 0; }
         .lesson-number { width: 52px; height: 52px; min-width: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.125rem; }
         .lesson-item-unlocked .lesson-number { background: var(--gradient-primary); color: white; }
         .lesson-item-locked .lesson-number { background: var(--color-bg-elevated); color: var(--color-locked); }
@@ -128,6 +130,8 @@
         .badge-completed { background: var(--color-success-bg); color: var(--color-success); }
         .badge-progress { background: rgba(245, 158, 11, 0.2); color: var(--color-warning); }
         .lesson-arrow { font-size: 1.5rem; color: var(--color-text-muted); transition: all 0.2s; }
+        .lesson-group-header { font-family: var(--font-display); font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-sky); padding: 2rem 0 1rem; margin-top: 1rem; border-top: 1px solid var(--color-border); }
+        .lesson-group-header:first-child { border-top: none; margin-top: 0; padding-top: 0; }
         .lesson-item-unlocked:hover .lesson-arrow { color: var(--color-accent); transform: translateX(4px); }
         
         .unlock-card { background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(118, 75, 162, 0.1) 100%); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 24px; padding: 3rem; text-align: center; position: relative; overflow: hidden; }
@@ -235,8 +239,8 @@
             <section class="section">
                 <div class="stats-row">
                     <div class="stat-card">
-                        <div class="stat-value">6</div>
-                        <div class="stat-label">Lessons</div>
+                        <div class="stat-value">48</div>
+                        <div class="stat-label">Chapters</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-value" id="completed-count">0</div>
@@ -264,51 +268,404 @@
                     <h2 class="section-title">Lessons</h2>
                 </header>
                 <div class="lessons-list" id="lesson-list">
-                    <a href="my-parents-and-early-life/" class="lesson-item lesson-item-unlocked" data-lesson-slug="my-parents-and-early-life">
+                    <!-- PART I: EARLY YEARS (Chapters 1-9) - Beginner -->
+                    <div class="lesson-group-header">Part I: Early Years</div>
+                    <a href="my-parents-and-early-life/" class="lesson-item lesson-item-unlocked" data-lesson-slug="ch1">
                         <div class="lesson-number">1</div>
                         <div class="lesson-content">
                             <div class="lesson-title">My Parents and Early Life <span class="lesson-badge badge-free">Free</span></div>
-                            <div class="lesson-subtitle">Chapter 1: The seeds of spiritual seeking</div>
+                            <div class="lesson-subtitle">The seeds of spiritual seeking</div>
                         </div>
                         <span class="lesson-arrow">→</span>
                     </a>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="mothers-death-mystic-amulet">
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch2">
                         <div class="lesson-number">2</div>
                         <div class="lesson-content">
                             <div class="lesson-title">My Mother's Death and the Mystic Amulet <span class="lesson-badge badge-locked">Locked</span></div>
-                            <div class="lesson-subtitle">Chapter 2: Loss, guidance, and destiny</div>
+                            <div class="lesson-subtitle">Loss, guidance, and destiny revealed</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
                     </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="saint-with-two-bodies">
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch3">
                         <div class="lesson-number">3</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Saint With Two Bodies <span class="lesson-badge badge-locked">Locked</span></div>
-                            <div class="lesson-subtitle">Chapter 3: Expanding the limits of possibility</div>
+                            <div class="lesson-subtitle">Expanding the limits of possibility</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
                     </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="interrupted-flight-himalayas">
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch4">
                         <div class="lesson-number">4</div>
                         <div class="lesson-content">
                             <div class="lesson-title">My Interrupted Flight Toward the Himalayas <span class="lesson-badge badge-locked">Locked</span></div>
-                            <div class="lesson-subtitle">Chapter 4: Divine timing and patience</div>
+                            <div class="lesson-subtitle">Divine timing and patience</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
                     </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="perfume-saint">
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch5">
                         <div class="lesson-number">5</div>
                         <div class="lesson-content">
-                            <div class="lesson-title">A 'Perfume Saint' Displays His Wonders <span class="lesson-badge badge-locked">Locked</span></div>
-                            <div class="lesson-subtitle">Chapter 5: Discrimination between power and purpose</div>
+                            <div class="lesson-title">A "Perfume Saint" Displays His Wonders <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Discrimination between power and purpose</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
                     </div>
-                    <div class="lesson-item lesson-item-locked" data-lesson-slug="tiger-swami">
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch6">
                         <div class="lesson-number">6</div>
                         <div class="lesson-content">
                             <div class="lesson-title">The Tiger Swami <span class="lesson-badge badge-locked">Locked</span></div>
-                            <div class="lesson-subtitle">Chapter 6: Mastery of body and spirit</div>
+                            <div class="lesson-subtitle">Physical mastery and its limits</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch7">
+                        <div class="lesson-number">7</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">The Levitating Saint <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">States of perpetual divine joy</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch8">
+                        <div class="lesson-number">8</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">India's Great Scientist, J.C. Bose <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Science and spirituality converge</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch9">
+                        <div class="lesson-number">9</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">The Blissful Devotee and His Cosmic Romance <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">The path of devotion (bhakti)</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    
+                    <!-- PART II: YEARS WITH THE MASTER (Chapters 10-20) - Intermediate -->
+                    <div class="lesson-group-header">Part II: Years with the Master</div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch10">
+                        <div class="lesson-number">10</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">I Meet My Master, Sri Yukteswar <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">The guru-disciple relationship begins</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch11">
+                        <div class="lesson-number">11</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Two Penniless Boys in Brindaban <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Faith tested and proven</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch12">
+                        <div class="lesson-number">12</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Years in My Master's Hermitage <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Intensive spiritual training</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch13">
+                        <div class="lesson-number">13</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">The Sleepless Saint <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Transcending physical limitations</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch14">
+                        <div class="lesson-number">14</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">An Experience in Cosmic Consciousness <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Direct perception of infinite awareness</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch15">
+                        <div class="lesson-number">15</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">The Cauliflower Robbery <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Lessons in discipline and impulse</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch16">
+                        <div class="lesson-number">16</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Outwitting the Stars <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Karma, astrology, and free will</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch17">
+                        <div class="lesson-number">17</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Sasi and the Three Sapphires <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Knowledge vs. application</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch18">
+                        <div class="lesson-number">18</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">A Mohammedan Wonder-Worker <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Truth beyond religious boundaries</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch19">
+                        <div class="lesson-number">19</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">My Master, in Calcutta, Appears in Serampore <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Consciousness beyond physical form</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch20">
+                        <div class="lesson-number">20</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">We Do Not Visit Kashmir <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Heeding the guru's guidance</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    
+                    <!-- PART III: DEEPENING PRACTICE (Chapters 21-30) - Advanced -->
+                    <div class="lesson-group-header">Part III: Deepening Practice</div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch21">
+                        <div class="lesson-number">21</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">We Visit Kashmir <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Right timing for action</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch22">
+                        <div class="lesson-number">22</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">The Heart of a Stone Image <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">The power of devotion through form</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch23">
+                        <div class="lesson-number">23</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">I Receive My University Degree <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Integrating worldly and spiritual life</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch24">
+                        <div class="lesson-number">24</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">I Become a Monk of the Swami Order <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Formal spiritual commitment</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch25">
+                        <div class="lesson-number">25</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Brother Ananta and Sister Nalini <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Householder spirituality</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch26">
+                        <div class="lesson-number">26</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">The Science of Kriya Yoga <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">The central technique explained</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch27">
+                        <div class="lesson-number">27</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Founding a Yoga School in Ranchi <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Spirituality in education</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch28">
+                        <div class="lesson-number">28</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Kashi, Reborn and Rediscovered <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Evidence of reincarnation</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch29">
+                        <div class="lesson-number">29</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Rabindranath Tagore and I Compare Schools <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Experiential vs. intellectual learning</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch30">
+                        <div class="lesson-number">30</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">The Law of Miracles <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Scientific basis of higher laws</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    
+                    <!-- PART IV: THE LINEAGE (Chapters 31-36) - Expert -->
+                    <div class="lesson-group-header">Part IV: The Lineage of Masters</div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch31">
+                        <div class="lesson-number">31</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">An Interview with the Sacred Mother <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Anandamoyi Ma and divine feminine</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch32">
+                        <div class="lesson-number">32</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Rama Is Raised From the Dead <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Mastery over life and death</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch33">
+                        <div class="lesson-number">33</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Babaji, the Yogi-Christ of Modern India <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">The deathless master</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch34">
+                        <div class="lesson-number">34</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Materializing a Palace in the Himalayas <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Matter as condensed thought</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch35">
+                        <div class="lesson-number">35</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">The Christlike Life of Lahiri Mahasaya <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">The householder yogi master</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch36">
+                        <div class="lesson-number">36</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Babaji's Interest in the West <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">East-West spiritual synthesis</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    
+                    <!-- PART V: MISSION TO AMERICA (Chapters 37-44) - Expert -->
+                    <div class="lesson-group-header">Part V: Mission to America</div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch37">
+                        <div class="lesson-number">37</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">I Go to America <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Answering the call to serve</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch38">
+                        <div class="lesson-number">38</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Luther Burbank—A Saint Amidst the Roses <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Spirituality through vocation</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch39">
+                        <div class="lesson-number">39</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Therese Neumann, the Catholic Stigmatist <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Sainthood across traditions</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch40">
+                        <div class="lesson-number">40</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">I Return to India <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Reunion with the master</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch41">
+                        <div class="lesson-number">41</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">An Idyll in South India <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Unity through diversity</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch42">
+                        <div class="lesson-number">42</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">Last Days With My Guru <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">The bond beyond death</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch43">
+                        <div class="lesson-number">43</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">The Resurrection of Sri Yukteswar <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">After-death communication</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch44">
+                        <div class="lesson-number">44</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">With Mahatma Gandhi at Wardha <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Spirituality in action</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    
+                    <!-- PART VI: FINAL TEACHINGS (Chapters 45-48) - Master -->
+                    <div class="lesson-group-header">Part VI: Final Teachings</div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch45">
+                        <div class="lesson-number">45</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">The Bengali "Joy-Permeated Mother" <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Spontaneous realization</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch46">
+                        <div class="lesson-number">46</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">The Woman Yogi Who Never Eats <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Living on light</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch47">
+                        <div class="lesson-number">47</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">I Return to the West <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Completing the mission</div>
+                        </div>
+                        <span class="lesson-arrow">🔒</span>
+                    </div>
+                    <div class="lesson-item lesson-item-locked" data-lesson-slug="ch48">
+                        <div class="lesson-number">48</div>
+                        <div class="lesson-content">
+                            <div class="lesson-title">At Encinitas in California <span class="lesson-badge badge-locked">Locked</span></div>
+                            <div class="lesson-subtitle">Establishing the legacy</div>
                         </div>
                         <span class="lesson-arrow">🔒</span>
                     </div>
@@ -319,7 +676,7 @@
                 <div class="unlock-card">
                     <div class="unlock-icon">✦</div>
                     <h3>Unlock Full Program</h3>
-                    <p>Get lifetime access to all 6 lessons, quizzes, and progress tracking.</p>
+                    <p>Get lifetime access to all 48 chapter lessons, quizzes, and progress tracking.</p>
                     <button class="btn btn-primary" onclick="alert('Payment integration coming soon!')">Unlock Now</button>
                 </div>
             </section>
@@ -387,13 +744,13 @@
         function getPathProgress(slugs){var p=getProgress(),c=0;slugs.forEach(function(s){if(p.lessons[s]&&p.lessons[s].completed)c++;});return{total:slugs.length,completed:c,percent:Math.round((c/slugs.length)*100)};}
         window.resetProgress=function(){if(confirm('Reset all progress? This cannot be undone.')){localStorage.removeItem(STORAGE_KEY);location.reload();}};
         document.addEventListener('DOMContentLoaded',function(){
-            var slugs=['self-realization','discipline','presence','inner-peace','willpower','focus'];
+            var slugs=['ch1','ch2','ch3','ch4','ch5','ch6','ch7','ch8','ch9','ch10','ch11','ch12','ch13','ch14','ch15','ch16','ch17','ch18','ch19','ch20','ch21','ch22','ch23','ch24','ch25','ch26','ch27','ch28','ch29','ch30','ch31','ch32','ch33','ch34','ch35','ch36','ch37','ch38','ch39','ch40','ch41','ch42','ch43','ch44','ch45','ch46','ch47','ch48'];
             var pp=getPathProgress(slugs);
             document.getElementById('completed-count').textContent=pp.completed;
             document.getElementById('progress-percent').textContent=pp.percent+'%';
             document.getElementById('progress-fill').style.width=pp.percent+'%';
             var pt=document.getElementById('progress-text');
-            if(pp.completed>0)pt.textContent=pp.completed+' of '+pp.total+' lessons completed';
+            if(pp.completed>0)pt.textContent=pp.completed+' of '+pp.total+' chapters completed';
             document.querySelectorAll('.lesson-item').forEach(function(item){
                 var slug=item.getAttribute('data-lesson-slug'),progress=getLessonProgress(slug);
                 if(progress){

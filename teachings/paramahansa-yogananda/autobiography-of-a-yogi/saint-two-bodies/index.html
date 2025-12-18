@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Saint With Two Bodies — Chapter 3 | Yogananda Teachings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--color-bg-deep:#f5f0e8;--color-bg-card:rgba(255,255,255,0.9);--color-bg-elevated:#fff9f0;--color-border:rgba(139,90,43,0.1);--color-text:#2d1810;--color-text-secondary:#5c4033;--color-text-muted:#8b7355;--gradient-primary:linear-gradient(135deg,#e8a946 0%,#c75d24 100%);--gradient-success:linear-gradient(135deg,#10b981 0%,#059669 100%);--gradient-error:linear-gradient(135deg,#ef4444 0%,#dc2626 100%);--color-accent:#c75d24;--color-accent-glow:rgba(205,127,50,0.3);--color-success:#10b981;--color-success-bg:rgba(16,185,129,0.15);--color-error:#ef4444;--color-error-bg:rgba(239,68,68,0.15);--font-body:'Inter',sans-serif;--font-display:'Sora','Inter',sans-serif}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{font-size:16px}body{font-family:var(--font-body);line-height:1.7;color:var(--color-text);background:var(--color-bg-deep)}
+        h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.2}
+        h1{font-size:clamp(2rem,4vw,2.75rem)}h2{font-size:clamp(1.5rem,3vw,2rem)}
+        p{color:var(--color-text-secondary);line-height:1.8}a{color:inherit;text-decoration:none}
+        .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;height:64px;background:rgba(250,247,242,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--color-border)}
+        .header-inner{max-width:1400px;margin:0 auto;padding:0 2rem;height:100%;display:flex;align-items:center;justify-content:space-between}
+        .logo{font-family:var(--font-display);font-size:1.375rem;font-weight:700;display:flex;align-items:center;gap:0.625rem}
+        .logo-icon{width:40px;height:40px;background:var(--gradient-primary);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.125rem}
+        .header-nav a{font-size:0.9375rem;font-weight:500;color:var(--color-text-muted)}
+        .focus-bar{position:fixed;top:0;left:0;right:0;z-index:1001;height:56px;background:rgba(250,247,242,0.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--color-border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;transform:translateY(-100%);transition:transform 0.3s}
+        .focus-bar.active{transform:translateY(0)}
+        .focus-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.875rem;font-weight:500;color:var(--color-text-muted);cursor:pointer;background:none;border:none}
+        .focus-title{font-family:var(--font-display);font-size:0.9375rem;font-weight:600}
+        .focus-progress{display:flex;align-items:center;gap:0.75rem;font-size:0.8125rem;color:var(--color-text-muted)}
+        .focus-progress-bar{width:100px;height:4px;background:var(--color-border);border-radius:4px;overflow:hidden}
+        .focus-progress-fill{height:100%;background:var(--gradient-primary);width:0%;transition:width 0.3s}
+        body.focus-mode .site-header{transform:translateY(-100%)}body.focus-mode .site-footer{display:none}body.focus-mode .focus-bar{transform:translateY(0)}body.focus-mode .main{padding-top:56px}body.focus-mode .breadcrumb{display:none}
+        .main{position:relative;z-index:1;padding-top:64px}.container{max-width:800px;margin:0 auto;padding:0 2rem}
+        .breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;color:var(--color-text-muted);padding:2rem 0;flex-wrap:wrap}
+        .breadcrumb a{color:var(--color-text-muted)}
+        .page-header{padding:2rem 0 3rem;border-bottom:1px solid var(--color-border);margin-bottom:3rem}
+        .lesson-badge{display:inline-flex;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-accent);background:rgba(199,93,36,0.1);padding:0.5rem 1rem;border-radius:8px;margin-bottom:1.25rem}
+        .page-subtitle{font-size:1.125rem;color:var(--color-text-muted)}
+        .section{margin-bottom:3.5rem}.section-header{margin-bottom:1.5rem}
+        .section-label{display:inline-block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--color-accent);margin-bottom:0.5rem}
+        .section-title{font-size:1.5rem}
+        .reading-content{background:var(--color-bg-card);border-radius:20px;padding:2.5rem;border:1px solid var(--color-border)}
+        .reading-content p{margin-bottom:1.5rem}.reading-content p:last-child{margin-bottom:0}
+        .highlight-box{background:linear-gradient(135deg,rgba(232,169,70,0.08),rgba(91,164,201,0.05));border-left:4px solid var(--color-accent);border-radius:0 16px 16px 0;padding:1.75rem 2rem}
+        .highlight-box-title{font-family:var(--font-display);font-weight:600;margin-bottom:1rem}
+        .highlight-box p{margin-bottom:1rem}.highlight-box p:last-child{margin-bottom:0}
+        .content-block{background:var(--color-bg-card);border-radius:16px;padding:1.75rem;border:1px solid var(--color-border)}
+        .content-block-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+        .content-block-icon{font-size:1.5rem}.content-block-title{font-family:var(--font-display);font-weight:600}
+        .key-points{display:grid;gap:1.25rem}
+        .key-point{background:var(--color-bg-card);border-radius:16px;padding:1.5rem;border:1px solid var(--color-border);display:flex;gap:1.25rem;align-items:flex-start}
+        .key-point-number{width:36px;height:36px;background:var(--gradient-primary);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;flex-shrink:0}
+        .key-point h4{font-size:1rem;margin-bottom:0.25rem}.key-point p{font-size:0.9375rem;margin:0}
+        .divider{height:1px;background:var(--color-border);margin:3rem 0}
+        .quiz-start{text-align:center;padding:2rem 0}.quiz-start h3{margin-bottom:0.75rem}.quiz-start p{margin-bottom:1.5rem;max-width:400px;margin-left:auto;margin-right:auto}
+        .btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-body);font-weight:600;font-size:1rem;padding:0.875rem 1.75rem;border-radius:12px;border:none;cursor:pointer;transition:all 0.2s}
+        .btn-primary{background:var(--gradient-primary);color:white;box-shadow:0 4px 15px var(--color-accent-glow)}.btn-primary:hover{transform:translateY(-2px)}.btn-primary:disabled{opacity:0.5;cursor:not-allowed}
+        .btn-secondary{background:var(--color-bg-card);color:var(--color-text);border:1px solid var(--color-border)}.btn-lg{padding:1rem 2rem}.btn-full{width:100%}
+        .quiz-container{display:none;background:var(--color-bg-card);border-radius:24px;padding:2.5rem;border:1px solid var(--color-border)}.quiz-container.active{display:block}
+        .quiz-progress{display:flex;align-items:center;gap:1rem;margin-bottom:2rem}
+        .quiz-progress-bar{flex:1;height:6px;background:var(--color-border);border-radius:6px;overflow:hidden}
+        .quiz-progress-fill{height:100%;background:var(--gradient-primary);transition:width 0.3s}
+        .quiz-progress-text{font-size:0.875rem;font-weight:600;color:var(--color-text-muted);min-width:40px;text-align:right}
+        .quiz-question{font-size:1.375rem;margin-bottom:2rem;line-height:1.4}
+        .quiz-options{display:grid;gap:1rem;margin-bottom:1.5rem}
+        .quiz-option{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;background:var(--color-bg-elevated);border:2px solid var(--color-border);border-radius:14px;cursor:pointer;transition:all 0.2s}
+        .quiz-option:hover{border-color:rgba(139,90,43,0.15)}.quiz-option.selected{border-color:var(--color-accent);background:rgba(199,93,36,0.08)}
+        .quiz-option.correct{border-color:var(--color-success);background:var(--color-success-bg)}.quiz-option.incorrect{border-color:var(--color-error);background:var(--color-error-bg)}.quiz-option.disabled{pointer-events:none}
+        .quiz-option-marker{width:32px;height:32px;border-radius:8px;background:var(--color-bg-card);border:1px solid var(--color-border);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;color:var(--color-text-muted);flex-shrink:0}
+        .quiz-option.selected .quiz-option-marker{background:var(--gradient-primary);color:white;border-color:transparent}
+        .quiz-option.correct .quiz-option-marker{background:var(--gradient-success);color:white;border-color:transparent}
+        .quiz-option.incorrect .quiz-option-marker{background:var(--gradient-error);color:white;border-color:transparent}
+        .quiz-feedback{display:none;padding:1rem 1.25rem;border-radius:12px;font-weight:600;margin-bottom:1.5rem}.quiz-feedback.show{display:flex;align-items:center;gap:0.75rem}
+        .quiz-feedback.correct{background:var(--color-success-bg);color:#059669}.quiz-feedback.incorrect{background:var(--color-error-bg);color:#dc2626}
+        .quiz-results{text-align:center;padding:2rem 0}.quiz-results-icon{font-size:4rem;margin-bottom:1rem}.quiz-results-score{font-size:1.5rem;font-weight:700;color:var(--color-accent);margin-bottom:1rem}.quiz-results-message{margin-bottom:2rem;max-width:400px;margin-left:auto;margin-right:auto}
+        .next-section{background:linear-gradient(135deg,rgba(91,164,201,0.1),rgba(232,169,70,0.08));border-radius:20px;padding:2.5rem;margin-top:4rem;text-align:center;border:1px solid var(--color-border)}
+        .next-section-header{display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:1rem}.next-section-icon{font-size:1.5rem}.next-section h3{margin:0}.next-section p{max-width:450px;margin:0 auto}
+        .site-footer{background:#fffcf7;border-top:1px solid var(--color-border);padding:2rem 0;margin-top:4rem}.footer-inner{max-width:800px;margin:0 auto;padding:0 2rem;text-align:center}.footer-inner p{font-size:0.875rem;color:var(--color-text-muted)}
+        @media(max-width:700px){.focus-title{display:none}.reading-content,.quiz-container{padding:1.75rem}.key-point{flex-direction:column;gap:1rem}}
+    </style>
+</head>
+<body>
+    <header class="site-header"><div class="header-inner"><a href="../../../../" class="logo"><span class="logo-icon">✦</span><span>Yogananda</span></a><nav class="header-nav"><a href="../">← Back to Program</a></nav></div></header>
+    <div class="focus-bar" id="focusBar"><button class="focus-back" id="exitFocus">← Exit Quiz</button><span class="focus-title">Chapter 3 Quiz</span><div class="focus-progress"><div class="focus-progress-bar"><div class="focus-progress-fill" id="focusProgressFill"></div></div><span id="focusProgressText">0/5</span></div></div>
+    <main class="main"><article class="container">
+        <nav class="breadcrumb"><a href="../../../../">Home</a><span>/</span><a href="../../">Yogananda</a><span>/</span><a href="../">Autobiography</a><span>/</span><span>Chapter 3</span></nav>
+        <header class="page-header"><div class="lesson-badge">✦ Chapter 3</div><h1>The Saint With Two Bodies</h1><p class="page-subtitle">Expanding the limits of possibility</p></header>
+        <div id="lesson-content">
+            <section class="section"><header class="section-header"><span class="section-label">Chapter Summary</span><h2 class="section-title">Beyond Physical Limitations</h2></header><div class="reading-content"><p>Yogananda describes his encounter with Swami Pranabananda, a yogi who possessed the remarkable ability to appear in two physical locations simultaneously. The saint demonstrated this power by materializing before Yogananda's father in a distant city while his body remained in Benares, delivering a specific message that was later verified.</p>
+<p>This miraculous account was not presented as mere legend but as direct testimony from Yogananda's father, a practical businessman not given to fantasy. The phenomenon—known in yogic tradition as bilocation—illustrated that consciousness is not bound by the body and that advanced practitioners can project their awareness, and even physical form, across space.</p>
+<p>The chapter introduces the concept of siddhis, the spiritual powers that naturally develop as byproducts of deep meditation practice. Yet even Swami Pranabananda acknowledged that such abilities were minor compared to the ultimate goal of God-realization.</p></div></section>
+            <section class="section"><header class="section-header"><span class="section-label">Core Teaching</span><h2 class="section-title">What This Chapter Reveals</h2></header><div class="reading-content"><p><strong>The physical world operates according to laws that can be transcended.</strong> What appears impossible from ordinary consciousness becomes possible from higher states. The materialist assumption that consciousness is produced by and confined to the body is challenged by such demonstrations.</p>
+<p><strong>Siddhis are byproducts, not goals.</strong> Spiritual powers arise naturally from advanced practice but pursuing them directly can become a distraction. The saint used his abilities for teaching purposes, not personal aggrandizement or entertainment.</p>
+<p><strong>Credible witnesses matter.</strong> Yogananda carefully documents these accounts through reliable witnesses—in this case, his pragmatic father. This is not blind faith but reasoned openness to expanded possibilities.</p></div></section>
+            <section class="section"><header class="section-header"><span class="section-label">Life Application</span><h2 class="section-title">Applying This Today</h2></header><div class="reading-content"><p>While you may never develop the power of bilocation, understanding its possibility expands your conception of human potential. The mind's influence extends further than materialist assumptions suggest. Your thoughts, intentions, and focused awareness can affect reality in ways that ordinary thinking cannot explain.</p>
+<p>More practically, this chapter invites you to question limiting beliefs about what is possible. How many of your assumed limitations are actually self-imposed? The saint's abilities point toward a spectrum of human potential that most people never explore.</p>
+<p>Begin to notice subtle ways your focused intention affects circumstances—synchronicities, intuitions that prove accurate, or moments when your presence seems to influence events beyond physical action.</p></div></section>
+            <section class="section"><header class="section-header"><span class="section-label">Your Assignment</span><h2 class="section-title">Practice Exercise</h2></header><div class="highlight-box"><div class="highlight-box-title">✦ Practice</div><p><strong>Develop concentration.</strong> The foundation of all higher attainments is one-pointed focus. Practice a simple concentration exercise: focus on a single object—a candle flame, a dot on paper, or your breath—for five minutes without allowing your attention to waver.</p>
+<p>When the mind wanders, gently return it without frustration. Notice how difficult sustained attention actually is, and how quickly the mind seeks distraction. This foundational practice develops the concentration that underlies all higher attainments.</p></div></section>
+            <section class="section"><header class="section-header"><span class="section-label">Reflection</span><h2 class="section-title">Go Deeper</h2></header><div class="content-block"><div class="content-block-header"><div class="content-block-icon">💭</div><div class="content-block-title">Journal Prompt</div></div><p style="font-style:italic;font-size:1.125rem">"What do I believe is impossible that might actually be possible? What limiting beliefs about human potential have I never questioned?"</p></div></section>
+            <section class="section"><header class="section-header"><span class="section-label">Summary</span><h2 class="section-title">Key Points</h2></header><div class="key-points">
+                        <div class="key-point">
+                            <div class="key-point-number">1</div>
+                            <div>
+                                <h4>Consciousness Beyond Body</h4>
+                                <p>Awareness is not confined to physical location</p>
+                            </div>
+                        </div>
+                        <div class="key-point">
+                            <div class="key-point-number">2</div>
+                            <div>
+                                <h4>Powers Are Byproducts</h4>
+                                <p>Siddhis arise from practice but aren't the goal</p>
+                            </div>
+                        </div>
+                        <div class="key-point">
+                            <div class="key-point-number">3</div>
+                            <div>
+                                <h4>Expanded Possibility</h4>
+                                <p>Question limiting beliefs about what humans can achieve</p>
+                            </div>
+                        </div></div></section>
+            <section class="section quiz-start"><div class="divider"></div><h3>Test Your Understanding</h3><p>Complete a quick quiz to reinforce what you've learned from Chapter 3.</p><button class="btn btn-primary btn-lg" id="start-quiz-btn">Begin Quiz →</button></section>
+        </div>
+        <div id="quiz-container" class="quiz-container"><div class="quiz-progress"><div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div><div class="quiz-progress-text" id="quiz-progress-text">1/5</div></div><h2 class="quiz-question" id="quiz-question">Loading...</h2><div class="quiz-options" id="quiz-options"></div><div class="quiz-feedback" id="quiz-feedback"></div><div class="quiz-actions"><button class="btn btn-primary btn-full" id="quiz-submit" disabled>Submit Answer</button><button class="btn btn-primary btn-full" id="quiz-next" style="display:none">Continue →</button></div><div id="quiz-results" style="display:none"></div></div>
+        <aside class="next-section"><div class="next-section-header"><div class="next-section-icon">📚</div><h3>Continue Your Journey</h3></div><p>Next chapter: <strong>My Interrupted Flight Toward the Himalayas</strong> — learning about divine timing and patience on the spiritual path.</p><a href="../" class="btn btn-secondary" style="margin-top:1rem">← Back to Program</a></aside>
+    </article></main>
+    <footer class="site-footer"><div class="footer-inner"><p>© 2024 YoganandaTeachings.com</p></div></footer>
+    <script>
+    (function(){var focusBar=document.getElementById('focusBar'),exitFocusBtn=document.getElementById('exitFocus'),quizActive=false,quizComplete=false;function enterFocusMode(){document.body.classList.add('focus-mode');quizActive=true;}function exitFocusMode(){if(quizActive&&!quizComplete){if(!confirm('Exit the quiz?'))return;}document.body.classList.remove('focus-mode');document.getElementById('quiz-container').classList.remove('active');document.getElementById('quiz-container').style.display='none';document.getElementById('lesson-content').style.display='block';quizActive=false;}function updateFocusProgress(c,t){var p=(c/t)*100;document.getElementById('focusProgressFill').style.width=p+'%';document.getElementById('focusProgressText').textContent=c+'/'+t;}exitFocusBtn.onclick=exitFocusMode;window.focusMode={enter:enterFocusMode,exit:exitFocusMode,updateProgress:updateFocusProgress,setComplete:function(){quizComplete=true;}}})();
+    (function(){var STORAGE_KEY='wisdompath_progress',LESSON_SLUG='ch3';var quizData=[
+            {question:"What ability did Swami Pranabananda demonstrate?",choices:["Flying through the air", "Reading minds", "Appearing in two places at once", "Predicting the future"],correct:"Appearing in two places at once"},
+            {question:"What are siddhis?",choices:["Hindu scriptures", "Spiritual powers", "Dietary restrictions", "Temple rituals"],correct:"Spiritual powers"},
+            {question:"In which city was the saint's physical body located during the bilocation?",choices:["Delhi", "Calcutta", "Benares", "Mumbai"],correct:"Benares"},
+            {question:"According to the chapter, what is the true purpose of spiritual powers?",choices:["Entertainment", "Personal gain", "Teaching and helping others", "Political influence"],correct:"Teaching and helping others"},
+            {question:"What attitude toward miracles does this chapter suggest?",choices:["They should be the primary focus", "They are natural byproducts, not goals", "They are impossible", "They are always dangerous"],correct:"They are natural byproducts, not goals"},
+        ];var quizState={currentIndex:0,answers:[],score:0,selectedAnswer:null},els={};function getProgress(){try{var d=localStorage.getItem(STORAGE_KEY);return d?JSON.parse(d):{lessons:{}};}catch(e){return{lessons:{}};}}function saveProgress(data){try{data.lastUpdated=new Date().toISOString();localStorage.setItem(STORAGE_KEY,JSON.stringify(data));return true;}catch(e){return false;}}function markLessonViewed(slug){var p=getProgress();if(!p.lessons[slug])p.lessons[slug]={slug:slug,viewed:false,completed:false,quizScore:null,quizAttempts:0};if(!p.lessons[slug].viewed){p.lessons[slug].viewed=true;p.lessons[slug].viewedAt=new Date().toISOString();}saveProgress(p);}function markLessonCompleted(slug,score,total){var p=getProgress();if(!p.lessons[slug])markLessonViewed(slug);p=getProgress();var lp=p.lessons[slug];lp.quizAttempts=(lp.quizAttempts||0)+1;lp.quizScore=score;lp.quizTotal=total;if(score>=total*0.7){lp.completed=true;lp.completedAt=new Date().toISOString();}p.lessons[slug]=lp;saveProgress(p);}function escapeHtml(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}function showQuiz(){document.getElementById('lesson-content').style.display='none';els.container.classList.add('active');els.container.style.display='block';if(els.results)els.results.style.display='none';window.focusMode.enter();}function updateProgress(){var pct=(quizState.currentIndex/quizData.length)*100;els.progressFill.style.width=pct+'%';els.progressText.textContent=(quizState.currentIndex+1)+'/'+quizData.length;window.focusMode.updateProgress(quizState.currentIndex,quizData.length);}function showQuestion(idx){if(idx>=quizData.length){showResults();return;}showQuiz();quizState.currentIndex=idx;quizState.selectedAnswer=null;var q=quizData[idx];updateProgress();els.question.textContent=q.question;els.options.innerHTML='';var labels=['A','B','C','D'];q.choices.forEach(function(c,i){var opt=document.createElement('div');opt.className='quiz-option';opt.setAttribute('data-choice',c);opt.innerHTML='<div class="quiz-option-marker">'+labels[i]+'</div><div class="quiz-option-text">'+escapeHtml(c)+'</div>';opt.onclick=function(){selectOption(c,opt);};els.options.appendChild(opt);});els.feedback.style.display='none';els.feedback.className='quiz-feedback';els.submit.style.display='inline-flex';els.submit.disabled=true;els.next.style.display='none';}function selectOption(choice,optEl){if(quizState.selectedAnswer!==null&&els.submit.style.display==='none')return;quizState.selectedAnswer=choice;els.options.querySelectorAll('.quiz-option').forEach(function(o){o.classList.remove('selected');});optEl.classList.add('selected');els.submit.disabled=false;}function submitAnswer(){if(quizState.selectedAnswer===null)return;var q=quizData[quizState.currentIndex],correct=quizState.selectedAnswer===q.correct;quizState.answers.push({question:q.question,selected:quizState.selectedAnswer,correct:q.correct,isCorrect:correct});if(correct)quizState.score++;showFeedback(correct,q.correct);highlightOptions(q.correct);els.submit.style.display='none';els.next.style.display='inline-flex';els.next.textContent=quizState.currentIndex<quizData.length-1?'Continue →':'See Results →';}function showFeedback(correct,ans){els.feedback.style.display='flex';els.feedback.classList.add('show');els.feedback.className=correct?'quiz-feedback show correct':'quiz-feedback show incorrect';els.feedback.innerHTML=correct?'✓ Correct!':'✗ The answer is: '+escapeHtml(ans);}function highlightOptions(correctAns){els.options.querySelectorAll('.quiz-option').forEach(function(opt){var c=opt.getAttribute('data-choice');opt.classList.add('disabled');if(c===correctAns){opt.classList.add('correct');opt.classList.remove('selected');}else if(c===quizState.selectedAnswer&&c!==correctAns)opt.classList.add('incorrect');});}function nextQuestion(){quizState.currentIndex<quizData.length-1?showQuestion(quizState.currentIndex+1):showResults();}function showResults(){var pct=Math.round((quizState.score/quizData.length)*100),passed=pct>=70;markLessonCompleted(LESSON_SLUG,quizState.score,quizData.length);window.focusMode.setComplete();els.question.style.display='none';els.options.style.display='none';els.feedback.style.display='none';els.submit.style.display='none';els.next.style.display='none';els.progressFill.style.width='100%';els.progressText.textContent='Done';document.getElementById('focusProgressFill').style.width='100%';document.getElementById('focusProgressText').textContent='Complete';document.getElementById('exitFocus').textContent='← Done';document.getElementById('exitFocus').onclick=function(){window.focusMode.exit();};els.results.innerHTML='<div class="quiz-results"><div class="quiz-results-icon">'+(passed?'🎉':'📚')+'</div><h2>'+(passed?'Excellent!':'Keep Learning')+'</h2><div class="quiz-results-score">'+quizState.score+'/'+quizData.length+' ('+pct+'%)</div><p class="quiz-results-message">'+(passed?'You completed Chapter 3.':'Review and try again. 70% needed.')+'</p><button class="btn btn-primary btn-full" onclick="window.focusMode.exit()">Continue</button></div>';els.results.style.display='block';}document.addEventListener('DOMContentLoaded',function(){markLessonViewed(LESSON_SLUG);els={container:document.getElementById('quiz-container'),progressFill:document.getElementById('quiz-progress-fill'),progressText:document.getElementById('quiz-progress-text'),question:document.getElementById('quiz-question'),options:document.getElementById('quiz-options'),feedback:document.getElementById('quiz-feedback'),submit:document.getElementById('quiz-submit'),next:document.getElementById('quiz-next'),results:document.getElementById('quiz-results')};document.getElementById('start-quiz-btn').onclick=function(){quizState={currentIndex:0,answers:[],score:0,selectedAnswer:null};showQuestion(0);};els.submit.onclick=submitAnswer;els.next.onclick=nextQuestion;});})();
+    </script>
+</body>
+</html>
