@@ -405,12 +405,15 @@
             padding: 2rem;
             border: 1px solid var(--color-border);
             transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
         }
         .feature-card:hover {
             border-color: var(--color-border-light);
             transform: translateY(-4px);
             box-shadow: 0 20px 40px rgba(139, 90, 43, 0.1);
         }
+        .feature-card p { flex: 1; }
         .feature-icon {
             width: 64px;
             height: 64px;
@@ -431,7 +434,8 @@
             display: inline-flex; 
             align-items: center; 
             gap: 0.5rem; 
-            margin-top: 1.25rem; 
+            margin-top: auto;
+            padding-top: 1.25rem;
             font-size: 0.875rem; 
             font-weight: 600; 
             color: var(--color-accent); 
@@ -439,7 +443,7 @@
             transition: all 0.2s;
             background: none;
             border: none;
-            padding: 0;
+            padding-left: 0;
         }
         .feature-learn-more:hover { color: var(--color-text); }
         .feature-learn-more::after { content: '→'; transition: transform 0.2s; }
