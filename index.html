@@ -427,6 +427,132 @@
         .feature-card:nth-child(4) .feature-icon { background: linear-gradient(135deg, rgba(91, 164, 201, 0.15), rgba(139, 90, 43, 0.1)); }
         .feature-card h4 { margin-bottom: 0.75rem; }
         .feature-card p { font-size: 0.9375rem; color: var(--color-text-muted); }
+        .feature-learn-more { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 0.5rem; 
+            margin-top: 1.25rem; 
+            font-size: 0.875rem; 
+            font-weight: 600; 
+            color: var(--color-accent); 
+            cursor: pointer; 
+            transition: all 0.2s;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+        .feature-learn-more:hover { color: var(--color-text); }
+        .feature-learn-more::after { content: '→'; transition: transform 0.2s; }
+        .feature-learn-more.active::after { transform: rotate(90deg); }
+        
+        /* Feature Expanded Panel */
+        .feature-panel-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(45, 24, 16, 0.5);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        .feature-panel-overlay.active { opacity: 1; visibility: visible; }
+        .feature-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 700px;
+            height: 100vh;
+            background: var(--color-bg);
+            z-index: 2001;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: -20px 0 60px rgba(139, 90, 43, 0.15);
+        }
+        .feature-panel.active { transform: translateX(0); }
+        .feature-panel-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--color-bg-card-solid);
+            flex-shrink: 0;
+        }
+        .feature-panel-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .feature-panel-title .feature-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 0;
+            font-size: 1.5rem;
+        }
+        .feature-panel-title h3 { font-size: 1.25rem; margin: 0; }
+        .feature-panel-close {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            background: var(--color-bg-elevated);
+            color: var(--color-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .feature-panel-close:hover { background: var(--color-bg-card-hover); border-color: var(--color-border-light); }
+        .feature-panel-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2.5rem 2rem 3rem;
+        }
+        .feature-panel-content h4 {
+            font-size: 1.125rem;
+            color: var(--color-sky);
+            margin: 2rem 0 1rem;
+        }
+        .feature-panel-content h4:first-child { margin-top: 0; }
+        .feature-panel-content p {
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+            line-height: 1.85;
+        }
+        .feature-panel-content blockquote {
+            margin: 1.5rem 0;
+            padding: 1.25rem 1.5rem;
+            background: linear-gradient(135deg, rgba(232, 169, 70, 0.08), rgba(91, 164, 201, 0.05));
+            border-left: 4px solid var(--color-accent);
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: var(--color-text);
+        }
+        .feature-panel-content blockquote cite {
+            display: block;
+            margin-top: 0.75rem;
+            font-style: normal;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+        .feature-panel-content ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--color-text-secondary);
+        }
+        .feature-panel-content li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+        @media (max-width: 700px) {
+            .feature-panel { max-width: 100%; }
+            .feature-panel-content { padding: 1.5rem; }
+        }
         
         /* ==================== ABOUT / LEARN MORE ==================== */
         .about-section {
@@ -1125,21 +1251,25 @@
                         <div class="feature-icon" aria-hidden="true">🎯</div>
                         <h4>Crystal Clarity</h4>
                         <p>Complex wisdom distilled into actionable insights. No fluff—just practical understanding you can use today.</p>
+                        <button class="feature-learn-more" data-panel="clarity">Learn More</button>
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon" aria-hidden="true">💪</div>
                         <h4>Unshakeable Discipline</h4>
                         <p>Build habits that actually stick using proven frameworks for lasting, meaningful change.</p>
+                        <button class="feature-learn-more" data-panel="discipline">Learn More</button>
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon" aria-hidden="true">🧠</div>
                         <h4>Deep Self-Awareness</h4>
                         <p>Observe your thoughts and master your responses. Stop reacting—start responding with intention.</p>
+                        <button class="feature-learn-more" data-panel="awareness">Learn More</button>
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon" aria-hidden="true">⚖️</div>
                         <h4>Inner Balance</h4>
                         <p>Navigate life's challenges with calm confidence and centered presence, no matter what arises.</p>
+                        <button class="feature-learn-more" data-panel="balance">Learn More</button>
                     </article>
                 </div>
             </div>
@@ -1662,6 +1792,338 @@
                 }
             });
         });
+
+        // Feature Panel System
+        (function() {
+            const featureOverlay = document.getElementById('featurePanelOverlay');
+            const featurePanels = document.querySelectorAll('.feature-panel');
+            
+            document.querySelectorAll('.feature-learn-more').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const panelId = 'feature-panel-' + btn.getAttribute('data-panel');
+                    const panel = document.getElementById(panelId);
+                    if (panel) {
+                        featureOverlay.classList.add('active');
+                        panel.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+            
+            function closeFeaturePanels() {
+                featureOverlay.classList.remove('active');
+                featurePanels.forEach(p => p.classList.remove('active'));
+                document.body.style.overflow = '';
+            }
+            
+            featureOverlay.addEventListener('click', closeFeaturePanels);
+            
+            document.querySelectorAll('.feature-panel-close').forEach(btn => {
+                btn.addEventListener('click', closeFeaturePanels);
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeFeaturePanels();
+            });
+        })();
     </script>
+
+    <!-- Feature Panel Overlay -->
+    <div class="feature-panel-overlay" id="featurePanelOverlay"></div>
+
+    <!-- Crystal Clarity Panel -->
+    <div class="feature-panel" id="feature-panel-clarity">
+        <div class="feature-panel-header">
+            <div class="feature-panel-title">
+                <div class="feature-icon" style="background: linear-gradient(135deg, rgba(232, 169, 70, 0.2), rgba(199, 93, 36, 0.15));">🎯</div>
+                <h3>Crystal Clarity</h3>
+            </div>
+            <button class="feature-panel-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="feature-panel-content">
+            <h4>The Nature of True Clarity</h4>
+            <p>Paramahansa Yogananda taught that true clarity is not merely intellectual understanding—it is a state of consciousness where the mind becomes still enough to reflect reality as it truly is. Like a lake whose surface is constantly disturbed by winds cannot reflect the sky clearly, a mind agitated by restless thoughts cannot perceive truth with accuracy.</p>
+            
+            <blockquote>
+                "Calmness is the living breath of God's immortality in you."
+                <cite>— Paramahansa Yogananda</cite>
+            </blockquote>
+            
+            <p>In everyday life, we encounter countless situations that demand clear thinking: career decisions, relationship challenges, financial choices, health concerns. Yet most people approach these moments with minds clouded by fear, desire, past conditioning, and emotional reactivity. Yogananda's teachings offer a revolutionary approach—achieving clarity not through more thinking, but through the cultivation of inner stillness.</p>
+            
+            <h4>The Three Veils That Obscure Clarity</h4>
+            <p>According to Yogananda's teachings, three primary obstacles prevent us from seeing situations clearly:</p>
+            
+            <p><strong>The Veil of Restlessness:</strong> The constant chatter of the untrained mind creates a fog through which we cannot see clearly. This restlessness manifests as worry about the future, regret about the past, and anxiety about the present. When we approach any situation with a restless mind, we see not the situation itself, but our projections onto it.</p>
+            
+            <p><strong>The Veil of Emotion:</strong> Strong emotions—whether positive or negative—color our perception dramatically. Anger makes us see enemies everywhere. Fear makes us see threats in shadows. Even excessive enthusiasm can blind us to obvious pitfalls. Yogananda taught that emotions are meant to be experienced, not suppressed, but they should not be the lens through which we make important decisions.</p>
+            
+            <p><strong>The Veil of Ego:</strong> Perhaps the most subtle obstacle is the ego's constant need to protect its self-image. We often cannot see the truth of a situation because acknowledging it would require admitting we were wrong, or facing uncomfortable realities about ourselves. The ego distorts perception to maintain its preferred narrative.</p>
+            
+            <h4>Practical Techniques for Cultivating Clarity</h4>
+            <p>Yogananda provided numerous practical methods for achieving mental clarity that can be applied in everyday situations:</p>
+            
+            <p><strong>The Pause Practice:</strong> Before making any significant decision, pause. Close your eyes if possible. Take three deep breaths, exhaling slowly. In this brief space, the mental waters begin to settle. Yogananda taught that even thirty seconds of conscious stillness can dramatically improve the quality of our decisions.</p>
+            
+            <p><strong>The Witness Perspective:</strong> Train yourself to observe your thoughts as if watching clouds pass through the sky. You are not your thoughts—you are the awareness that observes them. From this witness perspective, you can notice when fear, desire, or ego is coloring your perception, and consciously set these influences aside.</p>
+            
+            <p><strong>The Heart-Mind Integration:</strong> Yogananda taught that true clarity comes when the intellect and intuition work together. After calming the mind, ask yourself: "What does my heart know about this situation?" The heart, when the mind is still, can access a deeper wisdom that pure analysis cannot reach.</p>
+            
+            <h4>Clarity in Relationships</h4>
+            <p>One of the most powerful applications of Yogananda's clarity teachings is in relationships. How often do we misunderstand others because we are listening through the filter of our own insecurities, past hurts, or expectations? How often do conflicts escalate because neither party can see the other's perspective clearly?</p>
+            
+            <p>Yogananda advised approaching every interaction with what he called "spiritual clarity"—the recognition that behind every person's words and actions is a soul seeking happiness and freedom from suffering, just like yourself. When we can see others through this lens, many apparent conflicts dissolve naturally.</p>
+            
+            <blockquote>
+                "When you learn to see God in all persons, and in all things, you will have perfect clarity of mind."
+                <cite>— Paramahansa Yogananda</cite>
+            </blockquote>
+            
+            <h4>Clarity in Professional Life</h4>
+            <p>In professional settings, clarity translates directly into effectiveness. The person who can see a situation accurately, unclouded by office politics, personal agendas, or fear of failure, makes better decisions. Yogananda taught that success in any field requires this clear-sighted approach.</p>
+            
+            <p>Consider the difference between a leader who makes decisions from fear versus one who acts from clarity. The fearful leader reacts to threats, often creating new problems while solving old ones. The clear-minded leader responds to reality, addressing root causes rather than symptoms.</p>
+            
+            <h4>The Daily Practice of Clarity</h4>
+            <p>Yogananda emphasized that clarity is not achieved once and maintained forever—it must be cultivated daily through consistent practice. He recommended:</p>
+            
+            <ul>
+                <li>Beginning each day with meditation, however brief, to establish a foundation of mental stillness</li>
+                <li>Taking regular "clarity breaks" throughout the day—moments of conscious stillness between activities</li>
+                <li>Before sleep, reviewing the day's decisions and noticing where clarity was present and where it was absent</li>
+                <li>Practicing concentration exercises to strengthen the mind's ability to focus without distraction</li>
+            </ul>
+            
+            <p>The promise of Yogananda's teachings on clarity is profound: as we develop this capacity, we begin to navigate life with increasing wisdom and decreasing struggle. Problems that once seemed insurmountable become manageable when seen clearly. Relationships that once confused us become understandable. The path forward, which once seemed obscured, reveals itself step by step.</p>
+            
+            <p>This is not about becoming emotionless or detached from life. Rather, it is about engaging with life more fully because we can finally see it as it is—in all its beauty, challenge, and infinite possibility.</p>
+        </div>
+    </div>
+
+    <!-- Unshakeable Discipline Panel -->
+    <div class="feature-panel" id="feature-panel-discipline">
+        <div class="feature-panel-header">
+            <div class="feature-panel-title">
+                <div class="feature-icon" style="background: linear-gradient(135deg, rgba(91, 164, 201, 0.2), rgba(135, 206, 235, 0.15));">💪</div>
+                <h3>Unshakeable Discipline</h3>
+            </div>
+            <button class="feature-panel-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="feature-panel-content">
+            <h4>Discipline as Liberation, Not Restriction</h4>
+            <p>Paramahansa Yogananda presented a revolutionary understanding of discipline that transforms it from a burden into a pathway to freedom. In his view, discipline is not about forcing yourself to do things you don't want to do—it is about aligning your actions with your deepest aspirations so completely that resistance dissolves.</p>
+            
+            <blockquote>
+                "The season of failure is the best time for sowing the seeds of success."
+                <cite>— Paramahansa Yogananda</cite>
+            </blockquote>
+            
+            <p>Most people experience discipline as willpower battling desire—a constant internal war that exhausts them over time. Yogananda taught that this approach is fundamentally flawed. True discipline emerges naturally when we understand why we want to change and connect that understanding to our daily actions.</p>
+            
+            <h4>The Three Pillars of Sustainable Discipline</h4>
+            <p>Yogananda's teachings reveal three essential elements that make discipline sustainable rather than a constant struggle:</p>
+            
+            <p><strong>Deep Motivation:</strong> Surface-level reasons for change ("I should exercise more," "I ought to eat better") create surface-level commitment that crumbles under pressure. Yogananda taught that lasting discipline requires connecting our habits to our deepest values and aspirations. Why do you want to be healthier? Not just to look better—but perhaps to have the energy to fully engage with life, to be present for your loved ones, to fulfill your potential.</p>
+            
+            <p><strong>Intelligent Strategy:</strong> Discipline without wisdom is mere stubbornness. Yogananda emphasized working with human nature rather than against it. This means starting small, building gradually, creating supportive environments, and understanding that setbacks are part of the journey, not evidence of failure.</p>
+            
+            <p><strong>Spiritual Connection:</strong> Perhaps most distinctively, Yogananda taught that the deepest source of discipline comes from connecting our efforts to something greater than our individual desires. When we understand that developing ourselves is not just for our own benefit but contributes to the upliftment of all, we tap into a motivation that transcends personal comfort.</p>
+            
+            <h4>The Science of Habit According to Yogananda</h4>
+            <p>Long before modern neuroscience confirmed these principles, Yogananda taught that habits are not merely behavioral patterns but grooves carved in consciousness itself. Each time we repeat an action, we deepen the groove, making it easier to perform that action again.</p>
+            
+            <p>This understanding has profound implications. First, it explains why breaking bad habits feels so difficult—we are literally working against established neural pathways. Second, it offers hope—every time we choose differently, we begin carving new grooves that will eventually become as automatic as the old ones.</p>
+            
+            <blockquote>
+                "Good habits are your best helpers; preserve their integrity."
+                <cite>— Paramahansa Yogananda</cite>
+            </blockquote>
+            
+            <h4>Practical Applications in Daily Life</h4>
+            <p>Yogananda's discipline teachings apply to every area of life where sustained effort is required:</p>
+            
+            <p><strong>Physical Health:</strong> Rather than approaching exercise and nutrition as punishment or deprivation, see them as acts of self-respect and gratitude for the body you have been given. Start with commitments so small they seem almost trivial—five minutes of stretching, one serving of vegetables. As Yogananda taught, small successes build the confidence and habit-energy for larger ones.</p>
+            
+            <p><strong>Mental Development:</strong> The discipline to read, learn, and grow intellectually follows the same principles. Set aside a specific time each day, however brief. Choose material that genuinely interests you rather than what you think you "should" read. Make it easy—keep books accessible, use audiobooks during commutes.</p>
+            
+            <p><strong>Emotional Regulation:</strong> Perhaps the most challenging discipline is mastering our emotional reactions. Yogananda taught that this begins with awareness—simply noticing when we are being emotionally reactive. Over time, this awareness creates a gap between stimulus and response where choice becomes possible.</p>
+            
+            <p><strong>Spiritual Practice:</strong> Yogananda emphasized that spiritual practices like meditation should never be approached with grim determination. Better to meditate for five minutes with full attention and joy than to sit for an hour in restless obligation. Quality of attention matters more than quantity of time.</p>
+            
+            <h4>When Discipline Fails: Yogananda's Approach to Setbacks</h4>
+            <p>One of Yogananda's most compassionate teachings concerns how to handle failure. He recognized that everyone falls short of their intentions sometimes. The key is not to avoid falling but to know how to rise:</p>
+            
+            <ul>
+                <li>Never use failure as evidence of your unworthiness or inability to change</li>
+                <li>Analyze setbacks with curiosity rather than judgment—what can you learn?</li>
+                <li>Return to your practice immediately, without waiting for a "fresh start"</li>
+                <li>Remember that every saint has a past, and every sinner has a future</li>
+            </ul>
+            
+            <p>Yogananda taught that the soul is never damaged by failure—only the ego is bruised. When we can separate our essential self from our temporary setbacks, we gain the resilience to continue.</p>
+            
+            <h4>The Ultimate Discipline: Self-Mastery</h4>
+            <p>All external disciplines are preparation for the ultimate discipline: mastery over the mind itself. Yogananda taught that a person who has conquered their own mind has conquered the world. Not because they can now manipulate external circumstances, but because their happiness no longer depends on those circumstances.</p>
+            
+            <p>This self-mastery is not achieved through harsh self-control but through deep self-understanding. As we come to know ourselves—our patterns, our triggers, our deepest motivations—we gain the ability to work with ourselves rather than against ourselves.</p>
+            
+            <p>The disciplined life, as Yogananda presented it, is not a life of restriction but a life of freedom—freedom from the tyranny of passing impulses, freedom from the chaos of an undirected mind, freedom to pursue what truly matters rather than being constantly pulled by what merely feels urgent.</p>
+        </div>
+    </div>
+
+    <!-- Deep Self-Awareness Panel -->
+    <div class="feature-panel" id="feature-panel-awareness">
+        <div class="feature-panel-header">
+            <div class="feature-panel-title">
+                <div class="feature-icon" style="background: linear-gradient(135deg, rgba(212, 168, 75, 0.2), rgba(184, 134, 11, 0.15));">🧠</div>
+                <h3>Deep Self-Awareness</h3>
+            </div>
+            <button class="feature-panel-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="feature-panel-content">
+            <h4>The Foundation of All Transformation</h4>
+            <p>Paramahansa Yogananda considered self-awareness the cornerstone of all spiritual and personal development. Without knowing ourselves—our patterns, our motivations, our unconscious reactions—we cannot change. We are simply swept along by forces we don't understand, wondering why we keep repeating the same mistakes and experiencing the same frustrations.</p>
+            
+            <blockquote>
+                "Self-realization is the knowing in all parts of body, mind, and soul that you are now in possession of the kingdom of God."
+                <cite>— Paramahansa Yogananda</cite>
+            </blockquote>
+            
+            <p>True self-awareness, as Yogananda taught, goes far beyond simple introspection. It involves developing the capacity to observe ourselves in real-time—noticing our thoughts as they arise, our emotions as they move through us, our physical sensations, and our automatic reactions to situations. This witnessing awareness is the beginning of freedom.</p>
+            
+            <h4>Self-Awareness in Everyday Situations</h4>
+            <p>Consider how self-awareness transforms ordinary moments:</p>
+            
+            <p><strong>In Traffic:</strong> Someone cuts you off. Without self-awareness, you react automatically—perhaps with anger, a honk, an aggressive response. With self-awareness, you notice the anger arising. You feel the tension in your body, the quickening of your heart, the thoughts of righteous indignation. In this noticing, a gap appears. You don't have to react. You can choose to respond—or not respond at all.</p>
+            
+            <p><strong>In Conversation:</strong> Your partner says something that triggers you. Without self-awareness, you fire back defensively or withdraw into cold silence. With self-awareness, you notice the trigger—perhaps a feeling of being criticized, or dismissed, or not valued. You can name this feeling, even share it: "When you said that, I noticed I felt defensive. Can we talk about this?" This transforms potential conflict into opportunity for connection.</p>
+            
+            <p><strong>At Work:</strong> You receive critical feedback. Without self-awareness, your ego reacts—defending, explaining, minimizing. With self-awareness, you notice the ego's response and can set it aside temporarily. You can actually hear the feedback, consider its validity, and respond thoughtfully rather than reactively.</p>
+            
+            <p><strong>In Decision-Making:</strong> You face a difficult choice. Without self-awareness, you may be driven by fear, desire, or social pressure without realizing it. With self-awareness, you can identify what is actually motivating you and ask whether those motivations align with your values and long-term wellbeing.</p>
+            
+            <h4>The Layers of Self-Awareness</h4>
+            <p>Yogananda taught that self-awareness operates on multiple levels:</p>
+            
+            <p><strong>Physical Awareness:</strong> The foundation is awareness of the body. Where do you hold tension? How does your body respond to stress? What physical sensations accompany different emotions? Many people are so disconnected from their bodies that they don't notice they're stressed until they develop a headache or get sick. Cultivating body awareness provides early warning signals and the opportunity to address imbalances before they escalate.</p>
+            
+            <p><strong>Emotional Awareness:</strong> The next level is recognizing emotions as they arise. What are you actually feeling right now? Yogananda noted that many people cannot answer this question—they've been taught to suppress emotions or identify with them so completely that they can't step back and observe. Learning to name emotions—"I notice I'm feeling anxious"—creates distance and choice.</p>
+            
+            <p><strong>Mental Awareness:</strong> Beyond emotions lie the thoughts that generate them. What mental narratives run through your mind? What assumptions do you make? What stories do you tell yourself about yourself and others? These thought patterns, often operating unconsciously, shape our entire experience of reality.</p>
+            
+            <p><strong>Motivational Awareness:</strong> At a deeper level, what drives your behavior? What do you really want? Often our conscious desires conflict with unconscious motivations—we say we want connection but act in ways that push people away; we claim to want success but sabotage our efforts. Self-awareness at this level reveals these contradictions.</p>
+            
+            <blockquote>
+                "Live quietly in the moment and see the beauty of all before you. The future will take care of itself."
+                <cite>— Paramahansa Yogananda</cite>
+            </blockquote>
+            
+            <h4>Developing Self-Awareness: Yogananda's Methods</h4>
+            <p>Yogananda provided practical techniques for deepening self-awareness:</p>
+            
+            <p><strong>Regular Meditation:</strong> Meditation is the laboratory where self-awareness is developed. In the stillness of meditation, we can observe the mind's activity without the distraction of external events. We begin to see how thoughts arise unbidden, how emotions follow thoughts, how the mind jumps from one thing to another. This observation strengthens the witness consciousness that can then be applied in daily life.</p>
+            
+            <p><strong>Self-Analysis:</strong> Yogananda recommended regular periods of honest self-examination. Not harsh self-criticism, but compassionate inquiry. What patterns am I noticing in my life? Where do I get triggered? What am I avoiding? What motivates my choices? This analysis works best when conducted with genuine curiosity rather than judgment.</p>
+            
+            <p><strong>Feedback Seeking:</strong> Others often see what we cannot see in ourselves. Yogananda encouraged seeking honest feedback from trusted people—not to accept it uncritically, but to consider it as additional information. If multiple people independently observe the same pattern in us, that's worth examining.</p>
+            
+            <p><strong>Present-Moment Practice:</strong> Throughout the day, pause periodically and simply notice: What am I experiencing right now? What am I thinking? Feeling? What sensations are present in my body? These micro-moments of awareness accumulate into a general capacity for self-observation.</p>
+            
+            <h4>The Fruits of Self-Awareness</h4>
+            <p>Yogananda taught that self-awareness naturally leads to transformation. When we truly see our destructive patterns, they begin to lose their power over us. When we understand our motivations, we can work with them rather than being unconsciously controlled by them. When we observe our reactions, we gain the power to choose differently.</p>
+            
+            <ul>
+                <li>Improved relationships through understanding our triggers and patterns</li>
+                <li>Better decisions through recognizing what truly motivates us</li>
+                <li>Reduced anxiety through observing thoughts rather than being lost in them</li>
+                <li>Greater authenticity through knowing who we really are beneath social conditioning</li>
+                <li>Accelerated personal growth through accurate self-assessment</li>
+            </ul>
+            
+            <p>The journey of self-awareness is not always comfortable. We may discover things about ourselves we'd rather not see. But Yogananda assured seekers that this discomfort is temporary, while the freedom gained is permanent. To know yourself is to begin to master yourself. And to master yourself is to achieve the only freedom that cannot be taken away.</p>
+        </div>
+    </div>
+
+    <!-- Inner Balance Panel -->
+    <div class="feature-panel" id="feature-panel-balance">
+        <div class="feature-panel-header">
+            <div class="feature-panel-title">
+                <div class="feature-icon" style="background: linear-gradient(135deg, rgba(91, 164, 201, 0.15), rgba(139, 90, 43, 0.1));">⚖️</div>
+                <h3>Inner Balance</h3>
+            </div>
+            <button class="feature-panel-close" aria-label="Close">&times;</button>
+        </div>
+        <div class="feature-panel-content">
+            <h4>The Centered Life</h4>
+            <p>Paramahansa Yogananda described inner balance as the ability to remain centered and calm regardless of external circumstances. This is not indifference or emotional flatness—it is a dynamic equilibrium that allows us to engage fully with life without being capsized by its inevitable storms.</p>
+            
+            <blockquote>
+                "Be as simple as you can be; you will be astonished to see how uncomplicated and happy your life can become."
+                <cite>— Paramahansa Yogananda</cite>
+            </blockquote>
+            
+            <p>In everyday life, we face constant challenges to our equilibrium: work pressures, relationship tensions, health concerns, financial worries, global uncertainties. Most people's inner state fluctuates wildly in response to these external factors—up when things go well, down when they don't. Yogananda taught that there is another way: cultivating an inner stability that provides a steady foundation regardless of circumstances.</p>
+            
+            <h4>The Physics of Inner Balance</h4>
+            <p>Yogananda often used physical analogies to explain spiritual principles. He compared the balanced person to a ship with proper ballast—able to navigate rough seas without capsizing. An unbalanced person, by contrast, is like a top-heavy vessel, tipping dangerously with every wave.</p>
+            
+            <p>What provides this inner ballast? According to Yogananda's teachings:</p>
+            
+            <p><strong>A Stable Center of Identity:</strong> Most people's sense of self depends on external factors—their job, relationships, possessions, appearance, others' opinions. When these fluctuate, so does their inner state. The balanced person has cultivated an identity rooted in something unchanging—their essential nature as a conscious being, their connection to the divine, their fundamental values.</p>
+            
+            <p><strong>Emotional Regulation:</strong> Balance requires the ability to experience emotions fully without being overwhelmed by them. This means neither suppressing feelings nor being controlled by them. Yogananda taught that emotions are like weather—they arise, they pass, but we are the sky through which they move, not the weather itself.</p>
+            
+            <p><strong>Perspective:</strong> The balanced person maintains perspective even in crisis. They ask: How significant is this in the larger context of my life? Of human history? Of eternity? This is not minimizing real problems but placing them in proper proportion.</p>
+            
+            <h4>Balance in Daily Challenges</h4>
+            <p>Consider how inner balance transforms common situations:</p>
+            
+            <p><strong>Receiving Bad News:</strong> The unbalanced person is devastated, unable to think clearly or respond effectively. The balanced person feels the impact but remains centered. They can grieve or worry without losing their capacity to function. They process the news, consider options, and take appropriate action—all while maintaining their fundamental equilibrium.</p>
+            
+            <p><strong>Facing Criticism:</strong> The unbalanced person either crumbles under criticism or becomes defensive and hostile. The balanced person can hear criticism without their sense of self being threatened. They can evaluate the feedback objectively, accept what's valid, reject what isn't, and maintain their self-respect throughout.</p>
+            
+            <p><strong>Experiencing Success:</strong> Balance is tested by positive events too. The unbalanced person becomes inflated by success, losing perspective and often setting themselves up for a harder fall. The balanced person can enjoy success fully while understanding that external achievements don't define their worth.</p>
+            
+            <p><strong>Dealing with Difficult People:</strong> The unbalanced person is easily triggered by others' negativity or aggression. The balanced person can be around difficult people without absorbing their energy. They respond from their center rather than reacting to provocations.</p>
+            
+            <blockquote>
+                "The power of unfulfilled desires is the root of all man's slavery."
+                <cite>— Paramahansa Yogananda</cite>
+            </blockquote>
+            
+            <h4>The Path to Balance: Yogananda's Guidance</h4>
+            <p>Yogananda taught specific practices for cultivating inner balance:</p>
+            
+            <p><strong>Even-Mindedness Practice:</strong> Throughout the day, practice maintaining the same inner state regardless of what's happening externally. When good things happen, notice the tendency to become excited and gently return to center. When difficulties arise, notice the tendency to contract and gently return to center. This is not suppressing natural responses but recovering equilibrium more quickly.</p>
+            
+            <p><strong>Non-Attachment:</strong> Yogananda taught that attachment to outcomes is the primary destroyer of balance. This doesn't mean not caring about results—it means putting forth full effort while remaining unattached to specific outcomes. Do your best, then accept whatever comes with equanimity.</p>
+            
+            <p><strong>Regular Meditation:</strong> Meditation is perhaps the most powerful tool for developing balance. In meditation, we practice returning to center again and again as the mind wanders. This builds the mental muscle for maintaining center in the midst of life's distractions.</p>
+            
+            <p><strong>Simplification:</strong> Yogananda observed that complexity breeds imbalance. The more possessions, commitments, and complications we have, the more there is to disturb our equilibrium. Simplifying life creates more space for balance.</p>
+            
+            <h4>Balance Between Opposites</h4>
+            <p>Inner balance also means finding the middle path between opposing tendencies:</p>
+            
+            <ul>
+                <li><strong>Effort and Surrender:</strong> Work hard while remaining open to unexpected outcomes</li>
+                <li><strong>Solitude and Community:</strong> Time alone for inner work and time with others for connection</li>
+                <li><strong>Mind and Heart:</strong> Logical analysis and intuitive feeling working together</li>
+                <li><strong>Activity and Rest:</strong> Engaged effort and restorative stillness in proper rhythm</li>
+                <li><strong>Self-Focus and Service:</strong> Personal development and contribution to others</li>
+            </ul>
+            
+            <p>Yogananda taught that extremism in any direction creates imbalance. The spiritual life is not about rejecting the world or indulging in it without limit—it's about finding the dynamic center that honors all aspects of our nature.</p>
+            
+            <h4>The Fruits of Inner Balance</h4>
+            <p>As inner balance develops, profound changes occur:</p>
+            
+            <p>Anxiety decreases because we're no longer at the mercy of every external fluctuation. Energy increases because we're not wasting resources on constant emotional turbulence. Relationships improve because we're no longer looking to others to stabilize us. Decision-making improves because we can think clearly even under pressure. Creativity flows because we have the inner space for new ideas to emerge.</p>
+            
+            <p>Most importantly, Yogananda taught, inner balance allows us to experience life more fully. The balanced person is not withdrawn from life but more present to it. They can feel deeply without drowning, engage intensely without burning out, care profoundly without being destroyed by loss.</p>
+            
+            <p>This is the promise of inner balance: not a life without challenges, but a life where challenges cannot shake your fundamental peace. Not the absence of storms, but the development of such deep roots that no storm can topple you.</p>
+        </div>
+    </div>
 </body>
 </html>
