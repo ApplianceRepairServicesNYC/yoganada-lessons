@@ -32,6 +32,9 @@
             --gradient-error: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
             --color-accent: #c75d24;
             --color-accent-glow: rgba(205, 127, 50, 0.3);
+            --color-sky: #5ba4c9;
+            --color-sky-light: #87ceeb;
+            --gradient-sky: linear-gradient(135deg, #87ceeb 0%, #5ba4c9 100%);
             --color-success: #10b981;
             --color-success-bg: rgba(16, 185, 129, 0.15);
             --color-error: #ef4444;
@@ -55,12 +58,33 @@
         p { color: var(--color-text-secondary); line-height: 1.8; }
         a { color: inherit; text-decoration: none; }
         
-        .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--header-height); background: rgba(250, 247, 242, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--color-border); }
+        /* Normal Header */
+        .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 64px; background: rgba(250, 247, 242, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--color-border); transition: transform 0.3s; }
         .header-inner { max-width: 1400px; margin: 0 auto; padding: 0 2rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
-        .logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 0.75rem; }
-        .logo-icon { width: 44px; height: 44px; background: var(--gradient-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; box-shadow: 0 0 30px var(--color-accent-glow); }
+        .logo { font-family: var(--font-display); font-size: 1.375rem; font-weight: 700; display: flex; align-items: center; gap: 0.625rem; }
+        .logo-icon { width: 40px; height: 40px; background: var(--gradient-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.125rem; box-shadow: 0 0 20px var(--color-accent-glow); }
+        .header-nav { display: flex; align-items: center; gap: 1.5rem; }
+        .header-nav a { font-size: 0.9375rem; font-weight: 500; color: var(--color-text-muted); transition: color 0.2s; }
+        .header-nav a:hover { color: var(--color-text); }
         
-        .main { position: relative; z-index: 1; padding-top: var(--header-height); }
+        /* Focus Mode Bar (Quiz) - Hidden by default */
+        .focus-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 1001; height: 56px; background: rgba(250, 247, 242, 0.98); backdrop-filter: blur(20px); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; transform: translateY(-100%); transition: transform 0.3s; }
+        .focus-bar.active { transform: translateY(0); }
+        .focus-back { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 500; color: var(--color-text-muted); transition: color 0.2s; cursor: pointer; background: none; border: none; }
+        .focus-back:hover { color: var(--color-accent); }
+        .focus-title { font-family: var(--font-display); font-size: 0.9375rem; font-weight: 600; color: var(--color-text); }
+        .focus-progress { display: flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; color: var(--color-text-muted); }
+        .focus-progress-bar { width: 100px; height: 4px; background: var(--color-border); border-radius: 4px; overflow: hidden; }
+        .focus-progress-fill { height: 100%; background: var(--gradient-primary); border-radius: 4px; width: 0%; transition: width 0.3s; }
+        
+        /* Focus Mode Active State */
+        body.focus-mode .site-header { transform: translateY(-100%); }
+        body.focus-mode .site-footer { display: none; }
+        body.focus-mode .focus-bar { transform: translateY(0); }
+        body.focus-mode .main { padding-top: 56px; }
+        body.focus-mode .breadcrumb { display: none; }
+        
+        .main { position: relative; z-index: 1; padding-top: 64px; transition: padding-top 0.3s; }
         .container { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
         
         .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--color-text-muted); padding: 2rem 0; flex-wrap: wrap; }
@@ -149,17 +173,37 @@
         .footer-inner { max-width: 800px; margin: 0 auto; padding: 0 2rem; text-align: center; }
         .footer-inner p { font-size: 0.875rem; color: var(--color-text-muted); }
         
-        @media (max-width: 700px) { .key-points { grid-template-columns: 1fr; } .quiz-question { font-size: 1.25rem; } }
+        @media (max-width: 700px) { 
+            .key-points { grid-template-columns: 1fr; } 
+            .quiz-question { font-size: 1.25rem; } 
+            .focus-bar { padding: 0 1rem; }
+            .focus-title { display: none; }
+            .header-nav { display: none; }
+        }
     </style>
 </head>
 <body>
     <div class="master-bg"></div>
     
-    <header class="site-header">
+    <!-- Normal Header -->
+    <header class="site-header" id="siteHeader">
         <div class="header-inner">
             <a href="../../../../" class="logo"><span class="logo-icon">✦</span><span>Yogananda Teachings</span></a>
+            <nav class="header-nav">
+                <a href="../">← Back to Program</a>
+            </nav>
         </div>
     </header>
+    
+    <!-- Focus Mode Bar (appears during quiz) -->
+    <div class="focus-bar" id="focusBar">
+        <button class="focus-back" id="exitFocus">← Exit Quiz</button>
+        <span class="focus-title">Self-Realization Quiz</span>
+        <div class="focus-progress">
+            <div class="focus-progress-bar"><div class="focus-progress-fill" id="focusProgressFill"></div></div>
+            <span id="focusProgressText">1/5</span>
+        </div>
+    </div>
     
     <main class="main">
         <article class="container">
@@ -293,13 +337,52 @@
         </article>
     </main>
     
-    <footer class="site-footer">
+    <footer class="site-footer" id="siteFooter">
         <div class="footer-inner">
-            <p>© 2024 YoganandaTeachings.com. Educational content inspired by published works.</p>
+            <p>© 2024 YoganandaTeachings.com • <a href="../../../../about/" style="color: var(--color-accent);">About</a> • <a href="../" style="color: var(--color-accent);">Back to Program</a></p>
         </div>
     </footer>
     
     <script>
+    (function(){
+        // Focus Mode Controls
+        var focusBar = document.getElementById('focusBar');
+        var exitFocusBtn = document.getElementById('exitFocus');
+        var focusProgressFill = document.getElementById('focusProgressFill');
+        var focusProgressText = document.getElementById('focusProgressText');
+        
+        function enterFocusMode() {
+            document.body.classList.add('focus-mode');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function exitFocusMode() {
+            document.body.classList.remove('focus-mode');
+            document.getElementById('lesson-content').style.display = 'block';
+            document.getElementById('quiz-container').classList.remove('active');
+            document.getElementById('quiz-container').style.display = 'none';
+        }
+        
+        function updateFocusProgress(current, total) {
+            var pct = (current / total) * 100;
+            focusProgressFill.style.width = pct + '%';
+            focusProgressText.textContent = (current + 1) + '/' + total;
+        }
+        
+        exitFocusBtn.addEventListener('click', function() {
+            if (confirm('Exit the quiz? Your progress will be lost.')) {
+                exitFocusMode();
+            }
+        });
+        
+        // Expose to quiz
+        window.focusMode = {
+            enter: enterFocusMode,
+            exit: exitFocusMode,
+            updateProgress: updateFocusProgress
+        };
+    })();
+    
     (function(){
         var STORAGE_KEY='wisdompath_progress',LESSON_SLUG='self-realization';
         var quizData=[
@@ -313,8 +396,21 @@
         function markLessonViewed(slug){var p=getProgress();if(!p.lessons[slug])p.lessons[slug]={slug:slug,viewed:false,completed:false,quizScore:null,quizAttempts:0};if(!p.lessons[slug].viewed){p.lessons[slug].viewed=true;p.lessons[slug].viewedAt=new Date().toISOString();}saveProgress(p);}
         function markLessonCompleted(slug,score,total){var p=getProgress();if(!p.lessons[slug])markLessonViewed(slug);p=getProgress();var lp=p.lessons[slug];lp.quizAttempts=(lp.quizAttempts||0)+1;lp.quizScore=score;lp.quizTotal=total;if(score>=total*0.7){lp.completed=true;lp.completedAt=new Date().toISOString();}p.lessons[slug]=lp;saveProgress(p);}
         function escapeHtml(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
-        function showQuiz(){document.getElementById('lesson-content').style.display='none';els.container.classList.add('active');els.container.style.display='block';if(els.results)els.results.style.display='none';}
-        function updateProgress(){var pct=(quizState.currentIndex/quizData.length)*100;els.progressFill.style.width=pct+'%';els.progressText.textContent=(quizState.currentIndex+1)+'/'+quizData.length;}
+        function showQuiz(){
+            document.getElementById('lesson-content').style.display='none';
+            els.container.classList.add('active');
+            els.container.style.display='block';
+            if(els.results)els.results.style.display='none';
+            // Enter focus mode
+            window.focusMode.enter();
+        }
+        function updateProgress(){
+            var pct=(quizState.currentIndex/quizData.length)*100;
+            els.progressFill.style.width=pct+'%';
+            els.progressText.textContent=(quizState.currentIndex+1)+'/'+quizData.length;
+            // Update focus bar progress
+            window.focusMode.updateProgress(quizState.currentIndex, quizData.length);
+        }
         function showQuestion(idx){
             if(idx>=quizData.length){showResults();return;}
             showQuiz();quizState.currentIndex=idx;quizState.selectedAnswer=null;
@@ -365,7 +461,12 @@
             markLessonCompleted(LESSON_SLUG,quizState.score,quizData.length);
             els.question.style.display='none';els.options.style.display='none';els.feedback.style.display='none';els.submit.style.display='none';els.next.style.display='none';
             els.progressFill.style.width='100%';els.progressText.textContent='Done';
-            els.results.innerHTML='<div class="quiz-results"><div class="quiz-results-icon">'+(passed?'🎉':'📚')+'</div><h2 class="quiz-results-title">'+(passed?'Excellent Work!':'Keep Learning')+'</h2><div class="quiz-results-score">'+quizState.score+'/'+quizData.length+' correct ('+pct+'%)</div><p class="quiz-results-message">'+(passed?'You\'ve mastered this lesson\'s core concepts.':'Review the material and try again. 70% needed to pass.')+'</p><button class="btn btn-primary btn-full" onclick="location.reload()">'+(passed?'Review Lesson':'Try Again')+'</button></div>';
+            // Update focus bar
+            document.getElementById('focusProgressFill').style.width='100%';
+            document.getElementById('focusProgressText').textContent='Complete';
+            document.getElementById('exitFocus').textContent='← Done';
+            document.getElementById('exitFocus').onclick=function(){window.focusMode.exit();};
+            els.results.innerHTML='<div class="quiz-results"><div class="quiz-results-icon">'+(passed?'🎉':'📚')+'</div><h2 class="quiz-results-title">'+(passed?'Excellent Work!':'Keep Learning')+'</h2><div class="quiz-results-score">'+quizState.score+'/'+quizData.length+' correct ('+pct+'%)</div><p class="quiz-results-message">'+(passed?'You\'ve mastered this lesson\'s core concepts.':'Review the material and try again. 70% needed to pass.')+'</p><button class="btn btn-primary btn-full" onclick="window.focusMode.exit()">'+(passed?'Continue to Lesson':'Try Again')+'</button></div>';
             els.results.style.display='block';
         }
         document.addEventListener('DOMContentLoaded',function(){

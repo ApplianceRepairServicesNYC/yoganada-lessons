@@ -30,6 +30,9 @@
             --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
             --color-accent: #c75d24;
             --color-accent-glow: rgba(205, 127, 50, 0.3);
+            --color-sky: #5ba4c9;
+            --color-sky-light: #87ceeb;
+            --gradient-sky: linear-gradient(135deg, #87ceeb 0%, #5ba4c9 100%);
             --color-success: #10b981;
             --color-success-bg: rgba(16, 185, 129, 0.15);
             --color-locked: #4a4a5a;
@@ -56,6 +59,26 @@
         .header-inner { max-width: 1400px; margin: 0 auto; padding: 0 2rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
         .logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 0.75rem; }
         .logo-icon { width: 44px; height: 44px; background: var(--gradient-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; box-shadow: 0 0 30px var(--color-accent-glow); }
+        .main-nav { display: flex; align-items: center; gap: 1rem; }
+        .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav-links a { font-weight: 500; color: var(--color-text-secondary); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--color-text); }
+        .nav-cta { margin-left: 1rem; }
+        .mobile-menu-btn { display: none; background: none; border: 1px solid var(--color-border); color: var(--color-text); font-size: 1.25rem; cursor: pointer; padding: 0.5rem 0.75rem; border-radius: 8px; }
+        .mobile-menu-overlay { position: fixed; inset: 0; background: rgba(45, 24, 16, 0.3); backdrop-filter: blur(4px); z-index: 1500; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; }
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-menu { position: fixed; top: 0; right: 0; width: 300px; max-width: 85vw; height: 100vh; background: var(--color-bg-deep); z-index: 1501; transform: translateX(100%); transition: transform 0.3s; display: flex; flex-direction: column; border-left: 1px solid var(--color-border); }
+        .mobile-menu.active { transform: translateX(0); }
+        .mobile-menu-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; background: #fff; }
+        .mobile-menu-header .logo { font-size: 1.25rem; }
+        .mobile-menu-header .logo-icon { width: 36px; height: 36px; font-size: 1rem; }
+        .mobile-menu-close { width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--color-border); background: var(--color-bg-elevated); color: var(--color-text); font-size: 1.25rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .mobile-menu-nav { flex: 1; padding: 1.5rem; }
+        .mobile-menu-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+        .mobile-menu-links a { display: block; padding: 1rem 1.25rem; font-weight: 500; color: var(--color-text-secondary); border-radius: 12px; }
+        .mobile-menu-links a:hover { background: var(--color-bg-elevated); color: var(--color-text); }
+        .mobile-menu-cta { padding: 1.5rem; border-top: 1px solid var(--color-border); background: #fff; }
+        .mobile-menu-cta .btn { width: 100%; justify-content: center; }
         
         .main { position: relative; z-index: 1; padding-top: var(--header-height); }
         .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
@@ -121,6 +144,32 @@
         
         .reset-section { text-align: center; padding: 2rem 0; }
         
+        /* Footer */
+        .site-footer { background: #fff; border-top: 1px solid var(--color-border); padding: 4rem 0 2rem; margin-top: 2rem; }
+        .footer-inner { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-brand p { margin-top: 1rem; font-size: 0.9375rem; color: var(--color-text-muted); max-width: 280px; }
+        .footer-heading { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text); margin-bottom: 1.25rem; }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
+        .footer-links a { color: var(--color-text-muted); font-size: 0.875rem; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--color-accent); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid var(--color-border); font-size: 0.8125rem; color: var(--color-text-muted); }
+        .footer-legal { display: flex; gap: 1.5rem; }
+        .footer-legal a { color: var(--color-text-muted); }
+        .footer-legal a:hover { color: var(--color-accent); }
+        
+        @media (max-width: 900px) {
+            .nav-links, .nav-cta { display: none; }
+            .mobile-menu-btn { display: block; }
+            .stats-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+            .footer-legal { flex-direction: column; gap: 0.5rem; }
+        }
+        
         .site-footer { border-top: 1px solid var(--color-border); padding: 3rem 0; margin-top: 2rem; }
         .footer-inner { max-width: 900px; margin: 0 auto; padding: 0 2rem; text-align: center; }
         .footer-inner p { font-size: 0.875rem; color: var(--color-text-muted); }
@@ -134,8 +183,39 @@
     <header class="site-header">
         <div class="header-inner">
             <a href="../../../" class="logo"><span class="logo-icon">✦</span><span>Yogananda Teachings</span></a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../../../#features">Features</a></li>
+                    <li><a href="../../../#about">About Yogananda</a></li>
+                    <li><a href="../../../#programs">Programs</a></li>
+                    <li><a href="../../../about/">About Us</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="self-realization/" class="btn btn-primary">Start Free</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+            </nav>
         </div>
     </header>
+
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="../../../" class="logo"><span class="logo-icon">✦</span><span>Yogananda</span></a>
+            <button class="mobile-menu-close" id="mobileMenuClose">&times;</button>
+        </div>
+        <nav class="mobile-menu-nav">
+            <ul class="mobile-menu-links">
+                <li><a href="../../../#features" class="mobile-nav-link">Features</a></li>
+                <li><a href="../../../#about" class="mobile-nav-link">About Yogananda</a></li>
+                <li><a href="../../../#programs" class="mobile-nav-link">Programs</a></li>
+                <li><a href="../../../about/" class="mobile-nav-link">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-cta">
+            <a href="self-realization/" class="btn btn-primary">Start Free Lesson</a>
+        </div>
+    </div>
     
     <main class="main">
         <div class="container">
@@ -252,11 +332,54 @@
     
     <footer class="site-footer">
         <div class="footer-inner">
-            <p>© 2024 YoganandaTeachings.com. Educational content inspired by published works.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../../../" class="logo"><span class="logo-icon">✦</span><span>Yogananda Teachings</span></a>
+                    <p>Transform your mind through timeless wisdom.</p>
+                </div>
+                <nav>
+                    <h4 class="footer-heading">Programs</h4>
+                    <ul class="footer-links">
+                        <li><a href="../">Paramahansa Yogananda</a></li>
+                        <li><a href="./">Autobiography of a Yogi</a></li>
+                        <li><a href="self-realization/">Free Lesson</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../about/">About Us</a></li>
+                        <li><a href="mailto:hello@yoganandateachings.com">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../../#features">Features</a></li>
+                        <li><a href="../../../#programs">All Programs</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 YoganandaTeachings.com</p>
+                <div class="footer-legal">
+                    <a href="../../../privacy/">Privacy</a>
+                    <a href="../../../terms/">Terms</a>
+                </div>
+            </div>
         </div>
     </footer>
     
     <script>
+    // Mobile Menu
+    (function(){
+        var btn=document.getElementById('mobileMenuBtn'),menu=document.getElementById('mobileMenu'),overlay=document.getElementById('mobileMenuOverlay'),close=document.getElementById('mobileMenuClose');
+        function open(){menu.classList.add('active');overlay.classList.add('active');document.body.style.overflow='hidden';}
+        function shut(){menu.classList.remove('active');overlay.classList.remove('active');document.body.style.overflow='';}
+        btn.addEventListener('click',open);close.addEventListener('click',shut);overlay.addEventListener('click',shut);
+        document.querySelectorAll('.mobile-nav-link').forEach(function(l){l.addEventListener('click',shut);});
+    })();
+    // Progress Tracking
     (function(){
         var STORAGE_KEY='wisdompath_progress';
         function getProgress(){try{var d=localStorage.getItem(STORAGE_KEY);return d?JSON.parse(d):{lessons:{}};}catch(e){return{lessons:{}};}}
