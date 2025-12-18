@@ -827,17 +827,27 @@
         
         // On page load, unlock lessons if paid
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOMContentLoaded fired');
+            console.log('isPaid:', isPaid());
+            console.log('localStorage value:', localStorage.getItem(PAYMENT_KEY));
+            
             if (isPaid()) {
+                console.log('User is paid, unlocking...');
                 // Hide the unlock card since already paid
                 var unlockSection = document.getElementById('unlock-section');
                 if (unlockSection) unlockSection.style.display = 'none';
                 
-                document.querySelectorAll('.lesson-item-locked').forEach(function(item) {
+                var lockedItems = document.querySelectorAll('.lesson-item-locked');
+                console.log('Found locked items:', lockedItems.length);
+                
+                lockedItems.forEach(function(item) {
                     var url = item.getAttribute('data-lesson-url');
+                    console.log('Unlocking:', url);
                     if (url) {
-                        item.href = url;
+                        item.setAttribute('href', url);
                         item.classList.remove('lesson-item-locked');
                         item.classList.add('lesson-item-unlocked');
+                        item.onclick = null;
                         item.removeAttribute('onclick');
                         var badge = item.querySelector('.lesson-badge');
                         var arrow = item.querySelector('.lesson-arrow');
@@ -845,6 +855,7 @@
                         if (arrow) arrow.textContent = '→';
                     }
                 });
+                console.log('Unlock complete');
             }
         });
     })();
