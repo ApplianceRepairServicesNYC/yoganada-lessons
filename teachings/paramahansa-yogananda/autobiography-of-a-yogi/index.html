@@ -206,6 +206,30 @@
         
         .reset-section { text-align: center; padding: 2rem 0; }
         
+        /* Commitment Section */
+        .commitment-section { margin-top: 1rem; }
+        .commitment-intro { max-width: 800px; margin: 0 auto 2.5rem; text-align: center; }
+        .commitment-intro p { font-size: 1.125rem; line-height: 1.8; color: var(--color-text-secondary); }
+        .time-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+        .time-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 16px; padding: 1.75rem 1.25rem; text-align: center; transition: all 0.2s; }
+        .time-card:hover { border-color: var(--color-accent); box-shadow: 0 0 25px var(--color-accent-glow); transform: translateY(-3px); }
+        .time-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+        .time-value { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.25rem; }
+        .time-label { font-weight: 600; font-size: 0.9375rem; color: var(--color-text); margin-bottom: 0.5rem; }
+        .time-note { font-size: 0.8125rem; color: var(--color-text-muted); line-height: 1.4; }
+        .commitment-details { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 20px; padding: 2.5rem; margin-bottom: 2rem; }
+        .commitment-details h3 { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-text); }
+        .commitment-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+        .commitment-list li { padding-left: 1.75rem; position: relative; line-height: 1.6; color: var(--color-text-secondary); }
+        .commitment-list li::before { content: '✦'; position: absolute; left: 0; color: var(--color-accent); font-size: 0.875rem; }
+        .commitment-list li strong { color: var(--color-text); }
+        .commitment-why { background: linear-gradient(135deg, rgba(232, 169, 70, 0.08) 0%, rgba(199, 93, 36, 0.05) 100%); border: 1px solid rgba(199, 93, 36, 0.15); border-radius: 20px; padding: 2.5rem; }
+        .commitment-why h3 { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-text); }
+        .commitment-why p { color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 1rem; }
+        .commitment-why p:last-child { margin-bottom: 0; font-weight: 600; color: var(--color-text); }
+        @media (max-width: 900px) { .time-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .time-grid { grid-template-columns: 1fr; } .commitment-details, .commitment-why { padding: 1.75rem; } }
+        
         /* Footer */
         .site-footer { background: #fff; border-top: 1px solid var(--color-border); padding: 4rem 0 2rem; margin-top: 2rem; }
         .footer-inner { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
@@ -318,6 +342,58 @@
                         <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
                     </div>
                     <p class="progress-text" id="progress-text">Start with the free preview to begin your transformation</p>
+                </div>
+            </section>
+            
+            <section class="section commitment-section">
+                <header class="section-header">
+                    <span class="section-label">Your Commitment</span>
+                    <h2 class="section-title">A Journey of Real Transformation</h2>
+                </header>
+                <div class="commitment-intro">
+                    <p>This is not a course you skim in an afternoon. It is a structured path of inner work designed for those serious about spiritual growth—seekers ready to move beyond intellectual curiosity into lived practice and lasting change.</p>
+                </div>
+                <div class="time-grid">
+                    <div class="time-card">
+                        <div class="time-icon">📖</div>
+                        <div class="time-value">60,000+</div>
+                        <div class="time-label">Words of Teaching</div>
+                        <div class="time-note">Equivalent to a 200-page spiritual guidebook</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="time-icon">⏱️</div>
+                        <div class="time-value">15–20 hrs</div>
+                        <div class="time-label">Total Study Time</div>
+                        <div class="time-note">Reading, reflection, quizzes & journaling</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="time-icon">📅</div>
+                        <div class="time-value">7–12 weeks</div>
+                        <div class="time-label">Recommended Pace</div>
+                        <div class="time-note">One chapter daily or every other day</div>
+                    </div>
+                    <div class="time-card">
+                        <div class="time-icon">🧘</div>
+                        <div class="time-value">4 weeks</div>
+                        <div class="time-label">Per-Chapter Practice</div>
+                        <div class="time-note">Each lesson includes a 4-week application guide</div>
+                    </div>
+                </div>
+                <div class="commitment-details">
+                    <h3>What Each Lesson Includes</h3>
+                    <ul class="commitment-list">
+                        <li><strong>Deep Teaching (~1,250 words):</strong> Not summaries—complete explorations of Yogananda's wisdom with practical context for modern life</li>
+                        <li><strong>Highlight Boxes:</strong> Key insights and memorable quotes for quick reference and meditation</li>
+                        <li><strong>Going Deeper Section:</strong> Advanced applications for those ready to take the teaching further</li>
+                        <li><strong>4-Week Practice Guide:</strong> Structured daily exercises that build week over week—awareness, application, integration, mastery</li>
+                        <li><strong>Knowledge Quiz:</strong> Reinforce understanding and track your progress</li>
+                        <li><strong>Reflection Prompts:</strong> Journaling questions that personalize the teaching to your life</li>
+                    </ul>
+                </div>
+                <div class="commitment-why">
+                    <h3>Why This Approach?</h3>
+                    <p>Spiritual growth doesn't happen through passive reading. It requires engagement, repetition, and real-world application. Each chapter is designed to be lived with for days or weeks—not rushed through. The 4-week practice structure ensures you don't just understand Yogananda's teachings intellectually, but embody them in your thoughts, choices, and daily habits.</p>
+                    <p>This program is for seekers who are done with surface-level spirituality. If you're ready to do the work, the transformation is waiting.</p>
                 </div>
             </section>
             
