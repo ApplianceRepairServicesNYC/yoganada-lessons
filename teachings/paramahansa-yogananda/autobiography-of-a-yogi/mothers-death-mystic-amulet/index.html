@@ -224,6 +224,18 @@
         .completion-divider{display:flex;align-items:center;gap:1rem;width:100%;max-width:300px;color:var(--color-text-muted);font-size:0.8125rem}
         .completion-divider::before,.completion-divider::after{content:'';flex:1;height:1px;background:var(--color-border)}
 
+    
+        /* Mobile Concept Card Spacing */
+        @media(max-width:700px){
+            .concept-application,.concept-example{margin-bottom:1.5rem;padding:1.5rem}
+            .concept-application h4,.concept-example h4{margin-bottom:0.75rem;font-size:0.8125rem}
+            .premium-layer{padding:1.75rem;margin-top:2rem}
+            .premium-item{margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(139,90,43,0.1)}
+            .premium-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+            .premium-item.reflection{margin-top:1.5rem;padding:1.25rem}
+            .concept-body > p{margin-bottom:2rem}
+        }
+
     </style>
 </head>
 <body>
