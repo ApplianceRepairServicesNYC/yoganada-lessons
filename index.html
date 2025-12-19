@@ -639,7 +639,7 @@
             transition: max-height 0.4s ease;
         }
         .accordion-item.active .accordion-content {
-            max-height: 1000px;
+            max-height: 2000px;
         }
         .accordion-body {
             padding: 0 1.5rem 1.5rem;
@@ -665,25 +665,63 @@
             left: 0;
             color: var(--color-accent);
         }
+        
         .read-more-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            margin-top: 1rem;
             padding: 0.75rem 1.25rem;
             background: rgba(199, 93, 36, 0.1);
-            border: 1px solid var(--color-border-accent);
-            border-radius: 10px;
             color: var(--color-accent);
-            font-weight: 600;
+            border: 1px solid var(--color-accent);
+            border-radius: 8px;
+            font-weight: 500;
             font-size: 0.9375rem;
             cursor: pointer;
             transition: all 0.2s;
+            margin-top: 1rem;
             font-family: inherit;
         }
         .read-more-btn:hover {
-            background: rgba(199, 93, 36, 0.15);
-            transform: translateX(4px);
+            background: var(--color-accent);
+            color: white;
+        }
+        
+        /* Book List Styling */
+        .book-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .book-list-item {
+            background: rgba(199, 93, 36, 0.03);
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .book-list-item:hover {
+            border-color: var(--color-border-accent);
+            background: rgba(199, 93, 36, 0.06);
+        }
+        .book-title {
+            display: block;
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .book-intro {
+            color: var(--color-text-muted);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .book-list-item .read-more-btn {
+            margin-top: 0.75rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
         }
         
         /* Read More Panel (Slide-out) */
@@ -1492,6 +1530,118 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header" aria-expanded="false">
+                                    <span>His Books & Written Works</span>
+                                    <span class="accordion-icon" aria-hidden="true">▼</span>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="accordion-body">
+                                        <p>Paramahansa Yogananda's teachings were preserved primarily through his books, lectures, and recorded talks. Unlike many spiritual teachers whose wisdom was passed down orally, Yogananda took great care to document his knowledge in written form so it could be studied, practiced, and verified by future generations.</p>
+                                        <p>His books are not meant to be read casually or rushed through. Each work is layered—combining philosophy, psychology, meditation science, devotional insight, and direct spiritual instruction. Many readers report discovering new meanings each time they revisit the same passages, even years later.</p>
+                                        <p>From his spiritual classic <em>Autobiography of a Yogi</em> to his profound commentaries on the Bhagavad Gita and the teachings of Jesus Christ, Yogananda's writings serve different purposes: awakening curiosity about spiritual truth, explaining universal laws of consciousness, providing practical meditation guidance, reconciling science and religion, and offering lifelong spiritual study material.</p>
+                                        
+                                        <!-- Book Items with Individual Read More -->
+                                        <div class="book-list">
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 Autobiography of a Yogi</span>
+                                                <p class="book-intro">The spiritual classic that has transformed millions of lives worldwide.</p>
+                                                <button class="read-more-btn" data-panel="book-autobiography">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 The Science of Religion</span>
+                                                <p class="book-intro">Yogananda's first book establishing religion as verifiable science.</p>
+                                                <button class="read-more-btn" data-panel="book-science">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 God Talks With Arjuna</span>
+                                                <p class="book-intro">Monumental two-volume commentary on the Bhagavad Gita.</p>
+                                                <button class="read-more-btn" data-panel="book-gita">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 The Second Coming of Christ</span>
+                                                <p class="book-intro">Revolutionary interpretation revealing Jesus as a master yogi.</p>
+                                                <button class="read-more-btn" data-panel="book-secondcoming">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 Man's Eternal Quest</span>
+                                                <p class="book-intro">First volume of collected talks on vast spiritual topics.</p>
+                                                <button class="read-more-btn" data-panel="book-eternal">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 The Divine Romance</span>
+                                                <p class="book-intro">Collected talks on love, devotion, and divine relationship.</p>
+                                                <button class="read-more-btn" data-panel="book-romance">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 Journey to Self-Realization</span>
+                                                <p class="book-intro">Third volume focusing on practical steps of the inner journey.</p>
+                                                <button class="read-more-btn" data-panel="book-journey">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 Whispers from Eternity</span>
+                                                <p class="book-intro">Devotional prayers, affirmations, and mystical poetry.</p>
+                                                <button class="read-more-btn" data-panel="book-whispers">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 Metaphysical Meditations</span>
+                                                <p class="book-intro">Over 300 meditations for health, success, and awakening.</p>
+                                                <button class="read-more-btn" data-panel="book-meditations">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 Scientific Healing Affirmations</span>
+                                                <p class="book-intro">The science of mental and spiritual healing techniques.</p>
+                                                <button class="read-more-btn" data-panel="book-healing">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 How You Can Talk with God</span>
+                                                <p class="book-intro">Practical guidance on establishing divine communion.</p>
+                                                <button class="read-more-btn" data-panel="book-talkgod">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 Where There Is Light</span>
+                                                <p class="book-intro">Thematically organized guidance on life's essential questions.</p>
+                                                <button class="read-more-btn" data-panel="book-light">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 Sayings of Paramahansa Yogananda</span>
+                                                <p class="book-intro">Gems of wisdom distilled into memorable statements.</p>
+                                                <button class="read-more-btn" data-panel="book-sayings">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 The Law of Success</span>
+                                                <p class="book-intro">Spiritual principles underlying achievement in any field.</p>
+                                                <button class="read-more-btn" data-panel="book-success">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 How to Be Happy All the Time</span>
+                                                <p class="book-intro">Core principles for cultivating lasting inner joy.</p>
+                                                <button class="read-more-btn" data-panel="book-happy">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 Inner Peace</span>
+                                                <p class="book-intro">Techniques for mental tranquility in a turbulent world.</p>
+                                                <button class="read-more-btn" data-panel="book-peace">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 Karma and Reincarnation</span>
+                                                <p class="book-intro">Universal laws governing the soul's journey.</p>
+                                                <button class="read-more-btn" data-panel="book-karma">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 The Yoga of Jesus</span>
+                                                <p class="book-intro">The yogic teachings hidden in Jesus's words.</p>
+                                                <button class="read-more-btn" data-panel="book-yogajesus">Read More →</button>
+                                            </div>
+                                            <div class="book-list-item">
+                                                <span class="book-title">📖 The Yoga of the Bhagavad Gita</span>
+                                                <p class="book-intro">Accessible introduction to the Gita's essential teachings.</p>
+                                                <button class="read-more-btn" data-panel="book-yogagita">Read More →</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1678,6 +1828,357 @@
                     <p><strong>In Creativity:</strong> Artists, writers, and innovators find that regular meditation opens access to deeper levels of inspiration. The still mind becomes a clear channel for creative ideas to flow.</p>
                     <blockquote>"In the midst of activity, you should find a stillness of mind that remains unruffled. That is the consciousness with which you should live."</blockquote>
                     <p>What Yogananda offered was not escape from life but a way to live more fully, more consciously, more effectively. His teachings remain a practical roadmap for anyone seeking to transform their experience of being human—not in some distant future, but starting today.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Individual Book Panels -->
+        
+        <!-- Autobiography of a Yogi Panel -->
+        <div class="read-more-panel" id="panel-book-autobiography">
+            <div class="read-more-header">
+                <h3>📖 Autobiography of a Yogi</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>Autobiography of a Yogi</strong> stands as one of the most influential spiritual books of the 20th century—a gateway text that has introduced millions to the science of meditation, the reality of spiritual masters, and the unity underlying all religious teachings. Since its publication in 1946, it has been translated into over fifty languages and has never gone out of print, continuing to transform lives more than seven decades after Yogananda first set pen to paper.</p>
+                    <p>This spiritual memoir chronicles Yogananda's extraordinary journey from his childhood in India through his training under the great master Sri Yukteswar Giri, and ultimately to his mission of bringing yoga and meditation to the West. But it is far more than autobiography—it is a guided tour through the hidden spiritual dimensions of existence, written by one who had directly experienced the realities he describes.</p>
+                    <p>The book introduces readers to an astonishing array of saints, yogis, and miracle workers whom Yogananda encountered throughout his life. From the levitating saint Nagendra Nath Bhaduri to the fragrance-emanating Gandha Baba, from the sleepless saint Ram Gopal Muzumdar to encounters with the legendary Babaji—each chapter reveals aspects of consciousness and spiritual law that challenge conventional materialist assumptions about what is possible.</p>
+                    <p>Yet the book's enduring power lies not in its accounts of miracles, but in its clear explanation of the science behind spiritual development. Yogananda demystifies concepts like karma, reincarnation, cosmic consciousness, and the subtle energy centers (chakras) without requiring readers to accept anything on blind faith. He presents spiritual truths as verifiable through direct experience—the same approach used in scientific inquiry.</p>
+                    <div class="highlight-box">
+                        <h5>✦ Notable Influence</h5>
+                        <p>Steve Jobs famously kept it as the only book on his iPad, reading it once every year. George Harrison of the Beatles credited it with transforming his understanding of life and death. Countless scientists, artists, and entrepreneurs have cited it as a pivotal influence on their worldview.</p>
+                    </div>
+                    <p>Key themes woven throughout include: the underlying unity of all religions and their shared mystical core; meditation as an exact science with predictable, reproducible results; the existence of a living lineage of enlightened masters guiding humanity's evolution; the nature of the guru-disciple relationship as the foundation of spiritual transmission; karma and reincarnation as natural laws governing soul evolution; and the possibility of direct Divine communion available to all sincere seekers.</p>
+                    <p>For those new to Yogananda's teachings, <em>Autobiography of a Yogi</em> is the essential starting point—a doorway into a vast landscape of wisdom that can be explored for a lifetime.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Science of Religion Panel -->
+        <div class="read-more-panel" id="panel-book-science">
+            <div class="read-more-header">
+                <h3>📖 The Science of Religion</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>The Science of Religion</strong> was Yogananda's first book, written in 1920 before his journey to America. Despite its early composition, it contains the philosophical foundation upon which all his later teachings rest—a systematic argument that true religion must be based on direct experience rather than belief, and that spiritual truths can be verified through scientific methodology.</p>
+                    <p>The central premise is revolutionary yet simple: if religious claims are true, they must be demonstrable. Just as physics describes laws governing matter and energy, authentic spirituality describes laws governing consciousness and inner experience. The ancient yogis were essentially scientists of the inner world, conducting careful experiments in awareness and documenting their findings with precision.</p>
+                    <p>Yogananda argues that all human beings, regardless of religious background, are seeking the same thing—lasting happiness and freedom from suffering. He traces this universal drive to its source in the nature of consciousness itself, showing that what we truly seek is not temporary pleasure but permanent bliss, our original nature obscured by ignorance and mental turbulence.</p>
+                    <p>The book introduces meditation not as mystical ritual but as repeatable experiment. When the mind is stilled through specific techniques, certain invariable results follow—just as heating water to 100°C inevitably produces steam. These results include expanded awareness, inner peace, intuitive insight, and ultimately direct perception of the Divine Presence underlying all creation.</p>
+                    <p>Key concepts explored include: consciousness as the fundamental reality underlying all phenomena; the nervous system as a finely tuned instrument for spiritual perception; breath control (pranayama) as a means of regulating life force and stilling mental fluctuations; the distinction between intellectual understanding and direct experiential knowledge; the universal validity of spiritual laws across all religious traditions.</p>
+                    <p>This book is particularly valuable for readers with analytical or skeptical mindsets who appreciate logical argumentation and evidence-based approaches. Rather than asking readers to believe, Yogananda invites them to experiment and verify for themselves—the hallmark of genuine scientific inquiry applied to the realm of spirit.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- God Talks With Arjuna Panel -->
+        <div class="read-more-panel" id="panel-book-gita">
+            <div class="read-more-header">
+                <h3>📖 God Talks With Arjuna</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>God Talks With Arjuna</strong> represents Yogananda's monumental two-volume commentary on the Bhagavad Gita—India's most revered scripture. Spanning over 1,600 pages, this work reveals the Gita not as ancient mythology but as a practical manual for spiritual transformation, encoded in symbolic language that speaks directly to the challenges every seeker faces.</p>
+                    <p>The Bhagavad Gita's setting—a battlefield where the warrior Arjuna faces his own relatives in combat—is interpreted by Yogananda as representing the inner war each person must wage. The battlefield of Kurukshetra symbolizes the field of the body and mind where spiritual forces (the Pandavas) battle material tendencies (the Kauravas) for control of consciousness.</p>
+                    <p>Arjuna represents the devotee or sincere seeker, initially confused and overwhelmed by the difficulty of spiritual life. His charioteer Krishna represents the Divine Guru, the God-consciousness that guides the soul toward liberation. Their dialogue—which comprises the entire Gita—becomes a template for the relationship between the human soul and its Divine Source.</p>
+                    <p>Yogananda's interpretation differs from conventional readings by revealing the yogic science encoded within each verse. References to weapons, armies, and warriors are decoded as representing specific mental faculties, energy centers, and spiritual practices. The result is a text that speaks with startling directness to the inner life of the practitioner.</p>
+                    <p>Central themes include: the nature of the soul (atman) as distinct from body and mind; the three gunas (qualities of nature) and their influence on consciousness; karma yoga as action without attachment to results; bhakti yoga as the path of devotion; jnana yoga as the path of wisdom and discrimination; dhyana yoga as the path of meditation; and practical guidance for self-discipline and ethical living.</p>
+                    <p>This work is for serious students ready to engage deeply with spiritual practice. It rewards repeated study over years, revealing new dimensions as the reader's own understanding deepens through practice.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Second Coming of Christ Panel -->
+        <div class="read-more-panel" id="panel-book-secondcoming">
+            <div class="read-more-header">
+                <h3>📖 The Second Coming of Christ</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>The Second Coming of Christ: The Resurrection of the Christ Within You</strong> is Yogananda's revolutionary two-volume interpretation of the Gospels—revealing Jesus as a fully realized yogi whose teachings contain the same universal science of God-realization found in India's ancient traditions.</p>
+                    <p>The title itself conveys the book's central message: the "Second Coming" is not a future external event but an inner awakening available to every soul. Christ Consciousness—the universal divine presence that manifested through Jesus—can be resurrected within any individual who applies the scientific methods of meditation and spiritual discipline.</p>
+                    <p>Yogananda brings to the Gospels the lens of a master meditator, revealing metaphysical meanings hidden beneath the literal surface. Jesus's miracles are explained not as supernatural violations of natural law, but as demonstrations of higher laws governing consciousness and matter. His parables are decoded as precise instructions for spiritual practice.</p>
+                    <div class="highlight-box">
+                        <h5>✦ Verse-by-Verse Analysis</h5>
+                        <p>The Lord's Prayer becomes a comprehensive meditation technique. The Beatitudes describe progressive stages of spiritual awakening. Jesus's statement "I and my Father are one" describes the state of cosmic consciousness attainable through deep meditation.</p>
+                    </div>
+                    <p>The book presents Jesus not as the exclusive possession of any religion, but as belonging to all humanity—a wayshower who demonstrated the potential inherent in every soul. Yogananda shows the harmony between Jesus's teachings and those of Krishna, Buddha, and the great masters of all traditions.</p>
+                    <p>Key themes explored include: Christ Consciousness as a universal state of awareness; the true meaning of baptism, resurrection, and salvation; the Holy Ghost as the intelligent cosmic vibration (Aum/Amen); techniques for awakening the spiritual eye; and the essential unity of Christianity's mystical core with the perennial wisdom of all traditions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Man's Eternal Quest Panel -->
+        <div class="read-more-panel" id="panel-book-eternal">
+            <div class="read-more-header">
+                <h3>📖 Man's Eternal Quest</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>Man's Eternal Quest</strong> is the first volume of Paramahansa Yogananda's collected talks and essays, containing over fifty lectures delivered during his thirty years of teaching in America. These talks preserve the spontaneous wisdom and magnetic presence that drew thousands to his public lectures and private gatherings.</p>
+                    <p>Unlike his systematic scriptural commentaries, these collected talks have an immediacy and directness that make them accessible entry points into Yogananda's teachings. The conversational tone captures his ability to address profound truths in language anyone could understand, often illuminated by humor, personal anecdotes, and practical examples.</p>
+                    <p>Topics range from practical guidance on health, diet, and relationships to profound expositions on the nature of God, the afterlife, and cosmic creation. The book addresses humanity's deepest questions with characteristic clarity: Why are we here? What happens after death? How can we find lasting happiness? How do we overcome negative habits and develop willpower?</p>
+                    <p>Key sections cover meditation techniques and their physiological effects, the science of healing through mind power and life force, developing concentration and memory, overcoming fear and worry through spiritual understanding, understanding dreams and the astral world, the spiritual significance of diet and health practices, and the role of will and divine grace in achieving liberation.</p>
+                    <p>Yogananda's approach throughout is intensely practical. He rarely discusses spiritual principles without showing how they apply to daily challenges. Whether addressing financial difficulties, relationship problems, health issues, or existential questions, he brings the light of yogic wisdom to bear on real human concerns.</p>
+                    <p>This volume serves as an excellent introduction for newcomers while offering longtime students fresh perspectives on familiar teachings.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Divine Romance Panel -->
+        <div class="read-more-panel" id="panel-book-romance">
+            <div class="read-more-header">
+                <h3>📖 The Divine Romance</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>The Divine Romance</strong> is the second volume of Paramahansa Yogananda's collected talks, focusing on themes of love, devotion, and the soul's intimate relationship with the Divine. The title reflects Yogananda's central insight: that the deepest love humans seek in earthly relationships is actually the soul's yearning for union with God.</p>
+                    <p>These talks explore how human love—romantic, familial, and friendship—can be spiritualized and directed toward its ultimate Source. Yogananda addresses the challenges and possibilities of relationships with remarkable psychological insight, showing how attachment can be transformed into divine love that liberates rather than binds.</p>
+                    <p>The book examines why human relationships often disappoint despite our best efforts. Yogananda explains that we are seeking infinite love from finite beings—an impossible demand that inevitably leads to frustration. The solution is not to abandon human love but to recognize its source and learn to channel it appropriately.</p>
+                    <p>Topics include the nature of true love versus attachment, finding God in daily life and ordinary activities, the spiritual meaning of soulmates and twin souls, overcoming loneliness through inner communion with the Divine, developing unconditional love that expects nothing in return, and the path of bhakti yoga (devotion) as a direct route to God-realization.</p>
+                    <p>Yogananda's treatment of devotion is neither sentimental nor abstract. He presents specific practices for cultivating divine love: how to pray effectively, how to feel God's presence, how to transform emotional energy into spiritual aspiration. The talks reveal a master who lived what he taught—whose own love for God was so palpable that it awakened similar feelings in those around him.</p>
+                    <p>For those drawn to the heart's path to God, this volume offers both inspiration and practical guidance.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Journey to Self-Realization Panel -->
+        <div class="read-more-panel" id="panel-book-journey">
+            <div class="read-more-header">
+                <h3>📖 Journey to Self-Realization</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>Journey to Self-Realization</strong> is the third volume of Paramahansa Yogananda's collected talks, continuing the exploration of spiritual themes with particular emphasis on the practical steps of the inner journey. These talks serve as guideposts for seekers at every stage of development, from beginners taking their first steps to advanced practitioners facing subtler challenges.</p>
+                    <p>The volume addresses how to make steady spiritual progress in a world full of distractions and obstacles. Yogananda shares insights from his own journey and from the lives of the masters he encountered, offering both encouragement and realistic assessment of what the path requires.</p>
+                    <p>Topics include awakening and maintaining spiritual hunger—the essential motivation without which progress is impossible; the role of the guru in accelerating spiritual evolution and how to recognize genuine teachers; proper practice of meditation including common mistakes and how to avoid them; developing intuition as a faculty of direct knowing beyond intellect; overcoming karma through understanding and right action.</p>
+                    <p>The book also explores deeper metaphysical territories: understanding the astral and causal worlds that await us after physical death; the nature of the soul's journey through multiple incarnations; how enlightened masters maintain contact with their disciples even after leaving the physical body; and preparing for the ultimate transition of death with consciousness and grace.</p>
+                    <p>Yogananda's approach balances high idealism with practical wisdom. He never minimizes the challenges of spiritual life, yet consistently points to the rewards that await sincere effort. His words carry the authority of one who has walked the entire path and returned to guide others.</p>
+                    <p>This volume is particularly valuable for those who have established a regular practice and seek to deepen it.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Whispers from Eternity Panel -->
+        <div class="read-more-panel" id="panel-book-whispers">
+            <div class="read-more-header">
+                <h3>📖 Whispers from Eternity</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>Whispers from Eternity</strong> is Paramahansa Yogananda's collection of devotional prayers, affirmations, and mystical poetry. These writings emerged from his own meditation experiences and express the soul's intimate dialogue with the Divine in language of extraordinary beauty and power.</p>
+                    <p>The book is designed not merely to be read but to be used—each prayer and meditation serving as a doorway into deeper communion. Yogananda called these writings "spiritualized demands" that help attune the consciousness to receive divine grace. Unlike ordinary prayers of petition, they are structured to transform the one who prays.</p>
+                    <p>The collection spans the full range of spiritual aspiration. Some prayers are tender and intimate, expressing the soul's longing for its Beloved with the passion of mystical poetry. Others are cosmic in scope, addressing the Infinite as the power behind all creation. Still others focus on specific needs: healing, guidance, protection, prosperity, peace.</p>
+                    <p>Yogananda's approach to prayer differs from conventional religious practice. He teaches that prayer should not be begging but communion—a confident assertion of our unity with the Divine Source. The affirmations in this book are constructed to reprogram the subconscious mind, replacing doubt with faith and weakness with strength.</p>
+                    <p>Key sections address prayers for healing of body, mind, and soul; prayers for guidance in decision-making and life direction; prayers for inner peace and freedom from anxiety; prayers for spiritual awakening and direct experience of God; and prayers for protection and divine grace in all circumstances.</p>
+                    <p>For practitioners, these writings become companions in the inner life. Many readers find that a single prayer, used repeatedly over time, opens dimensions of consciousness they never knew existed.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metaphysical Meditations Panel -->
+        <div class="read-more-panel" id="panel-book-meditations">
+            <div class="read-more-header">
+                <h3>📖 Metaphysical Meditations</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>Metaphysical Meditations</strong> provides over 300 meditations and affirmations for developing different aspects of consciousness. This practical manual covers meditations for health, success, wisdom, happiness, spiritual awakening, and direct experience of the Divine Presence.</p>
+                    <p>The book is organized to address every dimension of human need and aspiration. Physical health receives attention through meditations that direct life force to healing. Mental clarity is developed through concentration exercises. Emotional balance is cultivated through affirmations that reprogram reactive patterns. Spiritual awakening is supported through meditations that open awareness to higher realities.</p>
+                    <p>Yogananda taught that affirmations—when charged with concentration, devotion, and will—have the power to transform the subconscious mind and attract corresponding realities. This is not mere positive thinking but a precise science of consciousness. The affirmations in this book are structured according to principles Yogananda learned from his guru and refined through decades of practice.</p>
+                    <p>Each meditation is designed to be practiced repeatedly until its truth becomes internalized. The approach is systematic: begin with physical relaxation, then calm the breath and mind, then focus attention on the affirmation until it penetrates beyond intellectual understanding to become living reality.</p>
+                    <p>Key sections include meditations for physical healing and vitality, meditations for mental power and clarity, meditations for success and prosperity, meditations for overcoming negative emotions, meditations for developing intuition, meditations for experiencing the presence of God, and meditations for specific life situations and challenges.</p>
+                    <p>The book serves as a comprehensive toolkit for spiritual practice, providing meditations for virtually every situation the seeker may encounter on the path.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scientific Healing Affirmations Panel -->
+        <div class="read-more-panel" id="panel-book-healing">
+            <div class="read-more-header">
+                <h3>📖 Scientific Healing Affirmations</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>Scientific Healing Affirmations</strong> explains the science behind mental and spiritual healing and provides specific techniques for using thought, will, and life force to overcome physical, mental, and spiritual disease. Yogananda presents healing as a science with precise methods and predictable results.</p>
+                    <p>The book begins with a thorough explanation of the relationship between mind and body. Yogananda shows how consciousness influences physical health through the nervous system and life force (prana). Disease often originates in mental and emotional disturbances that disrupt the flow of vital energy; true healing must address these root causes.</p>
+                    <p>The healing methods presented range from simple affirmations to advanced techniques involving visualization and energy direction. Yogananda distinguishes between different levels of healing: physical methods that treat symptoms, mental methods that address psychological causes, and spiritual methods that invoke divine healing power.</p>
+                    <p>Affirmations are provided for various conditions, along with detailed instructions for proper practice. The key is not merely repeating words but engaging the full power of concentration, will, and faith. Yogananda describes the physiological mechanisms by which thought influences body chemistry and cellular function.</p>
+                    <p>The book also addresses how to help others heal, including techniques for transmitting healing energy and the proper mental attitude for one who would serve as a healing channel. Yogananda warns against spiritual ego and emphasizes that all healing ultimately comes from the Divine Source.</p>
+                    <p>Importantly, Yogananda emphasizes that spiritual healing works in harmony with, not opposition to, medical treatment. The mind's healing power is presented as a complement to physical remedies, not a replacement for proper medical care.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- How You Can Talk with God Panel -->
+        <div class="read-more-panel" id="panel-book-talkgod">
+            <div class="read-more-header">
+                <h3>📖 How You Can Talk with God</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>How You Can Talk with God</strong> addresses the universal longing for direct contact with the Divine. Yogananda cuts through theological abstraction to offer practical guidance on establishing a living, personal relationship with God through meditation, prayer, and devotion.</p>
+                    <p>The book begins by examining why prayers often seem unanswered. Yogananda identifies common obstacles: mechanical repetition without feeling, doubt that undermines faith, asking for things that would not truly benefit us, and failure to listen for God's response. True prayer is dialogue, not monologue—and most people never learn to receive.</p>
+                    <p>Yogananda describes the different ways God responds to devotees. Sometimes the response comes as inner guidance—a clear sense of what to do. Sometimes it comes through circumstances—doors opening or closing. Sometimes it comes as vision or inner experience. And sometimes it comes as the direct presence of the Divine, unmistakable and transforming.</p>
+                    <p>The book provides specific techniques for deepening prayer and meditation. Yogananda explains how to calm the mind sufficiently to hear the "still, small voice," how to distinguish genuine guidance from imagination or desire, and how to develop the receptivity that allows grace to flow.</p>
+                    <p>Key themes include the nature of God as both impersonal Infinite and personal Beloved; why devotion accelerates spiritual progress; how to maintain contact with God throughout daily activities; the role of a guru in establishing divine connection; and the ultimate goal of constant communion with the Divine Presence.</p>
+                    <p>The emphasis throughout is on making spirituality real and experiential. Yogananda had no patience for religion that remained merely theoretical. He insisted that God could be known, not just believed in—and this book provides the methods to verify that claim.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Where There Is Light Panel -->
+        <div class="read-more-panel" id="panel-book-light">
+            <div class="read-more-header">
+                <h3>📖 Where There Is Light</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>Where There Is Light</strong> is a thematically organized collection of Yogananda's guidance on life's essential questions. Drawing from his talks and writings, the book addresses topics like overcoming fear, achieving success, finding your life's purpose, developing willpower, and navigating challenges with spiritual understanding.</p>
+                    <p>The accessible format makes this an ideal introduction to Yogananda for readers seeking practical spiritual guidance without committing to longer works. Each section can be read independently, providing wisdom and inspiration for daily life. The book functions almost like a spiritual reference, allowing readers to consult specific topics as needs arise.</p>
+                    <p>Chapters address finding inner peace in a turbulent world, developing unshakeable confidence and self-reliance, overcoming fear and anxiety through understanding, cultivating healthy relationships based on divine love, achieving success without sacrificing spiritual values, discovering and fulfilling your unique life purpose, developing concentration and willpower, facing illness and death with spiritual preparedness, and maintaining hope and faith through difficulties.</p>
+                    <p>Yogananda's approach throughout combines spiritual insight with psychological wisdom. He understands human nature in its weakness and strength, and his guidance reflects both compassion for human limitation and confidence in human potential. He never talks down to readers but addresses them as fellow travelers on the path.</p>
+                    <p>The book draws from talks given over three decades, edited to preserve Yogananda's distinctive voice while ensuring clarity and accessibility. Longtime students will recognize familiar themes presented with fresh emphasis, while newcomers will find a welcoming entry point to a vast body of teaching.</p>
+                    <p>For those seeking immediate, practical help with life's challenges, this book offers Yogananda's wisdom in concentrated, accessible form.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sayings of Paramahansa Yogananda Panel -->
+        <div class="read-more-panel" id="panel-book-sayings">
+            <div class="read-more-header">
+                <h3>📖 Sayings of Paramahansa Yogananda</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>Sayings of Paramahansa Yogananda</strong> collects gems of wisdom from Yogananda's talks, writings, and personal conversations with disciples. These brief, memorable statements distill profound truths into forms that can be easily remembered and applied in daily life.</p>
+                    <p>The sayings range from practical counsel to mystical insight. Some address everyday challenges: how to deal with difficult people, how to maintain enthusiasm, how to overcome bad habits. Others point toward ultimate realities: the nature of God, the purpose of existence, the path to liberation. All are expressed with Yogananda's characteristic combination of depth and simplicity.</p>
+                    <p>Organized by topic, the book serves as a reference for inspiration and guidance. Many practitioners keep it close for daily contemplation, finding that a single saying can illuminate an entire day's experience. The brevity of the entries makes them easy to memorize and carry as mental companions.</p>
+                    <p>Topics covered include the nature of God and the soul, meditation and the spiritual path, overcoming difficulties and obstacles, relationships and human nature, health and healing, success and prosperity, death and the afterlife, and the goal of Self-realization.</p>
+                    <p>The sayings capture Yogananda's voice with remarkable fidelity. Readers who knew him personally report that the book brings his presence vividly to mind. Those who never met him gain a sense of his personality: the humor, the intensity, the boundless compassion, the absolute certainty born of direct experience.</p>
+                    <p>This collection serves multiple purposes: as daily inspiration, as a source of guidance for specific situations, as a distillation of Yogananda's essential teachings, and as a companion for meditation and reflection.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Law of Success Panel -->
+        <div class="read-more-panel" id="panel-book-success">
+            <div class="read-more-header">
+                <h3>📖 The Law of Success</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>The Law of Success</strong> reveals the spiritual principles underlying achievement in any field. Yogananda shows how true success comes from aligning with cosmic law rather than mere worldly ambition, and how material accomplishment can be integrated with spiritual growth rather than opposed to it.</p>
+                    <p>The book challenges conventional notions of success. Yogananda argues that external achievement without inner fulfillment is hollow, while spiritual development that ignores worldly responsibilities is incomplete. True success encompasses both dimensions: material prosperity that supports spiritual growth and spiritual wisdom that guides material activity.</p>
+                    <p>Central to Yogananda's teaching is the power of will. He distinguishes between ordinary willpower, which is limited and easily exhausted, and dynamic will, which draws on infinite divine energy. The book provides techniques for developing this dynamic will and applying it to any worthwhile goal.</p>
+                    <p>Topics covered include the role of concentration in achieving any goal, creative visualization as a technique for attracting desired outcomes, developing magnetic personality that draws opportunities, the importance of right action aligned with universal law, overcoming failure and learning from setbacks, balancing ambition with contentment, and using success as a platform for spiritual service.</p>
+                    <p>Yogananda draws on examples from his own life and from successful people he knew or studied. He shows how the same principles apply whether one seeks success in business, art, relationships, or spiritual practice. The underlying laws are universal; only the applications differ.</p>
+                    <p>The book offers a middle path between worldly materialism and otherworldly escapism. Yogananda believed that God wants His children to be successful and happy—but on terms that support rather than undermine spiritual evolution.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- How to Be Happy All the Time Panel -->
+        <div class="read-more-panel" id="panel-book-happy">
+            <div class="read-more-header">
+                <h3>📖 How to Be Happy All the Time</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>How to Be Happy All the Time</strong> distills Yogananda's teachings on finding lasting joy regardless of external circumstances. This accessible volume presents core principles for cultivating inner happiness that does not depend on conditions.</p>
+                    <p>Yogananda begins by examining why happiness eludes most people despite their constant pursuit of it. He shows how we habitually seek joy in external sources—possessions, relationships, achievements—that can never provide lasting satisfaction. The pleasures they offer are temporary, and their pursuit often creates more suffering than it relieves.</p>
+                    <p>True happiness, Yogananda teaches, is an inside job. It is our natural state, obscured by mental turbulence and false identification with changing conditions. The techniques he offers aim not at creating happiness but at removing the obstacles that prevent us from experiencing the joy that is already ours by nature.</p>
+                    <p>The book addresses the role of desire in creating suffering, how to want things without becoming dependent on getting them, developing evenness of mind that remains stable through life's inevitable changes, the relationship between happiness and service to others, transforming negative emotions into positive energy, and maintaining joy in the face of illness, loss, and death.</p>
+                    <p>Yogananda's approach is intensely practical. He provides specific techniques: mental exercises, meditation practices, ways of reframing difficulties, and methods for cultivating positive states. The goal is not mere philosophical understanding but actual transformation of daily experience.</p>
+                    <p>The book speaks to the universal human longing for happiness while offering a path to fulfillment that actually works. Yogananda's promise is bold: that lasting happiness is possible for anyone willing to apply the principles he teaches.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inner Peace Panel -->
+        <div class="read-more-panel" id="panel-book-peace">
+            <div class="read-more-header">
+                <h3>📖 Inner Peace</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>Inner Peace</strong> explores techniques for achieving and maintaining mental tranquility in a turbulent world. Yogananda shows how peace is not passive resignation but dynamic balance—the foundation for effective action and clear thinking rather than withdrawal from life.</p>
+                    <p>The book addresses the epidemic of anxiety and stress that characterizes modern life. Yogananda analyzes the causes: overstimulation, excessive activity, worry about the future, regret about the past, and fundamental disconnection from our spiritual nature. He then offers remedies that address each cause at its root.</p>
+                    <p>Central to his teaching is the distinction between true peace and mere suppression of disturbance. Many people achieve a kind of calm by avoiding challenges or numbing themselves to feeling. This is not peace but its counterfeit. True peace remains stable in the midst of activity and challenge—a positive state of centered awareness rather than an absence of disturbance.</p>
+                    <p>Topics covered include calming techniques that can be practiced anywhere, dealing with stress and anxiety through understanding their causes, maintaining equanimity in difficult situations and relationships, the relationship between breath and mental state, accessing the deeper peace that is the soul's true nature, and practical strategies for creating peaceful environments.</p>
+                    <p>Yogananda draws on both yogic science and practical psychology. He shows how the nervous system can be trained, how habitual thought patterns can be changed, and how the mind can be made a servant rather than a master. The techniques are simple enough for anyone to practice yet profound enough to transform consciousness.</p>
+                    <p>For those overwhelmed by the pace and pressure of contemporary life, this book offers both understanding and practical relief.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Karma and Reincarnation Panel -->
+        <div class="read-more-panel" id="panel-book-karma">
+            <div class="read-more-header">
+                <h3>📖 Karma and Reincarnation</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>Karma and Reincarnation</strong> explains the universal laws governing the soul's journey through multiple lifetimes. Yogananda presents karma not as fate or punishment but as opportunity—the mechanism by which souls learn, grow, and eventually achieve liberation from the cycle of birth and death.</p>
+                    <p>The book begins with a clear explanation of what karma actually is: the law of cause and effect applied to consciousness. Every thought, word, and action creates impressions that shape future experience. Understanding this law transforms how we relate to both past and future—and especially to present choices.</p>
+                    <p>Yogananda addresses common misconceptions about karma. It is not rigid predestination but dynamic process that can be changed through right action and spiritual practice. It is not divine punishment but natural consequence, as impersonal as gravity. And it is not an excuse for passivity but a call to conscious creation of our destiny.</p>
+                    <p>The book explores questions about past lives: Do we really have them? Can we remember them? Should we try to? How do they affect present circumstances? Yogananda offers nuanced answers that satisfy curiosity without encouraging unhealthy fascination with previous incarnations at the expense of present living.</p>
+                    <p>Topics covered include how karmic patterns are created and dissolved, the role of grace in transcending karma, understanding present life circumstances in light of past actions, making choices now that create positive future outcomes, the nature of death and what follows, the mechanics of reincarnation, and the ultimate goal of escaping the wheel of rebirth through Self-realization.</p>
+                    <p>Yogananda's treatment brings clarity to concepts often shrouded in confusion or superstition. His explanation is both philosophically sophisticated and practically applicable.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Yoga of Jesus Panel -->
+        <div class="read-more-panel" id="panel-book-yogajesus">
+            <div class="read-more-header">
+                <h3>📖 The Yoga of Jesus</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>The Yoga of Jesus</strong> draws from Yogananda's extensive <em>Second Coming of Christ</em> commentary to present the yogic teachings hidden in Jesus's words in accessible, condensed form. This volume makes Yogananda's revolutionary Christian interpretation available to readers seeking a briefer introduction.</p>
+                    <p>The book reveals Jesus as a master of yoga—not in the sense of physical postures, but in the original meaning of yoga as union with God. Yogananda shows how Jesus taught the same universal science of God-realization found in India's ancient traditions, expressed in the language and symbolism of his own culture and time.</p>
+                    <p>Key Gospel passages are examined to reveal their deeper meanings. Familiar verses take on new significance when understood as instructions for meditation and spiritual practice rather than mere moral exhortation. Jesus's statements about the Kingdom of Heaven, for example, refer to states of consciousness accessible through specific techniques.</p>
+                    <p>The book addresses Jesus's "lost years" between ages twelve and thirty, presenting evidence for the tradition that he studied with masters in India during this period. This historical question, while not provable, illuminates the striking parallels between Jesus's teachings and yogic science.</p>
+                    <p>Topics covered include Jesus as a master of yoga and meditation, the inner meaning of baptism and spiritual rebirth, understanding Christ Consciousness as a universal state, the Holy Ghost as the sacred vibration of creation (Aum), techniques Jesus taught for experiencing divine light, and the essential unity of Christianity and yoga.</p>
+                    <p>For Christians seeking to deepen their understanding of Jesus's teachings, and for yogis curious about Christianity's mystical dimensions, this book builds bridges between traditions often seen as separate.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Yoga of the Bhagavad Gita Panel -->
+        <div class="read-more-panel" id="panel-book-yogagita">
+            <div class="read-more-header">
+                <h3>📖 The Yoga of the Bhagavad Gita</h3>
+                <button class="read-more-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="read-more-scroll">
+                <div class="read-more-content">
+                    <p><strong>The Yoga of the Bhagavad Gita</strong> presents key selections from Yogananda's monumental <em>God Talks With Arjuna</em> commentary in condensed form. For readers not ready to engage with the full two-volume work, this introduction reveals the Gita's essential teachings on meditation, self-discipline, and God-realization.</p>
+                    <p>The Bhagavad Gita is India's most beloved scripture, a dialogue between the warrior Arjuna and his charioteer Krishna that takes place on the eve of a great battle. Yogananda's interpretation reveals this setting as symbolic: the battle represents the inner war between spiritual and material tendencies that every seeker must wage.</p>
+                    <p>This condensed volume focuses on the Gita's practical teachings: how to meditate effectively, how to act in the world without creating bondage, how to develop devotion, how to discriminate between real and unreal. The philosophical framework is presented but emphasis falls on application rather than theory.</p>
+                    <p>Key topics include the nature of the soul and its distinction from body and mind, the three gunas (qualities of nature) and how they influence behavior, karma yoga as the path of action without attachment, bhakti yoga as the path of devotion, jnana yoga as the path of wisdom, dhyana yoga as the path of meditation, and the vision of God as the source of all creation.</p>
+                    <p>Yogananda's interpretation makes the Gita accessible to Western readers without sacrificing depth. He explains Indian concepts in terms Westerners can understand while honoring the text's profound insights. Sanskrit terms are clarified, cultural contexts are explained, and universal applications are emphasized.</p>
+                    <p>This book serves as both an introduction to the Bhagavad Gita and a gateway to deeper study of Yogananda's complete commentary for those who want more.</p>
                 </div>
             </div>
         </div>
