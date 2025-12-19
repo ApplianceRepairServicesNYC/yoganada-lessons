@@ -1,3 +1,31 @@
+/**
+ * WisdomPath Course Access Control
+ * Per-course unlock system for Stripe payments
+ * 
+ * COURSE IDS FOR STRIPE REDIRECT URLS:
+ * Format: ?unlocked=true&course=<COURSE_ID>
+ * 
+ * Active Courses:
+ *   autobiography-of-a-yogi          - Autobiography of a Yogi (48 chapters)
+ * 
+ * Coming Soon:
+ *   the-second-coming-of-christ      - The Second Coming of Christ (Two-Volume Edition)
+ *   mans-eternal-quest               - Man's Eternal Quest (Collected Talks)
+ *   the-divine-romance               - The Divine Romance (Collected Talks)
+ *   journey-to-self-realization      - Journey to Self-Realization (Collected Talks)
+ *   whispers-from-eternity           - Whispers from Eternity (Prayers & Poetry)
+ *   metaphysical-meditations         - Metaphysical Meditations (Meditation Guide)
+ *   scientific-healing-affirmations  - Scientific Healing Affirmations (Healing Practice)
+ *   how-you-can-talk-with-god        - How You Can Talk with God (Prayer Guide)
+ *   where-there-is-light             - Where There Is Light (Guidance Collection)
+ *   sayings-of-paramahansa-yogananda - Sayings of Paramahansa Yogananda (Wisdom Quotes)
+ *   the-law-of-success               - The Law of Success (Success Principles)
+ *   how-to-be-happy-all-the-time     - How to Be Happy All the Time (Happiness Guide)
+ *   inner-peace                      - Inner Peace (Peace Teachings)
+ *   karma-and-reincarnation          - Karma and Reincarnation (Spiritual Laws)
+ *   the-yoga-of-jesus                - The Yoga of Jesus (Christ's Teachings)
+ *   the-yoga-of-the-bhagavad-gita    - The Yoga of the Bhagavad Gita
+ */
 (function() {
     var STORAGE_KEY = "wisdompath_course_access";
     var LEGACY_KEY = "yogananda_course_unlocked";
