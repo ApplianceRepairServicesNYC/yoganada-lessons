@@ -722,6 +722,81 @@
             font-size: 0.875rem;
         }
         
+        /* FAQ Standalone Section */
+        .faq-standalone-section {
+            background: var(--color-bg-elevated);
+        }
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            background: var(--color-bg);
+        }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-align: left;
+            transition: background 0.2s;
+        }
+        .faq-question:hover {
+            background: rgba(199, 93, 36, 0.03);
+        }
+        .faq-icon {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--color-accent);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 600px;
+        }
+        .faq-answer p,
+        .faq-answer ul {
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        .faq-answer p:first-child {
+            padding-top: 0.5rem;
+        }
+        .faq-answer p:last-child,
+        .faq-answer ul:last-child {
+            padding-bottom: 1.5rem;
+        }
+        .faq-answer ul {
+            padding-left: 3rem;
+        }
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+        }
+        
         /* Read More Panel (Slide-out) */
         .read-more-overlay {
             position: fixed;
@@ -2368,6 +2443,131 @@
             </div>
         </section>
 
+        <!-- ==================== FAQ ==================== -->
+        <section class="section faq-standalone-section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Common Questions</span>
+                    <h2>Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Answers to help guide your spiritual journey</p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Which book should you start with?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>If you are new to Paramahansa Yogananda's teachings, the best place to start is <strong>Autobiography of a Yogi</strong>.</p>
+                            <p>This book serves as an introduction not only to Yogananda's life, but also to the broader spiritual principles that appear throughout all of his later works. It is written in a story-based format, making it accessible even for readers with no background in yoga, meditation, or Eastern philosophy.</p>
+                            <p>Once you have read Autobiography of a Yogi, your next book should depend on your personal interests:</p>
+                            <ul>
+                                <li>If you enjoy logic and scientific explanations → <em>The Science of Religion</em></li>
+                                <li>If you are drawn to scripture and symbolism → <em>God Talks With Arjuna</em></li>
+                                <li>If you are interested in Jesus' teachings beyond dogma → <em>The Second Coming of Christ</em></li>
+                            </ul>
+                            <p>Many students revisit these books multiple times, gaining deeper understanding with each reading.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do you need to read Yogananda's books in order?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, Yogananda's books do not need to be read in a strict order.</p>
+                            <p>Each book is complete in itself and addresses different aspects of spiritual growth. However, many readers find that starting with <em>Autobiography of a Yogi</em> makes the later books easier to understand because it introduces Yogananda's worldview, terminology, and purpose.</p>
+                            <p>Think of his books as layers of depth, not steps in a sequence. You can explore them based on your curiosity and life circumstances.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Are Yogananda's teachings religious or spiritual?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Paramahansa Yogananda described his teachings as <strong>spiritual, not religious</strong>.</p>
+                            <p>His work does not require belief in a particular religion, nor does it ask followers to abandon their existing faith. Instead, he emphasized direct inner experience through meditation as the foundation of spiritual understanding.</p>
+                            <p>Yogananda taught that all religions point toward the same universal truth and that spirituality transcends culture, doctrine, and labels.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Are these books difficult to understand?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Some of Yogananda's books are very easy to read, while others are intentionally deep.</p>
+                            <ul>
+                                <li><em>Autobiography of a Yogi</em> is highly accessible</li>
+                                <li><em>Man's Eternal Quest</em> and <em>Journey to Self-Realization</em> are practical and reflective</li>
+                                <li><em>God Talks With Arjuna</em> and <em>The Second Coming of Christ</em> are advanced texts meant for slow, thoughtful study</li>
+                            </ul>
+                            <p>These books are not meant to be rushed. Many readers study small sections at a time and return to the same passages over months or even years.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Can beginners benefit from Yogananda's teachings?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>Yes. Beginners often benefit the most.</strong></p>
+                            <p>Yogananda's teachings are rooted in universal human experiences—stress, purpose, fear, discipline, and inner peace. You do not need prior meditation experience or philosophical knowledge to begin.</p>
+                            <p>Even applying a small portion of his guidance—such as quiet self-reflection or breath awareness—can produce noticeable changes over time.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Are these books meant to replace meditation practice?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>No.</strong> The books are guides, not substitutes for practice.</p>
+                            <p>Yogananda consistently emphasized that reading alone is not enough. His writings are designed to support inner stillness, meditation, and self-discipline—not replace them.</p>
+                            <p><em>The books prepare the mind; practice transforms awareness.</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Why are Yogananda's teachings still relevant today?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Despite being written decades ago, Yogananda's teachings address challenges that are even more pronounced today—mental distraction, emotional imbalance, lack of purpose, and constant external stimulation.</p>
+                            <p>His work provides tools for:</p>
+                            <ul>
+                                <li>Mental clarity</li>
+                                <li>Emotional stability</li>
+                                <li>Inner discipline</li>
+                                <li>Meaningful living in a modern world</li>
+                            </ul>
+                            <p>As technology accelerates, the need for inner awareness becomes even more important.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How long does it take to understand Yogananda's teachings?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p><strong>Understanding develops over time.</strong></p>
+                            <p>Many readers report that passages they did not fully grasp initially become clear later, sometimes years afterward. This is because spiritual understanding often unfolds alongside personal experience.</p>
+                            <p>Yogananda encouraged patience, sincerity, and consistency rather than intellectual speed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ==================== CTA ==================== -->
         <section class="section cta-section">
             <div class="container">
@@ -2492,6 +2692,23 @@
                 
                 // Open clicked item if it wasn't active
                 if (!isActive) {
+                    item.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Toggle current item
+                if (isActive) {
+                    item.classList.remove('active');
+                    button.setAttribute('aria-expanded', 'false');
+                } else {
                     item.classList.add('active');
                     button.setAttribute('aria-expanded', 'true');
                 }
