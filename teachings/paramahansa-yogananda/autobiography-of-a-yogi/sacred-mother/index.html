@@ -15,6 +15,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root{--color-bg-deep:#f5f0e8;--color-bg-card:rgba(255,255,255,0.9);--color-bg-card-solid:#fffcf7;--color-bg-card-hover:rgba(255,252,247,1);--color-bg-elevated:#fff9f0;--color-border:rgba(139,90,43,0.1);--color-border-light:rgba(139,90,43,0.15);--color-text:#2d1810;--color-text-secondary:#5c4033;--color-text-muted:#8b7355;--gradient-primary:linear-gradient(135deg,#e8a946 0%,#c75d24 100%);--gradient-success:linear-gradient(135deg,#10b981 0%,#059669 100%);--gradient-error:linear-gradient(135deg,#ef4444 0%,#dc2626 100%);--color-accent:#c75d24;--color-accent-glow:rgba(205,127,50,0.3);--color-success:#10b981;--color-success-bg:rgba(16,185,129,0.15);--color-error:#ef4444;--color-error-bg:rgba(239,68,68,0.15);--font-body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--font-display:'Sora','Inter',sans-serif}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-body);font-size:1rem;line-height:1.7;color:var(--color-text);background:var(--color-bg-deep);-webkit-font-smoothing:antialiased}.master-bg{position:fixed;inset:0;pointer-events:none;z-index:0}.master-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(232,169,70,0.1) 0%,transparent 45%),linear-gradient(to bottom,transparent 40%,var(--color-bg-deep) 100%)}h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.2;letter-spacing:-0.02em}h1{font-size:clamp(2rem,4vw,2.75rem)}h2{font-size:clamp(1.5rem,3vw,2rem)}h3{font-size:1.25rem}p{color:var(--color-text-secondary);line-height:1.8}a{color:inherit;text-decoration:none}.site-header{position:fixed;top:0;left:0;right:0;z-index:1000;height:64px;background:rgba(250,247,242,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--color-border)}.header-inner{max-width:1400px;margin:0 auto;padding:0 2rem;height:100%;display:flex;align-items:center;justify-content:space-between}.logo{font-family:var(--font-display);font-size:1.375rem;font-weight:700;display:flex;align-items:center;gap:0.625rem}.logo-icon{width:40px;height:40px;background:var(--gradient-primary);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.125rem;box-shadow:0 0 20px var(--color-accent-glow)}.header-nav{display:flex;align-items:center;gap:1.5rem}.header-nav a{font-size:0.9375rem;font-weight:500;color:var(--color-text-muted)}.header-nav a:hover{color:var(--color-text)}.focus-bar{position:fixed;top:0;left:0;right:0;z-index:1001;height:56px;background:rgba(250,247,242,0.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--color-border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;transform:translateY(-100%);transition:transform 0.3s}.focus-bar.active{transform:translateY(0)}.focus-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.875rem;font-weight:500;color:var(--color-text-muted);cursor:pointer;background:none;border:none}.focus-back:hover{color:var(--color-accent)}.focus-title{font-family:var(--font-display);font-size:0.9375rem;font-weight:600}.focus-progress{display:flex;align-items:center;gap:0.75rem;font-size:0.8125rem;color:var(--color-text-muted)}.focus-progress-bar{width:100px;height:4px;background:var(--color-border);border-radius:4px;overflow:hidden}.focus-progress-fill{height:100%;background:var(--gradient-primary);border-radius:4px;width:0%;transition:width 0.3s}body.focus-mode .site-header{transform:translateY(-100%)}body.focus-mode .site-footer{display:none}body.focus-mode .focus-bar{transform:translateY(0)}body.focus-mode .main{padding-top:56px}body.focus-mode .breadcrumb{display:none}.main{position:relative;z-index:1;padding-top:64px}.container{max-width:800px;margin:0 auto;padding:0 2rem}.breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;color:var(--color-text-muted);padding:2rem 0;flex-wrap:wrap}.breadcrumb a{color:var(--color-text-muted)}.breadcrumb a:hover{color:var(--color-text)}.page-header{padding:2rem 0 3rem;border-bottom:1px solid var(--color-border);margin-bottom:3rem}.lesson-badge{display:inline-flex;align-items:center;gap:0.375rem;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-accent);background:rgba(199,93,36,0.1);padding:0.5rem 1rem;border-radius:8px;margin-bottom:1.25rem}.page-header h1{margin-bottom:0.5rem}.page-subtitle{font-size:1.125rem;color:var(--color-text-muted)}.section{margin-bottom:3.5rem}.section-header{margin-bottom:1.5rem}.section-label{display:inline-block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--color-accent);margin-bottom:0.5rem}.section-title{font-size:1.5rem}.reading-content{background:var(--color-bg-card);border-radius:20px;padding:2.5rem;border:1px solid var(--color-border)}.reading-content p{margin-bottom:1.5rem}.reading-content p:last-child{margin-bottom:0}.highlight-box{background:linear-gradient(135deg,rgba(232,169,70,0.08),rgba(91,164,201,0.05));border-left:4px solid var(--color-accent);border-radius:0 16px 16px 0;padding:1.75rem 2rem}.highlight-box-title{font-family:var(--font-display);font-weight:600;font-size:1rem;margin-bottom:1rem;color:var(--color-text)}.highlight-box p{margin-bottom:1rem}.highlight-box p:last-child{margin-bottom:0}.content-block{background:var(--color-bg-card);border-radius:16px;padding:1.75rem;border:1px solid var(--color-border)}.content-block-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.content-block-icon{font-size:1.5rem}.content-block-title{font-family:var(--font-display);font-weight:600;font-size:1rem}.key-points{display:grid;gap:1.25rem}.key-point{background:var(--color-bg-card);border-radius:16px;padding:1.5rem;border:1px solid var(--color-border);display:flex;gap:1.25rem;align-items:flex-start}.key-point-number{width:36px;height:36px;background:var(--gradient-primary);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:0.875rem;flex-shrink:0}.key-point h4{font-size:1rem;margin-bottom:0.25rem}.key-point p{font-size:0.9375rem;margin:0}.divider{height:1px;background:var(--color-border);margin:3rem 0}.quiz-start{text-align:center;padding:2rem 0}.quiz-start h3{margin-bottom:0.75rem}.quiz-start p{margin-bottom:1.5rem;max-width:400px;margin-left:auto;margin-right:auto}.btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;font-family:var(--font-body);font-weight:600;font-size:1rem;padding:0.875rem 1.75rem;border-radius:12px;border:none;cursor:pointer;transition:all 0.2s}.btn-primary{background:var(--gradient-primary);color:white;box-shadow:0 4px 15px var(--color-accent-glow)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px var(--color-accent-glow)}.btn-primary:disabled{opacity:0.5;cursor:not-allowed;transform:none}.btn-secondary{background:var(--color-bg-card);color:var(--color-text);border:1px solid var(--color-border)}.btn-secondary:hover{background:var(--color-bg-card-hover)}.btn-lg{padding:1rem 2rem;font-size:1.0625rem}.btn-full{width:100%}.quiz-container{display:none;background:var(--color-bg-card);border-radius:24px;padding:2.5rem;border:1px solid var(--color-border)}.quiz-container.active{display:block}.quiz-progress{display:flex;align-items:center;gap:1rem;margin-bottom:2rem}.quiz-progress-bar{flex:1;height:6px;background:var(--color-border);border-radius:6px;overflow:hidden}.quiz-progress-fill{height:100%;background:var(--gradient-primary);border-radius:6px;transition:width 0.3s}.quiz-progress-text{font-size:0.875rem;font-weight:600;color:var(--color-text-muted);min-width:40px;text-align:right}.quiz-question{font-size:1.375rem;margin-bottom:2rem;line-height:1.4}.quiz-options{display:grid;gap:1rem;margin-bottom:1.5rem}.quiz-option{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;background:var(--color-bg-elevated);border:2px solid var(--color-border);border-radius:14px;cursor:pointer;transition:all 0.2s}.quiz-option:hover{border-color:var(--color-border-light);background:var(--color-bg-card-hover)}.quiz-option.selected{border-color:var(--color-accent);background:rgba(199,93,36,0.08)}.quiz-option.correct{border-color:var(--color-success);background:var(--color-success-bg)}.quiz-option.incorrect{border-color:var(--color-error);background:var(--color-error-bg)}.quiz-option.disabled{pointer-events:none}.quiz-option-marker{width:32px;height:32px;border-radius:8px;background:var(--color-bg-card);border:1px solid var(--color-border);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;color:var(--color-text-muted);flex-shrink:0}.quiz-option.selected .quiz-option-marker{background:var(--gradient-primary);color:white;border-color:transparent}.quiz-option.correct .quiz-option-marker{background:var(--gradient-success);color:white;border-color:transparent}.quiz-option.incorrect .quiz-option-marker{background:var(--gradient-error);color:white;border-color:transparent}.quiz-option-text{font-size:1rem;color:var(--color-text)}.quiz-feedback{display:none;padding:1rem 1.25rem;border-radius:12px;font-weight:600;margin-bottom:1.5rem}.quiz-feedback.show{display:flex;align-items:center;gap:0.75rem}.quiz-feedback.correct{background:var(--color-success-bg);color:#059669}.quiz-feedback.incorrect{background:var(--color-error-bg);color:#dc2626}.quiz-actions{display:flex;gap:1rem}.quiz-results{text-align:center;padding:2rem 0}.quiz-results-icon{font-size:4rem;margin-bottom:1rem}.quiz-results-title{margin-bottom:0.5rem}.quiz-results-score{font-size:1.5rem;font-weight:700;color:var(--color-accent);margin-bottom:1rem}.quiz-results-message{margin-bottom:2rem;max-width:400px;margin-left:auto;margin-right:auto}.next-section{background:linear-gradient(135deg,rgba(91,164,201,0.1),rgba(232,169,70,0.08));border-radius:20px;padding:2.5rem;margin-top:4rem;text-align:center;border:1px solid var(--color-border)}.next-section-header{display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:1rem}.next-section-icon{font-size:1.5rem}.next-section h3{margin:0}.next-section p{max-width:450px;margin:0 auto}.site-footer{background:var(--color-bg-card-solid);border-top:1px solid var(--color-border);padding:2rem 0;margin-top:4rem}.footer-inner{max-width:800px;margin:0 auto;padding:0 2rem;text-align:center}.footer-inner p{font-size:0.875rem;color:var(--color-text-muted)}@media(max-width:700px){.focus-title{display:none}.reading-content{padding:1.75rem}.quiz-container{padding:1.75rem}.key-point{flex-direction:column;gap:1rem}}
+    
+        /* Reading Time */
+        .lesson-meta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+        .reading-time{display:none;font-size:0.75rem;font-weight:500;color:var(--color-text-muted);background:var(--color-bg-elevated);padding:0.5rem 0.875rem;border-radius:8px;align-items:center;gap:0.375rem}
+        .reading-time::before{content:'⏱'}
+        
+        /* Continue Banner */
+        .continue-banner{display:none;background:linear-gradient(135deg,rgba(91,164,201,0.12),rgba(232,169,70,0.08));border:1px solid rgba(91,164,201,0.3);border-radius:12px;padding:1rem 1.25rem;margin-bottom:2rem;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+        .continue-banner-text{font-size:0.9375rem;color:var(--color-text-secondary)}
+        .continue-banner-text strong{color:var(--color-text)}
+        .continue-banner-link{font-size:0.875rem;font-weight:600;color:#5ba4c9;display:inline-flex;align-items:center;gap:0.375rem}
+        .continue-banner-link:hover{text-decoration:underline}
+        .continue-banner-dismiss{background:none;border:none;font-size:1.25rem;color:var(--color-text-muted);cursor:pointer;padding:0.25rem}
+        
+        /* Chapter TOC */
+        .chapter-toc{background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:16px;margin-bottom:2.5rem;overflow:hidden}
+        .chapter-toc-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none}
+        .chapter-toc-title{font-size:0.8125rem;font-weight:600;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.05em;display:flex;align-items:center;gap:0.5rem}
+        .chapter-toc-toggle{font-size:0.75rem;color:var(--color-text-muted);transition:transform 0.2s}
+        .chapter-toc.open .chapter-toc-toggle{transform:rotate(180deg)}
+        .chapter-toc-list{display:none;padding:0 1.25rem 1rem;list-style:none}
+        .chapter-toc.open .chapter-toc-list{display:block}
+        .chapter-toc-item{padding:0.5rem 0;border-top:1px solid var(--color-border)}
+        .chapter-toc-item:first-child{border-top:none}
+        .chapter-toc-item a{font-size:0.9375rem;color:var(--color-text-secondary);display:flex;align-items:center;gap:0.5rem;transition:color 0.2s}
+        .chapter-toc-item a:hover{color:var(--color-accent)}
+        .chapter-toc-item a::before{content:'';width:6px;height:6px;background:var(--color-border);border-radius:50%;flex-shrink:0}
+        
+        /* Breath Divider */
+        .breath-divider{text-align:center;padding:2rem 0;color:var(--color-text-muted);font-size:0.8125rem;font-style:italic;opacity:0.8}
+        .breath-divider::before,.breath-divider::after{content:'';display:inline-block;width:40px;height:1px;background:var(--color-border);vertical-align:middle;margin:0 1rem}
+        
+        /* Ghost Button for Reflect */
+        .btn-ghost{background:transparent;color:var(--color-text-muted);border:1px dashed var(--color-border);padding:0.75rem 1.5rem;font-size:0.9375rem}
+        .btn-ghost:hover{border-color:var(--color-accent);color:var(--color-accent)}
+        
+        /* Completion Options */
+        .completion-options{display:flex;flex-direction:column;gap:1rem;align-items:center;margin-top:1.5rem}
+        .completion-divider{display:flex;align-items:center;gap:1rem;width:100%;max-width:300px;color:var(--color-text-muted);font-size:0.8125rem}
+        .completion-divider::before,.completion-divider::after{content:'';flex:1;height:1px;background:var(--color-border)}
+
     </style>
 </head>
 <body>
@@ -29,14 +70,36 @@
                 <div class="progress-mini-bar"><div class="progress-mini-fill" id="progressMiniFill"></div></div>
                 <span class="progress-mini-text" id="progressMiniText">0 of 48 complete</span>
             </div>
-            <header class="page-header"><div class="lesson-badge">Chapter 31</div><h1>An Interview with the Sacred Mother</h1><p class="page-subtitle">The divine feminine in realization</p></header>
-            <div id="lesson-content">
-                <section class="section"><header class="section-header"><span class="section-label">Chapter Summary</span><h2 class="section-title">Overview</h2></header><div class="reading-content"><p>Yogananda meets Anandamoyi Ma, one of the most revered woman saints of modern India. He witnesses her spontaneous spiritual states and recognizes her as a being of supreme realization.</p>
+            <header class="page-header"><div class="lesson-meta">
+                <div class="lesson-badge">Chapter 31</div>
+                <div class="reading-time" id="reading-time"></div>
+            </div>
+            <h1>An Interview with the Sacred Mother</h1><p class="page-subtitle">The divine feminine in realization</p></header>
+
+        <!-- Chapter Table of Contents -->
+        <nav class="chapter-toc" id="chapter-toc">
+            <div class="chapter-toc-header" onclick="document.getElementById('chapter-toc').classList.toggle('open')">
+                <span class="chapter-toc-title">📑 In This Chapter</span>
+                <span class="chapter-toc-toggle">▼</span>
+            </div>
+            <ul class="chapter-toc-list">
+                <li class="chapter-toc-item"><a href="#section-summary">Chapter Summary</a></li>
+                <li class="chapter-toc-item"><a href="#section-teaching">Core Teaching</a></li>
+                <li class="chapter-toc-item"><a href="#section-application">Life Application</a></li>
+                <li class="chapter-toc-item"><a href="#section-practice">Practice Exercise</a></li>
+                <li class="chapter-toc-item"><a href="#section-journal">Journal Prompt</a></li>
+                <li class="chapter-toc-item"><a href="#section-keypoints">Key Points</a></li>
+                <li class="chapter-toc-item"><a href="#section-quiz">Quiz</a></li>
+            </ul>
+        </nav>
+
+        <div id="lesson-content">
+                <section class="section" id="section-summary"><header class="section-header"><span class="section-label">Chapter Summary</span><h2 class="section-title">Overview</h2></header><div class="reading-content"><p>Yogananda meets Anandamoyi Ma, one of the most revered woman saints of modern India. He witnesses her spontaneous spiritual states and recognizes her as a being of supreme realization.</p>
                 <p>The chapter demonstrates that the highest attainments are not gender-limited. The divine feminine represents essential aspects of the absolute that masculine forms do not fully express.</p>
                 <p>Anandamoyi Ma—her name means "Joy-Permeated Mother"—was one of the most extraordinary saints of twentieth-century India. Unlike many spiritual figures who developed through years of practice, her realization seemed spontaneous, present from her earliest years. She would fall into profound spiritual states without warning, her body becoming rigid, her face radiant, sometimes for hours at a time.</p>
                 <p>Yogananda's encounter with her was deeply moving. He recognized in her the same supreme attainment he had witnessed in his own guru, expressed through a completely different personality and form. Her presence was characterized by an overwhelming sense of unconditional love—the quality often associated with the divine mother aspect of God.</p></div></section>
                 
-                <section class="section"><header class="section-header"><span class="section-label">Core Teaching</span><h2 class="section-title">What This Chapter Reveals</h2></header><div class="reading-content"><p><strong>Realization transcends gender.</strong> Women saints have achieved the highest attainments throughout history. Spiritual capacity has nothing to do with biological sex.</p>
+                <section class="section" id="section-teaching"><header class="section-header"><span class="section-label">Core Teaching</span><h2 class="section-title">What This Chapter Reveals</h2></header><div class="reading-content"><p><strong>Realization transcends gender.</strong> Women saints have achieved the highest attainments throughout history. Spiritual capacity has nothing to do with biological sex.</p>
                 <p><strong>The divine feminine is essential.</strong> Complete spiritual understanding includes honoring both masculine and feminine aspects of divine manifestation.</p>
                 <p><strong>Different expressions of the same truth.</strong> Anandamoyi Ma's realization expressed differently than male saints, yet reached the same ultimate truth.</p>
                 <p>Throughout history, despite cultural obstacles, women have achieved the highest spiritual realizations. Rabia of Basra in the Sufi tradition, Teresa of Avila and Hildegard of Bingen in Christianity, Mirabai in the Hindu tradition, and countless others have reached states of consciousness equal to any male saint. Their achievements expose the fallacy of gender-based spiritual limitation.</p>
@@ -46,7 +109,7 @@
                 <section class="section"><div class="highlight-box"><div class="highlight-box-title">✦ The Divine Mother</div><p>Many spiritual traditions recognize a "Divine Mother" aspect of God—Shakti in Hinduism, Sophia in Christianity, Shekinah in Judaism. This represents the creative, nurturing, merciful dimension of the infinite. Encountering God as Mother can open dimensions of spiritual experience that Father imagery alone may not access.</p>
                 <p>This isn't about preferring one image over another but recognizing that the absolute transcends all images while being approachable through many. Some seekers resonate more with maternal divine imagery; others with paternal. Both are valid approaches to the same reality.</p></div></section>
                 
-                <section class="section"><header class="section-header"><span class="section-label">Life Application</span><h2 class="section-title">Applying This Today</h2></header><div class="reading-content"><p>Examine any unconscious biases about spirituality and gender. Throughout history, women have achieved the highest realizations despite often facing greater obstacles.</p>
+                <section class="section" id="section-application"><header class="section-header"><span class="section-label">Life Application</span><h2 class="section-title">Applying This Today</h2></header><div class="reading-content"><p>Examine any unconscious biases about spirituality and gender. Throughout history, women have achieved the highest realizations despite often facing greater obstacles.</p>
                 <p>If you have not studied women mystics—Rabia, Teresa of Avila, Anandamoyi Ma, and countless others—remedy this gap in your understanding.</p>
                 <p>Many spiritual traditions have been dominated by male teachers, male voices, male imagery. This historical imbalance may have shaped your unconscious assumptions about spiritual attainment. Examining these assumptions can expand your understanding of what the spiritual life can look like.</p>
                 <p>Consider whether your conception of God or ultimate reality is unconsciously masculine. While gender attributions to the absolute are ultimately metaphorical, the metaphors we use shape our experience. Exploring divine feminine imagery can open new dimensions of spiritual relationship.</p>
@@ -55,8 +118,10 @@
                 
                 <section class="section"><div class="highlight-box"><div class="highlight-box-title">✦ Balancing Masculine and Feminine</div><p>Every human being contains both masculine and feminine qualities, regardless of biological sex. Spiritual development often involves integrating aspects that culture or conditioning has suppressed. Men may need to develop receptivity and emotional openness; women may need to develop strength and independent initiative. Both need both.</p>
                 <p>The ultimate goal is not balance between opposites but transcendence of the duality altogether—recognizing that these categories, useful as they may be, don't apply to the deepest dimension of your being.</p></div></section>
-                
-                <section class="section"><header class="section-header"><span class="section-label">Your Assignment</span><h2 class="section-title">Practice Exercise</h2></header><div class="highlight-box"><div class="highlight-box-title">✦ Practice</div><p>Study the life and teachings of one woman saint from any tradition. Notice what qualities characterize her realization. How does her expression of the divine differ from or complement male saints you have studied? What aspects of the divine feminine speak to your understanding?</p>
+            
+            <div class="breath-divider">✦ Take a moment before continuing ✦</div>
+            
+            <section class="section" id="section-practice"><header class="section-header"><span class="section-label">Your Assignment</span><h2 class="section-title">Practice Exercise</h2></header><div class="highlight-box"><div class="highlight-box-title">✦ Practice</div><p>Study the life and teachings of one woman saint from any tradition. Notice what qualities characterize her realization. How does her expression of the divine differ from or complement male saints you have studied? What aspects of the divine feminine speak to your understanding?</p>
                 <p><strong>Week One:</strong> Examine your mental image of "an enlightened person." Is it unconsciously male? What assumptions about gender and spirituality might you carry without having examined them?</p>
                 <p><strong>Week Two:</strong> Choose one woman saint from any tradition—Anandamoyi Ma, Teresa of Avila, Rabia, Mirabai, or another—and read about her life. Notice the particular flavor of her realization and teaching.</p>
                 <p><strong>Week Three:</strong> Experiment with divine feminine imagery in your practice. If you pray, try addressing God as Mother. If you meditate, visualize divine light as nurturing, embracing, unconditionally loving. Notice what this opens.</p>
@@ -67,14 +132,23 @@
                 <p>At the same time, caution is warranted against simply reversing the imbalance—replacing masculine dominance with feminine dominance. The goal is integration, not inversion. Both masculine and feminine divine qualities are needed for complete understanding.</p>
                 <p>Yogananda's relationship with the divine was notably inclusive. He honored both divine masculine and divine feminine imagery, speaking of God as both Father and Mother, recognizing the cosmic creative power as feminine Shakti in relationship with masculine consciousness. This balanced approach can serve as a model for contemporary seekers.</p></div></section>
                 
-                <section class="section"><header class="section-header"><span class="section-label">Reflection</span><h2 class="section-title">Go Deeper</h2></header><div class="content-block"><div class="content-block-header"><div class="content-block-icon">💭</div><div class="content-block-title">Journal Prompt</div></div><p style="font-style:italic;font-size:1.125rem;">"Have I unconsciously limited my conception of spirituality to masculine forms? What might the divine feminine reveal that I have overlooked?"</p></div>
+                <section class="section" id="section-journal"><header class="section-header"><span class="section-label">Reflection</span><h2 class="section-title">Go Deeper</h2></header><div class="content-block"><div class="content-block-header"><div class="content-block-icon">💭</div><div class="content-block-title">Journal Prompt</div></div><p style="font-style:italic;font-size:1.125rem;">"Have I unconsciously limited my conception of spirituality to masculine forms? What might the divine feminine reveal that I have overlooked?"</p></div>
                 <div class="content-block" style="margin-top:1.5rem;"><div class="content-block-header"><div class="content-block-icon">📝</div><div class="content-block-title">Additional Reflection Questions</div></div>
                 <p>What women mystics have I studied? If few or none, why might that be? What gap in my understanding might this represent?</p>
                 <p>How do I relate to the divine—as Father, Mother, both, or beyond gender? What shapes my imagery and what might I be missing?</p>
                 <p>What qualities associated with the divine feminine—unconditional love, receptivity, nurturing—might I develop more fully in my own spiritual life?</p></div></section>
                 
-                <section class="section"><header class="section-header"><span class="section-label">Summary</span><h2 class="section-title">Key Points</h2></header><div class="key-points"><div class="key-point"><div class="key-point-number">1</div><div><h4>Beyond Gender</h4><p>The highest realization has nothing to do with biological sex. Women saints have achieved supreme attainment throughout history, despite often facing greater cultural obstacles than men.</p></div></div><div class="key-point"><div class="key-point-number">2</div><div><h4>Divine Feminine</h4><p>Essential aspects of truth are expressed through feminine forms. Complete spiritual understanding includes honoring both masculine and feminine aspects of divine manifestation.</p></div></div><div class="key-point"><div class="key-point-number">3</div><div><h4>Different Expressions</h4><p>Various forms can embody the same ultimate truth. Anandamoyi Ma's realization expressed through qualities of unconditional maternal love, yet reached the same freedom as any male saint.</p></div></div></div></section>
-                <section class="section quiz-start"><div class="divider"></div><h3>Test Your Understanding</h3><p>Complete a quick quiz to reinforce what you've learned from Chapter 31.</p><button class="btn btn-primary btn-lg" id="start-quiz-btn">Begin Quiz →</button></section>
+                <section class="section" id="section-keypoints"><header class="section-header"><span class="section-label">Summary</span><h2 class="section-title">Key Points</h2></header><div class="key-points"><div class="key-point"><div class="key-point-number">1</div><div><h4>Beyond Gender</h4><p>The highest realization has nothing to do with biological sex. Women saints have achieved supreme attainment throughout history, despite often facing greater cultural obstacles than men.</p></div></div><div class="key-point"><div class="key-point-number">2</div><div><h4>Divine Feminine</h4><p>Essential aspects of truth are expressed through feminine forms. Complete spiritual understanding includes honoring both masculine and feminine aspects of divine manifestation.</p></div></div><div class="key-point"><div class="key-point-number">3</div><div><h4>Different Expressions</h4><p>Various forms can embody the same ultimate truth. Anandamoyi Ma's realization expressed through qualities of unconditional maternal love, yet reached the same freedom as any male saint.</p></div></div></div></section>
+                <section class="section quiz-start" id="section-quiz">
+                <div class="divider"></div>
+                <h3>Complete This Chapter</h3>
+                <p>Test your understanding with a quick quiz, or mark as reflected if you've journaled on this chapter.</p>
+                <div class="completion-options">
+                    <button class="btn btn-primary btn-lg" id="start-quiz-btn">Begin Quiz →</button>
+                    <div class="completion-divider">or</div>
+                    <button class="btn btn-ghost" id="mark-reflected-btn">I've Reflected on This Chapter ✓</button>
+                </div>
+            </section>
             </div>
             <div id="quiz-container" class="quiz-container"><div class="quiz-progress"><div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div><div class="quiz-progress-text" id="quiz-progress-text">1/5</div></div><h2 class="quiz-question" id="quiz-question">Loading...</h2><div class="quiz-options" id="quiz-options"></div><div class="quiz-feedback" id="quiz-feedback"></div><div class="quiz-actions"><button class="btn btn-primary btn-full" id="quiz-submit" disabled>Submit Answer</button><button class="btn btn-primary btn-full" id="quiz-next" style="display:none;">Continue →</button></div><div id="quiz-results" style="display:none;"></div></div>
             <aside class="next-section"><div class="next-section-header"><div class="next-section-icon">📚</div><h3>Continue Your Journey</h3></div><p>Return to the program to continue with the next chapter.</p><a href="../" class="btn btn-secondary" style="margin-top:1rem;">← Back to Program</a></aside>
@@ -87,8 +161,33 @@
     <script src="../../../../assets/js/quiz.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        var LESSON_SLUG = 'ch31';
+        
+        // Initialize reading time and section tracking
+        if (typeof WisdomProgress !== 'undefined') {
+            WisdomProgress.displayReadingTime();
+            WisdomProgress.updateMini();
+            WisdomProgress.initSectionTracking(LESSON_SLUG);
+            WisdomProgress.showContinueBanner(LESSON_SLUG);
+        }
+        
+        // Mark as Reflected button
+        var reflectBtn = document.getElementById('mark-reflected-btn');
+        if (reflectBtn) {
+            reflectBtn.onclick = function() {
+                if (confirm('Mark this chapter as complete? This indicates you have reflected on the material through journaling or contemplation.')) {
+                    if (typeof WisdomProgress !== 'undefined') {
+                        WisdomProgress.markReflected(LESSON_SLUG);
+                        alert('Chapter marked as complete! ✓');
+                        location.reload();
+                    }
+                }
+            };
+        }
+        
+        // Quiz data
         var quizData = [{"question": "Who did Yogananda meet in this chapter?", "choices": ["Anandamoyi Ma, a revered woman saint", "A government minister", "A foreign diplomat", "An academic"], "correct": "Anandamoyi Ma, a revered woman saint"}, {"question": "What does the chapter demonstrate?", "choices": ["Highest attainments are not gender-limited", "Only men can achieve realization", "Women's spirituality is inferior", "Gender determines spiritual capacity"], "correct": "Highest attainments are not gender-limited"}, {"question": "What does the divine feminine represent?", "choices": ["Essential aspects of the absolute", "A lesser form of spirituality", "Only emotional devotion", "Physical beauty"], "correct": "Essential aspects of the absolute"}, {"question": "What bias might seekers examine?", "choices": ["Unconscious assumptions about gender and spirituality", "Food preferences", "Political opinions", "Financial habits"], "correct": "Unconscious assumptions about gender and spirituality"}, {"question": "What should complete spiritual understanding include?", "choices": ["Honoring both masculine and feminine divine aspects", "Only masculine forms", "Only feminine forms", "Rejection of all forms"], "correct": "Honoring both masculine and feminine divine aspects"}];
-        QuizEngine.init(quizData, 'ch31');
+        QuizEngine.init(quizData, LESSON_SLUG);
     });
     </script>
 </body>

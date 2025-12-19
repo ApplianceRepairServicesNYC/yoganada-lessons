@@ -1,6 +1,7 @@
 // Progress Tracking System
 var WisdomProgress = (function() {
     var STORAGE_KEY = 'wisdompath_progress';
+    var SECTION_KEY = 'wisdompath_sections';
     var CHAPTER_SLUGS = ['ch1','ch2','ch3','ch4','ch5','ch6','ch7','ch8','ch9','ch10','ch11','ch12','ch13','ch14','ch15','ch16','ch17','ch18','ch19','ch20','ch21','ch22','ch23','ch24','ch25','ch26','ch27','ch28','ch29','ch30','ch31','ch32','ch33','ch34','ch35','ch36','ch37','ch38','ch39','ch40','ch41','ch42','ch43','ch44','ch45','ch46','ch47','ch48'];
     
     function getProgress() {
@@ -9,6 +10,98 @@ var WisdomProgress = (function() {
             return d ? JSON.parse(d) : { lessons: {} };
         } catch(e) {
             return { lessons: {} };
+        }
+    }
+    
+    // Section bookmark tracking
+    function getSectionProgress() {
+        try {
+            var d = localStorage.getItem(SECTION_KEY);
+            return d ? JSON.parse(d) : {};
+        } catch(e) {
+            return {};
+        }
+    }
+    
+    function saveSectionProgress(slug, sectionId, sectionName) {
+        try {
+            var sections = getSectionProgress();
+            sections[slug] = { id: sectionId, name: sectionName, timestamp: new Date().toISOString() };
+            localStorage.setItem(SECTION_KEY, JSON.stringify(sections));
+        } catch(e) {}
+    }
+    
+    function getLastSection(slug) {
+        var sections = getSectionProgress();
+        return sections[slug] || null;
+    }
+    
+    function clearSectionProgress(slug) {
+        try {
+            var sections = getSectionProgress();
+            delete sections[slug];
+            localStorage.setItem(SECTION_KEY, JSON.stringify(sections));
+        } catch(e) {}
+    }
+    
+    // Reading time estimation (words per minute = 200 for reflective reading)
+    function estimateReadingTime() {
+        var content = document.getElementById('lesson-content');
+        if (!content) return null;
+        var text = content.innerText || content.textContent;
+        var words = text.trim().split(/\s+/).length;
+        var minutes = Math.ceil(words / 200);
+        return minutes;
+    }
+    
+    function displayReadingTime() {
+        var time = estimateReadingTime();
+        var el = document.getElementById('reading-time');
+        if (el && time) {
+            el.textContent = '~' + time + ' min read';
+            el.style.display = 'inline-flex';
+        }
+    }
+    
+    // Section tracking on scroll
+    function initSectionTracking(slug) {
+        var sections = document.querySelectorAll('.section[id]');
+        if (sections.length === 0) return;
+        
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var sectionId = entry.target.id;
+                    var sectionHeader = entry.target.querySelector('.section-title, .section-label');
+                    var sectionName = sectionHeader ? sectionHeader.textContent : sectionId;
+                    saveSectionProgress(slug, sectionId, sectionName);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        sections.forEach(function(section) { observer.observe(section); });
+    }
+    
+    // Show "continue from" banner if returning to chapter
+    function showContinueBanner(slug) {
+        var lastSection = getLastSection(slug);
+        var progress = getLessonProgress(slug);
+        
+        // Only show if viewed but not completed, and has a section saved
+        if (lastSection && progress && progress.viewed && !progress.completed) {
+            var banner = document.getElementById('continue-banner');
+            var sectionLink = document.getElementById('continue-section-link');
+            var sectionName = document.getElementById('continue-section-name');
+            
+            if (banner && sectionLink && sectionName && lastSection.id !== 'section-summary') {
+                sectionName.textContent = lastSection.name;
+                sectionLink.href = '#' + lastSection.id;
+                sectionLink.onclick = function() {
+                    banner.style.display = 'none';
+                    clearSectionProgress(slug);
+                };
+                banner.style.display = 'flex';
+            }
         }
     }
     
@@ -69,14 +162,32 @@ var WisdomProgress = (function() {
         if (score >= total * 0.7) {
             lp.completed = true;
             lp.completedAt = new Date().toISOString();
+            clearSectionProgress(slug);
         }
         p.lessons[slug] = lp;
         saveProgress(p);
     }
     
+    // Alternative completion: Mark as Reflected (for those who prefer journaling over quizzes)
+    function markLessonReflected(slug) {
+        var p = getProgress();
+        if (!p.lessons[slug]) markLessonViewed(slug);
+        p = getProgress();
+        var lp = p.lessons[slug];
+        lp.reflected = true;
+        lp.completed = true;
+        lp.completedAt = new Date().toISOString();
+        lp.completionType = 'reflected';
+        clearSectionProgress(slug);
+        p.lessons[slug] = lp;
+        saveProgress(p);
+        return true;
+    }
+    
     function resetProgress() {
         if (confirm('Reset all progress? This cannot be undone.')) {
             localStorage.removeItem(STORAGE_KEY);
+            localStorage.removeItem(SECTION_KEY);
             location.reload();
         }
     }
@@ -183,10 +294,16 @@ var WisdomProgress = (function() {
         getPath: getPathProgress,
         markViewed: markLessonViewed,
         markCompleted: markLessonCompleted,
+        markReflected: markLessonReflected,
         reset: resetProgress,
         updateMini: updateMiniProgress,
         updateCourse: updateCourseProgress,
-        slugs: CHAPTER_SLUGS
+        slugs: CHAPTER_SLUGS,
+        // New section tracking
+        initSectionTracking: initSectionTracking,
+        showContinueBanner: showContinueBanner,
+        displayReadingTime: displayReadingTime,
+        getLastSection: getLastSection
     };
 })();
 

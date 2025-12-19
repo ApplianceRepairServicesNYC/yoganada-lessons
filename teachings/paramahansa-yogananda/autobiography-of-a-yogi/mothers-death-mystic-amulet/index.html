@@ -183,6 +183,47 @@
             .quiz-container { padding: 1.75rem; }
             .key-point { flex-direction: column; gap: 1rem; }
         }
+    
+        /* Reading Time */
+        .lesson-meta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+        .reading-time{display:none;font-size:0.75rem;font-weight:500;color:var(--color-text-muted);background:var(--color-bg-elevated);padding:0.5rem 0.875rem;border-radius:8px;align-items:center;gap:0.375rem}
+        .reading-time::before{content:'⏱'}
+        
+        /* Continue Banner */
+        .continue-banner{display:none;background:linear-gradient(135deg,rgba(91,164,201,0.12),rgba(232,169,70,0.08));border:1px solid rgba(91,164,201,0.3);border-radius:12px;padding:1rem 1.25rem;margin-bottom:2rem;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+        .continue-banner-text{font-size:0.9375rem;color:var(--color-text-secondary)}
+        .continue-banner-text strong{color:var(--color-text)}
+        .continue-banner-link{font-size:0.875rem;font-weight:600;color:#5ba4c9;display:inline-flex;align-items:center;gap:0.375rem}
+        .continue-banner-link:hover{text-decoration:underline}
+        .continue-banner-dismiss{background:none;border:none;font-size:1.25rem;color:var(--color-text-muted);cursor:pointer;padding:0.25rem}
+        
+        /* Chapter TOC */
+        .chapter-toc{background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:16px;margin-bottom:2.5rem;overflow:hidden}
+        .chapter-toc-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none}
+        .chapter-toc-title{font-size:0.8125rem;font-weight:600;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.05em;display:flex;align-items:center;gap:0.5rem}
+        .chapter-toc-toggle{font-size:0.75rem;color:var(--color-text-muted);transition:transform 0.2s}
+        .chapter-toc.open .chapter-toc-toggle{transform:rotate(180deg)}
+        .chapter-toc-list{display:none;padding:0 1.25rem 1rem;list-style:none}
+        .chapter-toc.open .chapter-toc-list{display:block}
+        .chapter-toc-item{padding:0.5rem 0;border-top:1px solid var(--color-border)}
+        .chapter-toc-item:first-child{border-top:none}
+        .chapter-toc-item a{font-size:0.9375rem;color:var(--color-text-secondary);display:flex;align-items:center;gap:0.5rem;transition:color 0.2s}
+        .chapter-toc-item a:hover{color:var(--color-accent)}
+        .chapter-toc-item a::before{content:'';width:6px;height:6px;background:var(--color-border);border-radius:50%;flex-shrink:0}
+        
+        /* Breath Divider */
+        .breath-divider{text-align:center;padding:2rem 0;color:var(--color-text-muted);font-size:0.8125rem;font-style:italic;opacity:0.8}
+        .breath-divider::before,.breath-divider::after{content:'';display:inline-block;width:40px;height:1px;background:var(--color-border);vertical-align:middle;margin:0 1rem}
+        
+        /* Ghost Button for Reflect */
+        .btn-ghost{background:transparent;color:var(--color-text-muted);border:1px dashed var(--color-border);padding:0.75rem 1.5rem;font-size:0.9375rem}
+        .btn-ghost:hover{border-color:var(--color-accent);color:var(--color-accent)}
+        
+        /* Completion Options */
+        .completion-options{display:flex;flex-direction:column;gap:1rem;align-items:center;margin-top:1.5rem}
+        .completion-divider{display:flex;align-items:center;gap:1rem;width:100%;max-width:300px;color:var(--color-text-muted);font-size:0.8125rem}
+        .completion-divider::before,.completion-divider::after{content:'';flex:1;height:1px;background:var(--color-border)}
+
     </style>
 </head>
 <body>
@@ -215,11 +256,33 @@
                 <span class="progress-mini-text" id="progressMiniText">0 of 48 complete</span>
             </div>
             <header class="page-header">
+                <div class="lesson-meta">
                 <div class="lesson-badge">✦ Chapter 2</div>
-                <h1>My Mother's Death and the Mystic Amulet</h1>
+                <div class="reading-time" id="reading-time"></div>
+            </div>
+            <h1>My Mother's Death and the Mystic Amulet</h1>
                 <p class="page-subtitle">Loss, guidance, and destiny revealed</p>
             </header>
-            <div id="lesson-content">
+
+        <!-- Chapter Table of Contents -->
+        <nav class="chapter-toc" id="chapter-toc">
+            <div class="chapter-toc-header" onclick="document.getElementById('chapter-toc').classList.toggle('open')">
+                <span class="chapter-toc-title">📑 In This Chapter</span>
+                <span class="chapter-toc-toggle">▼</span>
+            </div>
+            <ul class="chapter-toc-list">
+                <li class="chapter-toc-item"><a href="#section-summary">Chapter Summary</a></li>
+                <li class="chapter-toc-item"><a href="#section-teaching">Core Teaching</a></li>
+                <li class="chapter-toc-item"><a href="#section-application">Life Application</a></li>
+                <li class="chapter-toc-item"><a href="#section-concepts">Deeper Insights</a></li>
+                <li class="chapter-toc-item"><a href="#section-practice">Practice Exercise</a></li>
+                <li class="chapter-toc-item"><a href="#section-journal">Journal Prompt</a></li>
+                <li class="chapter-toc-item"><a href="#section-keypoints">Key Points</a></li>
+                <li class="chapter-toc-item"><a href="#section-quiz">Quiz</a></li>
+            </ul>
+        </nav>
+
+        <div id="lesson-content">
                 <section class="section">
                     <header class="section-header">
                         <span class="section-label">Chapter Summary</span>
@@ -431,12 +494,16 @@
                         </div>
                     </div>
                 </section>
-                <section class="section quiz-start">
-                    <div class="divider"></div>
-                    <h3>Test Your Understanding</h3>
-                    <p>Complete a quick quiz to reinforce what you've learned from Chapter 2.</p>
+                <section class="section quiz-start" id="section-quiz">
+                <div class="divider"></div>
+                <h3>Complete This Chapter</h3>
+                <p>Test your understanding with a quick quiz, or mark as reflected if you've journaled on this chapter.</p>
+                <div class="completion-options">
                     <button class="btn btn-primary btn-lg" id="start-quiz-btn">Begin Quiz →</button>
-                </section>
+                    <div class="completion-divider">or</div>
+                    <button class="btn btn-ghost" id="mark-reflected-btn">I've Reflected on This Chapter ✓</button>
+                </div>
+            </section>
             </div>
             <div id="quiz-container" class="quiz-container">
                 <div class="quiz-progress">
@@ -473,6 +540,31 @@
     <script src="../../../../assets/js/quiz.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        var LESSON_SLUG = 'ch2';
+        
+        // Initialize reading time and section tracking
+        if (typeof WisdomProgress !== 'undefined') {
+            WisdomProgress.displayReadingTime();
+            WisdomProgress.updateMini();
+            WisdomProgress.initSectionTracking(LESSON_SLUG);
+            WisdomProgress.showContinueBanner(LESSON_SLUG);
+        }
+        
+        // Mark as Reflected button
+        var reflectBtn = document.getElementById('mark-reflected-btn');
+        if (reflectBtn) {
+            reflectBtn.onclick = function() {
+                if (confirm('Mark this chapter as complete? This indicates you have reflected on the material through journaling or contemplation.')) {
+                    if (typeof WisdomProgress !== 'undefined') {
+                        WisdomProgress.markReflected(LESSON_SLUG);
+                        alert('Chapter marked as complete! ✓');
+                        location.reload();
+                    }
+                }
+            };
+        }
+        
+        // Quiz data
         var quizData = [
             {question:"At what age did Yogananda lose his mother?",choices:["Seven years old","Eleven years old","Fifteen years old","Twenty years old"],correct:"Eleven years old"},
             {question:"What did the mystic amulet contain?",choices:["Gold coins for his journey","A message from Lahiri Mahasaya","A photograph of his mother","Medicine for healing"],correct:"A message from Lahiri Mahasaya"},
@@ -483,7 +575,7 @@
             {question:"David dismissed his mentor's advice about patience ten years ago. Now facing a similar situation, he should:",choices:["Assume the advice is still irrelevant","Consider that he might now be ready to understand what he couldn't before","Resent that he wasn't ready earlier","Find a different mentor"],correct:"Consider that he might now be ready to understand what he couldn't before"},
             {question:"A new manager wants to build trust with her team quickly. The most effective approach would be:",choices:["Explain her credentials and qualifications","Promise great future outcomes","Consistently follow through on small commitments over time","Demand trust based on her position"],correct:"Consistently follow through on small commitments over time"}
         ];
-        QuizEngine.init(quizData, 'ch2');
+        QuizEngine.init(quizData, LESSON_SLUG);
     });
     </script>
 </body>

@@ -15,6 +15,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root{--color-bg-deep:#f5f0e8;--color-bg-card:rgba(255,255,255,0.9);--color-bg-card-solid:#fffcf7;--color-bg-card-hover:rgba(255,252,247,1);--color-bg-elevated:#fff9f0;--color-border:rgba(139,90,43,0.1);--color-border-light:rgba(139,90,43,0.15);--color-text:#2d1810;--color-text-secondary:#5c4033;--color-text-muted:#8b7355;--gradient-primary:linear-gradient(135deg,#e8a946 0%,#c75d24 100%);--gradient-success:linear-gradient(135deg,#10b981 0%,#059669 100%);--gradient-error:linear-gradient(135deg,#ef4444 0%,#dc2626 100%);--color-accent:#c75d24;--color-accent-glow:rgba(205,127,50,0.3);--color-success:#10b981;--color-success-bg:rgba(16,185,129,0.15);--color-error:#ef4444;--color-error-bg:rgba(239,68,68,0.15);--font-body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--font-display:'Sora','Inter',sans-serif}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-body);font-size:1rem;line-height:1.7;color:var(--color-text);background:var(--color-bg-deep);-webkit-font-smoothing:antialiased}.master-bg{position:fixed;inset:0;pointer-events:none;z-index:0}.master-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(232,169,70,0.1) 0%,transparent 45%),linear-gradient(to bottom,transparent 40%,var(--color-bg-deep) 100%)}h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.2;letter-spacing:-0.02em}h1{font-size:clamp(2rem,4vw,2.75rem)}h2{font-size:clamp(1.5rem,3vw,2rem)}h3{font-size:1.25rem}p{color:var(--color-text-secondary);line-height:1.8}a{color:inherit;text-decoration:none}.site-header{position:fixed;top:0;left:0;right:0;z-index:1000;height:64px;background:rgba(250,247,242,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--color-border)}.header-inner{max-width:1400px;margin:0 auto;padding:0 2rem;height:100%;display:flex;align-items:center;justify-content:space-between}.logo{font-family:var(--font-display);font-size:1.375rem;font-weight:700;display:flex;align-items:center;gap:0.625rem}.logo-icon{width:40px;height:40px;background:var(--gradient-primary);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.125rem;box-shadow:0 0 20px var(--color-accent-glow)}.header-nav{display:flex;align-items:center;gap:1.5rem}.header-nav a{font-size:0.9375rem;font-weight:500;color:var(--color-text-muted)}.header-nav a:hover{color:var(--color-text)}.focus-bar{position:fixed;top:0;left:0;right:0;z-index:1001;height:56px;background:rgba(250,247,242,0.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--color-border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;transform:translateY(-100%);transition:transform 0.3s}.focus-bar.active{transform:translateY(0)}.focus-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.875rem;font-weight:500;color:var(--color-text-muted);cursor:pointer;background:none;border:none}.focus-back:hover{color:var(--color-accent)}.focus-title{font-family:var(--font-display);font-size:0.9375rem;font-weight:600}.focus-progress{display:flex;align-items:center;gap:0.75rem;font-size:0.8125rem;color:var(--color-text-muted)}.focus-progress-bar{width:100px;height:4px;background:var(--color-border);border-radius:4px;overflow:hidden}.focus-progress-fill{height:100%;background:var(--gradient-primary);border-radius:4px;width:0%;transition:width 0.3s}body.focus-mode .site-header{transform:translateY(-100%)}body.focus-mode .site-footer{display:none}body.focus-mode .focus-bar{transform:translateY(0)}body.focus-mode .main{padding-top:56px}body.focus-mode .breadcrumb{display:none}.main{position:relative;z-index:1;padding-top:64px}.container{max-width:800px;margin:0 auto;padding:0 2rem}.breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.875rem;color:var(--color-text-muted);padding:2rem 0;flex-wrap:wrap}.breadcrumb a{color:var(--color-text-muted)}.breadcrumb a:hover{color:var(--color-text)}.page-header{padding:2rem 0 3rem;border-bottom:1px solid var(--color-border);margin-bottom:3rem}.lesson-badge{display:inline-flex;align-items:center;gap:0.375rem;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-accent);background:rgba(199,93,36,0.1);padding:0.5rem 1rem;border-radius:8px;margin-bottom:1.25rem}.page-header h1{margin-bottom:0.5rem}.page-subtitle{font-size:1.125rem;color:var(--color-text-muted)}.section{margin-bottom:3.5rem}.section-header{margin-bottom:1.5rem}.section-label{display:inline-block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--color-accent);margin-bottom:0.5rem}.section-title{font-size:1.5rem}.reading-content{background:var(--color-bg-card);border-radius:20px;padding:2.5rem;border:1px solid var(--color-border)}.reading-content p{margin-bottom:1.5rem}.reading-content p:last-child{margin-bottom:0}.highlight-box{background:linear-gradient(135deg,rgba(232,169,70,0.08),rgba(91,164,201,0.05));border-left:4px solid var(--color-accent);border-radius:0 16px 16px 0;padding:1.75rem 2rem}.highlight-box-title{font-family:var(--font-display);font-weight:600;font-size:1rem;margin-bottom:1rem;color:var(--color-text)}.highlight-box p{margin-bottom:1rem}.highlight-box p:last-child{margin-bottom:0}.content-block{background:var(--color-bg-card);border-radius:16px;padding:1.75rem;border:1px solid var(--color-border)}.content-block-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.content-block-icon{font-size:1.5rem}.content-block-title{font-family:var(--font-display);font-weight:600;font-size:1rem}.key-points{display:grid;gap:1.25rem}.key-point{background:var(--color-bg-card);border-radius:16px;padding:1.5rem;border:1px solid var(--color-border);display:flex;gap:1.25rem;align-items:flex-start}.key-point-number{width:36px;height:36px;background:var(--gradient-primary);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:0.875rem;flex-shrink:0}.key-point h4{font-size:1rem;margin-bottom:0.25rem}.key-point p{font-size:0.9375rem;margin:0}.divider{height:1px;background:var(--color-border);margin:3rem 0}.quiz-start{text-align:center;padding:2rem 0}.quiz-start h3{margin-bottom:0.75rem}.quiz-start p{margin-bottom:1.5rem;max-width:400px;margin-left:auto;margin-right:auto}.btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;font-family:var(--font-body);font-weight:600;font-size:1rem;padding:0.875rem 1.75rem;border-radius:12px;border:none;cursor:pointer;transition:all 0.2s}.btn-primary{background:var(--gradient-primary);color:white;box-shadow:0 4px 15px var(--color-accent-glow)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px var(--color-accent-glow)}.btn-primary:disabled{opacity:0.5;cursor:not-allowed;transform:none}.btn-secondary{background:var(--color-bg-card);color:var(--color-text);border:1px solid var(--color-border)}.btn-secondary:hover{background:var(--color-bg-card-hover)}.btn-lg{padding:1rem 2rem;font-size:1.0625rem}.btn-full{width:100%}.quiz-container{display:none;background:var(--color-bg-card);border-radius:24px;padding:2.5rem;border:1px solid var(--color-border)}.quiz-container.active{display:block}.quiz-progress{display:flex;align-items:center;gap:1rem;margin-bottom:2rem}.quiz-progress-bar{flex:1;height:6px;background:var(--color-border);border-radius:6px;overflow:hidden}.quiz-progress-fill{height:100%;background:var(--gradient-primary);border-radius:6px;transition:width 0.3s}.quiz-progress-text{font-size:0.875rem;font-weight:600;color:var(--color-text-muted);min-width:40px;text-align:right}.quiz-question{font-size:1.375rem;margin-bottom:2rem;line-height:1.4}.quiz-options{display:grid;gap:1rem;margin-bottom:1.5rem}.quiz-option{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;background:var(--color-bg-elevated);border:2px solid var(--color-border);border-radius:14px;cursor:pointer;transition:all 0.2s}.quiz-option:hover{border-color:var(--color-border-light);background:var(--color-bg-card-hover)}.quiz-option.selected{border-color:var(--color-accent);background:rgba(199,93,36,0.08)}.quiz-option.correct{border-color:var(--color-success);background:var(--color-success-bg)}.quiz-option.incorrect{border-color:var(--color-error);background:var(--color-error-bg)}.quiz-option.disabled{pointer-events:none}.quiz-option-marker{width:32px;height:32px;border-radius:8px;background:var(--color-bg-card);border:1px solid var(--color-border);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.875rem;color:var(--color-text-muted);flex-shrink:0}.quiz-option.selected .quiz-option-marker{background:var(--gradient-primary);color:white;border-color:transparent}.quiz-option.correct .quiz-option-marker{background:var(--gradient-success);color:white;border-color:transparent}.quiz-option.incorrect .quiz-option-marker{background:var(--gradient-error);color:white;border-color:transparent}.quiz-option-text{font-size:1rem;color:var(--color-text)}.quiz-feedback{display:none;padding:1rem 1.25rem;border-radius:12px;font-weight:600;margin-bottom:1.5rem}.quiz-feedback.show{display:flex;align-items:center;gap:0.75rem}.quiz-feedback.correct{background:var(--color-success-bg);color:#059669}.quiz-feedback.incorrect{background:var(--color-error-bg);color:#dc2626}.quiz-actions{display:flex;gap:1rem}.quiz-results{text-align:center;padding:2rem 0}.quiz-results-icon{font-size:4rem;margin-bottom:1rem}.quiz-results-title{margin-bottom:0.5rem}.quiz-results-score{font-size:1.5rem;font-weight:700;color:var(--color-accent);margin-bottom:1rem}.quiz-results-message{margin-bottom:2rem;max-width:400px;margin-left:auto;margin-right:auto}.next-section{background:linear-gradient(135deg,rgba(91,164,201,0.1),rgba(232,169,70,0.08));border-radius:20px;padding:2.5rem;margin-top:4rem;text-align:center;border:1px solid var(--color-border)}.next-section-header{display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:1rem}.next-section-icon{font-size:1.5rem}.next-section h3{margin:0}.next-section p{max-width:450px;margin:0 auto}.site-footer{background:var(--color-bg-card-solid);border-top:1px solid var(--color-border);padding:2rem 0;margin-top:4rem}.footer-inner{max-width:800px;margin:0 auto;padding:0 2rem;text-align:center}.footer-inner p{font-size:0.875rem;color:var(--color-text-muted)}@media(max-width:700px){.focus-title{display:none}.reading-content{padding:1.75rem}.quiz-container{padding:1.75rem}.key-point{flex-direction:column;gap:1rem}}
+    
+        /* Reading Time */
+        .lesson-meta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+        .reading-time{display:none;font-size:0.75rem;font-weight:500;color:var(--color-text-muted);background:var(--color-bg-elevated);padding:0.5rem 0.875rem;border-radius:8px;align-items:center;gap:0.375rem}
+        .reading-time::before{content:'⏱'}
+        
+        /* Continue Banner */
+        .continue-banner{display:none;background:linear-gradient(135deg,rgba(91,164,201,0.12),rgba(232,169,70,0.08));border:1px solid rgba(91,164,201,0.3);border-radius:12px;padding:1rem 1.25rem;margin-bottom:2rem;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+        .continue-banner-text{font-size:0.9375rem;color:var(--color-text-secondary)}
+        .continue-banner-text strong{color:var(--color-text)}
+        .continue-banner-link{font-size:0.875rem;font-weight:600;color:#5ba4c9;display:inline-flex;align-items:center;gap:0.375rem}
+        .continue-banner-link:hover{text-decoration:underline}
+        .continue-banner-dismiss{background:none;border:none;font-size:1.25rem;color:var(--color-text-muted);cursor:pointer;padding:0.25rem}
+        
+        /* Chapter TOC */
+        .chapter-toc{background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:16px;margin-bottom:2.5rem;overflow:hidden}
+        .chapter-toc-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none}
+        .chapter-toc-title{font-size:0.8125rem;font-weight:600;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.05em;display:flex;align-items:center;gap:0.5rem}
+        .chapter-toc-toggle{font-size:0.75rem;color:var(--color-text-muted);transition:transform 0.2s}
+        .chapter-toc.open .chapter-toc-toggle{transform:rotate(180deg)}
+        .chapter-toc-list{display:none;padding:0 1.25rem 1rem;list-style:none}
+        .chapter-toc.open .chapter-toc-list{display:block}
+        .chapter-toc-item{padding:0.5rem 0;border-top:1px solid var(--color-border)}
+        .chapter-toc-item:first-child{border-top:none}
+        .chapter-toc-item a{font-size:0.9375rem;color:var(--color-text-secondary);display:flex;align-items:center;gap:0.5rem;transition:color 0.2s}
+        .chapter-toc-item a:hover{color:var(--color-accent)}
+        .chapter-toc-item a::before{content:'';width:6px;height:6px;background:var(--color-border);border-radius:50%;flex-shrink:0}
+        
+        /* Breath Divider */
+        .breath-divider{text-align:center;padding:2rem 0;color:var(--color-text-muted);font-size:0.8125rem;font-style:italic;opacity:0.8}
+        .breath-divider::before,.breath-divider::after{content:'';display:inline-block;width:40px;height:1px;background:var(--color-border);vertical-align:middle;margin:0 1rem}
+        
+        /* Ghost Button for Reflect */
+        .btn-ghost{background:transparent;color:var(--color-text-muted);border:1px dashed var(--color-border);padding:0.75rem 1.5rem;font-size:0.9375rem}
+        .btn-ghost:hover{border-color:var(--color-accent);color:var(--color-accent)}
+        
+        /* Completion Options */
+        .completion-options{display:flex;flex-direction:column;gap:1rem;align-items:center;margin-top:1.5rem}
+        .completion-divider{display:flex;align-items:center;gap:1rem;width:100%;max-width:300px;color:var(--color-text-muted);font-size:0.8125rem}
+        .completion-divider::before,.completion-divider::after{content:'';flex:1;height:1px;background:var(--color-border)}
+
     </style>
 </head>
 <body>
@@ -29,14 +70,36 @@
                 <div class="progress-mini-bar"><div class="progress-mini-fill" id="progressMiniFill"></div></div>
                 <span class="progress-mini-text" id="progressMiniText">0 of 48 complete</span>
             </div>
-            <header class="page-header"><div class="lesson-badge">Chapter 28</div><h1>Kashi, Reborn and Rediscovered</h1><p class="page-subtitle">Evidence of reincarnation</p></header>
-            <div id="lesson-content">
-                <section class="section"><header class="section-header"><span class="section-label">Chapter Summary</span><h2 class="section-title">Overview</h2></header><div class="reading-content"><p>Yogananda recounts the death and rebirth of a young student named Kashi. Through yogic insight, Yogananda locates the child's next incarnation and reunites with him, providing striking evidence for the reality of reincarnation.</p>
+            <header class="page-header"><div class="lesson-meta">
+                <div class="lesson-badge">Chapter 28</div>
+                <div class="reading-time" id="reading-time"></div>
+            </div>
+            <h1>Kashi, Reborn and Rediscovered</h1><p class="page-subtitle">Evidence of reincarnation</p></header>
+
+        <!-- Chapter Table of Contents -->
+        <nav class="chapter-toc" id="chapter-toc">
+            <div class="chapter-toc-header" onclick="document.getElementById('chapter-toc').classList.toggle('open')">
+                <span class="chapter-toc-title">📑 In This Chapter</span>
+                <span class="chapter-toc-toggle">▼</span>
+            </div>
+            <ul class="chapter-toc-list">
+                <li class="chapter-toc-item"><a href="#section-summary">Chapter Summary</a></li>
+                <li class="chapter-toc-item"><a href="#section-teaching">Core Teaching</a></li>
+                <li class="chapter-toc-item"><a href="#section-application">Life Application</a></li>
+                <li class="chapter-toc-item"><a href="#section-practice">Practice Exercise</a></li>
+                <li class="chapter-toc-item"><a href="#section-journal">Journal Prompt</a></li>
+                <li class="chapter-toc-item"><a href="#section-keypoints">Key Points</a></li>
+                <li class="chapter-toc-item"><a href="#section-quiz">Quiz</a></li>
+            </ul>
+        </nav>
+
+        <div id="lesson-content">
+                <section class="section" id="section-summary"><header class="section-header"><span class="section-label">Chapter Summary</span><h2 class="section-title">Overview</h2></header><div class="reading-content"><p>Yogananda recounts the death and rebirth of a young student named Kashi. Through yogic insight, Yogananda locates the child's next incarnation and reunites with him, providing striking evidence for the reality of reincarnation.</p>
                 <p>The chapter dramatically illustrates the continuity of the soul beyond death. The same individual, recognizable by subtle signs, continues in a new body.</p>
                 <p>Kashi had been a devoted young student who died unexpectedly. Yogananda, grieving the loss, used his meditative powers to trace the soul's journey after death. He perceived Kashi's rebirth into a new family and, following inner guidance, located the child in his new incarnation.</p>
                 <p>The child displayed unmistakable recognition when Yogananda arrived—a recognition that transcended the new personality's ordinary knowledge. This wasn't a random infant but the same soul, carrying forward the connection formed in the previous life. The reunion provided both parties with striking evidence of the soul's continuity.</p></div></section>
                 
-                <section class="section"><header class="section-header"><span class="section-label">Core Teaching</span><h2 class="section-title">What This Chapter Reveals</h2></header><div class="reading-content"><p><strong>Reincarnation is observable fact.</strong> For those with developed perception, the continuity of souls across lifetimes is not theory but direct observation.</p>
+                <section class="section" id="section-teaching"><header class="section-header"><span class="section-label">Core Teaching</span><h2 class="section-title">What This Chapter Reveals</h2></header><div class="reading-content"><p><strong>Reincarnation is observable fact.</strong> For those with developed perception, the continuity of souls across lifetimes is not theory but direct observation.</p>
                 <p><strong>The soul carries forward.</strong> Tendencies, connections, and karmic patterns continue beyond physical death. Death is transition, not termination.</p>
                 <p><strong>Context for current life.</strong> Understanding reincarnation changes one's relationship to present circumstances. Current challenges and gifts may reflect patterns from a larger story.</p>
                 <p>Most people accept or reject reincarnation based on philosophical arguments or cultural conditioning. Yogananda's account shifts the discussion to direct experience. For those with the eyes to see, reincarnation isn't a belief to argue about but a perception to develop.</p>
@@ -46,7 +109,7 @@
                 <section class="section"><div class="highlight-box"><div class="highlight-box-title">✦ Death as Transition</div><p>If reincarnation is real, death is not termination but transition—like changing clothes or moving to a new home. The soul, the essential identity, continues. What dies is the body and the personality built around it, but the deeper self moves on.</p>
                 <p>This perspective can profoundly change how we relate to death—our own and others'. Grief remains appropriate; we miss the particular form that has passed. But the existential terror of annihilation dissolves. The loved one continues; only the form of relationship changes.</p></div></section>
                 
-                <section class="section"><header class="section-header"><span class="section-label">Life Application</span><h2 class="section-title">Applying This Today</h2></header><div class="reading-content"><p>If reincarnation is real, then your current life is one chapter in a longer story. Present difficulties may be opportunities to resolve past patterns; present gifts may be developments begun long ago.</p>
+                <section class="section" id="section-application"><header class="section-header"><span class="section-label">Life Application</span><h2 class="section-title">Applying This Today</h2></header><div class="reading-content"><p>If reincarnation is real, then your current life is one chapter in a longer story. Present difficulties may be opportunities to resolve past patterns; present gifts may be developments begun long ago.</p>
                 <p>This perspective can reduce fear of death and provide patience with your current developmental stage.</p>
                 <p>Consider your own life through this lens. What interests, talents, or fears do you have that seem to exceed what this lifetime could produce? What persistent patterns keep appearing despite your efforts to change them? What connections feel deeper than their history in this life would explain?</p>
                 <p>You don't need to claim certainty about specific past lives—that can become a form of spiritual fantasy. But experimenting with the perspective that your soul has a longer history can provide useful context. If a challenge has persisted for lifetimes, of course it's hard to resolve; but resolving it now prevents carrying it further. If a gift has been developing for lifetimes, honoring it honors that whole development.</p>
@@ -55,8 +118,10 @@
                 
                 <section class="section"><div class="highlight-box"><div class="highlight-box-title">✦ Working with Past Patterns</div><p>You don't need past-life recall to work with past-life patterns. Whatever their origin, your current tendencies can be addressed in the present. The point isn't to discover where patterns came from but to transform them now.</p>
                 <p>When facing persistent challenges, try this perspective: "I may have struggled with this for lifetimes. I'm going to resolve it now so I don't carry it further." This combines patience (it's old, deep) with resolve (it ends here).</p></div></section>
-                
-                <section class="section"><header class="section-header"><span class="section-label">Your Assignment</span><h2 class="section-title">Practice Exercise</h2></header><div class="highlight-box"><div class="highlight-box-title">✦ Practice</div><p>Consider your deepest interests, strongest tendencies, and most persistent patterns. Without forcing belief, experiment with the perspective that these may reflect soul patterns developed over multiple lives. How does this view affect your relationship to your current challenges and gifts?</p>
+            
+            <div class="breath-divider">✦ Take a moment before continuing ✦</div>
+            
+            <section class="section" id="section-practice"><header class="section-header"><span class="section-label">Your Assignment</span><h2 class="section-title">Practice Exercise</h2></header><div class="highlight-box"><div class="highlight-box-title">✦ Practice</div><p>Consider your deepest interests, strongest tendencies, and most persistent patterns. Without forcing belief, experiment with the perspective that these may reflect soul patterns developed over multiple lives. How does this view affect your relationship to your current challenges and gifts?</p>
                 <p><strong>Week One:</strong> List your strongest talents, deepest interests, persistent fears, and recurring patterns. Notice which seem to exceed what this lifetime could explain.</p>
                 <p><strong>Week Two:</strong> Experiment with viewing one challenging pattern as a soul-level issue spanning lifetimes. Does this provide useful context? Does it change how you approach working with the pattern?</p>
                 <p><strong>Week Three:</strong> Consider your significant relationships through the lens of soul connections across time. Does this perspective provide insight into the dynamics you experience?</p>
@@ -67,14 +132,23 @@
                 <p>The goal of spiritual practice, from this perspective, is to resolve the patterns that perpetuate incarnation—to become free from the wheel of birth and death. Not through rejection of life but through completing what birth and death serve. The soul incarnates to learn, grow, and ultimately realize its nature. When that realization is complete, the cycle ends—not through termination but through liberation.</p>
                 <p>Until then, each lifetime is an opportunity. What patterns can you resolve? What development can you complete? What service can you render? These questions gain urgency when life is seen not as isolated episode but as chapter in an ongoing story with ultimate resolution as its aim.</p></div></section>
                 
-                <section class="section"><header class="section-header"><span class="section-label">Reflection</span><h2 class="section-title">Go Deeper</h2></header><div class="content-block"><div class="content-block-header"><div class="content-block-icon">💭</div><div class="content-block-title">Journal Prompt</div></div><p style="font-style:italic;font-size:1.125rem;">"What patterns in my life feel deeper than this lifetime could explain? How might the perspective of soul continuity change my relationship to current challenges?"</p></div>
+                <section class="section" id="section-journal"><header class="section-header"><span class="section-label">Reflection</span><h2 class="section-title">Go Deeper</h2></header><div class="content-block"><div class="content-block-header"><div class="content-block-icon">💭</div><div class="content-block-title">Journal Prompt</div></div><p style="font-style:italic;font-size:1.125rem;">"What patterns in my life feel deeper than this lifetime could explain? How might the perspective of soul continuity change my relationship to current challenges?"</p></div>
                 <div class="content-block" style="margin-top:1.5rem;"><div class="content-block-header"><div class="content-block-icon">📝</div><div class="content-block-title">Additional Reflection Questions</div></div>
                 <p>How would I approach my life differently if I truly believed it was one chapter in a longer story? Would I be more patient? More urgent? Both?</p>
                 <p>What in my life feels like "unfinished business" that needs resolution before I can move on? How might I address these things now?</p>
                 <p>How does the possibility of soul continuity affect my fear of death? My relationship to those who have died?</p></div></section>
                 
-                <section class="section"><header class="section-header"><span class="section-label">Summary</span><h2 class="section-title">Key Points</h2></header><div class="key-points"><div class="key-point"><div class="key-point-number">1</div><div><h4>Observable Continuity</h4><p>For those with developed perception, reincarnation is not theory but observation. Yogananda's ability to track Kashi's soul and locate his next incarnation demonstrates perception beyond ordinary limits.</p></div></div><div class="key-point"><div class="key-point-number">2</div><div><h4>Soul Patterns Persist</h4><p>Tendencies, connections, and karmic patterns continue beyond death. What we work on in this life affects future lives; what we haven't resolved will present itself again. Death is transition, not termination.</p></div></div><div class="key-point"><div class="key-point-number">3</div><div><h4>Larger Context</h4><p>Current life is one chapter in a longer story. This perspective can reduce fear of death, provide patience with slow development, and motivate resolving patterns now rather than carrying them forward.</p></div></div></div></section>
-                <section class="section quiz-start"><div class="divider"></div><h3>Test Your Understanding</h3><p>Complete a quick quiz to reinforce what you've learned from Chapter 28.</p><button class="btn btn-primary btn-lg" id="start-quiz-btn">Begin Quiz →</button></section>
+                <section class="section" id="section-keypoints"><header class="section-header"><span class="section-label">Summary</span><h2 class="section-title">Key Points</h2></header><div class="key-points"><div class="key-point"><div class="key-point-number">1</div><div><h4>Observable Continuity</h4><p>For those with developed perception, reincarnation is not theory but observation. Yogananda's ability to track Kashi's soul and locate his next incarnation demonstrates perception beyond ordinary limits.</p></div></div><div class="key-point"><div class="key-point-number">2</div><div><h4>Soul Patterns Persist</h4><p>Tendencies, connections, and karmic patterns continue beyond death. What we work on in this life affects future lives; what we haven't resolved will present itself again. Death is transition, not termination.</p></div></div><div class="key-point"><div class="key-point-number">3</div><div><h4>Larger Context</h4><p>Current life is one chapter in a longer story. This perspective can reduce fear of death, provide patience with slow development, and motivate resolving patterns now rather than carrying them forward.</p></div></div></div></section>
+                <section class="section quiz-start" id="section-quiz">
+                <div class="divider"></div>
+                <h3>Complete This Chapter</h3>
+                <p>Test your understanding with a quick quiz, or mark as reflected if you've journaled on this chapter.</p>
+                <div class="completion-options">
+                    <button class="btn btn-primary btn-lg" id="start-quiz-btn">Begin Quiz →</button>
+                    <div class="completion-divider">or</div>
+                    <button class="btn btn-ghost" id="mark-reflected-btn">I've Reflected on This Chapter ✓</button>
+                </div>
+            </section>
             </div>
             <div id="quiz-container" class="quiz-container"><div class="quiz-progress"><div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div><div class="quiz-progress-text" id="quiz-progress-text">1/5</div></div><h2 class="quiz-question" id="quiz-question">Loading...</h2><div class="quiz-options" id="quiz-options"></div><div class="quiz-feedback" id="quiz-feedback"></div><div class="quiz-actions"><button class="btn btn-primary btn-full" id="quiz-submit" disabled>Submit Answer</button><button class="btn btn-primary btn-full" id="quiz-next" style="display:none;">Continue →</button></div><div id="quiz-results" style="display:none;"></div></div>
             <aside class="next-section"><div class="next-section-header"><div class="next-section-icon">📚</div><h3>Continue Your Journey</h3></div><p>Return to the program to continue with the next chapter.</p><a href="../" class="btn btn-secondary" style="margin-top:1rem;">← Back to Program</a></aside>
@@ -86,8 +160,33 @@
     <script src="../../../../assets/js/quiz.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        var LESSON_SLUG = 'ch28';
+        
+        // Initialize reading time and section tracking
+        if (typeof WisdomProgress !== 'undefined') {
+            WisdomProgress.displayReadingTime();
+            WisdomProgress.updateMini();
+            WisdomProgress.initSectionTracking(LESSON_SLUG);
+            WisdomProgress.showContinueBanner(LESSON_SLUG);
+        }
+        
+        // Mark as Reflected button
+        var reflectBtn = document.getElementById('mark-reflected-btn');
+        if (reflectBtn) {
+            reflectBtn.onclick = function() {
+                if (confirm('Mark this chapter as complete? This indicates you have reflected on the material through journaling or contemplation.')) {
+                    if (typeof WisdomProgress !== 'undefined') {
+                        WisdomProgress.markReflected(LESSON_SLUG);
+                        alert('Chapter marked as complete! ✓');
+                        location.reload();
+                    }
+                }
+            };
+        }
+        
+        // Quiz data
         var quizData = [{"question": "What did Yogananda do after Kashi's death?", "choices": ["Located his next incarnation and reunited with him", "Forgot about him", "Wrote a memorial", "Left the country"], "correct": "Located his next incarnation and reunited with him"}, {"question": "What does this chapter illustrate about death?", "choices": ["The soul continues beyond physical death", "Death is final", "Rebirth is impossible", "Only saints reincarnate"], "correct": "The soul continues beyond physical death"}, {"question": "What becomes observable with developed perception?", "choices": ["The continuity of souls across lifetimes", "Hidden treasure", "Future events", "Political changes"], "correct": "The continuity of souls across lifetimes"}, {"question": "How might understanding reincarnation affect fear of death?", "choices": ["It can reduce it", "It always increases it", "It has no effect", "It causes confusion"], "correct": "It can reduce it"}, {"question": "What perspective does reincarnation provide on difficulties?", "choices": ["They may be opportunities to resolve past patterns", "They are random punishment", "They are meaningless", "They prove unworthiness"], "correct": "They may be opportunities to resolve past patterns"}];
-        QuizEngine.init(quizData, 'ch28');
+        QuizEngine.init(quizData, LESSON_SLUG);
     });
     </script>
 </body>

@@ -180,6 +180,47 @@
             .focus-title { display: none; }
             .header-nav { display: none; }
         }
+    
+        /* Reading Time */
+        .lesson-meta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+        .reading-time{display:none;font-size:0.75rem;font-weight:500;color:var(--color-text-muted);background:var(--color-bg-elevated);padding:0.5rem 0.875rem;border-radius:8px;align-items:center;gap:0.375rem}
+        .reading-time::before{content:'⏱'}
+        
+        /* Continue Banner */
+        .continue-banner{display:none;background:linear-gradient(135deg,rgba(91,164,201,0.12),rgba(232,169,70,0.08));border:1px solid rgba(91,164,201,0.3);border-radius:12px;padding:1rem 1.25rem;margin-bottom:2rem;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+        .continue-banner-text{font-size:0.9375rem;color:var(--color-text-secondary)}
+        .continue-banner-text strong{color:var(--color-text)}
+        .continue-banner-link{font-size:0.875rem;font-weight:600;color:#5ba4c9;display:inline-flex;align-items:center;gap:0.375rem}
+        .continue-banner-link:hover{text-decoration:underline}
+        .continue-banner-dismiss{background:none;border:none;font-size:1.25rem;color:var(--color-text-muted);cursor:pointer;padding:0.25rem}
+        
+        /* Chapter TOC */
+        .chapter-toc{background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:16px;margin-bottom:2.5rem;overflow:hidden}
+        .chapter-toc-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;user-select:none}
+        .chapter-toc-title{font-size:0.8125rem;font-weight:600;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.05em;display:flex;align-items:center;gap:0.5rem}
+        .chapter-toc-toggle{font-size:0.75rem;color:var(--color-text-muted);transition:transform 0.2s}
+        .chapter-toc.open .chapter-toc-toggle{transform:rotate(180deg)}
+        .chapter-toc-list{display:none;padding:0 1.25rem 1rem;list-style:none}
+        .chapter-toc.open .chapter-toc-list{display:block}
+        .chapter-toc-item{padding:0.5rem 0;border-top:1px solid var(--color-border)}
+        .chapter-toc-item:first-child{border-top:none}
+        .chapter-toc-item a{font-size:0.9375rem;color:var(--color-text-secondary);display:flex;align-items:center;gap:0.5rem;transition:color 0.2s}
+        .chapter-toc-item a:hover{color:var(--color-accent)}
+        .chapter-toc-item a::before{content:'';width:6px;height:6px;background:var(--color-border);border-radius:50%;flex-shrink:0}
+        
+        /* Breath Divider */
+        .breath-divider{text-align:center;padding:2rem 0;color:var(--color-text-muted);font-size:0.8125rem;font-style:italic;opacity:0.8}
+        .breath-divider::before,.breath-divider::after{content:'';display:inline-block;width:40px;height:1px;background:var(--color-border);vertical-align:middle;margin:0 1rem}
+        
+        /* Ghost Button for Reflect */
+        .btn-ghost{background:transparent;color:var(--color-text-muted);border:1px dashed var(--color-border);padding:0.75rem 1.5rem;font-size:0.9375rem}
+        .btn-ghost:hover{border-color:var(--color-accent);color:var(--color-accent)}
+        
+        /* Completion Options */
+        .completion-options{display:flex;flex-direction:column;gap:1rem;align-items:center;margin-top:1.5rem}
+        .completion-divider{display:flex;align-items:center;gap:1rem;width:100%;max-width:300px;color:var(--color-text-muted);font-size:0.8125rem}
+        .completion-divider::before,.completion-divider::after{content:'';flex:1;height:1px;background:var(--color-border)}
+
     </style>
 </head>
 <body>
@@ -219,8 +260,11 @@
             
             <div id="lesson-content">
                 <header class="page-header">
-                    <div class="lesson-badge">✦ Free Preview</div>
-                    <h1>Self-Realization</h1>
+                    <div class="lesson-meta">
+                <div class="lesson-badge">✦ Free Preview</div>
+                <div class="reading-time" id="reading-time"></div>
+            </div>
+            <h1>Self-Realization</h1>
                     <p class="page-subtitle">Lesson 1 of 6 • Autobiography of a Yogi</p>
                 </header>
                 
@@ -303,12 +347,16 @@
                     </div>
                 </section>
                 
-                <section class="section quiz-start">
-                    <div class="divider"></div>
-                    <h3>Test Your Understanding</h3>
-                    <p>Complete a quick quiz to reinforce what you've learned.</p>
+                <section class="section quiz-start" id="section-quiz">
+                <div class="divider"></div>
+                <h3>Complete This Chapter</h3>
+                <p>Test your understanding with a quick quiz, or mark as reflected if you've journaled on this chapter.</p>
+                <div class="completion-options">
                     <button class="btn btn-primary btn-lg" id="start-quiz-btn">Begin Quiz →</button>
-                </section>
+                    <div class="completion-divider">or</div>
+                    <button class="btn btn-ghost" id="mark-reflected-btn">I've Reflected on This Chapter ✓</button>
+                </div>
+            </section>
             </div>
             
             <div id="quiz-container" class="quiz-container">
