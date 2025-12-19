@@ -89,6 +89,14 @@
         .breadcrumb a { color: var(--color-text-muted); transition: color 0.2s; }
         .breadcrumb a:hover { color: var(--color-text); }
         
+        .course-progress-mini { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 10px; margin-bottom: 1.5rem; }
+        .progress-mini-bar { flex: 1; max-width: 120px; height: 6px; background: var(--color-border); border-radius: 6px; overflow: hidden; }
+        .progress-mini-fill { height: 100%; background: var(--gradient-primary); border-radius: 6px; transition: width 0.3s; }
+        .progress-mini-text { font-size: 0.8125rem; font-weight: 600; color: var(--color-text-muted); white-space: nowrap; }
+        .course-progress-mini.complete { border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.05); }
+        .course-progress-mini.complete .progress-mini-fill { background: var(--gradient-success); }
+        .course-progress-mini.complete .progress-mini-text { color: var(--color-success); }
+        
         .page-header { padding: 2rem 0 3rem; border-bottom: 1px solid var(--color-border); margin-bottom: 3rem; }
         .lesson-badge { display: inline-flex; align-items: center; gap: 0.375rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-success); background: var(--color-success-bg); padding: 0.5rem 1rem; border-radius: 8px; margin-bottom: 1.25rem; }
         .page-header h1 { margin-bottom: 0.5rem; }
@@ -227,6 +235,11 @@
                 <a href="../">Autobiography</a><span>/</span>
                 <span>Chapter 1</span>
             </nav>
+            
+            <div class="course-progress-mini" id="courseProgressMini">
+                <div class="progress-mini-bar"><div class="progress-mini-fill" id="progressMiniFill"></div></div>
+                <span class="progress-mini-text" id="progressMiniText">0 of 48 complete</span>
+            </div>
             
             <header class="page-header">
                 <div class="lesson-badge">✦ Free Lesson</div>
@@ -621,6 +634,25 @@
         }
         document.addEventListener('DOMContentLoaded',function(){
             markLessonViewed(LESSON_SLUG);
+            
+            // Update mini course progress
+            var slugs=['ch1','ch2','ch3','ch4','ch5','ch6','ch7','ch8','ch9','ch10','ch11','ch12','ch13','ch14','ch15','ch16','ch17','ch18','ch19','ch20','ch21','ch22','ch23','ch24','ch25','ch26','ch27','ch28','ch29','ch30','ch31','ch32','ch33','ch34','ch35','ch36','ch37','ch38','ch39','ch40','ch41','ch42','ch43','ch44','ch45','ch46','ch47','ch48'];
+            var p=getProgress(),completed=0;
+            slugs.forEach(function(s){if(p.lessons[s]&&p.lessons[s].completed)completed++;});
+            var pct=Math.round((completed/slugs.length)*100);
+            var miniBar=document.getElementById('progressMiniFill');
+            var miniText=document.getElementById('progressMiniText');
+            var miniContainer=document.getElementById('courseProgressMini');
+            if(miniBar)miniBar.style.width=pct+'%';
+            if(miniText){
+                if(pct===100){
+                    miniText.textContent='🎉 100% Complete!';
+                    if(miniContainer)miniContainer.classList.add('complete');
+                }else{
+                    miniText.textContent=completed+' of 48 complete ('+pct+'%)';
+                }
+            }
+            
             els={container:document.getElementById('quiz-container'),progressFill:document.getElementById('quiz-progress-fill'),progressText:document.getElementById('quiz-progress-text'),question:document.getElementById('quiz-question'),options:document.getElementById('quiz-options'),feedback:document.getElementById('quiz-feedback'),submit:document.getElementById('quiz-submit'),next:document.getElementById('quiz-next'),results:document.getElementById('quiz-results')};
             document.getElementById('start-quiz-btn').onclick=function(){quizState={currentIndex:0,answers:[],score:0,selectedAnswer:null};showQuestion(0);};
             els.submit.onclick=submitAnswer;els.next.onclick=nextQuestion;
