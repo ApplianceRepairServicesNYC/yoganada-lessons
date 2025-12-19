@@ -456,29 +456,27 @@
             position: fixed;
             inset: 0;
             background: rgba(45, 24, 16, 0.5);
-            backdrop-filter: blur(8px);
             z-index: 2000;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s;
+            pointer-events: none;
+            transition: opacity 0.3s;
         }
-        .feature-panel-overlay.active { opacity: 1; visibility: visible; }
+        .feature-panel-overlay.active { opacity: 1; visibility: visible; pointer-events: auto; }
         .feature-panel {
+            display: none;
             position: fixed;
             top: 0;
             right: 0;
             width: 100%;
             max-width: 700px;
-            height: 100vh;
+            height: 100%;
             background: var(--color-bg);
             z-index: 2001;
-            transform: translateX(100%);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
             flex-direction: column;
-            box-shadow: -20px 0 60px rgba(139, 90, 43, 0.15);
+            overflow: hidden;
         }
-        .feature-panel.active { transform: translateX(0); }
+        .feature-panel.active { display: flex; }
         .feature-panel-header {
             padding: 1.5rem 2rem;
             border-bottom: 1px solid var(--color-border);
@@ -728,35 +726,34 @@
         .read-more-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(45, 24, 16, 0.4);
-            backdrop-filter: blur(4px);
+            background: rgba(45, 24, 16, 0.5);
             z-index: 2000;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
+            pointer-events: none;
+            transition: opacity 0.3s;
         }
         .read-more-overlay.active {
             opacity: 1;
             visibility: visible;
+            pointer-events: auto;
         }
         .read-more-panel {
+            display: none;
             position: fixed;
             top: 0;
             right: 0;
             width: 100%;
             max-width: 700px;
-            height: 100vh;
+            height: 100%;
             background: var(--color-bg);
             z-index: 2001;
-            transform: translateX(100%);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
             flex-direction: column;
             border-left: 1px solid var(--color-border);
-            box-shadow: -10px 0 40px rgba(139, 90, 43, 0.1);
+            overflow: hidden;
         }
         .read-more-panel.active {
-            transform: translateX(0);
+            display: flex;
         }
         .read-more-header {
             padding: 1.5rem 2rem;
@@ -863,6 +860,12 @@
             .read-more-scroll {
                 padding: 1.5rem;
             }
+            /* Disable backdrop-filter on mobile for performance */
+            .site-header.scrolled {
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                background: rgba(250, 247, 242, 0.98);
+            }
         }
         
         /* ==================== PROGRAMS ==================== */
@@ -873,7 +876,6 @@
         }
         .program-card {
             background: var(--color-bg-card);
-            backdrop-filter: blur(10px);
             border-radius: 24px;
             overflow: hidden;
             border: 1px solid var(--color-border);
@@ -1198,16 +1200,17 @@
         .mobile-menu-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(45, 24, 16, 0.3);
-            backdrop-filter: blur(4px);
+            background: rgba(45, 24, 16, 0.5);
             z-index: 1500;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
+            pointer-events: none;
+            transition: opacity 0.3s;
         }
         .mobile-menu-overlay.active {
             opacity: 1;
             visibility: visible;
+            pointer-events: auto;
         }
         .mobile-menu {
             position: fixed;
@@ -1215,7 +1218,7 @@
             right: 0;
             width: 300px;
             max-width: 85vw;
-            height: 100vh;
+            height: 100%;
             background: var(--color-bg);
             z-index: 1501;
             transform: translateX(100%);
