@@ -12,6 +12,13 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
     <link rel="canonical" href="https://yoganandateachings.com/teachings/paramahansa-yogananda/autobiography-of-a-yogi/">
     <title>Autobiography of a Yogi — Yogananda Teachings</title>
+    <script>
+    // EARLY UNLOCK CHECK - runs before page renders
+    (function() {
+        var isUnlocked = localStorage.getItem("yogananda_course_unlocked") === "true";
+        document.documentElement.className = isUnlocked ? "course-unlocked" : "course-locked";
+    })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -129,11 +136,12 @@
         .badge-locked { background: var(--color-bg-elevated); color: var(--color-locked); }
         .badge-unlocked { background: linear-gradient(135deg, rgba(232, 169, 70, 0.15), rgba(199, 93, 36, 0.15)); color: var(--color-accent); }
         
-        /* Course unlock state styles */
-        .course-locked .paid-content { display: none; }
-        .course-unlocked .paid-content { display: block; }
-        .course-unlocked .lesson-item-locked { opacity: 1; cursor: pointer; }
+        /* Course unlock state styles - target html element */
+        .course-locked .lesson-item-locked { opacity: 0.6; cursor: not-allowed; }
+        .course-unlocked .lesson-item-locked { opacity: 1 !important; cursor: pointer !important; }
         .course-unlocked .lesson-item-locked:hover { background: var(--color-bg-card-hover); border-color: var(--color-accent); box-shadow: 0 0 30px var(--color-accent-glow); transform: translateX(8px); }
+        .course-unlocked .badge-locked { background: rgba(16,185,129,0.15) !important; color: #059669 !important; }
+        .course-unlocked #unlock-section { display: none !important; }
         .badge-unlocked { background: rgba(16,185,129,0.15); color: #059669; }
         .badge-completed { background: var(--color-success-bg); color: var(--color-success); }
         .badge-progress { background: rgba(245, 158, 11, 0.2); color: var(--color-warning); }
@@ -777,53 +785,22 @@
     <script>
     // === UNLOCK SYSTEM ===
     document.addEventListener("DOMContentLoaded", function() {
-        // Read localStorage
-        var unlocked = localStorage.getItem("yogananda_course_unlocked");
-        console.log("=== UNLOCK DEBUG ===");
-        console.log("localStorage key: yogananda_course_unlocked");
-        console.log("localStorage value:", unlocked);
-        console.log("Type:", typeof unlocked);
+        var isUnlocked = localStorage.getItem("yogananda_course_unlocked") === "true";
+        console.log("Course unlocked:", isUnlocked);
         
-        if (unlocked === "true") {
-            console.log("UNLOCKING COURSE...");
-            document.body.classList.remove("course-locked");
-            document.body.classList.add("course-unlocked");
-            console.log("Body classes:", document.body.className);
-            
-            // Hide unlock section
-            var unlockSection = document.getElementById("unlock-section");
-            if (unlockSection) {
-                unlockSection.style.display = "none";
-                console.log("Hidden unlock section");
-            }
-            
-            // Find all locked lessons
-            var lockedLessons = document.querySelectorAll(".lesson-item-locked");
-            console.log("Found locked lessons:", lockedLessons.length);
-            
-            // Convert all locked lessons to unlocked
-            lockedLessons.forEach(function(item, index) {
+        if (isUnlocked) {
+            // Update all locked lessons to be clickable and show as unlocked
+            document.querySelectorAll(".lesson-item-locked").forEach(function(item) {
                 var url = item.getAttribute("data-lesson-url");
-                console.log("Unlocking lesson " + index + ":", url);
                 if (url) {
                     item.setAttribute("href", url);
-                    item.classList.remove("lesson-item-locked");
-                    item.classList.add("lesson-item-unlocked");
                     item.removeAttribute("onclick");
                     var badge = item.querySelector(".lesson-badge");
+                    if (badge) badge.textContent = "Unlocked";
                     var arrow = item.querySelector(".lesson-arrow");
-                    if (badge) { 
-                        badge.textContent = "Unlocked"; 
-                        badge.className = "lesson-badge badge-unlocked"; 
-                    }
                     if (arrow) arrow.textContent = "→";
                 }
             });
-            console.log("=== UNLOCK COMPLETE ===");
-        } else {
-            console.log("Course is LOCKED (no valid unlock flag)");
-            document.body.classList.remove("course-unlocked");
-            document.body.classList.add("course-locked");
         }
     });
 
