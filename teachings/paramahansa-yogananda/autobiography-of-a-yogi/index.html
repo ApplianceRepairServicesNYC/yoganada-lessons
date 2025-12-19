@@ -15,18 +15,35 @@
     <script>
     // EARLY UNLOCK CHECK - runs before page renders
     (function() {
-        var KEY = "yogananda_course_unlocked";
-        // Check URL for Stripe redirect with ?unlocked=true
+        var STORAGE_KEY = "wisdompath_course_access";
+        var LEGACY_KEY = "yogananda_course_unlocked";
+        var COURSE_ID = "autobiography-of-a-yogi";
+        
+        // Check URL for Stripe redirect with ?unlocked=true&course=<id>
         try {
             var params = new URLSearchParams(window.location.search);
             if (params.get("unlocked") === "true") {
-                localStorage.setItem(KEY, "true");
+                var courseId = params.get("course") || COURSE_ID;
+                var access = {};
+                try { access = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); } catch(e) {}
+                access[courseId] = true;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(access));
                 params.delete("unlocked");
+                params.delete("course");
                 var clean = window.location.pathname + (params.toString() ? "?" + params.toString() : "");
                 window.history.replaceState({}, "", clean);
             }
         } catch(e) {}
-        var isUnlocked = localStorage.getItem(KEY) === "true";
+        
+        // Check if this course is unlocked
+        var isUnlocked = false;
+        try {
+            var access = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+            isUnlocked = access[COURSE_ID] === true;
+            if (!isUnlocked && localStorage.getItem(LEGACY_KEY) === "true") {
+                isUnlocked = true;
+            }
+        } catch(e) {}
         document.documentElement.className = isUnlocked ? "course-unlocked" : "course-locked";
     })();
     </script>
@@ -795,50 +812,64 @@
     </script>
     <script>
     // === UNLOCK SYSTEM ===
-    document.addEventListener("DOMContentLoaded", function() {
-        var isUnlocked = localStorage.getItem("yogananda_course_unlocked") === "true";
-        console.log("Course unlocked:", isUnlocked);
+    (function() {
+        var STORAGE_KEY = "wisdompath_course_access";
+        var LEGACY_KEY = "yogananda_course_unlocked";
+        var COURSE_ID = "autobiography-of-a-yogi";
         
-        if (isUnlocked) {
-            // Update all locked lessons to be clickable and show as unlocked
-            document.querySelectorAll(".lesson-item-locked").forEach(function(item) {
-                var url = item.getAttribute("data-lesson-url");
-                if (url) {
-                    item.setAttribute("href", url);
-                    item.removeAttribute("onclick");
-                    var badge = item.querySelector(".lesson-badge");
-                    if (badge) badge.textContent = "Unlocked";
-                    var arrow = item.querySelector(".lesson-arrow");
-                    if (arrow) arrow.textContent = "→";
-                }
-            });
+        function hasCourseAccess(courseId) {
+            try {
+                var access = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+                if (access[courseId]) return true;
+                if (localStorage.getItem(LEGACY_KEY) === "true") return true;
+                return false;
+            } catch(e) { return false; }
         }
-    });
-
-    // Handle click on locked lesson
-    function handleLockedLesson(el) {
-        if (localStorage.getItem("yogananda_course_unlocked") === "true") {
-            var url = el.getAttribute("data-lesson-url");
-            if (url) window.location.href = url;
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            var isUnlocked = hasCourseAccess(COURSE_ID);
+            console.log("Course unlocked:", COURSE_ID, isUnlocked);
+            
+            if (isUnlocked) {
+                document.querySelectorAll(".lesson-item-locked").forEach(function(item) {
+                    var url = item.getAttribute("data-lesson-url");
+                    if (url) {
+                        item.setAttribute("href", url);
+                        item.removeAttribute("onclick");
+                        var badge = item.querySelector(".lesson-badge");
+                        if (badge) badge.textContent = "Unlocked";
+                        var arrow = item.querySelector(".lesson-arrow");
+                        if (arrow) arrow.textContent = "→";
+                    }
+                });
+            }
+        });
+        
+        // Handle click on locked lesson
+        window.handleLockedLesson = function(el) {
+            if (hasCourseAccess(COURSE_ID)) {
+                var url = el.getAttribute("data-lesson-url");
+                if (url) window.location.href = url;
+                return false;
+            }
+            showPaymentModal();
             return false;
-        }
-        showPaymentModal();
-        return false;
-    }
-
-    function showPaymentModal() {
-        var existing = document.getElementById("payment-modal");
-        if (existing) existing.remove();
-        
-        var modal = document.createElement("div");
-        modal.id = "payment-modal";
-        modal.innerHTML = '<div style="position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem;" onclick="this.remove()"><div style="background:#fffcf7;border-radius:20px;padding:2.5rem;max-width:400px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);" onclick="event.stopPropagation()"><div style="font-size:3rem;margin-bottom:1rem;">🔐</div><h3 style="font-family:Sora,sans-serif;font-size:1.5rem;margin-bottom:0.75rem;color:#2d1810;">Unlock Full Course</h3><p style="color:#5c4033;margin-bottom:1.5rem;line-height:1.6;">Get lifetime access to all 48 chapters with quizzes, exercises, and progress tracking.</p><button id="stripe-pay-btn" style="width:100%;padding:1rem;background:linear-gradient(135deg,#e8a946,#c75d24);color:white;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:0.75rem;">Unlock Now — $29</button><button onclick="this.closest(\'#payment-modal\').remove()" style="width:100%;padding:0.75rem;background:transparent;border:1px solid rgba(139,90,43,0.2);border-radius:12px;font-size:0.875rem;color:#8b7355;cursor:pointer;">Maybe Later</button></div></div>';
-        document.body.appendChild(modal);
-        
-        document.getElementById("stripe-pay-btn").onclick = function() {
-            window.location.href = "https://buy.stripe.com/test_dRm5kFboZ5crdTq3pL08g00";
         };
-    }
+        
+        function showPaymentModal() {
+            var existing = document.getElementById("payment-modal");
+            if (existing) existing.remove();
+            
+            var modal = document.createElement("div");
+            modal.id = "payment-modal";
+            modal.innerHTML = '<div style="position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem;" onclick="this.remove()"><div style="background:#fffcf7;border-radius:20px;padding:2.5rem;max-width:400px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);" onclick="event.stopPropagation()"><div style="font-size:3rem;margin-bottom:1rem;">🔐</div><h3 style="font-family:Sora,sans-serif;font-size:1.5rem;margin-bottom:0.75rem;color:#2d1810;">Unlock Full Course</h3><p style="color:#5c4033;margin-bottom:1.5rem;line-height:1.6;">Get lifetime access to all 48 chapters with quizzes, exercises, and progress tracking.</p><button id="stripe-pay-btn" style="width:100%;padding:1rem;background:linear-gradient(135deg,#e8a946,#c75d24);color:white;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:0.75rem;">Unlock Now — $29</button><button onclick="this.closest(\'#payment-modal\').remove()" style="width:100%;padding:0.75rem;background:transparent;border:1px solid rgba(139,90,43,0.2);border-radius:12px;font-size:0.875rem;color:#8b7355;cursor:pointer;">Maybe Later</button></div></div>';
+            document.body.appendChild(modal);
+            
+            document.getElementById("stripe-pay-btn").onclick = function() {
+                window.location.href = "https://buy.stripe.com/test_dRm5kFboZ5crdTq3pL08g00";
+            };
+        }
+    })();
     </script>
 </body>
 </html>
