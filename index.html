@@ -36,12 +36,10 @@
     
     <title>Yogananda Teachings — Transform Your Mind Through Timeless Wisdom</title>
     
-    <!-- Fonts - Non-render-blocking -->
+    <!-- Fonts - Using display=optional to prevent layout shift -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=optional" rel="stylesheet">
     
     <style>
         :root {
@@ -119,7 +117,11 @@
         /* Layout */
         .container { max-width: var(--container-width); margin: 0 auto; padding: 0 2rem; }
         .container-wide { max-width: var(--container-wide); margin: 0 auto; padding: 0 2rem; }
-        .section { padding: var(--section-spacing) 0; }
+        .section { 
+            padding: var(--section-spacing) 0;
+            content-visibility: auto;
+            contain-intrinsic-size: auto 500px;
+        }
         .section-header { text-align: center; margin-bottom: 4rem; }
         .section-label { 
             display: inline-block;
@@ -475,6 +477,7 @@
             z-index: 2001;
             flex-direction: column;
             overflow: hidden;
+            contain: strict;
         }
         .feature-panel.active { display: flex; }
         .feature-panel-header {
@@ -601,6 +604,7 @@
             border-radius: 14px;
             overflow: hidden;
             transition: border-color 0.2s;
+            contain: layout style;
         }
         .accordion-item:hover,
         .accordion-item.active {
@@ -751,6 +755,7 @@
             flex-direction: column;
             border-left: 1px solid var(--color-border);
             overflow: hidden;
+            contain: strict;
         }
         .read-more-panel.active {
             display: flex;
@@ -2430,16 +2435,23 @@
     </footer>
 
     <script>
-        // Header scroll effect - optimized with passive listener
+        // Header scroll effect - optimized to prevent forced reflows
         const header = document.getElementById('site-header');
         if (header) {
+            let lastScrolled = false;
             let ticking = false;
             window.addEventListener('scroll', () => {
                 if (!ticking) {
-                    window.requestAnimationFrame(() => {
-                        header.classList.toggle('scrolled', window.scrollY > 50);
+                    const scrolled = window.scrollY > 50;
+                    if (scrolled !== lastScrolled) {
+                        window.requestAnimationFrame(() => {
+                            header.classList.toggle('scrolled', scrolled);
+                            lastScrolled = scrolled;
+                            ticking = false;
+                        });
+                    } else {
                         ticking = false;
-                    });
+                    }
                     ticking = true;
                 }
             }, { passive: true });
@@ -2478,23 +2490,29 @@
             });
         }
 
-        // Accordion functionality
-        document.querySelectorAll('.accordion-header').forEach(button => {
+        // Accordion functionality - optimized to batch DOM operations
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        
+        accordionHeaders.forEach(button => {
             button.addEventListener('click', () => {
                 const item = button.parentElement;
                 const isActive = item.classList.contains('active');
                 
-                // Close all items
-                document.querySelectorAll('.accordion-item').forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                // Batch DOM writes using requestAnimationFrame
+                requestAnimationFrame(() => {
+                    // Close all items
+                    accordionItems.forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                        button.setAttribute('aria-expanded', 'true');
+                    }
                 });
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    item.classList.add('active');
-                    button.setAttribute('aria-expanded', 'true');
-                }
             });
         });
 
