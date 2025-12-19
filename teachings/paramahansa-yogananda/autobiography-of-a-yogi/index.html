@@ -15,7 +15,18 @@
     <script>
     // EARLY UNLOCK CHECK - runs before page renders
     (function() {
-        var isUnlocked = localStorage.getItem("yogananda_course_unlocked") === "true";
+        var KEY = "yogananda_course_unlocked";
+        // Check URL for Stripe redirect with ?unlocked=true
+        try {
+            var params = new URLSearchParams(window.location.search);
+            if (params.get("unlocked") === "true") {
+                localStorage.setItem(KEY, "true");
+                params.delete("unlocked");
+                var clean = window.location.pathname + (params.toString() ? "?" + params.toString() : "");
+                window.history.replaceState({}, "", clean);
+            }
+        } catch(e) {}
+        var isUnlocked = localStorage.getItem(KEY) === "true";
         document.documentElement.className = isUnlocked ? "course-unlocked" : "course-locked";
     })();
     </script>
