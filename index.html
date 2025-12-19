@@ -36,10 +36,12 @@
     
     <title>Yogananda Teachings — Transform Your Mind Through Timeless Wisdom</title>
     
-    <!-- Fonts -->
+    <!-- Fonts - Non-render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
     <style>
         :root {
@@ -148,6 +150,7 @@
             z-index: 1000;
             height: var(--header-height);
             transition: background 0.3s, box-shadow 0.3s;
+            will-change: background, box-shadow;
         }
         .site-header.scrolled {
             background: rgba(250, 247, 242, 0.95);
@@ -1923,11 +1926,18 @@
     </footer>
 
     <script>
-        // Header scroll effect
+        // Header scroll effect - optimized with passive listener
         const header = document.getElementById('site-header');
+        let ticking = false;
         window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        });
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    header.classList.toggle('scrolled', window.scrollY > 50);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
 
         // Mobile Menu functionality
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
