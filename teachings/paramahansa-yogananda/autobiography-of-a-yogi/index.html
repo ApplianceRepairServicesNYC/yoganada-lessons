@@ -210,7 +210,7 @@
         .commitment-section { margin-top: 1rem; }
         .commitment-intro { max-width: 800px; margin: 0 auto 2.5rem; text-align: center; }
         .commitment-intro p { font-size: 1.125rem; line-height: 1.8; color: var(--color-text-secondary); }
-        .time-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+        .time-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; max-width: 900px; margin-left: auto; margin-right: auto; }
         .time-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 16px; padding: 1.75rem 1.25rem; text-align: center; transition: all 0.2s; }
         .time-card:hover { border-color: var(--color-accent); box-shadow: 0 0 25px var(--color-accent-glow); transform: translateY(-3px); }
         .time-icon { font-size: 2rem; margin-bottom: 0.75rem; }
@@ -227,8 +227,8 @@
         .commitment-why h3 { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1rem; color: var(--color-text); }
         .commitment-why p { color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 1rem; }
         .commitment-why p:last-child { margin-bottom: 0; font-weight: 600; color: var(--color-text); }
-        @media (max-width: 900px) { .time-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 600px) { .time-grid { grid-template-columns: 1fr; } .commitment-details, .commitment-why { padding: 1.75rem; } }
+        @media (max-width: 768px) { .time-grid { grid-template-columns: 1fr; max-width: 320px; } }
+        @media (max-width: 600px) { .commitment-details, .commitment-why { padding: 1.75rem; } }
         
         /* Footer */
         .site-footer { background: #fff; border-top: 1px solid var(--color-border); padding: 4rem 0 2rem; margin-top: 2rem; }
