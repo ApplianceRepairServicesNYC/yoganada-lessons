@@ -2429,16 +2429,18 @@
     <script>
         // Header scroll effect - optimized with passive listener
         const header = document.getElementById('site-header');
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    header.classList.toggle('scrolled', window.scrollY > 50);
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        }, { passive: true });
+        if (header) {
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        header.classList.toggle('scrolled', window.scrollY > 50);
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
 
         // Mobile Menu functionality
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -2446,30 +2448,32 @@
         const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
         const mobileMenuClose = document.getElementById('mobileMenuClose');
         
-        function openMobileMenu() {
-            mobileMenu.classList.add('active');
-            mobileMenuOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            mobileMenuBtn.setAttribute('aria-expanded', 'true');
-        }
-        
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('active');
-            mobileMenuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        }
-        
-        mobileMenuBtn.addEventListener('click', openMobileMenu);
-        mobileMenuClose.addEventListener('click', closeMobileMenu);
-        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-        
-        // Close mobile menu when clicking nav links
-        document.querySelectorAll('.mobile-nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                closeMobileMenu();
+        if (mobileMenuBtn && mobileMenu && mobileMenuOverlay && mobileMenuClose) {
+            function openMobileMenu() {
+                mobileMenu.classList.add('active');
+                mobileMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            }
+            
+            function closeMobileMenu() {
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+            
+            mobileMenuBtn.addEventListener('click', openMobileMenu);
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+            
+            // Close mobile menu when clicking nav links
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    closeMobileMenu();
+                });
             });
-        });
+        }
 
         // Accordion functionality
         document.querySelectorAll('.accordion-header').forEach(button => {
@@ -2495,38 +2499,41 @@
         const overlay = document.getElementById('readMoreOverlay');
         const panels = document.querySelectorAll('.read-more-panel');
         
-        // Open panel
-        document.querySelectorAll('.read-more-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const panelId = 'panel-' + btn.getAttribute('data-panel');
-                const panel = document.getElementById(panelId);
-                if (panel) {
-                    overlay.classList.add('active');
-                    panel.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                }
+        // Only initialize if overlay exists
+        if (overlay) {
+            // Open panel
+            document.querySelectorAll('.read-more-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const panelId = 'panel-' + btn.getAttribute('data-panel');
+                    const panel = document.getElementById(panelId);
+                    if (panel) {
+                        overlay.classList.add('active');
+                        panel.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
             });
-        });
-        
-        // Close panel functions
-        function closeAllPanels() {
-            overlay.classList.remove('active');
-            panels.forEach(p => p.classList.remove('active'));
-            document.body.style.overflow = '';
+            
+            // Close panel functions
+            function closeAllPanels() {
+                overlay.classList.remove('active');
+                panels.forEach(p => p.classList.remove('active'));
+                document.body.style.overflow = '';
+            }
+            
+            // Close on overlay click
+            overlay.addEventListener('click', closeAllPanels);
+            
+            // Close buttons
+            document.querySelectorAll('.read-more-close').forEach(btn => {
+                btn.addEventListener('click', closeAllPanels);
+            });
+            
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeAllPanels();
+            });
         }
-        
-        // Close on overlay click
-        overlay.addEventListener('click', closeAllPanels);
-        
-        // Close buttons
-        document.querySelectorAll('.read-more-close').forEach(btn => {
-            btn.addEventListener('click', closeAllPanels);
-        });
-        
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeAllPanels();
-        });
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
