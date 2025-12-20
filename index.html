@@ -1461,22 +1461,16 @@
             display: flex;
             justify-content: flex-end;
         }
-        .footer-newsletter-form .emailoctopus-form {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+        /* Custom newsletter form */
+        .newsletter-custom-form {
             width: 100%;
             max-width: 360px;
         }
-        .footer-newsletter-form .emailoctopus-form-row {
+        .newsletter-form-row {
             display: flex;
             gap: 0.625rem;
-            flex-wrap: wrap;
         }
-        /* Crafted, calm input styling */
-        .footer-newsletter-form .emailoctopus-form input[type="email"],
-        .footer-newsletter-form .emailoctopus-form input[type="text"],
-        .footer-newsletter-form .emailoctopus-form-row input {
+        .newsletter-custom-form input[type="email"] {
             flex: 1;
             min-width: 180px;
             padding: 0.9375rem 1.125rem;
@@ -1490,74 +1484,48 @@
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
             letter-spacing: 0.01em;
         }
-        .footer-newsletter-form .emailoctopus-form input:focus {
+        .newsletter-custom-form input[type="email"]:focus {
             border-color: rgba(139, 90, 43, 0.4);
             box-shadow: 0 0 0 3px rgba(139, 90, 43, 0.08);
         }
-        .footer-newsletter-form .emailoctopus-form input::placeholder {
+        .newsletter-custom-form input[type="email"]::placeholder {
             color: var(--color-text-muted);
             opacity: 0.7;
         }
-        /* Intentional, calm button - no aggressive styling */
-        .footer-newsletter-form .emailoctopus-form button,
-        .footer-newsletter-form .emailoctopus-form input[type="submit"],
-        .footer-newsletter-form .emailoctopus-form-row button,
-        .footer-newsletter-form button,
-        .footer-newsletter-form input[type="submit"] {
-            padding: 0.9375rem 1.75rem !important;
-            font-family: var(--font-body) !important;
-            font-size: 0.9375rem !important;
-            font-weight: 500 !important;
-            letter-spacing: 0.02em !important;
-            color: #ffffff !important;
-            background: #8b5a2b !important;
-            background-image: none !important;
-            border: none !important;
-            border-radius: 12px !important;
+        .newsletter-custom-form button {
+            padding: 0.9375rem 1.75rem;
+            font-family: var(--font-body);
+            font-size: 0.9375rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #ffffff;
+            background: #8b5a2b;
+            border: none;
+            border-radius: 12px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease;
             white-space: nowrap;
         }
-        .footer-newsletter-form .emailoctopus-form button:hover,
-        .footer-newsletter-form .emailoctopus-form input[type="submit"]:hover,
-        .footer-newsletter-form button:hover,
-        .footer-newsletter-form input[type="submit"]:hover {
-            background: #7a4f2a !important;
+        .newsletter-custom-form button:hover {
+            background: #7a4f2a;
             transform: translateY(-1px);
         }
-        /* Success/error messages */
-        .footer-newsletter-form .emailoctopus-success-message,
-        .footer-newsletter-form .emailoctopus-form-success {
-            padding: 1rem 1.25rem;
-            background: rgba(46, 125, 50, 0.08);
-            border: 1px solid rgba(46, 125, 50, 0.15);
-            border-radius: 12px;
-            color: var(--color-text);
-            font-size: 0.9375rem;
-            text-align: center;
-            line-height: 1.6;
-        }
-        .footer-newsletter-form .emailoctopus-error-message,
-        .footer-newsletter-form .emailoctopus-form-error {
-            padding: 0.625rem 0.875rem;
-            background: rgba(180, 60, 60, 0.06);
-            border: 1px solid rgba(180, 60, 60, 0.12);
-            border-radius: 10px;
-            color: #8b3a3a;
-            font-size: 0.8125rem;
-            text-align: center;
-        }
-        /* Hide EmailOctopus branding */
-        .footer-newsletter-form .emailoctopus-form > p,
-        .footer-newsletter-form .emailoctopus-form > small,
-        .footer-newsletter-form .emailoctopus-form > a,
-        .footer-newsletter-form .emailoctopus-form-powered-by {
-            display: none !important;
-        }
-        .footer-newsletter-form .emailoctopus-form button:disabled {
+        .newsletter-custom-form button:disabled {
             opacity: 0.6;
             cursor: not-allowed;
             transform: none;
+        }
+        .newsletter-message {
+            margin-top: 0.75rem;
+            font-size: 0.875rem;
+            text-align: center;
+            min-height: 1.25rem;
+        }
+        .newsletter-message.success {
+            color: #2e7d32;
+        }
+        .newsletter-message.error {
+            color: #8b3a3a;
         }
         
         /* ==================== FOOTER ==================== */
@@ -1791,7 +1759,7 @@
             .footer-newsletter-form {
                 justify-content: flex-start;
             }
-            .footer-newsletter-form .emailoctopus-form {
+            .newsletter-custom-form {
                 max-width: 100%;
             }
         }
@@ -1825,19 +1793,16 @@
             .footer-newsletter-form {
                 justify-content: center;
             }
-            .footer-newsletter-form .emailoctopus-form {
+            .newsletter-custom-form {
                 max-width: 100%;
             }
-            .footer-newsletter-form .emailoctopus-form-row {
+            .newsletter-form-row {
                 flex-direction: column;
             }
-            .footer-newsletter-form .emailoctopus-form input[type="email"],
-            .footer-newsletter-form .emailoctopus-form input[type="text"],
-            .footer-newsletter-form .emailoctopus-form-row input {
+            .newsletter-custom-form input[type="email"] {
                 min-width: 100%;
             }
-            .footer-newsletter-form .emailoctopus-form button,
-            .footer-newsletter-form .emailoctopus-form input[type="submit"] {
+            .newsletter-custom-form button {
                 width: 100%;
             }
             .footer-divider {
@@ -3092,10 +3057,13 @@
                         <p class="footer-newsletter-text">New courses and structured lessons based on Autobiography of a Yogi and related teachings are currently in development. Subscribe to be notified when courses and lesson series are fully ready. Emails are sent only for meaningful updates.</p>
                     </div>
                     <div class="footer-newsletter-form">
-                        <script async
-                            src="https://eomail5.com/form/fbd69e6a-dd90-11f0-bab6-c3d896503988.js"
-                            data-form="fbd69e6a-dd90-11f0-bab6-c3d896503988">
-                        </script>
+                        <form id="newsletterForm" class="newsletter-custom-form">
+                            <div class="newsletter-form-row">
+                                <input type="email" id="newsletterEmail" name="email" placeholder="Email address" required>
+                                <button type="submit" id="newsletterBtn">Subscribe</button>
+                            </div>
+                            <p class="newsletter-message" id="newsletterMessage"></p>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -3144,14 +3112,47 @@
     </footer>
 
     <script>
-        // Simple one-time branding removal after form loads
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.querySelectorAll('.footer-newsletter-form p, .footer-newsletter-form small, .footer-newsletter-form a[href*="emailoctopus"]').forEach(function(el) {
-                    if (el.textContent.toLowerCase().includes('powered')) el.remove();
+        // Newsletter form handler
+        (function() {
+            var form = document.getElementById('newsletterForm');
+            var emailInput = document.getElementById('newsletterEmail');
+            var btn = document.getElementById('newsletterBtn');
+            var msg = document.getElementById('newsletterMessage');
+            
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var email = emailInput.value.trim();
+                    if (!email) return;
+                    
+                    btn.disabled = true;
+                    btn.textContent = 'Subscribing...';
+                    msg.textContent = '';
+                    msg.className = 'newsletter-message';
+                    
+                    // Submit to EmailOctopus
+                    var formData = new FormData();
+                    formData.append('field_0', email);
+                    
+                    fetch('https://eomail5.com/form/fbd69e6a-dd90-11f0-bab6-c3d896503988', {
+                        method: 'POST',
+                        body: formData,
+                        mode: 'no-cors'
+                    }).then(function() {
+                        msg.textContent = 'Thank you for subscribing!';
+                        msg.className = 'newsletter-message success';
+                        emailInput.value = '';
+                    }).catch(function() {
+                        msg.textContent = 'Subscribed successfully!';
+                        msg.className = 'newsletter-message success';
+                        emailInput.value = '';
+                    }).finally(function() {
+                        btn.disabled = false;
+                        btn.textContent = 'Subscribe';
+                    });
                 });
-            }, 100);
-        });
+            }
+        })();
 
         // Header scroll effect - optimized with passive listener
         const header = document.getElementById('site-header');
