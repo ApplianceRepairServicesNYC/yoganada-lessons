@@ -1547,29 +1547,12 @@
             font-size: 0.8125rem;
             text-align: center;
         }
-        /* Hide EmailOctopus branding completely */
-        .footer-newsletter-form .emailoctopus-form-powered-by,
-        .footer-newsletter-form a[href*="emailoctopus"],
-        .footer-newsletter-form [class*="powered"],
-        .footer-newsletter-form [class*="branding"],
-        .footer-newsletter-form .emailoctopus-logo,
-        .footer-newsletter-form p:last-of-type,
-        .footer-newsletter-form div:has(a[href*="emailoctopus"]),
-        .emailoctopus-form-powered-by,
-        [class*="powered-by"],
-        .footer-newsletter-form small,
-        .footer-newsletter-form span:has(a) {
+        /* Hide EmailOctopus branding */
+        .footer-newsletter-form .emailoctopus-form > p,
+        .footer-newsletter-form .emailoctopus-form > small,
+        .footer-newsletter-form .emailoctopus-form > a,
+        .footer-newsletter-form .emailoctopus-form-powered-by {
             display: none !important;
-            opacity: 0 !important;
-            visibility: hidden !important;
-            height: 0 !important;
-            overflow: hidden !important;
-            font-size: 0 !important;
-            line-height: 0 !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            position: absolute !important;
-            left: -9999px !important;
         }
         .footer-newsletter-form .emailoctopus-form button:disabled {
             opacity: 0.6;
@@ -3161,42 +3144,14 @@
     </footer>
 
     <script>
-        // Remove EmailOctopus branding when it loads
-        (function() {
-            function removeBranding() {
-                // Target all possible branding elements
-                var selectors = [
-                    '.emailoctopus-form-powered-by',
-                    '[class*="powered"]',
-                    '[class*="branding"]',
-                    'a[href*="emailoctopus"]',
-                    '.footer-newsletter-form p',
-                    '.footer-newsletter-form small',
-                    '.footer-newsletter-form span'
-                ];
-                selectors.forEach(function(sel) {
-                    document.querySelectorAll(sel).forEach(function(el) {
-                        var text = el.textContent.toLowerCase();
-                        if (text.includes('powered') || text.includes('emailoctopus') || text.includes('email octopus')) {
-                            el.style.display = 'none';
-                            el.remove();
-                        }
-                    });
+        // Simple one-time branding removal after form loads
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelectorAll('.footer-newsletter-form p, .footer-newsletter-form small, .footer-newsletter-form a[href*="emailoctopus"]').forEach(function(el) {
+                    if (el.textContent.toLowerCase().includes('powered')) el.remove();
                 });
-            }
-            
-            var observer = new MutationObserver(function(mutations) {
-                removeBranding();
-            });
-            observer.observe(document.body, { childList: true, subtree: true });
-            
-            // Run immediately and at intervals
-            removeBranding();
-            setTimeout(removeBranding, 500);
-            setTimeout(removeBranding, 1000);
-            setTimeout(removeBranding, 2000);
-            setTimeout(removeBranding, 3000);
-        })();
+            }, 100);
+        });
 
         // Header scroll effect - optimized with passive listener
         const header = document.getElementById('site-header');
