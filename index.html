@@ -4,8 +4,8 @@
     <!-- Primary Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Yogananda Teachings — Autobiography of a Yogi Course">
-    <meta name="description" content="Self-Study Guide for Autobiography of a Yogi, discipline, and inner peace through structured learning paths based on the teachings of Paramahansa Yogananda. Start your free lesson today.">
+    <meta name="title" content="Yogananda Teachings — Transform Your Mind Through Timeless Wisdom">
+    <meta name="description" content="Master self-awareness, discipline, and inner peace through structured learning paths based on the teachings of Paramahansa Yogananda. Start your free lesson today.">
     <meta name="keywords" content="self-realization, personal growth, meditation, Yogananda, mindfulness, self-improvement, spiritual growth, wisdom teachings">
     <meta name="author" content="Yogananda Teachings">
     <meta name="robots" content="index, follow">
@@ -1178,6 +1178,269 @@
         }
         .testimonial-name { font-weight: 600; }
         .testimonial-role { font-size: 0.875rem; color: var(--color-text-muted); }
+        
+        /* ==================== CONTACT FORM ==================== */
+        .contact-section {
+            background: linear-gradient(180deg, var(--color-bg-deep) 0%, var(--color-bg) 100%);
+        }
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .contact-box {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 4px 24px rgba(139, 90, 43, 0.08);
+        }
+        .contact-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .contact-header h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+        .contact-header p {
+            color: var(--color-text-secondary);
+            font-size: 1.0625rem;
+        }
+        
+        /* Contact Toggle Button */
+        .contact-toggle-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto 0;
+            padding: 18px 32px;
+            background: linear-gradient(135deg, var(--color-accent) 0%, #a0714a 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(139, 90, 43, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-toggle-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .contact-toggle-btn:hover::before {
+            left: 100%;
+        }
+        .contact-toggle-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(139, 90, 43, 0.45);
+            background: linear-gradient(135deg, #9a6b3f 0%, var(--color-accent) 100%);
+        }
+        .contact-toggle-btn:active {
+            transform: translateY(-1px);
+        }
+        .contact-toggle-btn .btn-icon {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+        .contact-toggle-btn:hover .btn-icon {
+            transform: scale(1.1);
+        }
+        .contact-toggle-btn .btn-arrow {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+            margin-left: auto;
+        }
+        .contact-toggle-btn.active .btn-arrow {
+            transform: rotate(90deg);
+        }
+        .contact-toggle-btn.active {
+            background: linear-gradient(135deg, #6b4423 0%, #8b5a2b 100%);
+            border-radius: 16px 16px 0 0;
+            max-width: 100%;
+        }
+        
+        /* Collapsible Form Wrapper */
+        .contact-form-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                        opacity 0.4s ease,
+                        padding 0.4s ease,
+                        margin 0.4s ease;
+            background: linear-gradient(180deg, rgba(139, 90, 43, 0.03) 0%, transparent 100%);
+            border-radius: 0 0 20px 20px;
+            padding: 0 1.5rem;
+            margin-top: 0;
+        }
+        .contact-form-wrapper.active {
+            max-height: 800px;
+            opacity: 1;
+            padding: 2rem 1.5rem;
+            margin-top: 0;
+            border: 1px solid var(--color-border);
+            border-top: none;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .form-group label {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+        .form-group input,
+        .form-group textarea {
+            padding: 0.875rem 1rem;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            background: var(--color-bg-elevated);
+            color: var(--color-text);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px var(--color-accent-glow);
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--color-text-muted);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+        .form-submit-btn {
+            margin-top: 0.5rem;
+            padding: 1rem 2rem;
+            font-size: 1.0625rem;
+            font-weight: 600;
+            font-family: var(--font-body);
+            color: white;
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .form-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--color-accent-glow);
+        }
+        .form-submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .form-note {
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            margin-top: 1rem;
+        }
+        /* Success Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 90%;
+            width: 400px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        .modal-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .modal-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+        }
+        .modal-content p {
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        .modal-close-btn {
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .modal-close-btn:hover {
+            transform: translateY(-2px);
+        }
+        @media (max-width: 600px) {
+            .contact-box { padding: 2rem 1.5rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .contact-header h2 { font-size: 1.625rem; }
+            .contact-toggle-btn {
+                padding: 16px 24px;
+                font-size: 1rem;
+                max-width: 280px;
+            }
+            .contact-toggle-btn.active {
+                border-radius: 12px 12px 0 0;
+            }
+            .contact-form-wrapper.active {
+                padding: 1.5rem 1rem;
+                border-radius: 0 0 12px 12px;
+            }
+        }
         
         /* ==================== CTA ==================== */
         .cta-section {
@@ -2567,6 +2830,66 @@
             </div>
         </section>
 
+        <!-- ==================== CONTACT FORM ==================== -->
+        <section class="section contact-section" id="contact">
+            <div class="container contact-container">
+                <div class="contact-box">
+                    <div class="contact-header">
+                        <h2>Get in Touch</h2>
+                        <p>Have questions about our teachings? We'd love to hear from you.</p>
+                    </div>
+                    
+                    <!-- Stylish Toggle Button -->
+                    <button class="contact-toggle-btn" id="contactToggleBtn">
+                        <span class="btn-icon">✉</span>
+                        <span class="btn-text">Send Us a Message</span>
+                        <span class="btn-arrow">›</span>
+                    </button>
+                    
+                    <!-- Collapsible Form Container -->
+                    <div class="contact-form-wrapper" id="contactFormWrapper">
+                        <form id="contactForm" class="contact-form">
+                            <!-- Hidden fields for EmailJS template compatibility -->
+                            <input type="hidden" name="reply_to" id="contactReplyTo">
+                            <input type="hidden" name="email" id="contactEmailHidden">
+                            <input type="hidden" name="from_email" id="contactFromEmail">
+                            <input type="hidden" name="customer_email" id="contactCustomerEmail">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName">Name *</label>
+                                    <input type="text" id="contactName" name="from_name" placeholder="Your name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail">Email *</label>
+                                    <input type="email" id="contactEmail" name="user_email" placeholder="your@email.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactSubject">Subject</label>
+                                <input type="text" id="contactSubject" name="subject" placeholder="What is this regarding?">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage">Message *</label>
+                                <textarea id="contactMessage" name="message" placeholder="Your message..." required></textarea>
+                            </div>
+                            <button type="submit" class="form-submit-btn" id="submitBtn">Send Message</button>
+                            <p class="form-note">We typically respond within 24-48 hours.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Modal -->
+        <div class="modal-overlay" id="successModal">
+            <div class="modal-content">
+                <div class="modal-icon">✨</div>
+                <h3>Message Sent!</h3>
+                <p>Thank you for reaching out. We'll get back to you soon.</p>
+                <button class="modal-close-btn" id="closeModal">Close</button>
+            </div>
+        </div>
+
         <!-- ==================== CTA ==================== -->
         <section class="section cta-section">
             <div class="container">
@@ -2811,6 +3134,101 @@
                     setTimeout(() => el.classList.remove('touched'), 300);
                 }, { passive: true });
             });
+        });
+    </script>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("zfCrLmZU8eK9CuZcs");
+        })();
+
+        // Contact Form Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successModal = document.getElementById('successModal');
+            const closeModal = document.getElementById('closeModal');
+            
+            // Contact Form Toggle Button
+            const contactToggleBtn = document.getElementById('contactToggleBtn');
+            const contactFormWrapper = document.getElementById('contactFormWrapper');
+            
+            if (contactToggleBtn && contactFormWrapper) {
+                contactToggleBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    contactFormWrapper.classList.toggle('active');
+                    
+                    // Update button text
+                    const btnText = this.querySelector('.btn-text');
+                    if (this.classList.contains('active')) {
+                        btnText.textContent = 'Close Form';
+                    } else {
+                        btnText.textContent = 'Send Us a Message';
+                    }
+                });
+            }
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Disable button and show loading state
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+
+                    // Get email value
+                    const email = document.getElementById('contactEmail').value.trim();
+                    
+                    // Copy email to hidden fields for template compatibility
+                    document.getElementById('contactReplyTo').value = email;
+                    document.getElementById('contactEmailHidden').value = email;
+                    document.getElementById('contactFromEmail').value = email;
+                    document.getElementById('contactCustomerEmail').value = email;
+
+                    // Send email via EmailJS using sendForm (matches form field names to template)
+                    emailjs.sendForm('service_emxksio', 'template_tmexlql', this)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            // Show success modal
+                            successModal.classList.add('active');
+                            // Reset form
+                            contactForm.reset();
+                            // Close the form wrapper
+                            if (contactFormWrapper) {
+                                contactFormWrapper.classList.remove('active');
+                                contactToggleBtn.classList.remove('active');
+                                contactToggleBtn.querySelector('.btn-text').textContent = 'Send Us a Message';
+                            }
+                        })
+                        .catch(function(error) {
+                            console.log('FAILED...', error);
+                            alert('Sorry, there was an error sending your message. Please try again or email us directly.');
+                        })
+                        .finally(function() {
+                            // Re-enable button
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+                        });
+                });
+            }
+
+            // Close modal handlers
+            if (closeModal) {
+                closeModal.addEventListener('click', function() {
+                    successModal.classList.remove('active');
+                });
+            }
+
+            if (successModal) {
+                successModal.addEventListener('click', function(e) {
+                    if (e.target === successModal) {
+                        successModal.classList.remove('active');
+                    }
+                });
+            }
         });
     </script>
 
