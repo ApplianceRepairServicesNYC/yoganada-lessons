@@ -375,11 +375,25 @@
         
         // Quiz data
         var quizData = [
-            {question:"Where did Yogananda meet Sri Yukteswar?",choices:["Calcutta", "Benares", "Delhi", "Mumbai"],correct:"Benares"},
-            {question:"What characterized their meeting?",choices:["Confusion and doubt", "Immediate mutual recognition", "Hostility and rejection", "Complete indifference"],correct:"Immediate mutual recognition"},
-            {question:"What does the chapter suggest about the guru-disciple relationship?",choices:["It is purely intellectual", "It involves past-life connections", "It is unnecessary for progress", "It always causes problems"],correct:"It involves past-life connections"},
-            {question:"What spiritual technique was Sri Yukteswar associated with?",choices:["Hatha Yoga", "Kriya Yoga", "Buddhist meditation", "Sufi practices"],correct:"Kriya Yoga"},
-            {question:"What does a true guru serve as?",choices:["A source of entertainment", "A channel for divine grace", "A business partner", "A casual acquaintance"],correct:"A channel for divine grace"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 1: CORE TEACHING (Original Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 1] Where did Yogananda meet Sri Yukteswar?",choices:["Calcutta","Benares","Delhi","Mumbai"],correct:"Benares"},
+            {question:"[Part 1] What characterized their meeting?",choices:["Confusion and doubt","Immediate mutual recognition","Hostility and rejection","Complete indifference"],correct:"Immediate mutual recognition"},
+            {question:"[Part 1] What does the chapter suggest about the guru-disciple relationship?",choices:["It is purely intellectual","It involves past-life connections","It is unnecessary for progress","It always causes problems"],correct:"It involves past-life connections"},
+            {question:"[Part 1] What spiritual technique was Sri Yukteswar associated with?",choices:["Hatha Yoga","Kriya Yoga","Buddhist meditation","Sufi practices"],correct:"Kriya Yoga"},
+            {question:"[Part 1] What does a true guru serve as?",choices:["A source of entertainment","A channel for divine grace","A business partner","A casual acquaintance"],correct:"A channel for divine grace"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 2: INTEGRATED UNDERSTANDING (New Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 2] The instant recognition between Yogananda and Sri Yukteswar suggests:",choices:["First impressions are always reliable","Deep soul connections may transcend current-life acquaintance","They had met in this life before","Recognition means nothing"],correct:"Deep soul connections may transcend current-life acquaintance"},
+            {question:"[Part 2] Someone feels an inexplicable connection to a teacher they've just met. According to this chapter:",choices:["They should be suspicious","Such recognition may indicate genuine spiritual affinity worth exploring","First meetings never matter","They're being deceived"],correct:"Such recognition may indicate genuine spiritual affinity worth exploring"},
+            {question:"[Part 2] The guru-disciple relationship described differs from ordinary teaching because:",choices:["The guru is worshipped as God","It involves a deep spiritual bond aimed at the disciple's liberation","The disciple never questions anything","Payment is involved"],correct:"It involves a deep spiritual bond aimed at the disciple's liberation"},
+            {question:"[Part 2] Sri Yukteswar told Yogananda 'I give you my unconditional love.' This reveals:",choices:["Gurus are always permissive","The foundation of authentic guru-disciple relationship is unconditional love, not control","No expectations exist in such relationships","Love replaces all discipline"],correct:"The foundation of authentic guru-disciple relationship is unconditional love, not control"},
+            {question:"[Part 2] For modern seekers, this chapter suggests that finding a teacher:",choices:["Is impossible today","May involve recognizing a connection that feels like coming home","Requires no discernment","Should be avoided"],correct:"May involve recognizing a connection that feels like coming home"},
+            {question:"[Part 2] Why was this meeting 'fateful' for Yogananda's life?",choices:["Sri Yukteswar was famous","A genuine guru catalyzes transformation that shapes one's entire destiny","It happened in a special location","Yogananda became wealthy after"],correct:"A genuine guru catalyzes transformation that shapes one's entire destiny"},
+            {question:"[Part 2] The chapter's emotional intensity about meeting the master points to:",choices:["Yogananda's exaggeration","The profound significance of true spiritual connection in a seeker's life","Normal student-teacher dynamics","Cultural differences only"],correct:"The profound significance of true spiritual connection in a seeker's life"},
+            {question:"[Part 2] What should a seeker look for when evaluating a potential teacher?",choices:["Fame and following","Whether genuine transformation and recognition occur in the connection","Impressive powers only","Complete submission from the start"],correct:"Whether genuine transformation and recognition occur in the connection"}
         ];
         QuizEngine.init(quizData, LESSON_SLUG);
     });

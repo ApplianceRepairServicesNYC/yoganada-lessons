@@ -200,7 +200,27 @@
         }
         
         // Quiz data
-        var quizData = [{"question": "What happens to Sri Yukteswar in this chapter?", "choices": ["His health declines toward death", "He travels abroad", "He gains strength", "He teaches crowds"], "correct": "His health declines toward death"}, {"question": "What is captured in this chapter?", "choices": ["The profound intimacy of their relationship", "Academic philosophy", "Business matters", "Political strategy"], "correct": "The profound intimacy of their relationship"}, {"question": "Does the guru-disciple relationship end with physical death?", "choices": ["No\u2014it transforms rather than ends", "Yes\u2014it ends completely", "It becomes meaningless", "It was never real"], "correct": "No\u2014it transforms rather than ends"}, {"question": "What does awareness of impermanence invite?", "choices": ["Appreciation of current connections", "Fear and avoidance", "Constant grief", "Rejection of relationships"], "correct": "Appreciation of current connections"}, {"question": "What transcends the physical form?", "choices": ["The blessings and transmission given", "Nothing survives", "Only material things", "Social status"], "correct": "The blessings and transmission given"}];
+        var quizData = [
+            // ═══════════════════════════════════════════════════════════════
+            // PART 1: CORE TEACHING (Original Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 1] What happens to Sri Yukteswar in this chapter?",choices:["His health declines toward death","He travels abroad","He gains strength","He teaches crowds"],correct:"His health declines toward death"},
+            {question:"[Part 1] What is captured in this chapter?",choices:["The profound intimacy of their relationship","Academic philosophy","Business matters","Political strategy"],correct:"The profound intimacy of their relationship"},
+            {question:"[Part 1] Does the guru-disciple relationship end with physical death?",choices:["No—it transforms rather than ends","Yes—it ends completely","It becomes meaningless","It was never real"],correct:"No—it transforms rather than ends"},
+            {question:"[Part 1] What does awareness of impermanence invite?",choices:["Appreciation of current connections","Fear and avoidance","Constant grief","Rejection of relationships"],correct:"Appreciation of current connections"},
+            {question:"[Part 1] What transcends the physical form?",choices:["The blessings and transmission given","Nothing survives","Only material things","Social status"],correct:"The blessings and transmission given"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 2: INTEGRATED UNDERSTANDING (New Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 2] Being with Sri Yukteswar in his last days represented:",choices:["Sad obligation","Sacred completion of the guru-disciple relationship in physical form","Random timing","Difficult duty"],correct:"Sacred completion of the guru-disciple relationship in physical form"},
+            {question:"[Part 2] The master's death affects the disciple by:",choices:["Ending the relationship completely","Transforming but not ending the bond—relationship continues in different form","Creating permanent grief","Nothing significant"],correct:"Transforming but not ending the bond—relationship continues in different form"},
+            {question:"[Part 2] For seekers who have lost teachers, this chapter offers:",choices:["No comfort","Understanding that the connection transcends physical death","Advice to find replacements","Nothing applicable"],correct:"Understanding that the connection transcends physical death"},
+            {question:"[Part 2] Sri Yukteswar's final teachings would have carried:",choices:["Less significance than earlier teachings","Special potency and transmission appropriate to the approaching completion","No difference from before","Confusion"],correct:"Special potency and transmission appropriate to the approaching completion"},
+            {question:"[Part 2] The chapter's emotional depth shows:",choices:["Unprofessional attachment","The genuine human dimension of even the highest spiritual relationships","Weakness","Cultural expression only"],correct:"The genuine human dimension of even the highest spiritual relationships"},
+            {question:"[Part 2] Why might a master choose to die at a particular time?",choices:["Random biological event","Death can be conscious choice when life's purpose is complete","Masters can't choose","No reason"],correct:"Death can be conscious choice when life's purpose is complete"},
+            {question:"[Part 2] The teaching about death from this chapter is:",choices:["Death ends everything","For the realized, death is transition, not termination of consciousness","Death is to be feared","Nothing to learn"],correct:"For the realized, death is transition, not termination of consciousness"},
+            {question:"[Part 2] The bond 'beyond death' suggests that:",choices:["Grief is unnecessary","Guru-disciple connection operates on levels that physical death doesn't end","Masters are immortal physically","Only memories remain"],correct:"Guru-disciple connection operates on levels that physical death doesn't end"}
+        ];
         QuizEngine.init(quizData, LESSON_SLUG);
     });
     </script>

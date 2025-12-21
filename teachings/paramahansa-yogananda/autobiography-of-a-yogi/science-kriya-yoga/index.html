@@ -200,7 +200,27 @@
         }
         
         // Quiz data
-        var quizData = [{"question": "What does Kriya Yoga work with to accelerate development?", "choices": ["Subtle energy and consciousness", "Physical exercise only", "Intellectual study", "Group discussion"], "correct": "Subtle energy and consciousness"}, {"question": "How is Kriya Yoga described?", "choices": ["An ancient science tested over millennia", "A new invention", "A simple relaxation method", "A Hindu ritual only"], "correct": "An ancient science tested over millennia"}, {"question": "What is required to receive the specific technique?", "choices": ["Formal initiation", "Reading a book", "Watching a video", "Nothing"], "correct": "Formal initiation"}, {"question": "What does this chapter suggest about meditation practice choice?", "choices": ["It matters\u2014some techniques are more effective", "All practices are identical", "Practice is unnecessary", "Only prayer works"], "correct": "It matters\u2014some techniques are more effective"}, {"question": "What should seekers look for in a practice?", "choices": ["Authentic lineage and proven results", "Popularity and convenience", "Complexity", "Novelty"], "correct": "Authentic lineage and proven results"}];
+        var quizData = [
+            // ═══════════════════════════════════════════════════════════════
+            // PART 1: CORE TEACHING (Original Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 1] What does Kriya Yoga work with to accelerate development?",choices:["Subtle energy and consciousness","Physical exercise only","Intellectual study","Group discussion"],correct:"Subtle energy and consciousness"},
+            {question:"[Part 1] How is Kriya Yoga described?",choices:["An ancient science tested over millennia","A new invention","A simple relaxation method","A Hindu ritual only"],correct:"An ancient science tested over millennia"},
+            {question:"[Part 1] What is required to receive the specific technique?",choices:["Formal initiation","Reading a book","Watching a video","Nothing"],correct:"Formal initiation"},
+            {question:"[Part 1] What does this chapter suggest about meditation practice choice?",choices:["It matters—some techniques are more effective","All practices are identical","Practice is unnecessary","Only prayer works"],correct:"It matters—some techniques are more effective"},
+            {question:"[Part 1] What should seekers look for in a practice?",choices:["Authentic lineage and proven results","Popularity and convenience","Complexity","Novelty"],correct:"Authentic lineage and proven results"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 2: INTEGRATED UNDERSTANDING (New Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 2] Kriya Yoga is called a 'science' because:",choices:["It was invented by scientists","It follows specific principles that produce reliable results when properly applied","It conflicts with religion","Marketing purposes"],correct:"It follows specific principles that produce reliable results when properly applied"},
+            {question:"[Part 2] The central technique of this lineage works with:",choices:["Beliefs only","Energy and breath to accelerate spiritual evolution","Physical exercise primarily","Intellectual study"],correct:"Energy and breath to accelerate spiritual evolution"},
+            {question:"[Part 2] Someone wants to learn Kriya without proper initiation. According to tradition, this:",choices:["Is fine and encouraged","Misses essential transmission and guidance that make the practice effective","Shows advanced readiness","Is the modern way"],correct:"Misses essential transmission and guidance that make the practice effective"},
+            {question:"[Part 2] The 'accelerating evolution' aspect of Kriya refers to:",choices:["Dangerous speed","Concentrating spiritual development that might otherwise take many lifetimes","Physical evolution","Nothing real"],correct:"Concentrating spiritual development that might otherwise take many lifetimes"},
+            {question:"[Part 2] Why is initiation emphasized for Kriya practice?",choices:["To create exclusivity","The technique requires proper instruction and energetic transmission to work correctly","Financial reasons","Tradition without meaning"],correct:"The technique requires proper instruction and energetic transmission to work correctly"},
+            {question:"[Part 2] For those not yet initiated into Kriya, the chapter suggests:",choices:["Immediate practice without guidance","Preparation through study, basic practices, and finding an authorized source","Kriya is unnecessary","Finding any teacher"],correct:"Preparation through study, basic practices, and finding an authorized source"},
+            {question:"[Part 2] The chapter places Kriya in the context of:",choices:["One technique among many","A central, direct method that the whole autobiography has been building toward","Minor importance","Historical curiosity"],correct:"A central, direct method that the whole autobiography has been building toward"},
+            {question:"[Part 2] What distinguishes Kriya from ordinary breathing exercises?",choices:["Nothing","Specific techniques that work with subtle energy and consciousness, requiring proper instruction","It's faster","It's slower"],correct:"Specific techniques that work with subtle energy and consciousness, requiring proper instruction"}
+        ];
         QuizEngine.init(quizData, LESSON_SLUG);
     });
     </script>

@@ -200,7 +200,27 @@
         }
         
         // Quiz data
-        var quizData = [{"question": "What ability did Sri Yukteswar demonstrate?", "choices": ["Appearing in a distant location", "Reading minds", "Materializing objects", "Predicting weather"], "correct": "Appearing in a distant location"}, {"question": "Where was his physical body during this?", "choices": ["Calcutta", "Benares", "America", "The Himalayas"], "correct": "Calcutta"}, {"question": "What does this suggest about consciousness?", "choices": ["It is not bound by physical location", "It is only in the body", "It cannot transcend space", "It is an illusion"], "correct": "It is not bound by physical location"}, {"question": "What is the relationship between consciousness and matter?", "choices": ["Consciousness is primary, matter secondary", "Matter is all that exists", "They are unrelated", "Matter creates consciousness"], "correct": "Consciousness is primary, matter secondary"}, {"question": "What should seekers cultivate according to this chapter?", "choices": ["Inner receptivity to non-physical connection", "Skepticism toward all phenomena", "Physical travel only", "Rejection of teachers"], "correct": "Inner receptivity to non-physical connection"}];
+        var quizData = [
+            // ═══════════════════════════════════════════════════════════════
+            // PART 1: CORE TEACHING (Original Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 1] What ability did Sri Yukteswar demonstrate?",choices:["Appearing in a distant location","Reading minds","Materializing objects","Predicting weather"],correct:"Appearing in a distant location"},
+            {question:"[Part 1] Where was his physical body during this?",choices:["Calcutta","Benares","America","The Himalayas"],correct:"Calcutta"},
+            {question:"[Part 1] What does this suggest about consciousness?",choices:["It is not bound by physical location","It is only in the body","It cannot transcend space","It is an illusion"],correct:"It is not bound by physical location"},
+            {question:"[Part 1] What is the relationship between consciousness and matter?",choices:["Consciousness is primary, matter secondary","Matter is all that exists","They are unrelated","Matter creates consciousness"],correct:"Consciousness is primary, matter secondary"},
+            {question:"[Part 1] What should seekers cultivate according to this chapter?",choices:["Inner receptivity to non-physical connection","Skepticism toward all phenomena","Physical travel only","Rejection of teachers"],correct:"Inner receptivity to non-physical connection"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 2: INTEGRATED UNDERSTANDING (New Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 2] Sri Yukteswar appearing in Serampore while physically in Calcutta demonstrates:",choices:["A trick","Consciousness can operate beyond physical body location","Yogananda's confusion","Impossible claims"],correct:"Consciousness can operate beyond physical body location"},
+            {question:"[Part 2] This incident supports the teaching that:",choices:["Bodies are primary","Awareness is more fundamental than the physical vehicle through which it usually operates","Such things never happen","Location is absolute"],correct:"Awareness is more fundamental than the physical vehicle through which it usually operates"},
+            {question:"[Part 2] For the disciple, such an occurrence builds:",choices:["Doubt","Faith based on direct experience of the master's subtle capacities","Confusion only","Fear"],correct:"Faith based on direct experience of the master's subtle capacities"},
+            {question:"[Part 2] Why might a master demonstrate such capacities?",choices:["To show off","To expand the disciple's understanding of what's possible","For entertainment","No reason"],correct:"To expand the disciple's understanding of what's possible"},
+            {question:"[Part 2] Someone explains this as hallucination. The alternative view is:",choices:["Accept that view","Consciousness at certain levels may genuinely transcend ordinary spatial limitations","All such events are hallucinations","Explanation is impossible"],correct:"Consciousness at certain levels may genuinely transcend ordinary spatial limitations"},
+            {question:"[Part 2] The chapter suggests that the master-disciple connection:",choices:["Is purely physical","Operates on levels that transcend physical proximity","Requires constant physical presence","Is about convenience"],correct:"Operates on levels that transcend physical proximity"},
+            {question:"[Part 2] For modern seekers whose teachers may be distant, this suggests:",choices:["Physical proximity is essential","Genuine spiritual connection isn't limited by geographic distance","They should give up","Travel constantly"],correct:"Genuine spiritual connection isn't limited by geographic distance"},
+            {question:"[Part 2] What does Sri Yukteswar's 'appearance' reveal about the nature of his being?",choices:["Nothing","He was established in awareness not confined to physical body","He was a ghost","Optical illusion"],correct:"He was established in awareness not confined to physical body"}
+        ];
         QuizEngine.init(quizData, LESSON_SLUG);
     });
     </script>

@@ -200,7 +200,27 @@
         }
         
         // Quiz data
-        var quizData = [{"question": "What did Yogananda compare with Tagore?", "choices": ["Their educational approaches", "Their poetry", "Their wealth", "Their political views"], "correct": "Their educational approaches"}, {"question": "What did both educators value over book knowledge?", "choices": ["Experiential learning", "Memorization", "Tests and grades", "Large libraries"], "correct": "Experiential learning"}, {"question": "What does true learning happen through?", "choices": ["Experience", "Reading alone", "Listening to lectures", "Watching others"], "correct": "Experience"}, {"question": "What is incomplete according to this chapter?", "choices": ["Head knowledge without heart wisdom and practice", "Practical skills", "Emotional development", "Physical education"], "correct": "Head knowledge without heart wisdom and practice"}, {"question": "What should seekers prioritize?", "choices": ["Experiential learning that transforms", "Information accumulation", "Theoretical understanding", "Academic credentials"], "correct": "Experiential learning that transforms"}];
+        var quizData = [
+            // ═══════════════════════════════════════════════════════════════
+            // PART 1: CORE TEACHING (Original Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 1] What did Yogananda compare with Tagore?",choices:["Their educational approaches","Their poetry","Their wealth","Their political views"],correct:"Their educational approaches"},
+            {question:"[Part 1] What did both educators value over book knowledge?",choices:["Experiential learning","Memorization","Tests and grades","Large libraries"],correct:"Experiential learning"},
+            {question:"[Part 1] What does true learning happen through?",choices:["Experience","Reading alone","Listening to lectures","Watching others"],correct:"Experience"},
+            {question:"[Part 1] What is incomplete according to this chapter?",choices:["Head knowledge without heart wisdom and practice","Practical skills","Emotional development","Physical education"],correct:"Head knowledge without heart wisdom and practice"},
+            {question:"[Part 1] What should seekers prioritize?",choices:["Experiential learning that transforms","Information accumulation","Theoretical understanding","Academic credentials"],correct:"Experiential learning that transforms"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 2: INTEGRATED UNDERSTANDING (New Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 2] Yogananda's meeting with Tagore compared experiential versus intellectual learning. Experiential means:",choices:["Reading more books","Learning through direct practice and experience, not just concepts","Avoiding thinking","Experience without learning"],correct:"Learning through direct practice and experience, not just concepts"},
+            {question:"[Part 2] Tagore's approach emphasized artistic and intellectual culture while Yogananda's emphasized:",choices:["Ignorance","Direct spiritual experience as the foundation","Academic achievement","Cultural refinement"],correct:"Direct spiritual experience as the foundation"},
+            {question:"[Part 2] For modern seekers, this chapter suggests evaluating spiritual paths based on:",choices:["What produces actual transformation versus what merely informs","Who is more famous","Cultural prestige","Number of followers"],correct:"What produces actual transformation versus what merely informs"},
+            {question:"[Part 2] Knowledge without experience in spirituality is:",choices:["Complete","Like reading about food without eating—necessary but insufficient","Superior to experience","The goal"],correct:"Like reading about food without eating—necessary but insufficient"},
+            {question:"[Part 2] The dialogue between two great figures shows:",choices:["One was wrong","Multiple valid perspectives can coexist while having different emphases","They agreed on everything","Hostility is necessary"],correct:"Multiple valid perspectives can coexist while having different emphases"},
+            {question:"[Part 2] Why might some spiritual schools emphasize experience over scholarship?",choices:["They're anti-intellectual","Because transformation requires more than information—it requires direct realization","Scholarship is useless","Experience is easier"],correct:"Because transformation requires more than information—it requires direct realization"},
+            {question:"[Part 2] A balanced approach would integrate:",choices:["Nothing—choose one","Both intellectual understanding and experiential practice","Only experience","Only study"],correct:"Both intellectual understanding and experiential practice"},
+            {question:"[Part 2] This chapter helps seekers discern paths by asking:",choices:["Which has more books?","Does this path produce actual transformation or mainly information?","Which is more traditional?","Which is newer?"],correct:"Does this path produce actual transformation or mainly information?"}
+        ];
         QuizEngine.init(quizData, LESSON_SLUG);
     });
     </script>

@@ -446,10 +446,26 @@
     
     (function(){
         var STORAGE_KEY='wisdompath_progress',LESSON_SLUG='self-realization';
-        var quizData=[
-            {question:"What is the primary focus of self-realization?",choices:["Achieving external success","Developing awareness of thoughts and actions","Following a belief system","Performing rituals"],correct:"Developing awareness of thoughts and actions"},
-            {question:"What does self-realization create between stimulus and response?",choices:["Conflict","Confusion","Space","Resistance"],correct:"Space"},
-            {question:"What is the recommended first step?",choices:["Suppress emotions","Notice reactions and pause before responding","Avoid stressful situations","Read philosophy books"],correct:"Notice reactions and pause before responding"}
+        var quizData = [
+            // ═══════════════════════════════════════════════════════════════
+            // PART 1: CORE TEACHING (Original Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 1] What is the primary focus of self-realization?",choices:["Achieving external success","Developing awareness of thoughts and actions","Following a belief system","Performing rituals"],correct:"Developing awareness of thoughts and actions"},
+            {question:"[Part 1] What does self-realization create between stimulus and response?",choices:["Conflict","Confusion","Space","Resistance"],correct:"Space"},
+            {question:"[Part 1] What is the recommended first step?",choices:["Suppress emotions","Notice reactions and pause before responding","Avoid stressful situations","Read philosophy books"],correct:"Notice reactions and pause before responding"},
+            {question:"[Part 1] Self-realization differs from ordinary self-improvement by:",choices:["Being easier","Focusing on discovering what you already are rather than becoming something different","Requiring more effort","Having no practical benefits"],correct:"Focusing on discovering what you already are rather than becoming something different"},
+            {question:"[Part 1] The 'Self' being realized refers to:",choices:["The personality","The deeper consciousness beneath thoughts, emotions, and body","Better self-esteem","Ego strength"],correct:"The deeper consciousness beneath thoughts, emotions, and body"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 2: INTEGRATED UNDERSTANDING (New Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 2] Someone has occasional self-awareness but it doesn't last. This suggests:",choices:["They should give up","Continuity of awareness requires practice—it's a capacity that develops","They're incapable","Awareness can't be sustained"],correct:"Continuity of awareness requires practice—it's a capacity that develops"},
+            {question:"[Part 2] Why begin with observing ordinary experience rather than seeking transcendent states?",choices:["Transcendence isn't real","The capacity to observe develops through ordinary awareness before extraordinary states are stable","States are all that matter","Observation is the final goal"],correct:"The capacity to observe develops through ordinary awareness before extraordinary states are stable"},
+            {question:"[Part 2] A practical first step in self-realization practice is:",choices:["Achieving samadhi immediately","Simply noticing when you're lost in thought versus when you're present","Reading more books","Finding a guru first"],correct:"Simply noticing when you're lost in thought versus when you're present"},
+            {question:"[Part 2] 'Foundations' of self-realization suggests that:",choices:["Basics are unimportant","Proper groundwork enables stable development later","Skip to advanced practices","Foundations delay progress"],correct:"Proper groundwork enables stable development later"},
+            {question:"[Part 2] When trying to observe your own thoughts, you might notice:",choices:["Thoughts stop completely","The observer seems different from the thoughts observed","Nothing happens","Thinking gets worse"],correct:"The observer seems different from the thoughts observed"},
+            {question:"[Part 2] The practice of self-inquiry benefits daily life by:",choices:["Making you detached from life","Increasing awareness of automatic patterns that may not serve you","Having no practical application","Only helping meditation"],correct:"Increasing awareness of automatic patterns that may not serve you"},
+            {question:"[Part 2] Someone thinks self-realization requires dramatic experiences. This chapter suggests:",choices:["They're correct","Progress often appears as subtle shifts in awareness rather than dramatic events","Dramatic experiences are required","Nothing about expectations"],correct:"Progress often appears as subtle shifts in awareness rather than dramatic events"},
+            {question:"[Part 2] The relationship between self-realization and daily activities is:",choices:["They're separate domains","Daily activities become opportunities for practicing awareness","Only meditation counts","Activities delay realization"],correct:"Daily activities become opportunities for practicing awareness"}
         ];
         var quizState={currentIndex:0,answers:[],score:0,selectedAnswer:null},els={};
         function getProgress(){try{var d=localStorage.getItem(STORAGE_KEY);return d?JSON.parse(d):{lessons:{}};}catch(e){return{lessons:{}};}}

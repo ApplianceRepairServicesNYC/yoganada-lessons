@@ -200,7 +200,27 @@
         }
         
         // Quiz data
-        var quizData = [{"question": "What did Sri Yukteswar accomplish?", "choices": ["Restoring life to a dead student", "Predicting weather", "Finding treasure", "Traveling abroad"], "correct": "Restoring life to a dead student"}, {"question": "What was Rama's condition before intervention?", "choices": ["He had died", "He was sleeping", "He was meditating", "He was traveling"], "correct": "He had died"}, {"question": "Why was the resurrection temporary?", "choices": ["It served spiritual preparation, not mere prolongation", "The guru lost power", "Rama wanted to die", "The technique failed"], "correct": "It served spiritual preparation, not mere prolongation"}, {"question": "What does this demonstrate about death?", "choices": ["It can be influenced by those with mastery", "It is completely random", "It is absolutely final", "It has no spiritual significance"], "correct": "It can be influenced by those with mastery"}, {"question": "What is the ultimate goal regarding death?", "choices": ["Freedom from the death cycle entirely", "Living forever in this body", "Dying as quickly as possible", "Ignoring death completely"], "correct": "Freedom from the death cycle entirely"}];
+        var quizData = [
+            // ═══════════════════════════════════════════════════════════════
+            // PART 1: CORE TEACHING (Original Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 1] What did Sri Yukteswar accomplish?",choices:["Restoring life to a dead student","Predicting weather","Finding treasure","Traveling abroad"],correct:"Restoring life to a dead student"},
+            {question:"[Part 1] What was Rama's condition before intervention?",choices:["He had died","He was sleeping","He was meditating","He was traveling"],correct:"He had died"},
+            {question:"[Part 1] Why was the resurrection temporary?",choices:["It served spiritual preparation, not mere prolongation","The guru lost power","Rama wanted to die","The technique failed"],correct:"It served spiritual preparation, not mere prolongation"},
+            {question:"[Part 1] What does this demonstrate about death?",choices:["It can be influenced by those with mastery","It is completely random","It is absolutely final","It has no spiritual significance"],correct:"It can be influenced by those with mastery"},
+            {question:"[Part 1] What is the ultimate goal regarding death?",choices:["Freedom from the death cycle entirely","Living forever in this body","Dying as quickly as possible","Ignoring death completely"],correct:"Freedom from the death cycle entirely"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 2: INTEGRATED UNDERSTANDING (New Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 2] Rama being raised from the dead demonstrates:",choices:["Death is permanent","Mastery over life force can reverse what seems final","Exaggeration","Medical misdiagnosis"],correct:"Mastery over life force can reverse what seems final"},
+            {question:"[Part 2] Such accounts expand our view of what's possible by:",choices:["Nothing","Challenging assumptions about the finality and nature of death","Creating false hope","Promoting superstition"],correct:"Challenging assumptions about the finality and nature of death"},
+            {question:"[Part 2] Why would a master reverse death in some cases but not others?",choices:["Random choice","Cosmic factors including karma and divine purpose determine appropriateness","Masters can't really do this","They always could but don't"],correct:"Cosmic factors including karma and divine purpose determine appropriateness"},
+            {question:"[Part 2] The chapter relates to teachings about consciousness being:",choices:["Strictly physical","More fundamental than the physical body that can be apparently 'dead'","Dependent on body","A brain function"],correct:"More fundamental than the physical body that can be apparently 'dead'"},
+            {question:"[Part 2] For ordinary seekers, the teaching implication is:",choices:["Nothing applicable","Our understanding of life and death may be much more limited than reality allows","Expect to raise the dead","Death doesn't matter"],correct:"Our understanding of life and death may be much more limited than reality allows"},
+            {question:"[Part 2] Skeptical responses to such accounts typically:",choices:["Are always right","Assume current scientific understanding is complete rather than partial","Are always wrong","Should be ignored"],correct:"Assume current scientific understanding is complete rather than partial"},
+            {question:"[Part 2] The yogic understanding of life force (prana) suggests death occurs when:",choices:["Heart stops","Life force withdraws—which in some cases can be reversed by one who controls prana","Brain dies","Fixed at a certain time"],correct:"Life force withdraws—which in some cases can be reversed by one who controls prana"},
+            {question:"[Part 2] What would be required for a master to restore life?",choices:["Simple desire","Profound mastery over life force plus cosmic permission","Medical knowledge","Nothing special"],correct:"Profound mastery over life force plus cosmic permission"}
+        ];
         QuizEngine.init(quizData, LESSON_SLUG);
     });
     </script>

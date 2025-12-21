@@ -200,7 +200,27 @@
         }
         
         // Quiz data
-        var quizData = [{"question": "What did Sri Yukteswar advise about the Kashmir trip?", "choices": ["He predicted difficulties and advised against it", "He encouraged them to go", "He said nothing", "He wanted to join"], "correct": "He predicted difficulties and advised against it"}, {"question": "What happened when they went anyway?", "choices": ["They encountered exactly the predicted problems", "They had a wonderful time", "Nothing unusual", "They found treasure"], "correct": "They encountered exactly the predicted problems"}, {"question": "What does this teach about the guru's guidance?", "choices": ["It often extends beyond student's limited view", "It should always be ignored", "It is merely opinion", "It is usually wrong"], "correct": "It often extends beyond student's limited view"}, {"question": "What often causes us to ignore wise guidance?", "choices": ["Personal desire and ego", "Superior knowledge", "Clear thinking", "Genuine wisdom"], "correct": "Personal desire and ego"}, {"question": "What quality does this chapter recommend developing?", "choices": ["Humility about our limited perspective", "Complete independence", "Skepticism toward all guidance", "Pride in personal judgment"], "correct": "Humility about our limited perspective"}];
+        var quizData = [
+            // ═══════════════════════════════════════════════════════════════
+            // PART 1: CORE TEACHING (Original Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 1] What did Sri Yukteswar advise about the Kashmir trip?",choices:["He predicted difficulties and advised against it","He encouraged them to go","He said nothing","He wanted to join"],correct:"He predicted difficulties and advised against it"},
+            {question:"[Part 1] What happened when they went anyway?",choices:["They encountered exactly the predicted problems","They had a wonderful time","Nothing unusual","They found treasure"],correct:"They encountered exactly the predicted problems"},
+            {question:"[Part 1] What does this teach about the guru's guidance?",choices:["It often extends beyond student's limited view","It should always be ignored","It is merely opinion","It is usually wrong"],correct:"It often extends beyond student's limited view"},
+            {question:"[Part 1] What often causes us to ignore wise guidance?",choices:["Personal desire and ego","Superior knowledge","Clear thinking","Genuine wisdom"],correct:"Personal desire and ego"},
+            {question:"[Part 1] What quality does this chapter recommend developing?",choices:["Humility about our limited perspective","Complete independence","Skepticism toward all guidance","Pride in personal judgment"],correct:"Humility about our limited perspective"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 2: INTEGRATED UNDERSTANDING (New Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 2] Not visiting Kashmir when guided not to illustrates:",choices:["Cowardice","Obedience to guidance even when the reasons aren't clear","Missing opportunities","Fear of travel"],correct:"Obedience to guidance even when the reasons aren't clear"},
+            {question:"[Part 2] The 'consequences' mentioned relate to:",choices:["Nothing happened","Learning what happens when intuitive guidance is ignored","Pleasant surprises","Random events"],correct:"Learning what happens when intuitive guidance is ignored"},
+            {question:"[Part 2] Someone receives inner guidance but ignores it because it doesn't make sense. This chapter suggests:",choices:["Rational analysis should always override","Intuitive guidance may perceive what reasoning cannot","Guidance can be ignored safely","Only act on what makes logical sense"],correct:"Intuitive guidance may perceive what reasoning cannot"},
+            {question:"[Part 2] The chapter title itself teaches about:",choices:["Kashmir tourism","How spiritual life involves not doing certain things based on guidance","What to visit in Kashmir","Geographic preferences"],correct:"How spiritual life involves not doing certain things based on guidance"},
+            {question:"[Part 2] Developing trust in guidance requires:",choices:["Never questioning","A balance of discernment and willingness to follow even when unclear","Constant doubt","Only following clear guidance"],correct:"A balance of discernment and willingness to follow even when unclear"},
+            {question:"[Part 2] This chapter paired with 'We Visit Kashmir' suggests:",choices:["Random choices","That timing and guidance determine when actions are appropriate","Kashmir has mixed energy","The author was indecisive"],correct:"That timing and guidance determine when actions are appropriate"},
+            {question:"[Part 2] For daily life, the lesson applies when:",choices:["Never","You feel guided away from something despite wanting to do it","Only on trips","Major decisions only"],correct:"You feel guided away from something despite wanting to do it"},
+            {question:"[Part 2] The ability to follow 'no' guidance requires:",choices:["No sacrifice","Willingness to release attachment to plans and preferences","Nothing difficult","Stubbornness"],correct:"Willingness to release attachment to plans and preferences"}
+        ];
         QuizEngine.init(quizData, LESSON_SLUG);
     });
     </script>

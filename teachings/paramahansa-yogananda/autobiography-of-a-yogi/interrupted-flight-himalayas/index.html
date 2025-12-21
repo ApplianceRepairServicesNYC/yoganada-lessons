@@ -374,11 +374,25 @@
         
         // Quiz data
         var quizData = [
-            {question:"Where did young Yogananda attempt to flee?",choices:["England", "America", "The Himalayas", "Sri Lanka"],correct:"The Himalayas"},
-            {question:"Who intercepted his escape?",choices:["His father", "A police officer", "His elder brother", "His guru"],correct:"His elder brother"},
-            {question:"What lesson did this failed attempt teach?",choices:["Mountains are dangerous", "Brothers are cruel", "Divine timing matters", "Trains are unreliable"],correct:"Divine timing matters"},
-            {question:"What does the chapter suggest about geographical relocation for spiritual purposes?",choices:["It guarantees enlightenment", "It is required by scriptures", "It is not necessary for realization", "It should happen immediately"],correct:"It is not necessary for realization"},
-            {question:"What was Yogananda convinced he needed?",choices:["A wealthy sponsor", "Solitary mountain meditation", "University education", "Political connections"],correct:"Solitary mountain meditation"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 1: CORE TEACHING (Original Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 1] Where did young Yogananda attempt to flee?",choices:["England","America","The Himalayas","Sri Lanka"],correct:"The Himalayas"},
+            {question:"[Part 1] Who intercepted his escape?",choices:["His father","A police officer","His elder brother","His guru"],correct:"His elder brother"},
+            {question:"[Part 1] What lesson did this failed attempt teach?",choices:["Mountains are dangerous","Brothers are cruel","Divine timing matters","Trains are unreliable"],correct:"Divine timing matters"},
+            {question:"[Part 1] What does the chapter suggest about geographical relocation for spiritual purposes?",choices:["It guarantees enlightenment","It is required by scriptures","It is not necessary for realization","It should happen immediately"],correct:"It is not necessary for realization"},
+            {question:"[Part 1] What was Yogananda convinced he needed?",choices:["A wealthy sponsor","Solitary mountain meditation","University education","Political connections"],correct:"Solitary mountain meditation"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 2: INTEGRATED UNDERSTANDING (New Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 2] The young Yogananda's failed Himalayan escape teaches that:",choices:["Running away is always wrong","Spiritual progress requires proper preparation, not just enthusiasm","The Himalayas aren't spiritual","Parents always know best"],correct:"Spiritual progress requires proper preparation, not just enthusiasm"},
+            {question:"[Part 2] Someone wants to quit their job immediately to pursue spirituality full-time. This chapter suggests:",choices:["Do it without hesitation","Consider whether proper preparation and timing are in place","Material life is incompatible with spirituality","Never make changes"],correct:"Consider whether proper preparation and timing are in place"},
+            {question:"[Part 2] The chapter's theme of 'premature renunciation' applies when:",choices:["Someone waits too long to act","Enthusiasm outpaces readiness and necessary groundwork","A person is very dedicated","Renunciation is always premature"],correct:"Enthusiasm outpaces readiness and necessary groundwork"},
+            {question:"[Part 2] What does being 'sent back' to complete education suggest about spiritual life?",choices:["Education is more important than spirituality","There may be a right sequence of development where steps shouldn't be skipped","Formal education is required for enlightenment","Spiritual yearning should be suppressed"],correct:"There may be a right sequence of development where steps shouldn't be skipped"},
+            {question:"[Part 2] A modern parallel to Yogananda's interrupted flight might be:",choices:["Booking a retreat without arranging responsibilities","Reading spiritual books","Having spiritual interests","Meditating daily"],correct:"Booking a retreat without arranging responsibilities"},
+            {question:"[Part 2] The chapter suggests that true renunciation:",choices:["Means running away from problems","Emerges from maturity and completion, not escape and avoidance","Requires no preparation","Should happen as early as possible"],correct:"Emerges from maturity and completion, not escape and avoidance"},
+            {question:"[Part 2] Why might premature spiritual intensity actually delay progress?",choices:["It never delays progress","Unresolved issues and incomplete preparation create obstacles that must eventually be addressed","Intensity is always good","The universe punishes enthusiasm"],correct:"Unresolved issues and incomplete preparation create obstacles that must eventually be addressed"},
+            {question:"[Part 2] The lesson about right timing suggests that spiritual urgency should be:",choices:["Ignored completely","Balanced with wisdom about proper preparation and sequence","Acted on immediately always","Suppressed until old age"],correct:"Balanced with wisdom about proper preparation and sequence"}
         ];
         QuizEngine.init(quizData, LESSON_SLUG);
     });

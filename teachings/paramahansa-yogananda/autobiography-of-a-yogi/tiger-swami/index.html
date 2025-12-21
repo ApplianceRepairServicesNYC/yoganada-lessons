@@ -375,11 +375,25 @@
         
         // Quiz data
         var quizData = [
-            {question:"What remarkable ability did the Tiger Swami develop?",choices:["Flying through the air", "Defeating tigers with bare hands", "Becoming invisible", "Reading ancient languages"],correct:"Defeating tigers with bare hands"},
-            {question:"What did he eventually prioritize over physical feats?",choices:["Fame and recognition", "Building temples", "Deeper spiritual practice", "Training other wrestlers"],correct:"Deeper spiritual practice"},
-            {question:"What is the relationship between body and spirit according to this chapter?",choices:["Body is the only reality", "Spirit is less important", "Body should serve spirit", "They are unrelated"],correct:"Body should serve spirit"},
-            {question:"What common modern misunderstanding about yoga does this chapter address?",choices:["Yoga being only for Indians", "Reducing yoga to mere physical exercise", "Yoga being a religion", "Yoga requiring vegetarianism"],correct:"Reducing yoga to mere physical exercise"},
-            {question:"What type of attachment can physical yoga accomplishments create?",choices:["Complete detachment", "Spiritual liberation", "Ego attachment", "Mental illness"],correct:"Ego attachment"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 1: CORE TEACHING (Original Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 1] What remarkable ability did the Tiger Swami develop?",choices:["Flying through the air","Defeating tigers with bare hands","Becoming invisible","Reading ancient languages"],correct:"Defeating tigers with bare hands"},
+            {question:"[Part 1] What did he eventually prioritize over physical feats?",choices:["Fame and recognition","Building temples","Deeper spiritual practice","Training other wrestlers"],correct:"Deeper spiritual practice"},
+            {question:"[Part 1] What is the relationship between body and spirit according to this chapter?",choices:["Body is the only reality","Spirit is less important","Body should serve spirit","They are unrelated"],correct:"Body should serve spirit"},
+            {question:"[Part 1] What common modern misunderstanding about yoga does this chapter address?",choices:["Yoga being only for Indians","Reducing yoga to mere physical exercise","Yoga being a religion","Yoga requiring vegetarianism"],correct:"Reducing yoga to mere physical exercise"},
+            {question:"[Part 1] What type of attachment can physical yoga accomplishments create?",choices:["Complete detachment","Spiritual liberation","Ego attachment","Mental illness"],correct:"Ego attachment"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 2: INTEGRATED UNDERSTANDING (New Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 2] The Tiger Swami conquered tigers through trained will. This demonstrates:",choices:["That fighting animals is spiritual","The power of disciplined mind over physical circumstances","That everyone should wrestle tigers","Physical strength alone"],correct:"The power of disciplined mind over physical circumstances"},
+            {question:"[Part 2] Someone dedicates themselves to extreme physical feats as spiritual practice. This chapter suggests:",choices:["This is the highest path","Body mastery can serve spiritual development but isn't the ultimate goal","Physical feats are always wrong","Comfort is spiritual"],correct:"Body mastery can serve spiritual development but isn't the ultimate goal"},
+            {question:"[Part 2] The difference between using will for ego-display versus spiritual growth is:",choices:["There is no difference","The intention and direction—ego aggrandizement versus liberation","Display is always better","Spiritual people never display abilities"],correct:"The intention and direction—ego aggrandizement versus liberation"},
+            {question:"[Part 2] What practical lesson does the Tiger Swami offer about willpower?",choices:["Willpower is unnecessary","Concentrated will can achieve what seems impossible, but must be directed wisely","Only physical feats matter","Will is dangerous"],correct:"Concentrated will can achieve what seems impossible, but must be directed wisely"},
+            {question:"[Part 2] In daily life, the principle of trained will over physical circumstances might apply to:",choices:["Nothing practical","Developing capacity to face difficult situations without being overwhelmed","Fighting actual animals","Ignoring all physical reality"],correct:"Developing capacity to face difficult situations without being overwhelmed"},
+            {question:"[Part 2] Why is body mastery considered a step rather than the destination?",choices:["The body is evil","Physical mastery alone doesn't address the root of suffering or lead to God-realization","It's too difficult","Destinations don't exist"],correct:"Physical mastery alone doesn't address the root of suffering or lead to God-realization"},
+            {question:"[Part 2] The Tiger Swami's abilities came from:",choices:["Natural talent only","Disciplined practice and concentrated training over time","Genetic advantage","Luck"],correct:"Disciplined practice and concentrated training over time"},
+            {question:"[Part 2] How should one view extraordinary physical feats by yogis?",choices:["With dismissive skepticism","As demonstrations of trained will that point to broader capacities of consciousness","As the goal of yoga","As tricks to ignore"],correct:"As demonstrations of trained will that point to broader capacities of consciousness"}
         ];
         QuizEngine.init(quizData, LESSON_SLUG);
     });

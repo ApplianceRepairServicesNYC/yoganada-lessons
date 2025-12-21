@@ -375,11 +375,25 @@
         
         // Quiz data
         var quizData = [
-            {question:"What ability did Swami Pranabananda demonstrate?",choices:["Flying through the air", "Reading minds", "Appearing in two places at once", "Predicting the future"],correct:"Appearing in two places at once"},
-            {question:"What are siddhis?",choices:["Hindu scriptures", "Spiritual powers", "Dietary restrictions", "Temple rituals"],correct:"Spiritual powers"},
-            {question:"In which city was the saint's physical body located during the bilocation?",choices:["Delhi", "Calcutta", "Benares", "Mumbai"],correct:"Benares"},
-            {question:"According to the chapter, what is the true purpose of spiritual powers?",choices:["Entertainment", "Personal gain", "Teaching and helping others", "Political influence"],correct:"Teaching and helping others"},
-            {question:"What attitude toward miracles does this chapter suggest?",choices:["They should be the primary focus", "They are natural byproducts, not goals", "They are impossible", "They are always dangerous"],correct:"They are natural byproducts, not goals"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 1: CORE TEACHING (Original Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 1] What ability did Swami Pranabananda demonstrate?",choices:["Flying through the air","Reading minds","Appearing in two places at once","Predicting the future"],correct:"Appearing in two places at once"},
+            {question:"[Part 1] What are siddhis?",choices:["Hindu scriptures","Spiritual powers","Dietary restrictions","Temple rituals"],correct:"Spiritual powers"},
+            {question:"[Part 1] In which city was the saint's physical body located during the bilocation?",choices:["Delhi","Calcutta","Benares","Mumbai"],correct:"Benares"},
+            {question:"[Part 1] According to the chapter, what is the true purpose of spiritual powers?",choices:["Entertainment","Personal gain","Teaching and helping others","Political influence"],correct:"Teaching and helping others"},
+            {question:"[Part 1] What attitude toward miracles does this chapter suggest?",choices:["They should be the primary focus","They are natural byproducts, not goals","They are impossible","They are always dangerous"],correct:"They are natural byproducts, not goals"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 2: INTEGRATED UNDERSTANDING (New Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 2] The phenomenon of bilocation challenges which common assumption?",choices:["That saints exist","That consciousness is strictly limited to one physical location","That India has spiritual masters","That stories can be told"],correct:"That consciousness is strictly limited to one physical location"},
+            {question:"[Part 2] Someone dismisses bilocation as impossible because it violates physics. A more open response would be:",choices:["Physics explains everything already known","Our understanding of consciousness and its relationship to matter may be incomplete","All spiritual claims are true","Science is useless"],correct:"Our understanding of consciousness and its relationship to matter may be incomplete"},
+            {question:"[Part 2] In daily life, the teaching about consciousness transcending physical form might mean:",choices:["We should try to bilocate","Our sense of being limited to this body may be more conditioned than absolute","Physical location doesn't matter at all","Nothing practical"],correct:"Our sense of being limited to this body may be more conditioned than absolute"},
+            {question:"[Part 2] The chapter suggests that advanced spiritual development can result in:",choices:["Only internal experiences","Capacities that ordinary understanding considers impossible","Nothing observable by others","Rejection of all physical reality"],correct:"Capacities that ordinary understanding considers impossible"},
+            {question:"[Part 2] Why might genuine bilocation be rare even among spiritual aspirants?",choices:["It doesn't exist","It requires a level of consciousness development few attain","Saints are selfish with their powers","Everyone can do it easily"],correct:"It requires a level of consciousness development few attain"},
+            {question:"[Part 2] A seeker who obsesses over developing powers like bilocation is likely:",choices:["On the right track","Missing the point—powers are side effects, not goals","Already spiritually advanced","Following the correct priority"],correct:"Missing the point—powers are side effects, not goals"},
+            {question:"[Part 2] The account of the saint with two bodies should inspire:",choices:["Skeptical dismissal","Expanded sense of what consciousness might be capable of","Attempts to replicate the feat","Fear of spiritual development"],correct:"Expanded sense of what consciousness might be capable of"},
+            {question:"[Part 2] How does this chapter relate to the idea that 'we are not the body'?",choices:["It doesn't relate","It provides a dramatic example suggesting consciousness isn't confined to physical form","It proves we have no body","Bodies are evil"],correct:"It provides a dramatic example suggesting consciousness isn't confined to physical form"}
         ];
         QuizEngine.init(quizData, LESSON_SLUG);
     });

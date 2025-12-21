@@ -292,7 +292,27 @@
         }
         
         // Quiz data
-        var quizData = [{"question": "What did Yogananda prematurely eat?", "choices": ["Cauliflower intended for the ashram", "Mangoes from the garden", "Temple offerings", "His guru's meal"], "correct": "Cauliflower intended for the ashram"}, {"question": "How did Sri Yukteswar respond?", "choices": ["With firm but loving correction", "With angry punishment", "He ignored it", "He laughed it off"], "correct": "With firm but loving correction"}, {"question": "What larger lessons did this incident teach?", "choices": ["Impulse control and consideration for others", "That food is unimportant", "That mistakes don't matter", "That gurus are harsh"], "correct": "Impulse control and consideration for others"}, {"question": "What does this chapter suggest about ordinary incidents?", "choices": ["They can become teaching opportunities", "They are spiritually meaningless", "They should be ignored", "They only matter to beginners"], "correct": "They can become teaching opportunities"}, {"question": "What do small impulses often reveal?", "choices": ["Larger patterns in consciousness", "Nothing important", "Physical health issues", "Past life karma only"], "correct": "Larger patterns in consciousness"}];
+        var quizData = [
+            // ═══════════════════════════════════════════════════════════════
+            // PART 1: CORE TEACHING (Original Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 1] What did Yogananda prematurely eat?",choices:["Cauliflower intended for the ashram","Mangoes from the garden","Temple offerings","His guru's meal"],correct:"Cauliflower intended for the ashram"},
+            {question:"[Part 1] How did Sri Yukteswar respond?",choices:["With firm but loving correction","With angry punishment","He ignored it","He laughed it off"],correct:"With firm but loving correction"},
+            {question:"[Part 1] What larger lessons did this incident teach?",choices:["Impulse control and consideration for others","That food is unimportant","That mistakes don't matter","That gurus are harsh"],correct:"Impulse control and consideration for others"},
+            {question:"[Part 1] What does this chapter suggest about ordinary incidents?",choices:["They can become teaching opportunities","They are spiritually meaningless","They should be ignored","They only matter to beginners"],correct:"They can become teaching opportunities"},
+            {question:"[Part 1] What do small impulses often reveal?",choices:["Larger patterns in consciousness","Nothing important","Physical health issues","Past life karma only"],correct:"Larger patterns in consciousness"},
+            // ═══════════════════════════════════════════════════════════════
+            // PART 2: INTEGRATED UNDERSTANDING (New Questions)
+            // ═══════════════════════════════════════════════════════════════
+            {question:"[Part 2] Sri Yukteswar's teaching over a cauliflower incident shows that:",choices:["Vegetables are spiritual","Every daily situation can become a teaching moment about character","Only big events matter","Food shouldn't be discussed"],correct:"Every daily situation can become a teaching moment about character"},
+            {question:"[Part 2] The 'robbery' metaphor in the title points to:",choices:["Actual theft","How small actions reveal and develop (or compromise) character","Cauliflower crime","Nothing significant"],correct:"How small actions reveal and develop (or compromise) character"},
+            {question:"[Part 2] Sri Yukteswar used everyday events for training because:",choices:["He had nothing better to teach","Spiritual development must be integrated into ordinary life, not separated from it","Philosophy is impractical","Daily events are random"],correct:"Spiritual development must be integrated into ordinary life, not separated from it"},
+            {question:"[Part 2] For modern seekers, this chapter suggests examining:",choices:["Only meditation practice","How they handle small, daily situations as practice ground for character","Nothing practical","Only big decisions"],correct:"How they handle small, daily situations as practice ground for character"},
+            {question:"[Part 2] The discipline involved in seemingly minor matters:",choices:["Is unnecessary strictness","Builds the capacity needed for larger spiritual challenges","Should be avoided","Only applies to monks"],correct:"Builds the capacity needed for larger spiritual challenges"},
+            {question:"[Part 2] Why might a master focus on small behavioral details with disciples?",choices:["To be controlling","Small patterns reveal and reinforce larger character tendencies","Details don't matter","Masters are petty"],correct:"Small patterns reveal and reinforce larger character tendencies"},
+            {question:"[Part 2] The chapter teaches that spiritual progress involves:",choices:["Only transcendent experiences","Attention to mundane details as expressions of consciousness","Ignoring daily life","Separating spiritual and ordinary"],correct:"Attention to mundane details as expressions of consciousness"},
+            {question:"[Part 2] Someone thinks their meditation is advanced but is careless in daily interactions. This chapter would suggest:",choices:["Daily actions don't reflect spiritual state","Integrated development includes how we handle ordinary moments","Meditation compensates for behavior","They're truly advanced"],correct:"Integrated development includes how we handle ordinary moments"}
+        ];
         QuizEngine.init(quizData, LESSON_SLUG);
     });
     </script>
