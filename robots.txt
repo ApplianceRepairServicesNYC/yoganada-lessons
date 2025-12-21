@@ -1,0 +1,12 @@
+# Robots.txt for yoganandateachings.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://yoganandateachings.com/sitemap.xml
+
+# Disallow non-content pages
+Disallow: /thank-you/
+Disallow: /success/
+Disallow: /teachings/paramahansa-yogananda/autobiography-of-a-yogi/success/
